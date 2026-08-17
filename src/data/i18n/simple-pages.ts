@@ -50,26 +50,31 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'ESP & wallhack',
 				paragraphs: [
-					'See PMCs, Scavs, bosses, and loot through walls with distance readouts.',
-					'Use filters so the overlay stays clear in dorms, Factory, and scav-run chaos.',
+					'These ESP and wallhack Features show enemy operators and bots through walls with distance readouts.',
+					'Use filters so the overlay stays clear in ranked and unranked matches.',
 				],
-				list: ['Player boxes & distance', 'Loot and extract markers', 'Boss and Scav filters'],
+				list: [
+					'Operator and bot ESP',
+					'Gadget and deployable ESP',
+					'Spawn and objective markers',
+					'Gadget and objective highlights',
+				],
 			},
 			{
-				h2: 'Aimbot & soft aim',
+				h2: 'Aimbot & no recoil',
 				paragraphs: [
-					'Aim help you can tune to feel natural.',
-					'Set FOV, smoothness, and bone priority per weapon before you raid.',
+					'Aimbot with FOV limit you can tune to feel natural.',
+					'Set FOV, smoothness, and no recoil tuning per weapon before you queue.',
 				],
-				list: ['Smooth aim strength', 'FOV and bone priority', 'Hotkeys mid-match'],
+				list: ['Aimbot with FOV limit', 'No recoil tuning', 'Hotkeys mid-match'],
 			},
 			{
-				h2: 'Radar',
+				h2: 'Stream-proof & cloud DMA',
 				paragraphs: [
-					'A simple 2D radar for threats outside your view.',
-					'Spot flanks near extracts without filling the whole screen.',
+					'Stream-proof overlay for ranked sessions.',
+					'Cloud-DMA option and AWS hosting available for advanced setups.',
 				],
-				list: ['Nearby enemy cues', 'Adjustable range', 'Works in PMC & Scav'],
+				list: ['Stream-proof overlay', 'Cloud-DMA option', 'AWS option'],
 			},
 			{
 				h2: 'Updates & support',
@@ -94,10 +99,10 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'Full package access for Windows 10 / 11.',
-					'Same ESP, soft aim, and radar on monthly and lifetime plans.',
+					'The Store includes full package access for Windows 10 / 11.',
+					'Same ESP, aimbot, and wallhack on monthly and lifetime plans.',
 				],
-				list: ['ESP, aimbot, and radar', 'Patch rebuilds while active', 'Digital delivery after checkout'],
+				list: ['ESP, aimbot, and wallhack', 'Patch rebuilds while active', 'Digital delivery after checkout'],
 			},
 			{
 				h2: 'Plans',
@@ -124,18 +129,18 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Status',
 		intro: brandCopy.statusIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Tarkov Cheats overview',
-		ctaSecondaryHref: '/tarkov-cheats/',
+		ctaSecondary: 'Rainbow Six Siege Cheats overview',
+		ctaSecondaryHref: '/r6-siege-cheats/',
 		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'Current status',
 				paragraphs: [
-					'As of 13 Aug 2026 the package is online for Escape from Tarkov on Windows PC. We post a new note here when a game or BattlEye patch needs a rebuild.',
-					'If Status is green, you can raid. If we are rebuilding, wait for the next note.',
+					'As of 17 Aug 2026 the package is online for Rainbow Six Siege on Windows PC. We post a new note here when a game or BattlEye patch needs a rebuild.',
+					'If Status is green, you can queue. If we are rebuilding, wait for the next note.',
 				],
 				list: [
-					'Check this page before every raid after a patch',
+					'Check this page before every match after a patch',
 					'Monthly and lifetime licenses get rebuilds while active',
 					'No cheat stays undetected forever — status first, then play',
 				],
@@ -157,40 +162,44 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	hacks: page({
 		title: brandSeo.previewTitle,
 		description: brandSeo.previewDescription,
-		h1: 'Tarkov Cheats',
+		h1: 'Rainbow Six Siege Cheats',
 		intro: brandCopy.previewIntro,
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'View features',
 		ctaSecondaryHref: '/features/',
-		galleryTitle: 'In-raid look',
+		galleryTitle: 'In-match look',
 		sections: [
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'One license for Escape from Tarkov on Windows PC — built for PMC raids and Scav runs.',
+					'Rainbow Six Siege Cheats is one license for Rainbow Six Siege on Windows PC — built for ranked and unranked play.',
 				],
 				list: [
-					'ESP / wallhack with distance',
-					'Soft aim & aimbot profiles',
-					'2D radar for flanks',
+					'Operator and bot ESP / wallhack',
+					'Aimbot with FOV limit',
+					'No recoil tuning',
+					'Stream-proof overlay',
+					'Cloud-DMA and AWS options',
 					'BattlEye rebuilds after patches',
 				],
 			},
 			{
-				h2: 'Built for Tarkov raids',
+				h2: 'Built for Rainbow Six Siege',
 				paragraphs: [
-					'Read PMCs and Scavs before you push, mark loot worth the risk, and stay aware near extracts. Tune soft aim per weapon class for dorms, Factory, and long-range maps.',
+					'Rainbow Six Siege Cheats helps you read operators before you push, mark gadgets worth the risk, and stay aware near objectives. Tune aimbot FOV and no recoil per weapon for close quarters and long-range gunfights.',
 				],
 				list: [
-					'<a href="/tarkov-esp/">ESP guide</a>',
-					'<a href="/tarkov-aimbot/">Aimbot controls</a>',
-					'<a href="/tarkov-radar-hack/">Radar overlay</a>',
+					'<a href="/r6-siege-esp/">ESP guide</a>',
+					'<a href="/r6-siege-aimbot/">Aimbot controls</a>',
+					'<a href="/r6-siege-radar-hack/">Stream-proof overlay</a>',
 					'<a href="/updates/">Live status</a>',
 				],
 			},
 			{
 				h2: 'How to start',
-				paragraphs: ['Buy a plan, get your license by email, then follow setup. Check Status after every major patch.'],
+				paragraphs: [
+					'Buy a plan, get your license by email, then follow setup. Check Status after every major patch.',
+				],
 				list: [
 					'<a href="/pricing/">Open store</a>',
 					'<a href="/setup/">Setup guide</a>',
@@ -200,31 +209,33 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-esp': page({
-		title: 'Tarkov ESP | {brand}',
+		title: 'Rainbow Six Siege ESP | {brand}',
 		description:
-			'Tarkov ESP and wallhack for Escape from Tarkov on Windows PC — player boxes, distance, loot filters, and clear overlays in raids.',
+			'Rainbow Six Siege ESP and wallhack for Windows PC — operator boxes, distance, gadget filters, and clear overlays in ranked matches.',
 		h1: 'ESP',
-		intro: 'See players and loot through walls during Tarkov raids. Part of the same {brand} license.',
+		intro: 'Rainbow Six Siege ESP shows operators and gadgets through walls. Part of the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Tarkov Cheats overview',
-		ctaSecondaryHref: '/tarkov-cheats/',
-		galleryTitle: 'ESP in raid',
+		ctaSecondary: 'Rainbow Six Siege Cheats overview',
+		ctaSecondaryHref: '/r6-siege-cheats/',
+		galleryTitle: 'ESP in match',
 		sections: [
 			{
 				h2: 'What ESP shows',
-				paragraphs: ['Boxes, distance, and filters for PMCs, Scavs, bosses, and loot.'],
-				list: ['Player ESP', 'Loot markers', 'Boss and Scav filters'],
+				paragraphs: [
+					'Rainbow Six Siege ESP includes boxes, distance, and filters for operators, bots, and gadgets.',
+				],
+				list: ['Operator and bot ESP', 'Gadget and deployable ESP', 'Spawn and objective markers'],
 			},
 			{
 				h2: 'When to use it',
-				paragraphs: ['Clear dorms, Factory, and scav runs without flooding the screen.'],
-				list: ['Tune opacity', 'Filter noise', 'Pair with radar'],
+				paragraphs: ['Clear ranked rounds without flooding the screen.'],
+				list: ['Tune opacity', 'Filter noise', 'Pair with stream-proof overlay'],
 			},
 			{
 				h2: 'Next steps',
-				paragraphs: ['ESP is included with aimbot and radar in one plan.'],
+				paragraphs: ['ESP is included with aimbot and wallhack in one plan.'],
 				list: [
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/r6-siege-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Store</a>',
 				],
@@ -232,31 +243,31 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-aimbot': page({
-		title: 'Tarkov Aimbot | {brand}',
+		title: 'Rainbow Six Siege Aimbot | {brand}',
 		description:
-			'Tarkov aimbot and soft aim for Escape from Tarkov on Windows PC — FOV, smoothness, and bone priority you can tune per weapon.',
+			'Rainbow Six Siege aimbot for Windows PC — FOV limit, smoothness, and no recoil tuning you can set per weapon.',
 		h1: 'Aimbot',
-		intro: 'Soft aim and aim assist you can tune for Tarkov. Included in the same {brand} license.',
+		intro: 'Rainbow Six Siege aimbot with FOV limit and no recoil tuning. Included in the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Tarkov Cheats overview',
-		ctaSecondaryHref: '/tarkov-cheats/',
+		ctaSecondary: 'Rainbow Six Siege Cheats overview',
+		ctaSecondaryHref: '/r6-siege-cheats/',
 		galleryTitle: 'Aimbot view',
 		sections: [
 			{
 				h2: 'Controls',
-				paragraphs: ['Set FOV, smoothness, and bone priority before you raid.'],
-				list: ['Soft aim strength', 'Bone priority', 'Hotkeys mid-match'],
+				paragraphs: ['Set FOV limit, smoothness, and no recoil before you queue.'],
+				list: ['Aimbot with FOV limit', 'No recoil tuning', 'Hotkeys mid-match'],
 			},
 			{
 				h2: 'Play styles',
 				paragraphs: ['Keep settings subtle for longer sessions. Raise strength only when you accept more risk.'],
-				list: ['Legit soft aim', 'Per-weapon profiles', 'Works with ESP'],
+				list: ['Legit aim settings', 'Per-weapon profiles', 'Works with ESP'],
 			},
 			{
 				h2: 'Next steps',
-				paragraphs: ['Aimbot ships with ESP and radar in one license.'],
+				paragraphs: ['Aimbot ships with ESP and wallhack in one license.'],
 				list: [
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/r6-siege-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Store</a>',
 				],
@@ -264,27 +275,27 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	radar: page({
-		title: 'Tarkov Radar | {brand}',
+		title: 'Rainbow Six Siege Wallhack | {brand}',
 		description:
-			'Tarkov 2D radar for Escape from Tarkov on Windows PC — flank cues near extracts without filling the whole screen.',
-		h1: 'Radar',
-		intro: 'A simple 2D radar for threats outside your view. Included in the same {brand} license.',
+			'Rainbow Six Siege wallhack for Windows PC — see operators through walls with a stream-proof overlay.',
+		h1: 'Wallhack',
+		intro: 'Rainbow Six Siege wallhack with stream-proof overlay. Included in the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Tarkov Cheats overview',
-		ctaSecondaryHref: '/tarkov-cheats/',
-		galleryTitle: 'Radar overlay',
+		ctaSecondary: 'Rainbow Six Siege Cheats overview',
+		ctaSecondaryHref: '/r6-siege-cheats/',
+		galleryTitle: 'Wallhack overlay',
 		sections: [
 			{
 				h2: 'What it shows',
-				paragraphs: ['Nearby enemy cues with adjustable range for PMC and Scav runs.'],
-				list: ['Flank awareness', 'Extract approaches', 'Adjustable range'],
+				paragraphs: ['Enemy operator outlines through walls and barricades with adjustable range.'],
+				list: ['See through walls', 'Stream-proof overlay', 'Adjustable filters'],
 			},
 			{
 				h2: 'With ESP',
-				paragraphs: ['Use radar for threats you cannot see yet. Use ESP when you push.'],
+				paragraphs: ['Use wallhack for threats you cannot see yet. Use ESP when you push.'],
 				list: [
-					'<a href="/tarkov-esp/">ESP guide</a>',
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/r6-siege-esp/">ESP guide</a>',
+					'<a href="/r6-siege-cheats/">Full product</a>',
 					'<a href="/pricing/">Store</a>',
 				],
 			},
@@ -302,7 +313,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'Before you install',
-				paragraphs: ['Buy a plan first. You get a license by email.'],
+				paragraphs: ['Start Setup after you buy a plan. You get a license by email.'],
 				list: ['Windows 10 / 11 PC', 'Disable conflicting overlays', 'Have your order email ready'],
 			},
 			{
@@ -329,7 +340,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'How to contact us',
-				paragraphs: ['Email {email}. Include your order ID and a short note about the issue.'],
+				paragraphs: ['Support is by email at {email}. Include your order ID and a short note about the issue.'],
 				list: ['Order ID from your receipt', 'Windows version', 'What you already tried'],
 			},
 			{
@@ -351,7 +362,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'Buying & delivery',
-				paragraphs: ['You get a digital license by email after payment.'],
+				paragraphs: ['This FAQ covers buying and delivery. You get a digital license by email after payment.'],
 				list: ['Instant delivery after checkout', 'Keep your order email', 'One license per purchase'],
 			},
 			{

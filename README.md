@@ -1,6 +1,6 @@
-# Tarkov Cheats — Marketing Site
+# r6siege-cheats-.net
 
-Static Astro 7 site for [tarkovcheats.org](https://tarkovcheats.org). Primary SEO keyword: **tarkov cheats** (secondary: escape from tarkov cheats, aimbot, ESP).
+Static Astro 7 site for [r6siegecheats.net](https://r6siegecheats.net). Rainbow Six Siege cheats — ESP, aimbot, and wallhack for Windows PC.
 
 ## Stack
 

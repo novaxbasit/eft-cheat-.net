@@ -23,6 +23,7 @@
 	--magenta-deep: #86198f;
 	--accent: var(--magenta);
 	--accent-hover: #d946ef;
+	--heading: var(--magenta-soft);
 	--ok: #34d399;
 	--warn: #f43f5e;
 
@@ -164,6 +165,13 @@
 		text-decoration: none;
 	}
 
+	h1,
+	h2,
+	h3,
+	h4 {
+		color: var(--heading, var(--magenta-soft));
+	}
+
 	:focus-visible {
 		outline: 2px solid var(--magenta);
 		outline-offset: 2px;
@@ -219,7 +227,7 @@
 		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
 		line-height: 1.15;
 	}
 
@@ -366,7 +374,7 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
 		margin: 0 0 1rem;
 	}
 
@@ -384,7 +392,7 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
 	}
 
 	.g2a-section-head p {

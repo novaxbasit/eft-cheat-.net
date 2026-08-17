@@ -10,7 +10,7 @@ export const crawlPhotoPool = [
 	tarkovImages.aimbotSkeleton,
 	tarkovImages.playerEsp,
 	tarkovImages.cheatsCombat,
-	'/images/tarkov-cheats-esp.webp',
+	'/images/r6-siege-cheats-esp.webp',
 ] as const;
 
 /**
@@ -18,25 +18,25 @@ export const crawlPhotoPool = [
  * Prefer compressed WebP screenshots so Google can fetch them quickly.
  */
 export const pageImageSrcById: Record<PageId, string> = {
-	home: '/images/tarkov-cheats-hero-1024w.webp',
+	home: '/images/r6-siege-cheats-hero-1024w.webp',
 	'tarkov-esp': tarkovImages.playerEsp,
 	'tarkov-aimbot': tarkovImages.aimbotCombat,
-	features: tarkovImages.aimbotSkeleton,
-	pricing: tarkovImages.cheatsCombat,
+	features: '/images/r6-siege-cheats-hero-1024w.webp',
+	pricing: '/images/r6-siege-cheats-hero-1024w.webp',
 	setup: tarkovImages.playerEsp,
-	updates: '/images/tarkov-cheats-hero-1024w.webp',
+	updates: '/images/r6-siege-cheats-hero-1024w.webp',
 	faq: tarkovImages.aimbotSkeleton,
 	support: tarkovImages.cheatsCombat,
 	undetected: tarkovImages.espWallhack,
 	wallhack: tarkovImages.espWallhack,
 	radar: tarkovImages.playerEsp,
 	battleye: tarkovImages.aimbotCombat,
-	'cheats-2026': '/images/tarkov-cheats-hero-1024w.webp',
-	hacks: tarkovImages.cheatsCombat,
+	'cheats-2026': '/images/r6-siege-cheats-hero-1024w.webp',
+	hacks: '/images/r6-siege-cheats-hero-1024w.webp',
 	'cheat-download': tarkovImages.cheatsCombat,
 	'mod-menu': tarkovImages.playerEsp,
 	'soft-aim': tarkovImages.aimbotSkeleton,
-	'best-cheats': '/images/tarkov-cheats-hero-1024w.webp',
+	'best-cheats': '/images/r6-siege-cheats-hero-1024w.webp',
 	'aimbot-hack': tarkovImages.aimbotSkeleton,
 	'esp-hack': tarkovImages.espWallhack,
 	'unlock-all': tarkovImages.playerEsp,

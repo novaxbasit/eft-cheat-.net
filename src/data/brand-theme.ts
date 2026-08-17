@@ -229,6 +229,7 @@ export function brandThemeCssMap(theme: BrandThemeResolved = brandTheme): Record
 		'--magenta-deep': theme.accentDeep,
 		'--accent': theme.accent,
 		'--accent-hover': theme.accentHover,
+		'--heading': theme.accentSoft,
 		'--ok': theme.ok,
 		'--warn': theme.warn,
 		'--tone-void': theme.toneVoid,

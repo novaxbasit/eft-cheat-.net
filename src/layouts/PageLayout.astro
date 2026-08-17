@@ -91,10 +91,17 @@ const breadcrumbs = [
 	{ label: heading },
 ];
 
+const whiteBannerTitle =
+	pageId === 'hacks' ||
+	pageId === 'features' ||
+	pageId === 'pricing' ||
+	pageId === 'updates';
+
 const useHomeHero =
 	heroImage === tarkovImages.hero ||
 	heroImage === siteConfig.defaultOgImage ||
-	heroImage.includes('tarkov-cheats-hero');
+	heroImage.includes('tarkov-cheats-hero') ||
+	heroImage.includes('r6-siege-cheats-hero');
 ---
 
 <Layout
@@ -156,7 +163,7 @@ const useHomeHero =
 						<span aria-current="page">{heading}</span>
 					</nav>
 					<p class="banner__eyebrow">{resolvedEyebrow}</p>
-					<h1 class="banner__title">{heading}</h1>
+					<h1 class:list={['banner__title', whiteBannerTitle && 'banner__title--white']}>{heading}</h1>
 					<p class="banner__intro" data-edit={introEdit || undefined}>{intro}</p>
 					{
 						(ctaPrimary || ctaSecondary) && (
@@ -309,7 +316,11 @@ const useHomeHero =
 		font-weight: 800;
 		letter-spacing: -0.035em;
 		line-height: 1.1;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
+	}
+
+	.banner__title--white {
+		color: #fff;
 	}
 
 	.banner__intro {
@@ -375,7 +386,7 @@ const useHomeHero =
 		font-size: 1.05rem;
 		font-weight: 800;
 		letter-spacing: -0.02em;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
 	}
 
 	.article :global(p) {
@@ -487,7 +498,7 @@ const useHomeHero =
 		font-size: 1.15rem;
 		font-weight: 800;
 		letter-spacing: -0.02em;
-		color: var(--ink);
+		color: var(--heading, var(--magenta-soft));
 	}
 
 	.gallery-block__eyebrow {
