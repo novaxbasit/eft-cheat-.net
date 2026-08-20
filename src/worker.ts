@@ -1,19 +1,46 @@
 /**
- * Cloudflare Worker — host canonicalization before static assets.
- * Canonical site: https://tarkovcheats.org (matches brand.url)
- *
- * Requires DNS: CNAME `www` → `tarkovcheats.org` (proxied) AND
- * Workers custom domain `www.tarkovcheats.org` attached — otherwise
- * www is NXDOMAIN and Seobility fails the www/non-www check.
+ * Cloudflare Worker — host + path canonicalization before static assets.
+ * Canonical host is kept in sync with brand.url by `npm run sync:brand`.
+ * Path 301s come from public/_redirects via functions/path-redirects.json.
  */
+import PATH_REDIRECTS from '../functions/path-redirects.json';
+import CANNIBAL_REDIRECTS from '../functions/cannibal-redirects.json';
+
 export interface Env {
 	ASSETS: Fetcher;
 }
 
-const CANONICAL_HOST = 'tarkovcheats.org';
+const CANONICAL_HOST = 'r6siegecheats.net';
 
-/** Old apex still 301 → current canonical. */
-const LEGACY_HOSTS = new Set(['besttarkovcheats.com', 'www.besttarkovcheats.com']);
+const LEGACY_HOSTS = new Set([
+	'tarkovcheats.org',
+	'www.tarkovcheats.org',
+	'besttarkovcheats.com',
+	'www.besttarkovcheats.com',
+]);
+
+function xmlTrailingSlashRedirect(pathname: string): string | null {
+	if (!pathname.endsWith('.xml/')) return null;
+	return pathname.slice(0, -1);
+}
+
+function trailingSlashRedirect(pathname: string): string | null {
+	if (!pathname || pathname === '/' || pathname.includes('.') || pathname.endsWith('/')) {
+		return null;
+	}
+	return `${pathname}/`;
+}
+
+function resolvePathRedirect(pathname: string): string | null {
+	const map = PATH_REDIRECTS as Record<string, string>;
+	const cannibal = CANNIBAL_REDIRECTS as Record<string, string>;
+	return (
+		map[pathname] ??
+		cannibal[pathname] ??
+		xmlTrailingSlashRedirect(pathname) ??
+		trailingSlashRedirect(pathname)
+	);
+}
 
 function canonicalUrl(request: Request): URL | null {
 	const url = new URL(request.url);
@@ -39,9 +66,19 @@ function canonicalUrl(request: Request): URL | null {
 
 export default {
 	async fetch(request: Request, env: Env): Promise<Response> {
-		const target = canonicalUrl(request);
-		if (target) {
-			return Response.redirect(target.toString(), 301);
+		const url = new URL(request.url);
+
+		const hostTarget = canonicalUrl(request);
+		if (hostTarget) {
+			const mappedPath = resolvePathRedirect(url.pathname) ?? url.pathname;
+			hostTarget.pathname = mappedPath;
+			hostTarget.search = url.search;
+			return Response.redirect(hostTarget.toString(), 301);
+		}
+
+		const pathRedirect = resolvePathRedirect(url.pathname);
+		if (pathRedirect) {
+			return Response.redirect(`${url.origin}${pathRedirect}${url.search}`, 301);
 		}
 
 		return env.ASSETS.fetch(request);

@@ -94,4 +94,20 @@ if (nextAstro === astro && !astro.includes(`site: '${brand.url}'`)) {
 }
 writeFileSync(astroPath, nextAstro, 'utf8');
 
-console.log(`sync-brand: ${brand.name} → ${brand.url} (robots Sitemap + Astro site)`);
+const host = new URL(brand.url).hostname.replace(/^www\./, '');
+const origin = `https://${host}`;
+patchHostConstant(path.join(ROOT, 'src/worker.ts'), /const CANONICAL_HOST = '[^']+';/, `const CANONICAL_HOST = '${host}';`);
+patchHostConstant(path.join(ROOT, 'functions/_middleware.js'), /const CANONICAL_ORIGIN = '[^']+';/, `const CANONICAL_ORIGIN = '${origin}';`);
+patchHostConstant(path.join(ROOT, 'functions/_middleware.js'), /const APEX_HOST = '[^']+';/, `const APEX_HOST = '${host}';`);
+patchHostConstant(path.join(ROOT, 'functions/_middleware.js'), /const WWW_HOST = '[^']+';/, `const WWW_HOST = 'www.${host}';`);
+
+console.log(`sync-brand: ${brand.name} → ${brand.url} (robots Sitemap + Astro site + www 301 host)`);
+
+function patchHostConstant(file, pattern, next) {
+	const src = readFileSync(file, 'utf8');
+	const re = new RegExp(pattern.source);
+	if (!re.test(src)) {
+		throw new Error(`Could not update host constant in ${path.relative(ROOT, file)}`);
+	}
+	writeFileSync(file, src.replace(new RegExp(pattern.source), next), 'utf8');
+}

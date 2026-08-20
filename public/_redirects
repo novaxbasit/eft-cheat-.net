@@ -35,6 +35,38 @@
 /battleye-bypass /updates/ 301
 /battleye-bypass/ /updates/ 301
 
+# Legacy Tarkov template paths → R6 canonical landings
+/tarkov-cheats /r6-siege-cheats/ 301
+/tarkov-cheats/ /r6-siege-cheats/ 301
+/escape-from-tarkov-cheats /r6-siege-cheats/ 301
+/escape-from-tarkov-cheats/ /r6-siege-cheats/ 301
+/tarkov-esp /r6-siege-esp/ 301
+/tarkov-esp/ /r6-siege-esp/ 301
+/tarkov-esp-hack /r6-siege-esp/ 301
+/tarkov-esp-hack/ /r6-siege-esp/ 301
+/tarkov-aimbot /r6-siege-aimbot/ 301
+/tarkov-aimbot/ /r6-siege-aimbot/ 301
+/tarkov-aimbot-hack /r6-siege-aimbot/ 301
+/tarkov-aimbot-hack/ /r6-siege-aimbot/ 301
+/best-tarkov-cheats /r6-siege-cheats/ 301
+/best-tarkov-cheats/ /r6-siege-cheats/ 301
+/tarkov-cheats-2026 /r6-siege-cheats/ 301
+/tarkov-cheats-2026/ /r6-siege-cheats/ 301
+/undetected-tarkov-cheats /r6-siege-cheats/ 301
+/undetected-tarkov-cheats/ /r6-siege-cheats/ 301
+/tarkov-mod-menu /r6-siege-cheats/ 301
+/tarkov-mod-menu/ /r6-siege-cheats/ 301
+/tarkov-unlock-all /r6-siege-cheats/ 301
+/tarkov-unlock-all/ /r6-siege-cheats/ 301
+/tarkov-soft-aim /r6-siege-aimbot/ 301
+/tarkov-soft-aim/ /r6-siege-aimbot/ 301
+/tarkov-wallhack /r6-siege-esp/ 301
+/tarkov-wallhack/ /r6-siege-esp/ 301
+/tarkov-radar-hack /r6-siege-radar-hack/ 301
+/tarkov-radar-hack/ /r6-siege-radar-hack/ 301
+/tarkov-cheat-download /setup/ 301
+/tarkov-cheat-download/ /setup/ 301
+
 # Broken review slug fixes
 /reviews/tarkov-radar-hack-review-vanlifefn /reviews/tarkov-radar-hack-review-vanlifeeft/ 301
 /reviews/tarkov-radar-hack-review-vanlifefn/ /reviews/tarkov-radar-hack-review-vanlifeeft/ 301

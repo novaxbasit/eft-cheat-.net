@@ -1,11 +1,15 @@
 import CANNIBAL_REDIRECTS from './cannibal-redirects.json';
+import PATH_REDIRECTS from './path-redirects.json';
 
-const CANONICAL_ORIGIN = 'https://tarkovcheats.org';
-const APEX_HOST = 'tarkovcheats.org';
-const WWW_HOST = 'www.tarkovcheats.org';
+/** Kept in sync with brand.url by `npm run sync:brand`. */
+const CANONICAL_ORIGIN = 'https://r6siegecheats.net';
+const APEX_HOST = 'r6siegecheats.net';
+const WWW_HOST = 'www.r6siegecheats.net';
 
 /** Legacy domains → canonical apex (301). */
 const LEGACY_HOSTS = new Set([
+	'tarkovcheats.org',
+	'www.tarkovcheats.org',
 	'besttarkovcheats.com',
 	'www.besttarkovcheats.com',
 	'fortnitehack.net',
@@ -25,86 +29,6 @@ const LEGACY_HOSTS = new Set([
 	'warzonescheats.xyz',
 	'www.warzonescheats.xyz',
 ]);
-
-// Keep in sync with public/_redirects (which preserves query strings by default, as we do below).
-const PATH_REDIRECTS = {
-	'/sitemap-0.xml': '/sitemap.xml',
-	'/sitemap-index.xml': '/sitemap.xml',
-	'/sitemap.xml/': '/sitemap.xml',
-	'/sitemap-en.xml/': '/sitemap-en.xml',
-	'/sitemap-i18n.xml/': '/sitemap-i18n.xml',
-	'/sitemap-images.xml/': '/sitemap-images.xml',
-	// Exact-match keyword → pillar (not homepage)
-	'/escape-from-tarkov-cheats': '/tarkov-cheats/',
-	'/escape-from-tarkov-cheats/': '/tarkov-cheats/',
-	// Cannibalization → canonical landings (money URL = /tarkov-cheats/)
-	'/tarkov-esp-hack': '/tarkov-esp/',
-	'/tarkov-esp-hack/': '/tarkov-esp/',
-	'/tarkov-aimbot-hack': '/tarkov-aimbot/',
-	'/tarkov-aimbot-hack/': '/tarkov-aimbot/',
-	'/best-tarkov-cheats': '/tarkov-cheats/',
-	'/best-tarkov-cheats/': '/tarkov-cheats/',
-	'/tarkov-cheats-2026': '/tarkov-cheats/',
-	'/tarkov-cheats-2026/': '/tarkov-cheats/',
-	'/undetected-tarkov-cheats': '/tarkov-cheats/',
-	'/undetected-tarkov-cheats/': '/tarkov-cheats/',
-	'/tarkov-mod-menu': '/tarkov-cheats/',
-	'/tarkov-mod-menu/': '/tarkov-cheats/',
-	'/tarkov-unlock-all': '/tarkov-cheats/',
-	'/tarkov-unlock-all/': '/tarkov-cheats/',
-	'/tarkov-soft-aim': '/tarkov-aimbot/',
-	'/tarkov-soft-aim/': '/tarkov-aimbot/',
-	'/tarkov-wallhack': '/tarkov-esp/',
-	'/tarkov-wallhack/': '/tarkov-esp/',
-	'/tarkov-cheat-download': '/setup/',
-	'/tarkov-cheat-download/': '/setup/',
-	'/battleye-bypass': '/updates/',
-	'/battleye-bypass/': '/updates/',
-	'/warzone-cheats': '/tarkov-cheats/',
-	'/warzone-cheats/': '/tarkov-cheats/',
-	'/warzone-hacks': '/tarkov-cheats/',
-	'/warzone-hacks/': '/tarkov-cheats/',
-	'/warzone-esp': '/tarkov-esp/',
-	'/warzone-esp/': '/tarkov-esp/',
-	'/warzone-aimbot': '/tarkov-aimbot/',
-	'/warzone-aimbot/': '/tarkov-aimbot/',
-	'/ricochet-bypass': '/updates/',
-	'/ricochet-bypass/': '/updates/',
-	'/fortnite-aimbot': '/tarkov-aimbot/',
-	'/fortnite-aimbot/': '/tarkov-aimbot/',
-	'/fortnite-esp': '/tarkov-esp/',
-	'/fortnite-esp/': '/tarkov-esp/',
-	'/fortnite-hacks': '/tarkov-cheats/',
-	'/fortnite-hacks/': '/tarkov-cheats/',
-	'/eac-bypass': '/updates/',
-	'/eac-bypass/': '/updates/',
-	'/eac-bypass-fortnite': '/updates/',
-	'/eac-bypass-fortnite/': '/updates/',
-	'/blog/patch-notes-buffs-nerfs-vaults': '/blog/tarkov-patch-notes-guide/',
-	'/blog/patch-notes-buffs-nerfs-vaults/': '/blog/tarkov-patch-notes-guide/',
-	'/blog/chapter-7-season-3-skin-leaks-vbucks': '/blog/tarkov-skin-leaks-guide/',
-	'/blog/chapter-7-season-3-skin-leaks-vbucks/': '/blog/tarkov-skin-leaks-guide/',
-	'/blog/hammer-ar-s-tier-data-analysis': '/blog/tarkov-weapon-tier-list/',
-	'/blog/hammer-ar-s-tier-data-analysis/': '/blog/tarkov-weapon-tier-list/',
-	'/blog/zero-build-meta-broken-aggressive-strategies': '/blog/tarkov-scav-run-aggressive-strategies/',
-	'/blog/zero-build-meta-broken-aggressive-strategies/': '/blog/tarkov-scav-run-aggressive-strategies/',
-	'/blog/fncs-meta-watch-tournament-drops': '/blog/tarkov-tournament-meta-guide/',
-	'/blog/fncs-meta-watch-tournament-drops/': '/blog/tarkov-tournament-meta-guide/',
-	'/blog/secret-loot-routes-full-gold': '/blog/tarkov-loot-routes-guide/',
-	'/blog/secret-loot-routes-full-gold/': '/blog/tarkov-loot-routes-guide/',
-	'/blog/bugha-settings-pro-setup': '/blog/tarkov-pro-settings-guide/',
-	'/blog/bugha-settings-pro-setup/': '/blog/tarkov-pro-settings-guide/',
-	'/blog/creative-warmup-maps-pros-use': '/blog/tarkov-warmup-maps-ranked/',
-	'/blog/creative-warmup-maps-pros-use/': '/blog/tarkov-warmup-maps-ranked/',
-	'/reviews/tarkov-esp-zero-build-review-buildsr4k': '/reviews/tarkov-esp-scav-run-review-buildsr4k/',
-	'/reviews/tarkov-esp-zero-build-review-buildsr4k/': '/reviews/tarkov-esp-scav-run-review-buildsr4k/',
-	'/reviews/tarkov-radar-hack-review-vanlifefn': '/reviews/tarkov-radar-hack-review-vanlifeeft/',
-	'/reviews/tarkov-radar-hack-review-vanlifefn/': '/reviews/tarkov-radar-hack-review-vanlifeeft/',
-	'/reviews/tarkov-radar-hack-review-vanlifewz': '/reviews/tarkov-radar-hack-review-vanlifeeft/',
-	'/reviews/tarkov-radar-hack-review-vanlifewz/': '/reviews/tarkov-radar-hack-review-vanlifeeft/',
-	'/reviews/tarkov-controller-soft-aim-review-ctrl-player99': '/reviews/tarkov-soft-aim-review-ctrl-player99/',
-	'/reviews/tarkov-controller-soft-aim-review-ctrl-player99/': '/reviews/tarkov-soft-aim-review-ctrl-player99/',
-};
 
 const SECURITY_HEADERS = {
 	'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
@@ -163,7 +87,6 @@ function applySecurityHeaders(headers, { html = false } = {}) {
 		if (!/charset=/i.test(contentType)) {
 			headers.set('Content-Type', 'text/html; charset=utf-8');
 		}
-		// Browser always revalidates; Cloudflare edge caches briefly for TTFB.
 		headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
 		headers.set('CDN-Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
 		headers.set('Cloudflare-CDN-Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
@@ -184,6 +107,15 @@ function trailingSlashRedirect(pathname) {
 	return `${pathname}/`;
 }
 
+function resolvePathRedirect(pathname) {
+	return (
+		PATH_REDIRECTS[pathname] ??
+		CANNIBAL_REDIRECTS[pathname] ??
+		xmlTrailingSlashRedirect(pathname) ??
+		trailingSlashRedirect(pathname)
+	);
+}
+
 export async function onRequest(context) {
 	const url = new URL(context.request.url);
 	const host = url.hostname.toLowerCase();
@@ -195,7 +127,7 @@ export async function onRequest(context) {
 	const needsHttpsRedirect = isProductionHost && proto === 'http';
 
 	if (needsHostRedirect || needsHttpsRedirect) {
-		const mappedPath = PATH_REDIRECTS[url.pathname] ?? url.pathname;
+		const mappedPath = resolvePathRedirect(url.pathname) ?? url.pathname;
 		const target = new URL(mappedPath + url.search, CANONICAL_ORIGIN);
 		const headers = new Headers({
 			Location: target.toString(),
@@ -207,14 +139,11 @@ export async function onRequest(context) {
 		return new Response(null, { status: 301, headers });
 	}
 
-	const pathRedirect =
-		PATH_REDIRECTS[url.pathname] ??
-		CANNIBAL_REDIRECTS[url.pathname] ??
-		xmlTrailingSlashRedirect(url.pathname) ??
-		trailingSlashRedirect(url.pathname);
+	const pathRedirect = resolvePathRedirect(url.pathname);
 	if (pathRedirect) {
+		// Relative Location keeps redirects on the current host (avoids wrong CANONICAL_ORIGIN on stale deploys).
 		const headers = new Headers({
-			Location: new URL(pathRedirect + url.search, CANONICAL_ORIGIN).toString(),
+			Location: pathRedirect + url.search,
 			'Cache-Control': 'no-store',
 		});
 		applySecurityHeaders(headers);
