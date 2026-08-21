@@ -116,7 +116,7 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Does this work in PMC raids and Scav runs?',
 		answer:
-			'Yes, this does work in PMC raids and Scav runs. ESP, aimbot, and wallhack are built for {game} raid flow — reading PMCs and bots, spotting loot containers, and staying aware near extracts.',
+			'Does this work in PMC raids and Scav runs? Yes — this does work in PMC raids and Scav runs. ESP, aimbot, and wallhack are built for {game} raid flow — reading PMCs and bots, spotting loot containers, and staying aware near extracts.',
 		slug: 'pmc-raids-and-scav-runs',
 		seoTitle: 'PMC Raids and Scav Runs | FAQ',
 		seoDescription:
@@ -125,7 +125,7 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'What is included — ESP, wallhack, or Aimbot?',
 		answer:
-			'ESP, wallhack, and Aimbot are what is included in one {brand} license, plus PMC and bot ESP, loot container ESP, aimbot with FOV limit, and no recoil tuning. See Features for the full list.',
+			'What is included — ESP, wallhack, or Aimbot? ESP, wallhack, or Aimbot are what is included in one {brand} license, plus PMC and bot ESP, loot container ESP, aimbot with FOV limit, and no recoil tuning. See Features for the full list.',
 		slug: 'esp-wallhack-radar-or-aimbot',
 		seoTitle: 'What Is Included: ESP, Wallhack, Aimbot | FAQ',
 		seoDescription:
@@ -174,7 +174,7 @@ export const seoFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Does {brand} include a stream-proof overlay?',
 		answer:
-			'Yes. {brand} does include a stream-proof overlay so ESP and wallhack stay hidden on capture software — useful for raid sessions.',
+			'Does {brand} include a stream-proof overlay? Yes — {brand} does include a stream-proof overlay so ESP and wallhack stay hidden on capture software — useful for raid sessions.',
 		slug: 'does-tarkov-cheats-include-stream-proof',
 		seoTitle: 'Does {brand} Include Stream-Proof Overlay? | FAQ',
 		seoDescription:
@@ -192,7 +192,7 @@ export const seoFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Can I buy undetected {game} cheats for Windows PC?',
 		answer:
-			'Yes — you can buy undetected {game} cheats for Windows PC. {brand} sells monthly and lifetime licenses with ESP, wallhack, and aimbot in one stack. Compare plans on Store before checkout.',
+			'Can I buy undetected {game} cheats for Windows PC? Yes — you can buy undetected {game} cheats for Windows PC. {brand} sells monthly and lifetime licenses with ESP, wallhack, and aimbot in one stack. Compare plans on Store before checkout.',
 		slug: 'buy-undetected-tarkov-cheats-windows-pc',
 		seoTitle: 'Buy Undetected {game} Cheats for Windows PC | FAQ',
 		seoDescription:
