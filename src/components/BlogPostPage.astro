@@ -113,7 +113,7 @@ function pageTitle(headline: string): string {
 			{
 				t.sections.map((section) => (
 					<section class="post__section">
-						<h2>{section.h2}</h2>
+						<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
 						{section.paragraphs.map((paragraph) => {
 							const isTip = paragraph.startsWith('Pro Tip');
 							const isTry = paragraph.startsWith('Try This Today');
@@ -173,7 +173,7 @@ function pageTitle(headline: string): string {
 		margin: 0 0 0.75rem;
 		font-size: clamp(1.9rem, 4vw, 2.8rem);
 		line-height: 1.1;
-		color: var(--ink);
+		color: var(--heading);
 	}
 	.post__intro {
 		color: #fff;
@@ -196,7 +196,10 @@ function pageTitle(headline: string): string {
 	.post__section h2 {
 		margin: 0 0 0.75rem;
 		font-size: 1.35rem;
-		color: var(--ink);
+		color: var(--heading);
+	}
+	.post__section h2.is-title-white {
+		color: #fff;
 	}
 	.post__section p {
 		margin: 0 0 0.9rem;
@@ -226,7 +229,7 @@ function pageTitle(headline: string): string {
 	.post__related h2 {
 		margin: 0 0 0.75rem;
 		font-size: 1.15rem;
-		color: var(--ink);
+		color: var(--heading);
 	}
 	.post__related ul {
 		margin: 0;

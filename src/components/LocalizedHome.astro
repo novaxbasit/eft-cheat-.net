@@ -121,7 +121,7 @@ const extraGraph: Record<string, unknown>[] = [
 						{
 							home.sections.map((section) => (
 								<div>
-									<h3>{section.h2}</h3>
+									<h3 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h3>
 									{section.paragraphs.map((p) => (
 										<p set:html={p} />
 									))}
@@ -183,6 +183,10 @@ const extraGraph: Record<string, unknown>[] = [
 	.home__prose h3 {
 		margin: 1.25rem 0 0.5rem;
 		font-size: 1rem;
-		color: var(--ink);
+		color: var(--heading);
+	}
+
+	.home__prose h3.is-title-white {
+		color: #fff;
 	}
 </style>

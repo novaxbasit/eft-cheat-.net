@@ -180,7 +180,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	{
 		sections.map((section) => (
 			<section class="card-panel">
-				<h2>{section.h2}</h2>
+				<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
 				{section.paragraphs.map((p) => (
 					<p set:html={localizeParagraphHtml(p)} />
 				))}
