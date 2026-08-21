@@ -432,13 +432,13 @@ const sources = [
 				h2: 'ESP, soft aim, and radar — what each tool is for',
 				paragraphs: [
 					'ESP answers “who is near me and what is worth looting?” Soft aim answers “can I finish the fight once I choose it?” Radar answers “is someone flanking while I heal?” Used together, they cover information and combat. Used badly, they create noisy overlays and obvious aim corrections.',
-					'Deep dives live on <a href="/tarkov-esp/">ESP</a>, <a href="/tarkov-aimbot/">aimbot</a>, <a href="/tarkov-wallhack/">wallhack</a>, and <a href="/tarkov-radar-hack/">radar</a>. Read those before you buy if you only need one job done well.',
+					'Deep dives live on <a href="/tarkov-esp/">ESP</a>, <a href="/tarkov-aimbot/">aimbot</a>, <a href="/tarkov-radar-hack/">wallhack</a>, and <a href="/tarkov-radar-hack/">radar</a>. Read those before you buy if you only need one job done well.',
 				],
 			},
 			{
 				h2: 'BattlEye, “undetected,” and honest expectations',
 				paragraphs: [
-					`${EXT.battleye} protects Escape from Tarkov. No seller can promise permanent undetected status. What a serious vendor can offer is maintenance: rebuilds after patches, a public status note, and clear setup steps. That workflow is documented on <a href="/undetected-tarkov-cheats/">undetected tarkov cheats</a> and <a href="/battleye-bypass/">BattlEye maintenance</a>.`,
+					`${EXT.battleye} protects Escape from Tarkov. No seller can promise permanent undetected status. What a serious vendor can offer is maintenance: rebuilds after patches, a public status note, and clear setup steps. That workflow is documented on <a href="/tarkov-cheats/">undetected tarkov cheats</a> and <a href="/updates/">BattlEye maintenance</a>.`,
 					'Before every patch-day queue, read <a href="/updates/">Updates</a>. If status is quiet, wait. Responsible settings matter as much as the binary itself.',
 				],
 			},
@@ -523,7 +523,7 @@ const sources = [
 			{
 				h2: 'Why 2026 buyers care more about status pages',
 				paragraphs: [
-					'Players got tired of “undetected forever” slogans. They want a dated note after patches. That is why we invest in the <a href="/updates/">Updates</a> log and the <a href="/undetected-tarkov-cheats/">undetected explainer</a> instead of empty guarantees.',
+					'Players got tired of “undetected forever” slogans. They want a dated note after patches. That is why we invest in the <a href="/updates/">Updates</a> log and the <a href="/tarkov-cheats/">undetected explainer</a> instead of empty guarantees.',
 					`${EXT.battleye} and Battlestate client updates still force rebuilds. The shops that survive are the ones that communicate during those windows.`,
 				],
 			},
@@ -570,7 +570,7 @@ const sources = [
 				h2: 'Start softer than you think you need',
 				paragraphs: [
 					'Begin with a smaller FOV and higher smoothness so the assist helps tracking instead of snapping. Play five raids on Customs or Factory and only then widen FOV. If friends watching a demo say it looks robotic, you went too far.',
-					'Full control docs live on <a href="/tarkov-aimbot/">Tarkov Aimbot</a> and <a href="/tarkov-soft-aim/">soft aim</a>.',
+					'Full control docs live on <a href="/tarkov-aimbot/">Tarkov Aimbot</a> and <a href="/tarkov-aimbot/">soft aim</a>.',
 				],
 			},
 			{
@@ -615,7 +615,7 @@ const sources = [
 				h2: 'What ESP shows during a real raid',
 				paragraphs: [
 					'Player ESP outlines PMCs and Scavs through walls and terrain, often with distance. Loot ESP highlights containers or high-value items. Extract cues help you avoid camping surprises. That information gap is why people search for tarkov esp in the first place.',
-					'Read the dedicated pages for <a href="/tarkov-esp/">ESP</a> and <a href="/tarkov-wallhack/">wallhack</a> if you want category-level detail.',
+					'Read the dedicated pages for <a href="/tarkov-esp/">ESP</a> and <a href="/tarkov-radar-hack/">wallhack</a> if you want category-level detail.',
 				],
 			},
 			{
@@ -628,7 +628,7 @@ const sources = [
 			{
 				h2: 'Maintenance and responsible use',
 				paragraphs: [
-					'ESP modules rebuild after BattlEye patches like everything else. Check <a href="/updates/">Updates</a> and the <a href="/undetected-tarkov-cheats/">undetected guide</a>. No overlay replaces listening and map knowledge — it shortens the time between “I heard something” and “I know where.”',
+					'ESP modules rebuild after BattlEye patches like everything else. Check <a href="/updates/">Updates</a> and the <a href="/tarkov-cheats/">undetected guide</a>. No overlay replaces listening and map knowledge — it shortens the time between “I heard something” and “I know where.”',
 				],
 			},
 		],
@@ -659,7 +659,7 @@ const sources = [
 			{
 				h2: 'What undetected can honestly mean',
 				paragraphs: [
-					`BattlEye is documented at ${EXT.battleye}. It evolves. Vendors who care publish rebuild notes when ESP, radar, or aim modules need work. Tarkov Cheats does that on <a href="/updates/">Updates</a> and explains the workflow on <a href="/battleye-bypass/">BattlEye maintenance</a>.`,
+					`BattlEye is documented at ${EXT.battleye}. It evolves. Vendors who care publish rebuild notes when ESP, radar, or aim modules need work. Tarkov Cheats does that on <a href="/updates/">Updates</a> and explains the workflow on <a href="/updates/">BattlEye maintenance</a>.`,
 					'If a seller says “100% undetected forever,” treat it as advertising. Your risk also depends on how obviously you play.',
 				],
 			},
@@ -673,7 +673,7 @@ const sources = [
 			{
 				h2: 'Where to go next',
 				paragraphs: [
-					'Read <a href="/undetected-tarkov-cheats/">undetected tarkov cheats</a>, the <a href="/blog/tarkov-cheats-complete-guide-2026/">2026 complete guide</a>, and <a href="/pricing/">Pricing</a> if you want the maintained stack. Undetected status is a process you check — not a sticker on the box.',
+					'Read <a href="/tarkov-cheats/">undetected tarkov cheats</a>, the <a href="/blog/tarkov-cheats-complete-guide-2026/">2026 complete guide</a>, and <a href="/pricing/">Pricing</a> if you want the maintained stack. Undetected status is a process you check — not a sticker on the box.',
 				],
 			},
 		],
@@ -719,7 +719,7 @@ const sources = [
 				h2: 'How to decide without brand loyalty',
 				paragraphs: [
 					'Write down must-haves: dated status, loot ESP, radar, soft aim profiles, Windows PC support. Open each seller’s status channel and feature list side by side. If a shop fails the status test, price does not matter.',
-					'Then return to <a href="/tarkov-cheats/">tarkov cheats</a> and <a href="/undetected-tarkov-cheats/">undetected notes</a> if that checklist matches what we ship.',
+					'Then return to <a href="/tarkov-cheats/">tarkov cheats</a> and <a href="/tarkov-cheats/">undetected notes</a> if that checklist matches what we ship.',
 				],
 			},
 		],
@@ -818,7 +818,7 @@ const sources = [
 				h2: 'Detection talk without fairy tales',
 				paragraphs: [
 					'Smaller user bases generate fewer public ban screenshots — that is not proof of safety. Larger brands generate more noise even when maintenance is solid. Judge sellers by patch communication speed and whether you can find a dated status note.',
-					'Tarkov Cheats documents maintenance on <a href="/battleye-bypass/">BattlEye workflow</a> and <a href="/undetected-tarkov-cheats/">undetected notes</a>.',
+					'Tarkov Cheats documents maintenance on <a href="/updates/">BattlEye workflow</a> and <a href="/tarkov-cheats/">undetected notes</a>.',
 				],
 			},
 			{

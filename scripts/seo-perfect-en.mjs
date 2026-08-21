@@ -108,11 +108,11 @@ const replacements = [
 	['best Tarkov cheats checklist', 'Tarkov cheats checklist'],
 	['best Tarkov cheats', 'Tarkov cheats'],
 	[
-		'Prefer softer tracking? Read the <a href="/tarkov-soft-aim/">soft aim guide</a>. Want the search term most players use? See <a href="/tarkov-aimbot/">aimbot hack</a>.',
-		'Prefer softer tracking? Read the <a href="/tarkov-soft-aim/">soft aim guide</a>.',
+		'Prefer softer tracking? Read the <a href="/tarkov-aimbot/">soft aim guide</a>. Want the search term most players use? See <a href="/tarkov-aimbot/">aimbot hack</a>.',
+		'Prefer softer tracking? Read the <a href="/tarkov-aimbot/">soft aim guide</a>.',
 	],
-	['Related landings: <a href="/tarkov-cheat-download/">cheat download</a>, <a href="/tarkov-mod-menu/">mod menu</a>, <a href="/tarkov-aimbot/">aimbot hack</a>, <a href="/tarkov-esp/">ESP hack</a>.',
-		'Related landings: <a href="/tarkov-cheat-download/">cheat download</a>, <a href="/tarkov-mod-menu/">mod menu</a>, <a href="/tarkov-aimbot/">aimbot</a>, <a href="/tarkov-esp/">ESP</a>.'],
+	['Related landings: <a href="/setup/">cheat download</a>, <a href="/tarkov-cheats/">mod menu</a>, <a href="/tarkov-aimbot/">aimbot hack</a>, <a href="/tarkov-esp/">ESP hack</a>.',
+		'Related landings: <a href="/setup/">cheat download</a>, <a href="/tarkov-cheats/">mod menu</a>, <a href="/tarkov-aimbot/">aimbot</a>, <a href="/tarkov-esp/">ESP</a>.'],
 ];
 
 let src = readFileSync(PAGES_EN, 'utf8');

@@ -229,7 +229,7 @@ export function brandThemeCssMap(theme: BrandThemeResolved = brandTheme): Record
 		'--magenta-deep': theme.accentDeep,
 		'--accent': theme.accent,
 		'--accent-hover': theme.accentHover,
-		'--heading': mixHex(theme.accentSoft, theme.accent, 0.38),
+		'--heading': mixHex(theme.accentSoft, theme.accent, 0.18),
 		'--ok': theme.ok,
 		'--warn': theme.warn,
 		'--tone-void': theme.toneVoid,

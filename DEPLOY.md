@@ -60,13 +60,9 @@ Cloudflare CNAME flattening handles apex records automatically.
 
 ### www → apex redirect
 
-1. Add a DNS record for `www` pointing to the same Pages project (proxied CNAME or A record).
-2. In **Rules** → **Redirect Rules** (or Bulk Redirects), create:
-   - **Source:** `www.eftcheat.net/*`
-   - **Target:** `https://eftcheat.net/${1}`
-   - **Status:** 301
-
-The deployed `functions/_middleware.js` also enforces apex canonical host, legacy domain redirects, and legacy path redirects.
+1. Add `www.eftcheat.net` as a **custom domain** on the same Pages project (proxied CNAME to the Pages target).
+2. Do **not** add a separate Redirect Rule or Bulk Redirect for www. Extra host rules stack with path 301s and create redirect chains.
+3. `functions/_middleware.js` already sends `www` + `http` + legacy paths to `https://eftcheat.net{canonical-path}` in **one** 301 hop.
 
 ### SSL / HTTPS
 

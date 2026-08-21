@@ -166,8 +166,40 @@ for (const id of ['privacy', 'refund', 'terms']) {
 
 check('404', 'Page not found', 'This page was not found. The URL you opened is not on this site.');
 
-const reviewLede = `This review by @handle covers ${brand.name} for Windows PC.`;
-check('review-detail', `${brand.name} review by @xKrypt0_EFT`, `This review by @xKrypt0_EFT covers ${brand.name} for Windows PC.`);
+const reviewBlock = siteSrc.match(/export const customerReviews = \[([\s\S]*?)\] as const/);
+const handles = reviewBlock
+	? [...reviewBlock[1].matchAll(/handle:\s*'([^']+)'/g)].map((m) => m[1])
+	: ['xKrypt0_EFT'];
+for (const handle of handles) {
+	const h1 = `${brand.name} review by @${handle}`;
+	const lede = `${h1}. This review by @${handle} covers ${brand.name} for Windows PC.`;
+	check(`review:${handle}`, h1, lede);
+}
+
+const redirectMap = {
+	...JSON.parse(readFileSync(path.join(ROOT, 'functions/path-redirects.json'), 'utf8')),
+	...JSON.parse(readFileSync(path.join(ROOT, 'functions/cannibal-redirects.json'), 'utf8')),
+};
+function resolveRedirect(from, seen = new Set()) {
+	if (seen.has(from)) return [...seen, from];
+	const next = redirectMap[from];
+	if (!next) return [...seen, from];
+	seen.add(from);
+	return resolveRedirect(next, seen);
+}
+let redirectChains = 0;
+for (const from of Object.keys(redirectMap)) {
+	const chain = resolveRedirect(from);
+	if (chain.length > 2) {
+		redirectChains++;
+		console.error(`FAIL 301 chain: ${chain.join(' → ')}`);
+	}
+}
+if (redirectChains) {
+	failures += redirectChains;
+} else {
+	console.log('OK   redirects: no 301 chains');
+}
 
 if (failures) {
 	console.error(`\n${failures} page(s) fail H1/body alignment (Seobility).`);

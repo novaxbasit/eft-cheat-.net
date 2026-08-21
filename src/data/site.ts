@@ -14,10 +14,13 @@ export {
 import { fillBrandTokens } from './brand';
 
 function faq<T extends { question: string; answer: string; seoTitle: string; seoDescription: string }>(item: T): T {
+	const question = fillBrandTokens(item.question);
+	const filledAnswer = fillBrandTokens(item.answer);
+	const answer = filledAnswer.startsWith(question) ? filledAnswer : `${question} ${filledAnswer}`;
 	return {
 		...item,
-		question: fillBrandTokens(item.question),
-		answer: fillBrandTokens(item.answer),
+		question,
+		answer,
 		seoTitle: fillBrandTokens(item.seoTitle),
 		seoDescription: fillBrandTokens(item.seoDescription),
 	};
@@ -143,7 +146,7 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Where do I check updates after an Escape from Tarkov or {antiCheat} patch?',
 		answer:
-			'Where do I check updates? Check updates on the Status page after an Escape from Tarkov or {antiCheat} patch. Maintenance notes post there when a patch affects the package. That is the fastest place to confirm whether a new {brand} build is live.',
+			'Where do I check updates after an Escape from Tarkov or {antiCheat} patch? Check updates on the Status page after an Escape from Tarkov or {antiCheat} patch. Maintenance notes post there when a patch affects the package. That is the fastest place to confirm whether a new {brand} build is live.',
 		slug: 'where-to-check-updates',
 		seoTitle: 'Where to Check {game} / {antiCheat} Updates | FAQ',
 		seoDescription:
