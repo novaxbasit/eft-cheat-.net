@@ -1,11 +1,11 @@
 {
-  "name": "Rainbow Six Siege Cheats",
-  "short_name": "Rainbow Six Siege",
-  "description": "Undetected Rainbow Six Siege cheats — ESP, aimbot, and radar for PC",
+  "name": "Escape from Tarkov Cheats",
+  "short_name": "Escape from Tarkov",
+  "description": "Undetected Escape from Tarkov cheats — ESP, aimbot, and radar for PC",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0f18",
-  "theme_color": "#0a0f18",
+  "background_color": "#0a0614",
+  "theme_color": "#0a0614",
   "icons": [
     {
       "src": "/favicon.png",

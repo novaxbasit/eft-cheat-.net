@@ -50,14 +50,14 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'ESP & wallhack',
 				paragraphs: [
-					'These ESP and wallhack Features show enemy operators and bots through walls with distance readouts.',
-					'Use filters so the overlay stays clear in ranked and unranked matches.',
+					'These ESP and wallhack Features show PMCs, bots, and loot through walls with distance readouts.',
+					'Use filters so the overlay stays clear in PMC raids and Scav runs.',
 				],
 				list: [
-					'Operator and bot ESP',
-					'Gadget and deployable ESP',
-					'Spawn and objective markers',
-					'Gadget and objective highlights',
+					'PMC and bot ESP',
+					'Loot container ESP',
+					'Extract helicopter markers',
+					'Key and quest item highlights',
 				],
 			},
 			{
@@ -129,15 +129,15 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Status',
 		intro: brandCopy.statusIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Rainbow Six Siege Cheats overview',
-		ctaSecondaryHref: '/r6-siege-cheats/',
+		ctaSecondary: 'Full product',
+		ctaSecondaryHref: '/tarkov-cheats/',
 		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'Current status',
 				paragraphs: [
-					'As of 17 Aug 2026 the package is online for Rainbow Six Siege on Windows PC. We post a new note here when a game or BattlEye patch needs a rebuild.',
-					'If Status is green, you can queue. If we are rebuilding, wait for the next note.',
+					'As of 21 Aug 2026 the package is online for Escape from Tarkov on Windows PC. We post a new note here when a game or BattlEye patch needs a rebuild.',
+					'If Status is green, you can raid. If we are rebuilding, wait for the next note.',
 				],
 				list: [
 					'Check this page before every match after a patch',
@@ -162,36 +162,38 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	hacks: page({
 		title: brandSeo.previewTitle,
 		description: brandSeo.previewDescription,
-		h1: 'Rainbow Six Siege Cheats',
+		h1: 'Escape from Tarkov Cheats',
 		intro: brandCopy.previewIntro,
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'View features',
 		ctaSecondaryHref: '/features/',
-		galleryTitle: 'In-match look',
+		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'Rainbow Six Siege Cheats is one license for Rainbow Six Siege on Windows PC — built for ranked and unranked play.',
+					'Escape from Tarkov Cheats is one license for Escape from Tarkov on Windows PC — built for PMC raids and Scav runs.',
 				],
 				list: [
-					'Operator and bot ESP / wallhack',
+					'PMC and bot ESP / wallhack',
+					'Loot container ESP',
+					'Extract helicopter markers',
+					'Key and quest item highlights',
 					'Aimbot with FOV limit',
 					'No recoil tuning',
 					'Stream-proof overlay',
-					'Cloud-DMA and AWS options',
-					'BattlEye rebuilds after patches',
+					'Cloud-DMA option and AWS option',
 				],
 			},
 			{
-				h2: 'Built for Rainbow Six Siege',
+				h2: 'Built for Escape from Tarkov',
 				paragraphs: [
-					'Rainbow Six Siege Cheats helps you read operators before you push, mark gadgets worth the risk, and stay aware near objectives. Tune aimbot FOV and no recoil per weapon for close quarters and long-range gunfights.',
+					'Escape from Tarkov Cheats helps you read PMCs and bots before you push, mark loot worth the risk, and stay aware near extracts. Tune aimbot FOV and no recoil per weapon for close quarters and long-range gunfights.',
 				],
 				list: [
-					'<a href="/r6-siege-esp/">ESP guide</a>',
-					'<a href="/r6-siege-aimbot/">Aimbot controls</a>',
-					'<a href="/r6-siege-radar-hack/">Stream-proof overlay</a>',
+					'<a href="/tarkov-esp/">ESP guide</a>',
+					'<a href="/tarkov-aimbot/">Aimbot controls</a>',
+					'<a href="/tarkov-radar-hack/">Stream-proof overlay</a>',
 					'<a href="/updates/">Live status</a>',
 				],
 			},
@@ -209,33 +211,33 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-esp': page({
-		title: 'Rainbow Six Siege ESP | {brand}',
+		title: 'Escape from Tarkov ESP | {brand}',
 		description:
-			'Rainbow Six Siege ESP and wallhack for Windows PC — operator boxes, distance, gadget filters, and clear overlays in ranked matches.',
+			'Escape from Tarkov ESP and wallhack for Windows PC — PMC boxes, loot containers, extract markers, and clear overlays in raids.',
 		h1: 'ESP',
-		intro: 'Rainbow Six Siege ESP shows operators and gadgets through walls. Part of the same {brand} license.',
+		intro: 'Escape from Tarkov ESP shows PMCs, bots, and loot containers through walls. Part of the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Rainbow Six Siege Cheats overview',
-		ctaSecondaryHref: '/r6-siege-cheats/',
-		galleryTitle: 'ESP in match',
+		ctaSecondary: 'Full product',
+		ctaSecondaryHref: '/tarkov-cheats/',
+		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'What ESP shows',
 				paragraphs: [
-					'Rainbow Six Siege ESP includes boxes, distance, and filters for operators, bots, and gadgets.',
+					'Escape from Tarkov ESP includes boxes, distance, and filters for PMCs, bots, and loot containers.',
 				],
-				list: ['Operator and bot ESP', 'Gadget and deployable ESP', 'Spawn and objective markers'],
+				list: ['PMC and bot ESP', 'Loot container ESP', 'Extract helicopter markers', 'Key and quest item highlights'],
 			},
 			{
 				h2: 'When to use it',
-				paragraphs: ['Clear ranked rounds without flooding the screen.'],
+				paragraphs: ['Clear PMC raids without flooding the screen.'],
 				list: ['Tune opacity', 'Filter noise', 'Pair with stream-proof overlay'],
 			},
 			{
 				h2: 'Next steps',
 				paragraphs: ['ESP is included with aimbot and wallhack in one plan.'],
 				list: [
-					'<a href="/r6-siege-cheats/">Full product</a>',
+					'<a href="/tarkov-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Store</a>',
 				],
@@ -243,14 +245,14 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-aimbot': page({
-		title: 'Rainbow Six Siege Aimbot | {brand}',
+		title: 'Escape from Tarkov Aimbot | {brand}',
 		description:
-			'Rainbow Six Siege aimbot for Windows PC — FOV limit, smoothness, and no recoil tuning you can set per weapon.',
+			'Escape from Tarkov aimbot for Windows PC — FOV limit, smoothness, and no recoil tuning you can set per weapon.',
 		h1: 'Aimbot',
-		intro: 'Rainbow Six Siege aimbot with FOV limit and no recoil tuning. Included in the same {brand} license.',
+		intro: 'Escape from Tarkov aimbot with FOV limit and no recoil tuning. Included in the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Rainbow Six Siege Cheats overview',
-		ctaSecondaryHref: '/r6-siege-cheats/',
+		ctaSecondary: 'Full product',
+		ctaSecondaryHref: '/tarkov-cheats/',
 		galleryTitle: 'Aimbot view',
 		sections: [
 			{
@@ -267,7 +269,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				h2: 'Next steps',
 				paragraphs: ['Aimbot ships with ESP and wallhack in one license.'],
 				list: [
-					'<a href="/r6-siege-cheats/">Full product</a>',
+					'<a href="/tarkov-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Store</a>',
 				],
@@ -275,27 +277,27 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	radar: page({
-		title: 'Rainbow Six Siege Wallhack | {brand}',
+		title: 'Escape from Tarkov Wallhack | {brand}',
 		description:
-			'Rainbow Six Siege wallhack for Windows PC — see operators through walls with a stream-proof overlay.',
+			'Escape from Tarkov wallhack for Windows PC — see PMCs and bots through walls with a stream-proof overlay.',
 		h1: 'Wallhack',
-		intro: 'Rainbow Six Siege wallhack with stream-proof overlay. Included in the same {brand} license.',
+		intro: 'Escape from Tarkov wallhack with stream-proof overlay. Included in the same {brand} license.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Rainbow Six Siege Cheats overview',
-		ctaSecondaryHref: '/r6-siege-cheats/',
+		ctaSecondary: 'Full product',
+		ctaSecondaryHref: '/tarkov-cheats/',
 		galleryTitle: 'Wallhack overlay',
 		sections: [
 			{
 				h2: 'What it shows',
-				paragraphs: ['Enemy operator outlines through walls and barricades with adjustable range.'],
+				paragraphs: ['This Wallhack shows enemy PMC and bot outlines through walls with adjustable range.'],
 				list: ['See through walls', 'Stream-proof overlay', 'Adjustable filters'],
 			},
 			{
 				h2: 'With ESP',
 				paragraphs: ['Use wallhack for threats you cannot see yet. Use ESP when you push.'],
 				list: [
-					'<a href="/r6-siege-esp/">ESP guide</a>',
-					'<a href="/r6-siege-cheats/">Full product</a>',
+					'<a href="/tarkov-esp/">ESP guide</a>',
+					'<a href="/tarkov-cheats/">Full product</a>',
 					'<a href="/pricing/">Store</a>',
 				],
 			},

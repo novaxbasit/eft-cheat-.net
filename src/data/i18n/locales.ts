@@ -95,10 +95,10 @@ export const blogUi: Record<
 	en: {
 		blogTitle: 'Tarkov Cheats Blog | Raid Guides',
 		blogDescription:
-			'Escape from Tarkov guides — raid tips, ESP, aimbot notes, loot routes, and BattlEye update coverage. English blog at tarkovcheats.org/blog/.',
-		blogH1: 'Tarkov Cheats Intel',
+			'Escape from Tarkov guides — raid tips, ESP, aimbot notes, loot routes, and BattlEye update coverage. English blog at eftcheat.net/blog/.',
+		blogH1: 'Tarkov Intel',
 		blogIntro:
-			'Short Escape from Tarkov guides for PMC raids and Scav runs. Pair these tips with the Tarkov Cheats product pages when you need ESP, soft aim, or radar.',
+			'Tarkov Intel guides for PMC raids and Scav runs. Pair these tips with Escape from Tarkov Cheats product pages when you need ESP, aimbot, or wallhack.',
 		readMore: 'Read guide',
 		published: 'Published',
 		updated: 'Updated',

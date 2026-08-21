@@ -9,71 +9,29 @@
 # Legacy sitemap URL → primary index (GSC / old crawlers)
 /sitemap-index.xml /sitemap.xml 301
 
-# Exact-match keyword + cannibalization → canonical EN landings
-/rainbow-six-siege-cheats /r6-siege-cheats/ 301
-/rainbow-six-siege-cheats/ /r6-siege-cheats/ 301
-/r6-siege-esp-hack /r6-siege-esp/ 301
-/r6-siege-esp-hack/ /r6-siege-esp/ 301
-/r6-siege-aimbot-hack /r6-siege-aimbot/ 301
-/r6-siege-aimbot-hack/ /r6-siege-aimbot/ 301
-/best-r6-siege-cheats /r6-siege-cheats/ 301
-/best-r6-siege-cheats/ /r6-siege-cheats/ 301
-/r6-siege-cheats-2026 /r6-siege-cheats/ 301
-/r6-siege-cheats-2026/ /r6-siege-cheats/ 301
-/undetected-r6-siege-cheats /r6-siege-cheats/ 301
-/undetected-r6-siege-cheats/ /r6-siege-cheats/ 301
-/r6-siege-mod-menu /r6-siege-cheats/ 301
-/r6-siege-mod-menu/ /r6-siege-cheats/ 301
-/r6-siege-unlock-all /r6-siege-cheats/ 301
-/r6-siege-unlock-all/ /r6-siege-cheats/ 301
-/r6-siege-soft-aim /r6-siege-aimbot/ 301
-/r6-siege-soft-aim/ /r6-siege-aimbot/ 301
-/r6-siege-wallhack /r6-siege-esp/ 301
-/r6-siege-wallhack/ /r6-siege-esp/ 301
-/r6-siege-cheat-download /setup/ 301
-/r6-siege-cheat-download/ /setup/ 301
-/battleye-bypass /updates/ 301
-/battleye-bypass/ /updates/ 301
-
-# Legacy Tarkov template paths → R6 canonical landings
-/tarkov-cheats /r6-siege-cheats/ 301
-/tarkov-cheats/ /r6-siege-cheats/ 301
-/escape-from-tarkov-cheats /r6-siege-cheats/ 301
-/escape-from-tarkov-cheats/ /r6-siege-cheats/ 301
-/tarkov-esp /r6-siege-esp/ 301
-/tarkov-esp/ /r6-siege-esp/ 301
-/tarkov-esp-hack /r6-siege-esp/ 301
-/tarkov-esp-hack/ /r6-siege-esp/ 301
-/tarkov-aimbot /r6-siege-aimbot/ 301
-/tarkov-aimbot/ /r6-siege-aimbot/ 301
-/tarkov-aimbot-hack /r6-siege-aimbot/ 301
-/tarkov-aimbot-hack/ /r6-siege-aimbot/ 301
-/best-tarkov-cheats /r6-siege-cheats/ 301
-/best-tarkov-cheats/ /r6-siege-cheats/ 301
-/tarkov-cheats-2026 /r6-siege-cheats/ 301
-/tarkov-cheats-2026/ /r6-siege-cheats/ 301
-/undetected-tarkov-cheats /r6-siege-cheats/ 301
-/undetected-tarkov-cheats/ /r6-siege-cheats/ 301
-/tarkov-mod-menu /r6-siege-cheats/ 301
-/tarkov-mod-menu/ /r6-siege-cheats/ 301
-/tarkov-unlock-all /r6-siege-cheats/ 301
-/tarkov-unlock-all/ /r6-siege-cheats/ 301
-/tarkov-soft-aim /r6-siege-aimbot/ 301
-/tarkov-soft-aim/ /r6-siege-aimbot/ 301
-/tarkov-wallhack /r6-siege-esp/ 301
-/tarkov-wallhack/ /r6-siege-esp/ 301
-/tarkov-radar-hack /r6-siege-radar-hack/ 301
-/tarkov-radar-hack/ /r6-siege-radar-hack/ 301
+# Cannibalization → canonical EN landings (not in sitemap; internal links go to pillars)
+/tarkov-esp-hack /tarkov-esp/ 301
+/tarkov-esp-hack/ /tarkov-esp/ 301
+/tarkov-aimbot-hack /tarkov-aimbot/ 301
+/tarkov-aimbot-hack/ /tarkov-aimbot/ 301
+/best-tarkov-cheats /tarkov-cheats/ 301
+/best-tarkov-cheats/ /tarkov-cheats/ 301
+/tarkov-cheats-2026 /tarkov-cheats/ 301
+/tarkov-cheats-2026/ /tarkov-cheats/ 301
+/undetected-tarkov-cheats /tarkov-cheats/ 301
+/undetected-tarkov-cheats/ /tarkov-cheats/ 301
+/tarkov-mod-menu /tarkov-cheats/ 301
+/tarkov-mod-menu/ /tarkov-cheats/ 301
+/tarkov-unlock-all /tarkov-cheats/ 301
+/tarkov-unlock-all/ /tarkov-cheats/ 301
+/tarkov-soft-aim /tarkov-aimbot/ 301
+/tarkov-soft-aim/ /tarkov-aimbot/ 301
+/tarkov-wallhack /tarkov-esp/ 301
+/tarkov-wallhack/ /tarkov-esp/ 301
 /tarkov-cheat-download /setup/ 301
 /tarkov-cheat-download/ /setup/ 301
-
-# Broken review slug fixes
-/reviews/tarkov-radar-hack-review-vanlifefn /reviews/tarkov-radar-hack-review-vanlifeeft/ 301
-/reviews/tarkov-radar-hack-review-vanlifefn/ /reviews/tarkov-radar-hack-review-vanlifeeft/ 301
-/reviews/tarkov-radar-hack-review-vanlifewz /reviews/tarkov-radar-hack-review-vanlifeeft/ 301
-/reviews/tarkov-radar-hack-review-vanlifewz/ /reviews/tarkov-radar-hack-review-vanlifeeft/ 301
-/reviews/tarkov-controller-soft-aim-review-ctrl-player99 /reviews/tarkov-soft-aim-review-ctrl-player99/ 301
-/reviews/tarkov-controller-soft-aim-review-ctrl-player99/ /reviews/tarkov-soft-aim-review-ctrl-player99/ 301
+/battleye-bypass /updates/ 301
+/battleye-bypass/ /updates/ 301
 
 # Auto-generated cannibal locale redirects (scripts/sync-cannibal-redirects.mjs)
 # Do not edit by hand — regenerated on sync:brand / prebuild

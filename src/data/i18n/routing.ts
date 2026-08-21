@@ -40,27 +40,27 @@ export type PageId =
 /** English (official) paths — served at site root without /en/ prefix. */
 export const englishPaths: Record<PageId, string> = {
 	home: '/',
-	'tarkov-esp': '/r6-siege-esp/',
-	'tarkov-aimbot': '/r6-siege-aimbot/',
+	'tarkov-esp': '/tarkov-esp/',
+	'tarkov-aimbot': '/tarkov-aimbot/',
 	features: '/features/',
 	pricing: '/pricing/',
 	setup: '/setup/',
 	updates: '/updates/',
 	faq: '/faq/',
 	support: '/support/',
-	undetected: '/undetected-r6-siege-cheats/',
-	wallhack: '/r6-siege-wallhack/',
-	radar: '/r6-siege-radar-hack/',
+	undetected: '/undetected-tarkov-cheats/',
+	wallhack: '/tarkov-wallhack/',
+	radar: '/tarkov-radar-hack/',
 	'battleye': '/battleye-bypass/',
-	'cheats-2026': '/r6-siege-cheats-2026/',
-	hacks: '/r6-siege-cheats/',
-	'cheat-download': '/r6-siege-cheat-download/',
-	'mod-menu': '/r6-siege-mod-menu/',
-	'soft-aim': '/r6-siege-soft-aim/',
-	'best-cheats': '/best-r6-siege-cheats/',
-	'aimbot-hack': '/r6-siege-aimbot-hack/',
-	'esp-hack': '/r6-siege-esp-hack/',
-	'unlock-all': '/r6-siege-unlock-all/',
+	'cheats-2026': '/tarkov-cheats-2026/',
+	hacks: '/tarkov-cheats/',
+	'cheat-download': '/tarkov-cheat-download/',
+	'mod-menu': '/tarkov-mod-menu/',
+	'soft-aim': '/tarkov-soft-aim/',
+	'best-cheats': '/best-tarkov-cheats/',
+	'aimbot-hack': '/tarkov-aimbot-hack/',
+	'esp-hack': '/tarkov-esp-hack/',
+	'unlock-all': '/tarkov-unlock-all/',
 	privacy: '/privacy-policy/',
 	refund: '/refund-policy/',
 	terms: '/terms/',
@@ -96,7 +96,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: '',
 	},
 	'tarkov-esp': {
-		en: 'r6-siege-esp',
+		en: 'tarkov-esp',
 		es: 'trucos-tarkov-esp',
 		fr: 'triche-tarkov-esp',
 		de: 'tarkov-esp-wallhack',
@@ -120,7 +120,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-esp-wallhack',
 	},
 	'tarkov-aimbot': {
-		en: 'r6-siege-aimbot',
+		en: 'tarkov-aimbot',
 		es: 'trucos-tarkov-aimbot',
 		fr: 'triche-tarkov-aimbot',
 		de: 'tarkov-aimbot',
@@ -288,7 +288,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'escape-from-tarkov-cheats-support',
 	},
 	undetected: {
-		en: 'undetected-r6-siege-cheats',
+		en: 'undetected-tarkov-cheats',
 		es: 'trucos-tarkov-indetectables',
 		fr: 'triche-tarkov-indetectable',
 		de: 'unentdeckte-escape-from-tarkov-cheats',
@@ -312,7 +312,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'undetected-tarkov-cheats',
 	},
 	wallhack: {
-		en: 'r6-siege-wallhack',
+		en: 'tarkov-wallhack',
 		es: 'wallhack-trucos-tarkov',
 		fr: 'wallhack-triche-tarkov',
 		de: 'tarkov-wallhack',
@@ -336,7 +336,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-wallhack',
 	},
 	radar: {
-		en: 'r6-siege-radar-hack',
+		en: 'tarkov-radar-hack',
 		es: 'radar-hack-trucos-tarkov',
 		fr: 'radar-hack-triche-tarkov',
 		de: 'tarkov-radar-hack',
@@ -384,7 +384,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'battleye-bypass',
 	},
 	'cheats-2026': {
-		en: 'r6-siege-cheats-2026',
+		en: 'tarkov-cheats-2026',
 		es: 'trucos-tarkov-2026',
 		fr: 'triche-tarkov-2026',
 		de: 'tarkov-cheats-2026',
@@ -408,7 +408,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-cheats-2026',
 	},
 	hacks: {
-		en: 'r6-siege-cheats',
+		en: 'tarkov-cheats',
 		es: 'hacks-trucos-tarkov',
 		fr: 'hacks-triche-tarkov',
 		de: 'tarkov-cheats',
@@ -432,7 +432,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-cheats',
 	},
 	'cheat-download': {
-		en: 'r6-siege-cheat-download',
+		en: 'tarkov-cheat-download',
 		es: 'descarga-trucos-tarkov',
 		fr: 'telechargement-triche-tarkov',
 		de: 'tarkov-cheat-download',
@@ -456,7 +456,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-cheat-download',
 	},
 	'mod-menu': {
-		en: 'r6-siege-mod-menu',
+		en: 'tarkov-mod-menu',
 		es: 'menu-mod-trucos-tarkov',
 		fr: 'menu-mod-triche-tarkov',
 		de: 'tarkov-mod-menu',
@@ -480,7 +480,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-mod-menu',
 	},
 	'soft-aim': {
-		en: 'r6-siege-soft-aim',
+		en: 'tarkov-soft-aim',
 		es: 'soft-aim-trucos-tarkov',
 		fr: 'soft-aim-triche-tarkov',
 		de: 'tarkov-soft-aim',
@@ -504,7 +504,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-soft-aim',
 	},
 	'best-cheats': {
-		en: 'best-r6-siege-cheats',
+		en: 'best-tarkov-cheats',
 		es: 'mejores-trucos-tarkov',
 		fr: 'meilleures-triches-tarkov',
 		de: 'beste-escape-from-tarkov-cheats',
@@ -528,7 +528,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'basta-escape-from-tarkov-cheats',
 	},
 	'aimbot-hack': {
-		en: 'r6-siege-aimbot-hack',
+		en: 'tarkov-aimbot-hack',
 		es: 'aimbot-hack-trucos-tarkov',
 		fr: 'aimbot-hack-triche-tarkov',
 		de: 'tarkov-aimbot-hack',
@@ -552,7 +552,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-aimbot-hack',
 	},
 	'esp-hack': {
-		en: 'r6-siege-esp-hack',
+		en: 'tarkov-esp-hack',
 		es: 'esp-hack-trucos-tarkov',
 		fr: 'esp-hack-triche-tarkov',
 		de: 'tarkov-esp-hack',
@@ -576,7 +576,7 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 		sv: 'tarkov-esp-hack',
 	},
 	'unlock-all': {
-		en: 'r6-siege-unlock-all',
+		en: 'tarkov-unlock-all',
 		es: 'unlock-all-trucos-tarkov',
 		fr: 'unlock-all-triche-tarkov',
 		de: 'tarkov-unlock-all',
@@ -676,10 +676,11 @@ export const localizedSlugs: Record<PageId, Record<LocaleCode, string>> = {
 export const pageIds = Object.keys(englishPaths) as PageId[];
 
 export function getLocalizedPath(pageId: PageId, locale: LocaleCode): string {
+	const resolvedId = (isCannibalPageId(pageId) ? getCannibalTargetId(pageId) : pageId) as PageId;
 	if (locale === defaultLocale) {
-		return englishPaths[pageId];
+		return englishPaths[resolvedId];
 	}
-	const slug = localizedSlugs[pageId][locale];
+	const slug = localizedSlugs[resolvedId][locale];
 	return slug ? `/${locale}/${slug}/` : `/${locale}/`;
 }
 

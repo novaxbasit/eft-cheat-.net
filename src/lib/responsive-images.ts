@@ -38,24 +38,24 @@ export function contentSrcSet(baseSrc: string): string | undefined {
 }
 
 /**
- * Homepage / banner hero — compressed WebP ladder (not the PNG master).
- * Native art ~1024×409 (~2.5:1).
+ * Homepage / banner hero — native PNG at 1024w so quality is not re-compressed.
+ * 640w WebP only for small screens. Native art 1024×409 (~2.5:1).
  */
 export const heroResponsive: ResponsiveWidth[] = [
-	{ src: '/images/r6-siege-cheats-hero-640w.webp', width: 640 },
-	{ src: '/images/r6-siege-cheats-hero-1024w.webp', width: 1024 },
+	{ src: '/images/tarkov-cheats-hero-640w.webp', width: 640 },
+	{ src: '/images/tarkov-cheats-hero-full.png', width: 1024 },
 ];
 
 export const heroDesktopResponsive: ResponsiveWidth[] = heroResponsive;
 
-/** Default LCP src — mid ladder WebP. */
-export const heroSrc = '/images/r6-siege-cheats-hero-1024w.webp';
+/** Default LCP src — lossless PNG master (same pixels as the attached hero). */
+export const heroSrc = '/images/tarkov-cheats-hero-full.png';
 export const heroSrcSet = buildSrcSet(heroResponsive);
 export const heroSizes = '100vw';
 
-/** LCP preload — same compressed WebP. */
+/** LCP preload — same PNG master. */
 export const heroPreloadSrc = heroSrc;
-export const heroMimeType = 'image/webp';
+export const heroMimeType = 'image/png';
 
 /** Exact native dimensions (no zoom crop). */
 export const heroWidth = 1024;

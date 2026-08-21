@@ -97,7 +97,7 @@ const extraGraph: Record<string, unknown>[] = [
 				</div>
 
 				<div class="faq-detail__ctas">
-					<a href={siteConfig.checkoutUrl} class="faq-detail__buy" rel="noopener noreferrer">
+					<a href={siteConfig.checkoutUrl} class="faq-detail__buy" target="_blank" rel="noopener noreferrer">
 						Buy {siteConfig.name} — ${productInfo.plans[0].price}
 					</a>
 					<a href="/pricing/" class="faq-detail__link">Compare pricing</a>
@@ -217,7 +217,7 @@ const extraGraph: Record<string, unknown>[] = [
 		margin: 0;
 		font-size: 1.05rem;
 		line-height: 1.75;
-		color: var(--ink-muted);
+		color: #fff;
 	}
 
 	.faq-detail__ctas {

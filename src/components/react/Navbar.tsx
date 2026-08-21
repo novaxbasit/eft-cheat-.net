@@ -126,6 +126,7 @@ function NavbarInner({
 					<a
 						href={checkoutUrl}
 						className="site-tools__buy"
+						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={t('cta.buyShort')}
 					>
@@ -189,7 +190,7 @@ function NavbarInner({
 									hrefForLocale={hrefForLocale}
 								/>
 							</div>
-							<a href={checkoutUrl} className="site-panel__buy" rel="noopener noreferrer">
+							<a href={checkoutUrl} className="site-panel__buy" target="_blank" rel="noopener noreferrer">
 								<span data-edit="ctaBuy">{t('cta.buy')}</span>
 							</a>
 						</div>

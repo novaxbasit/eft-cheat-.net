@@ -21,7 +21,7 @@
   },
   "hero": {
     "accent": "Trucos Tarkov indetectables",
-    "accentShort": "Tarkov Cheats",
+    "accentShort": "Escape from Tarkov Cheats",
     "subtitle": "ESP wallhack, radar hack y Aimbot para Tarkov en PC Windows — mantenimiento BattlEye anti-cheat incluido.",
     "subtitleShort": "ESP, radar y Aimbot para Tarkov PC",
     "buyNow": "Comprar ahora",
@@ -40,7 +40,7 @@
   },
   "trust": {
     "status": "En línea",
-    "statusNote": "El paquete Tarkov Cheats está activo para Tarkov en PC Windows.",
+    "statusNote": "El paquete Escape from Tarkov Cheats está activo para Tarkov en PC Windows.",
     "statusShort": "Activo",
     "delivery": "Entrega digital instantánea",
     "platform": "Windows 10 y 11",
@@ -48,7 +48,7 @@
     "antiCheatShort": "BattlEye anti-cheat incluido"
   },
   "product": {
-    "title": "Tarkov Cheats",
+    "title": "Escape from Tarkov Cheats",
     "addToCart": "Añadir al carrito",
     "monthly": "Mensual",
     "lifetime": "De por vida",
@@ -66,11 +66,11 @@
   },
   "reviews": {
     "title": "Lo que dicen los jugadores",
-    "subtitle": "Comentarios recientes de compradores de Tarkov Cheats",
+    "subtitle": "Comentarios recientes de compradores de Escape from Tarkov Cheats",
     "outOf": "de 5",
     "countLabel": "reseñas",
     "eyebrow": "Reseñas",
-    "homeTitle": "Reseñas de Tarkov Cheats",
+    "homeTitle": "Reseñas de Escape from Tarkov Cheats",
     "buyerReviews": "{{count}} reseñas de compradores",
     "averageAria": "{{rating}} de media entre {{count}} reseñas",
     "outOfFiveAria": "{{rating}} de 5",
@@ -118,7 +118,7 @@
   },
   "home": {
     "aboutTitle": "Trucos indetectables de Tarkov para Escape from Tarkov",
-    "aboutP1": "Tarkov Cheats es un paquete de trucos indetectables para Escape from Tarkov en PC Windows. Una licencia incluye ESP wallhack, soft aim y radar 2D, con reconstrucciones BattlEye tras los parches del juego. Compara planes en la Tienda y revisa el Estado antes de entrar en raid.",
+    "aboutP1": "Escape from Tarkov Cheats es un paquete de trucos indetectables para Escape from Tarkov en PC Windows. Una licencia incluye ESP wallhack, soft aim y radar 2D, con reconstrucciones BattlEye tras los parches del juego. Compara planes en la Tienda y revisa el Estado antes de entrar en raid.",
     "aboutP2Before": "Empieza por el",
     "aboutPillar": "pilar de trucos de Tarkov",
     "aboutEsp": "guía de ESP",
@@ -188,43 +188,43 @@
     "blog": "Blog"
   },
   "images": {
-    "hero": "Tarkov Cheats hero — ESP and aimbot overlay in Escape from Tarkov",
+    "hero": "Escape from Tarkov Cheats hero — ESP and aimbot overlay in Escape from Tarkov",
     "espWallhack": "Wallhack outlines showing PMCs and Scavs through walls",
     "aimbotCombat": "Soft aim assist overlay during an Escape from Tarkov raid",
-    "squadFight": "Tarkov Cheats combat overlay during a squad fight",
+    "squadFight": "Escape from Tarkov Cheats combat overlay during a squad fight",
     "playerEsp": "Player ESP boxes and distance readouts in a Tarkov raid",
     "headerArt": "Aimbot view and bone priority controls for Tarkov",
     "cheatsPackage": "2D radar threat overlay for Escape from Tarkov",
     "rebootFight": "Aimbot assist during a Tarkov firefight",
-    "battleRoyale": "Tarkov Cheats in-raid overview for Windows PC",
+    "battleRoyale": "Escape from Tarkov Cheats in-raid overview for Windows PC",
     "battleRoyaleIsland": "ESP markers for loot and extracts in Tarkov"
   },
   "blog": {
-    "blogTitle": "Blog Tarkov Cheats 2026 | Guías en 22 idiomas",
-    "blogDescription": "Blog de Tarkov Cheats con guías de trucos indetectables, ESP wallhack, radar y Aimbot para Escape from Tarkov en PC Windows.",
-    "blogH1": "Blog Tarkov Cheats — Guías globales",
+    "blogTitle": "Blog Escape from Tarkov Cheats 2026 | Guías en 22 idiomas",
+    "blogDescription": "Blog de Escape from Tarkov Cheats con guías de trucos indetectables, ESP wallhack, radar y Aimbot para Escape from Tarkov en PC Windows.",
+    "blogH1": "Blog Escape from Tarkov Cheats — Guías globales",
     "blogIntro": "Guías SEO de trucos Escape from Tarkov indetectables, ESP wallhack, radar hack, Aimbot y mantenimiento BattlEye anti-cheat en 22 idiomas.",
     "readMore": "Leer guía",
     "published": "Publicado",
     "updated": "Actualizado",
     "relatedPosts": "Guías Escape from Tarkov relacionadas",
     "allPosts": "Todos los artículos",
-    "home": "Inicio Tarkov Cheats",
+    "home": "Inicio Escape from Tarkov Cheats",
     "language": "Idioma",
     "label": "Intel de Tarkov"
   },
   "gallery": {
-    "eyebrow": "Tarkov Cheats",
+    "eyebrow": "Escape from Tarkov Cheats",
     "title": "Galería Escape from Tarkov",
     "subtitle": "Visuales de Escape from Tarkov con loadouts, peleas de escuadrón y combate raid — junto a herramientas ESP, radar y Aimbot.",
-    "lead": "Tarkov Cheats está pensado para el loop de Escape from Tarkov: leer el mapa, rastrear escuadrones enemigos, lootear y sobrevivir al extract.",
+    "lead": "Escape from Tarkov Cheats está pensado para el loop de Escape from Tarkov: leer el mapa, rastrear escuadrones enemigos, lootear y sobrevivir al extract.",
     "highlightEspTitle": "ESP de jugadores y escuadrones",
     "highlightEspCopy": "Detecta jugadores enemigos y contornos de escuadrón en Customs y scav-run para elegir peleas con mejor información.",
     "highlightRadarTitle": "Marcadores de loot y cofres",
     "highlightRadarCopy": "Resalta loadouts, cofres y loot de alto nivel sin saturar la pantalla en plena partida.",
     "highlightAimbotTitle": "Controles Aimbot Escape from Tarkov",
     "highlightAimbotCopy": "Ajusta suavidad, prioridad de objetivo y teclas para AR, SMG y francotirador antes de comprar.",
-    "updatesLabel": "Actualizaciones Tarkov Cheats",
+    "updatesLabel": "Actualizaciones Escape from Tarkov Cheats",
     "updatesShort": "Actualizaciones"
   }
 }

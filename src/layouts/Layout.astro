@@ -5,6 +5,7 @@ import { brandTheme, brandThemeInlineStyle, brandThemeRootCss } from '../data/br
 import I18nHead from '../components/I18nHead.astro';
 import LocaleSuggest from '../components/LocaleSuggest.astro';
 import InlineBrandEditor from '../components/InlineBrandEditor.astro';
+import { heroMimeType } from '../lib/responsive-images';
 import { defaultLocale, localeMap, locales, type LocaleCode } from '../data/i18n/locales';
 import type { PageId } from '../data/i18n/content.generated';
 import { buildCanonicalUrl, type HreflangAlternate } from '../data/i18n/routing';
@@ -195,7 +196,7 @@ if (aboutNode) {
 					rel="preload"
 					as="image"
 					href={lcpImage ?? lcpImageSrcSet.split(' ')[0]}
-					type="image/webp"
+					type={lcpImage?.endsWith('.png') ? 'image/png' : heroMimeType}
 					fetchpriority="high"
 					imagesrcset={lcpImageSrcSet}
 					imagesizes={lcpImageSizes}
@@ -206,7 +207,7 @@ if (aboutNode) {
 						rel="preload"
 						as="image"
 						href={lcpImage}
-						type="image/webp"
+						type={lcpImage.endsWith('.png') ? 'image/png' : heroMimeType}
 						fetchpriority="high"
 					/>
 				)

@@ -1,6 +1,6 @@
 # r6siege-cheats-.net
 
-Static Astro 7 site for [r6siegecheats.net](https://r6siegecheats.net). Rainbow Six Siege cheats — ESP, aimbot, and wallhack for Windows PC.
+Static Astro 7 site for [eftcheat.net](https://eftcheat.net). Escape from Tarkov cheats — ESP, aimbot, and wallhack for Windows PC.
 
 ## Stack
 

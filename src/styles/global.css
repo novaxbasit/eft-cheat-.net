@@ -169,7 +169,7 @@
 	h2,
 	h3,
 	h4 {
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	:focus-visible {
@@ -227,7 +227,7 @@
 		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 		line-height: 1.15;
 	}
 
@@ -374,7 +374,7 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 		margin: 0 0 1rem;
 	}
 
@@ -392,7 +392,7 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		letter-spacing: -0.03em;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	.g2a-section-head p {
@@ -432,4 +432,12 @@
 		height: 100%;
 		object-fit: cover;
 	}
+}
+
+/* Unlayered so section headings beat Tailwind preflight inherit */
+h1,
+h2,
+h3,
+h4 {
+	color: var(--ink);
 }

@@ -114,6 +114,9 @@ const extraGraph: Record<string, unknown>[] = [
 					<span class="review-detail__avatar" aria-hidden="true">{review.handle.charAt(0).toUpperCase()}</span>
 					<div class="review-detail__meta">
 						<h1 class="review-detail__title">{siteConfig.name} review by @{review.handle}</h1>
+						<p class="review-detail__lede">
+							This review by @{review.handle} covers {siteConfig.name} for Windows PC.
+						</p>
 						<p class="review-detail__stars" aria-label={`${review.rating} out of 5 stars`}>
 							<span aria-hidden="true">{stars(review.rating)}</span>
 							<span class="review-detail__rating">{review.rating}/5</span>
@@ -131,7 +134,7 @@ const extraGraph: Record<string, unknown>[] = [
 				</blockquote>
 
 				<div class="review-detail__ctas">
-					<a href={siteConfig.checkoutUrl} class="review-detail__buy" rel="noopener noreferrer">
+					<a href={siteConfig.checkoutUrl} class="review-detail__buy" target="_blank" rel="noopener noreferrer">
 						Buy {siteConfig.name} — ${productInfo.plans[0].price}
 					</a>
 					<a href="/pricing/" class="review-detail__link-btn">Compare pricing</a>
@@ -258,8 +261,15 @@ const extraGraph: Record<string, unknown>[] = [
 		font-weight: 800;
 		letter-spacing: -0.02em;
 		line-height: 1.2;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 		overflow-wrap: anywhere;
+	}
+
+	.review-detail__lede {
+		margin: 0.35rem 0 0;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		color: #fff;
 	}
 
 	.review-detail__stars {
@@ -387,7 +397,7 @@ const extraGraph: Record<string, unknown>[] = [
 		font-family: var(--font-display);
 		font-size: 1.2rem;
 		font-weight: 800;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	.review-detail__more-grid {

@@ -2,9 +2,9 @@ import CANNIBAL_REDIRECTS from './cannibal-redirects.json';
 import PATH_REDIRECTS from './path-redirects.json';
 
 /** Kept in sync with brand.url by `npm run sync:brand`. */
-const CANONICAL_ORIGIN = 'https://r6siegecheats.net';
-const APEX_HOST = 'r6siegecheats.net';
-const WWW_HOST = 'www.r6siegecheats.net';
+const CANONICAL_ORIGIN = 'https://eftcheat.net';
+const APEX_HOST = 'eftcheat.net';
+const WWW_HOST = 'www.eftcheat.net';
 
 /** Legacy domains → canonical apex (301). */
 const LEGACY_HOSTS = new Set([

@@ -294,7 +294,8 @@ function url(value) {
 	try {
 		const u = new URL(t);
 		if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
-		return u.href.replace(/\/$/, '');
+		// Keep the original string so query encoding like %2F is not rewritten.
+		return t.replace(/\/$/, '');
 	} catch {
 		return null;
 	}

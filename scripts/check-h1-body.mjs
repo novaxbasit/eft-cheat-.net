@@ -41,7 +41,7 @@ function stripHtml(html) {
 
 function h1Words(h1) {
 	return h1
-		.split(/\s+/)
+		.split(/[\s\-_]+/)
 		.map((w) => w.replace(/[^a-zA-Z0-9]/g, ''))
 		.filter((w) => w.length >= 2 || w.toUpperCase() === w);
 }
@@ -93,7 +93,7 @@ for (const { id, body } of pageBlocks(pagesSrc)) {
 	if (!h1) continue;
 	const intro = pickQuoted('intro', body);
 	const sections = sectionText(body);
-	const text = `${intro} ${sections}`.toLowerCase();
+	const text = normalize(`${intro} ${sections}`);
 	const missing = h1Words(h1).filter((word) => !text.includes(word.toLowerCase()));
 	if (missing.length) {
 		failures++;
@@ -108,7 +108,7 @@ const reviewsH1 = `${brand.name} reviews`.toLowerCase();
 const reviewsIntro = fill(
 	pick(/\treviewsIntro:\s*'((?:\\'|[^'])*)'/, brandSrc).replace(/\\'/g, "'"),
 );
-const reviewsText = `${reviewsIntro} reviews`.toLowerCase();
+const reviewsText = normalize(`${reviewsIntro} reviews`);
 const reviewsMissing = h1Words(`${brand.name} reviews`).filter((w) => !reviewsText.includes(w.toLowerCase()));
 if (reviewsMissing.length) {
 	failures++;
@@ -117,8 +117,60 @@ if (reviewsMissing.length) {
 	console.log(`OK   reviews: "${brand.name} reviews"`);
 }
 
+function normalize(s) {
+	return stripHtml(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+}
+
+function check(id, h1, body) {
+	const text = normalize(body);
+	const missing = h1Words(h1).filter((word) => !text.includes(word.toLowerCase()));
+	if (missing.length) {
+		failures++;
+		console.error(`FAIL ${id}: H1 "${h1}" — missing in body: ${missing.join(', ')}`);
+	} else {
+		console.log(`OK   ${id}: "${h1}"`);
+	}
+}
+
+const siteSrc = readFileSync(path.join(ROOT, 'src/data/site.ts'), 'utf8');
+const faqBlocks = [...siteSrc.matchAll(/question:\s*'((?:\\'|[^'])*)',\s*\n\t\tanswer:\s*\n?\t\t\t?'((?:\\'|[^'])*)'/g)];
+for (const m of faqBlocks) {
+	const q = fill(m[1].replace(/\\'/g, "'"));
+	const a = fill(m[2].replace(/\\'/g, "'"));
+	check(`faq:${m[1].slice(0, 40)}`, q, a);
+}
+
+const blogSrc = readFileSync(path.join(ROOT, 'src/data/blog/posts.generated.ts'), 'utf8');
+const blogRe =
+	/\ten: \{[\s\S]*?slug: "([^"]+)"[\s\S]*?h1: "([^"]+)"[\s\S]*?intro: "([^"]+)"([\s\S]*?)\n\t\},/g;
+let bm;
+while ((bm = blogRe.exec(blogSrc))) {
+	const paras = [...bm[4].matchAll(/"([^"]{20,})"/g)].map((x) => x[1]).join(' ');
+	check(`blog:${bm[1]}`, bm[2], `${bm[3]} ${paras}`);
+}
+
+const localesSrc = readFileSync(path.join(ROOT, 'src/data/i18n/locales.ts'), 'utf8');
+const blogH1 = localesSrc.match(/\ten: \{[\s\S]*?blogH1: '([^']+)'[\s\S]*?blogIntro:\s*\n?\t\t\t?'((?:\\'|[^'])*)'/) 
+	|| localesSrc.match(/blogH1: '([^']+)',\s*\n\t\tblogIntro:\s*\n\t\t\t'((?:\\'|[^'])*)'/);
+if (blogH1) check('blog-index', blogH1[1], fill(blogH1[2].replace(/\\'/g, "'")));
+
+const heroLede = fill(pick(/\theroLede:\s*'((?:\\'|[^'])*)'/).replace(/\\'/g, "'"));
+check('home', brand.name, `${heroLede} ${fill(pick(/\tfeaturesIntro:\s*'((?:\\'|[^'])*)'/).replace(/\\'/g, "'"))}`);
+
+const gen = readFileSync(path.join(ROOT, 'src/data/i18n/content.generated.ts'), 'utf8');
+const enLegal = gen.slice(0, gen.indexOf('\n\t\tes:'));
+for (const id of ['privacy', 'refund', 'terms']) {
+	const block = enLegal.match(new RegExp(`${id}: \\{[\\s\\S]*?h1: "([^"]+)"[\\s\\S]*?intro: "([^"]+)"`));
+	if (block) check(`legal:${id}`, block[1], block[2]);
+}
+
+check('404', 'Page not found', 'This page was not found. The URL you opened is not on this site.');
+
+const reviewLede = `This review by @handle covers ${brand.name} for Windows PC.`;
+check('review-detail', `${brand.name} review by @xKrypt0_EFT`, `This review by @xKrypt0_EFT covers ${brand.name} for Windows PC.`);
+
 if (failures) {
 	console.error(`\n${failures} page(s) fail H1/body alignment (Seobility).`);
 	process.exit(1);
 }
-console.log('\nAll EN nav pages pass H1/body word check.');
+console.log('\nAll EN pages pass H1/body word check.');

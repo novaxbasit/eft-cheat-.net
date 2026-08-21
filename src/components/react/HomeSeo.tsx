@@ -17,9 +17,9 @@ function HomeSeoInner({ faqs }: Props) {
 			hintKey: 'homeSeo.catFeaturesHint',
 			links: [
 				{ href: '/features/', labelKey: 'homeSeo.linkAllFeatures' },
-				{ href: '/r6-siege-esp/', labelKey: 'homeSeo.linkEsp' },
-				{ href: '/r6-siege-aimbot/', labelKey: 'homeSeo.linkAimbot' },
-				{ href: '/r6-siege-radar-hack/', labelKey: 'homeSeo.linkRadar' },
+				{ href: '/tarkov-esp/', labelKey: 'homeSeo.linkEsp' },
+				{ href: '/tarkov-aimbot/', labelKey: 'homeSeo.linkAimbot' },
+				{ href: '/tarkov-radar-hack/', labelKey: 'homeSeo.linkRadar' },
 			],
 		},
 		{
@@ -27,7 +27,7 @@ function HomeSeoInner({ faqs }: Props) {
 			hintKey: 'homeSeo.catStatusHint',
 			links: [
 				{ href: '/updates/', labelKey: 'homeSeo.linkLiveStatus' },
-				{ href: '/r6-siege-cheats/', labelKey: 'homeSeo.linkUndetected' },
+				{ href: '/tarkov-cheats/', labelKey: 'homeSeo.linkUndetected' },
 				{ href: '/setup/', labelKey: 'homeSeo.linkSetup' },
 				{ href: '/faq/', labelKey: 'homeSeo.linkFaq' },
 			],
@@ -38,7 +38,7 @@ function HomeSeoInner({ faqs }: Props) {
 			links: [
 				{ href: '/pricing/', labelKey: 'homeSeo.linkPlans' },
 				{ href: '/reviews/', labelKey: 'homeSeo.linkReviews' },
-				{ href: '/r6-siege-cheats/', labelKey: 'homeSeo.linkRainbowSixSiegeCheats' },
+				{ href: '/tarkov-cheats/', labelKey: 'homeSeo.linkTarkovCheats' },
 				{ href: '/features/', labelKey: 'homeSeo.linkAllFeatures' },
 			],
 		},

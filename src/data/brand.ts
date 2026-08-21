@@ -5,28 +5,28 @@
  */
 export const brand = {
 	/** Public brand name (nav, footer, H1 hero, schema Organization) */
-	name: 'Rainbow Six Siege Cheats',
+	name: 'Escape from Tarkov Cheats',
 	/** Short product label if needed */
-	shortName: 'Rainbow Six Siege',
+	shortName: 'Escape from Tarkov',
 	/** Canonical origin — no trailing slash */
-	url: 'https://r6siegecheats.net',
+	url: 'https://eftcheat.net',
 	locale: 'en',
 	market: 'Worldwide',
-	supportEmail: 'support@r6siegecheats.net',
-	checkoutUrl: 'https://zadeyo.com/go/BASIT?to=%2Fproducts%2Frainbow-six-siege',
+	supportEmail: 'support@eftcheat.net',
+	checkoutUrl: 'https://zadeyo.com/go/BASIT?to=%2Fproducts%2Fescape-from-tarkov',
 
 	/** Game this template instance targets */
-	game: 'Rainbow Six Siege',
+	game: 'Escape from Tarkov',
 	/** Anti-cheat name used in Status / FAQ copy */
 	antiCheat: 'BattlEye',
 
-	logo: '/images/r6-siege-cheats-logo.webp',
-	logoRaster: '/images/r6-siege-cheats-logo.png',
+	logo: '/images/tarkov-cheats-logo.webp',
+	logoRaster: '/images/tarkov-cheats-logo.png',
 	logoRasterWidth: 512,
 	logoRasterHeight: 512,
-	logoAlt: 'Rainbow Six Siege Cheats logo',
-	defaultOgImage: '/images/r6-siege-cheats-hero-1024w.webp',
-	heroImage: '/images/r6-siege-cheats-hero-1024w.webp',
+	logoAlt: 'Escape from Tarkov Cheats logo',
+	defaultOgImage: '/images/tarkov-cheats-hero-1024w.webp',
+	heroImage: '/images/tarkov-cheats-hero-1024w.webp',
 
 	plans: [
 		{ id: 'monthly', label: 'Monthly', price: 35, duration: 'P30D' },
@@ -40,12 +40,12 @@ export const brand = {
 	 * Edit in Brand Studio → Colors (tones are fully customizable).
 	 */
 	theme: {
-		accent: '#1e90ff',
-		bg: '#0a0f18',
-		soft: '#7dd3fc',
-		deep: '#0369a1',
-		hover: '#38bdf8',
-		panel: '#0c1220',
+		accent: '#c084fc',
+		bg: '#0a0614',
+		soft: '#e9d5ff',
+		deep: '#7e22ce',
+		hover: '#d8b4fe',
+		panel: '#14081e',
 	},
 
 	/**
@@ -53,16 +53,16 @@ export const brand = {
 	 * Keep 5–8 terms.
 	 */
 	keywords: {
-		primary: 'Rainbow Six Siege cheats',
+		primary: 'Escape from Tarkov cheats',
 		list: [
-			'Rainbow Six Siege cheats',
-			'Rainbow Six Siege hacks',
-			'Rainbow Six Siege ESP',
-			'Rainbow Six Siege aimbot',
-			'Rainbow Six Siege wallhack',
-			'Rainbow Six Siege cheats PC',
-			'Rainbow Six Siege cheats 2026',
-			'undetected Rainbow Six Siege cheats',
+			'Escape from Tarkov cheats',
+			'Escape from Tarkov hacks',
+			'Escape from Tarkov ESP',
+			'Escape from Tarkov aimbot',
+			'Escape from Tarkov wallhack',
+			'Escape from Tarkov cheats PC',
+			'Escape from Tarkov cheats 2026',
+			'undetected Escape from Tarkov cheats',
 		] as const,
 	},
 
@@ -72,54 +72,53 @@ export const brand = {
 	 */
 	seo: {
 		/** Titles ≤60 chars; descriptions ~140–160 (Google SERP display). */
-		/** Home = brand hub. Money URL /r6-siege-cheats/ owns the head term. */
-		homeTitle: 'Rainbow Six Siege Cheats | Official Windows PC Site',
+		/** Home = brand hub. Money URL /tarkov-cheats/ owns the head term. */
+		homeTitle: 'Escape from Tarkov Cheats | Features & Store',
 		homeDescription:
-			'Official Rainbow Six Siege Cheats site for Windows PC. Compare features, store plans, and live status — then buy ESP, aimbot, and wallhack in one license.',
-		featuresTitle: '{game} Features | {brand}',
+			'Official Escape from Tarkov Cheats site for Windows PC. Compare features, store plans, and live status — then buy ESP, aimbot, and wallhack in one license.',
+		featuresTitle: 'Escape from Tarkov Features | Cheats',
 		featuresDescription:
-			'Everything in one {game} license for Windows PC — operator ESP, aimbot, wallhack, no recoil, and patch updates after {antiCheat}. See what is included.',
-		storeTitle: '{game} Store | {brand}',
+			'Everything in one Escape from Tarkov license for Windows PC — PMC ESP, loot ESP, aimbot, wallhack, no recoil, and patch updates after BattlEye.',
+		storeTitle: 'Escape from Tarkov Store | Cheats',
 		storeDescription:
-			'Monthly and lifetime {game} plans for Windows PC. Same ESP, aimbot, and wallhack features on both. Instant delivery after payment checkout.',
-		statusTitle: '{game} Status | {brand}',
+			'Monthly and lifetime Escape from Tarkov cheat plans for Windows PC. Same ESP, aimbot, and wallhack on both. Instant delivery after payment checkout.',
+		statusTitle: 'Escape from Tarkov Status | Cheats',
 		statusDescription:
-			'Live undetected status for {brand} after {game} or {antiCheat} patches. Check here before you queue ranked on Windows PC today.',
-		/** Money page meta — primary target for "Rainbow Six Siege cheats". */
-		previewTitle: 'Rainbow Six Siege Cheats | Undetected ESP & Aimbot',
+			'Live undetected status for Escape from Tarkov Cheats after game or BattlEye patches. Check Status here before you raid on a Windows PC today.',
+		previewTitle: 'Escape from Tarkov Cheats | Undetected ESP & Aimbot',
 		previewDescription:
-			'Buy undetected Rainbow Six Siege cheats for Windows PC. ESP, aimbot, wallhack, stream-proof overlay, and BattlEye patch updates in one license.',
-		setupTitle: '{game} Setup | {brand}',
+			'Buy undetected Escape from Tarkov cheats for Windows PC. ESP, aimbot, wallhack, stream-proof overlay, and BattlEye patch updates in one license.',
+		setupTitle: 'Escape from Tarkov Setup | Cheats',
 		setupDescription:
-			'Install and launch {brand} on Windows PC after checkout. Short setup steps so you can queue faster. Follow each step in order before your first match.',
-		supportTitle: '{game} Support | {brand}',
+			'Install Escape from Tarkov Cheats on Windows PC after checkout. Short setup steps so you can raid faster. Follow each step in order before you raid.',
+		supportTitle: 'Escape from Tarkov Support | Cheats',
 		supportDescription:
-			'Get help with {brand} on Windows PC. Email {email} with your order ID for setup, delivery, or billing help after you buy.',
-		faqTitle: '{game} FAQ | {brand}',
+			'Get help with Escape from Tarkov Cheats on Windows PC. Email support@eftcheat.net with your order ID for setup, delivery, or billing help after you buy.',
+		faqTitle: 'Escape from Tarkov FAQ | Cheats',
 		faqDescription:
-			'Short answers about {brand} for Rainbow Six Siege — delivery, setup, {antiCheat} updates, refunds, and Windows PC system notes before you buy.',
-		reviewsTitle: '{brand} Reviews | Buyer Feedback',
+			'Short answers about Escape from Tarkov Cheats — delivery, setup, BattlEye updates, refunds, and Windows PC system notes before you buy a plan.',
+		reviewsTitle: 'Escape from Tarkov Cheats Reviews | Buyers',
 		reviewsDescription:
-			'Buyer reviews for {brand} — ESP, aimbot, wallhack, and patch updates for Rainbow Six Siege on Windows PC. Real feedback from license holders.',
-		blogTitle: '{game} Intel | {brand}',
+			'Buyer reviews for Escape from Tarkov Cheats — ESP, aimbot, wallhack, and patch updates on Windows PC. Real feedback from current license holders.',
+		blogTitle: 'Escape from Tarkov Intel | Cheats',
 		blogDescription:
-			'Guides and notes for {game} — ranked tips, ESP, aimbot, operator meta, and {antiCheat} update coverage for Windows PC players.',
+			'Guides and notes for Escape from Tarkov cheats — raid tips, ESP, aimbot, loot routes, and BattlEye update coverage for Windows PC players before you buy.',
 	},
 
 	/** On-page marketing copy (tokens allowed) */
 	copy: {
 		tagline: 'Undetected {primaryKeyword} — ESP, aimbot, and wallhack for PC',
 		summary:
-			'{brand} is an undetected {game} cheat package for Windows PC. Includes operator ESP, aimbot, and wallhack, with {antiCheat} maintenance after patches.',
-		heroLede: 'Undetected ESP, aimbot, and wallhack for Rainbow Six Siege on Windows PC.',
-		blogLabel: 'Rainbow Six Siege Intel',
+			'{brand} is an undetected {game} cheat package for Windows PC. Includes PMC and bot ESP, aimbot, and wallhack, with {antiCheat} maintenance after patches.',
+		heroLede: 'Escape from Tarkov Cheats — undetected ESP, aimbot, and wallhack for Windows PC.',
+		blogLabel: 'Tarkov Intel',
 		ctaBuy: 'Get Access',
 		ctaBuyShort: 'Buy',
 		featuresIntro: 'These Features are included in one license for {game} on Windows PC.',
 		storeIntro: 'Store plans for {brand}. Same features on both. Instant delivery after payment.',
 		statusIntro: 'Live Status for {brand} — check here after a {game} or {antiCheat} patch before you queue.',
 		previewIntro:
-			'{brand} for Rainbow Six Siege — operator ESP, wallhack, aimbot with FOV limit, no recoil tuning, and stream-proof overlay.',
+			'Escape from Tarkov Cheats for Windows PC — PMC and bot ESP, loot container ESP, extract helicopter markers, aimbot with FOV limit, and stream-proof overlay.',
 		setupIntro: 'Setup guide for {brand} on Windows PC after you buy. Follow these short steps.',
 		supportIntro: 'Support for {brand} — email {email} with your order ID.',
 		faqIntro: 'FAQ with short answers about delivery, setup, updates, and refunds.',
@@ -142,40 +141,40 @@ export const brand = {
 	 */
 	sitemap: {
 		/** YYYY-MM-DD — Brand Studio can bump this on save to refresh crawl dates */
-		contentLastmod: '2026-08-17',
+		contentLastmod: '2026-08-21',
 		blogImageTitle: '{brand} blog',
 		blogImageCaption: 'Tips and updates for {primaryKeyword}',
 		reviewsImageTitle: '{brand} reviews',
 		reviewsImageCaption: 'What buyers say about {primaryKeyword}',
 		images: [
 			{
-				src: '/images/r6-siege-cheats-esp.webp',
-				title: 'ESP overlay in Rainbow Six Siege',
-				caption: 'Operator ESP boxes and distance readouts during a ranked match',
+				src: '/images/tarkov-cheats-esp.webp',
+				title: 'ESP overlay in Escape from Tarkov',
+				caption: 'PMC and bot ESP boxes and distance readouts during a raid',
 			},
 			{
-				src: '/images/r6-siege-cheats-wallhack.webp',
-				title: 'Wallhack visibility for Rainbow Six Siege matches',
-				caption: 'Enemy operator outlines through walls and barricades',
+				src: '/images/tarkov-cheats-wallhack.webp',
+				title: 'Wallhack visibility for Escape from Tarkov matches',
+				caption: 'Enemy PMC outlines through walls on Customs and Interchange',
 			},
 			{
-				src: '/images/r6-siege-cheats-aimbot.webp',
-				title: 'Aimbot with FOV limit for Rainbow Six Siege',
+				src: '/images/tarkov-cheats-aimbot.webp',
+				title: 'Aimbot with FOV limit for Escape from Tarkov',
 				caption: 'Configurable aimbot FOV and bone priority',
 			},
 			{
-				src: '/images/r6-siege-cheats-aimbot-view.webp',
-				title: 'Aimbot view in Rainbow Six Siege Cheats',
+				src: '/images/tarkov-cheats-aimbot-view.webp',
+				title: 'Aimbot view in Escape from Tarkov Cheats',
 				caption: 'In-menu aimbot controls for Windows PC',
 			},
 			{
-				src: '/images/r6-siege-cheats-radar.webp',
+				src: '/images/tarkov-cheats-radar.webp',
 				title: 'Stream-proof overlay',
-				caption: 'Stream-proof ESP overlay for ranked play',
+				caption: 'Stream-proof ESP overlay for PMC raids',
 			},
 			{
-				src: '/images/r6-siege-cheats-raid.webp',
-				title: 'Rainbow Six Siege Cheats license plans',
+				src: '/images/tarkov-cheats-raid.webp',
+				title: 'Escape from Tarkov Cheats license plans',
 				caption: 'Monthly and lifetime plans for Windows PC',
 			},
 		],

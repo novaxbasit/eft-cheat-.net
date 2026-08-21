@@ -9,6 +9,7 @@ import { tarkovImages } from '../data/tarkov';
 import { simplePageCopy } from '../data/i18n/simple-pages';
 import { getT } from '../i18n/server';
 import { getPageCrawlImage } from '../data/page-images';
+import { MONEY_PATH } from '../data/seo-canonical';
 
 interface Props {
 	locale: LocaleCode;
@@ -74,7 +75,7 @@ const storeSchema =
 				description: productInfo.summary,
 				image: crawl.url,
 				brand: { '@type': 'Brand', name: productInfo.brand },
-				url: new URL('/r6-siege-cheats/', siteConfig.url).href,
+				url: new URL(MONEY_PATH, siteConfig.url).href,
 				aggregateRating: {
 					'@type': 'AggregateRating',
 					ratingValue: customerReviewStats.averageRating.toFixed(1),
@@ -106,6 +107,9 @@ const storeSchema =
 
 const extraGraph = [faqSchema, storeSchema].filter(Boolean) as Record<string, unknown>[];
 
+const buyCta = /\b(buy|access|checkout|comprar|acheter|kaufen|kopen|acquista)\b/i.test(ctaPrimaryLabel);
+const ctaPrimaryHref = buyCta ? siteConfig.checkoutUrl : `mailto:${siteConfig.supportEmail}`;
+
 const ctaSecondaryHref = ctaSecondaryPath
 	? localizeInternalHref(ctaSecondaryPath, locale)
 	: ctaSecondaryLabel
@@ -123,7 +127,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	hacks: locale === 'en' ? t('nav.preview') : ui.nav.hacks,
 	'tarkov-esp': ui.nav.esp,
 	'tarkov-aimbot': ui.nav.aimbot,
-	radar: 'Radar',
+	radar: 'Wallhack',
 	setup: ui.nav.setup,
 	faq: ui.nav.faq,
 };
@@ -144,7 +148,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	locale={locale}
 	pageId={pageId}
 	extraGraph={extraGraph}
-	ctaPrimary={{ href: siteConfig.checkoutUrl, label: ctaPrimaryLabel, edit: 'ctaBuy' }}
+	ctaPrimary={{ href: ctaPrimaryHref, label: ctaPrimaryLabel, edit: buyCta ? 'ctaBuy' : undefined }}
 	ctaSecondary={
 		ctaSecondaryLabel
 			? { href: ctaSecondaryHref, label: ctaSecondaryLabel }
@@ -158,12 +162,12 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 			<section class="card-panel">
 				<h2>{t('product.plans')}</h2>
 				<div class="price-grid">
-					<a class="price-card" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+					<a class="price-card" href={siteConfig.checkoutUrl} target="_blank" rel="noopener noreferrer">
 						<span class="price-card__label">{t('product.monthly')}</span>
 						<span class="price-card__price">${monthly.price}</span>
 						<span class="price-card__meta">{t('product.days30')}</span>
 					</a>
-					<a class="price-card is-featured" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+					<a class="price-card is-featured" href={siteConfig.checkoutUrl} target="_blank" rel="noopener noreferrer">
 						<span class="price-card__label">{t('product.lifetime')}</span>
 						<span class="price-card__price">${lifetime.price}</span>
 						<span class="price-card__meta">{t('product.oneTime')}</span>

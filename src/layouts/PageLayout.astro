@@ -91,17 +91,12 @@ const breadcrumbs = [
 	{ label: heading },
 ];
 
-const whiteBannerTitle =
-	pageId === 'hacks' ||
-	pageId === 'features' ||
-	pageId === 'pricing' ||
-	pageId === 'updates';
+const whiteBannerTitle = true;
 
 const useHomeHero =
 	heroImage === tarkovImages.hero ||
 	heroImage === siteConfig.defaultOgImage ||
-	heroImage.includes('tarkov-cheats-hero') ||
-	heroImage.includes('r6-siege-cheats-hero');
+	heroImage.includes('tarkov-cheats-hero');
 ---
 
 <Layout
@@ -172,6 +167,7 @@ const useHomeHero =
 									<a
 										class="btn-buy"
 										href={ctaPrimary.href}
+										target={ctaPrimary.href.startsWith('http') ? '_blank' : undefined}
 										rel={ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
 									>
 										<span data-edit={ctaPrimary.edit || undefined}>{ctaPrimary.label}</span>
@@ -316,7 +312,7 @@ const useHomeHero =
 		font-weight: 800;
 		letter-spacing: -0.035em;
 		line-height: 1.1;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	.banner__title--white {
@@ -369,7 +365,7 @@ const useHomeHero =
 		width: min(100%, var(--content-max));
 		display: grid;
 		gap: 0.75rem;
-		color: var(--ink-muted);
+		color: #fff;
 		line-height: 1.55;
 	}
 
@@ -386,7 +382,7 @@ const useHomeHero =
 		font-size: 1.05rem;
 		font-weight: 800;
 		letter-spacing: -0.02em;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	.article :global(p) {
@@ -406,7 +402,7 @@ const useHomeHero =
 		position: relative;
 		padding-left: 0.95rem;
 		font-size: 0.9rem;
-		color: var(--ink-muted);
+		color: #fff;
 	}
 
 	.article :global(li::before) {
@@ -498,7 +494,7 @@ const useHomeHero =
 		font-size: 1.15rem;
 		font-weight: 800;
 		letter-spacing: -0.02em;
-		color: var(--heading, var(--magenta-soft));
+		color: var(--ink);
 	}
 
 	.gallery-block__eyebrow {

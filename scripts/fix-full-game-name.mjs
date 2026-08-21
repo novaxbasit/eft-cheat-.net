@@ -9,19 +9,19 @@ const files = [
 ];
 
 const replacements = [
-	['R6 Siege Cheats', 'Rainbow Six Siege Cheats'],
-	['R6 Siege Intel', 'Rainbow Six Siege Intel'],
-	['Undetected R6 Siege Cheats', 'Undetected Rainbow Six Siege Cheats'],
-	['for R6 Siege', 'for Rainbow Six Siege'],
-	['in R6 Siege', 'in Rainbow Six Siege'],
-	['a R6 Siege', 'a Rainbow Six Siege'],
-	['R6 Siege raid', 'Rainbow Six Siege match'],
-	['R6 Siege firefight', 'Rainbow Six Siege firefight'],
-	['R6 Siege on', 'Rainbow Six Siege on'],
-	['"gameBadge": "R6 Siege"', '"gameBadge": "Rainbow Six Siege"'],
-	['linkR6SiegeCheats', 'linkRainbowSixSiegeCheats'],
-	['R6 Siege Cheats overview', 'Rainbow Six Siege Cheats overview'],
-	['R6 Siege Cheats pillar', 'Rainbow Six Siege Cheats pillar'],
+	['R6 Siege Cheats', 'Tarkov Cheats'],
+	['R6 Siege Intel', 'Tarkov Intel'],
+	['Undetected R6 Siege Cheats', 'Undetected Tarkov Cheats'],
+	['for R6 Siege', 'for Escape from Tarkov'],
+	['in R6 Siege', 'in Escape from Tarkov'],
+	['a R6 Siege', 'a Escape from Tarkov'],
+	['R6 Siege raid', 'Escape from Tarkov match'],
+	['R6 Siege firefight', 'Escape from Tarkov firefight'],
+	['R6 Siege on', 'Escape from Tarkov on'],
+	['"gameBadge": "R6 Siege"', '"gameBadge": "Escape from Tarkov"'],
+	['linkR6SiegeCheats', 'linkTarkovCheats'],
+	['R6 Siege Cheats overview', 'Tarkov Cheats overview'],
+	['R6 Siege Cheats pillar', 'Tarkov Cheats pillar'],
 ];
 
 for (const p of files) {

@@ -10,7 +10,7 @@ export interface Env {
 	ASSETS: Fetcher;
 }
 
-const CANONICAL_HOST = 'r6siegecheats.net';
+const CANONICAL_HOST = 'eftcheat.net';
 
 const LEGACY_HOSTS = new Set([
 	'tarkovcheats.org',
