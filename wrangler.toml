@@ -1,5 +1,5 @@
-# CI Workers Builds project name (repo: tarkovcheats)
-name = "tarkovcheats"
+# CI Workers Builds project name (repo: eft-cheat-.net)
+name = "eftcheat"
 compatibility_date = "2026-01-01"
 main = "src/worker.ts"
 
