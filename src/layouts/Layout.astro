@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/pubg-home.css';
 import '../styles/pubg-site.css';
 import '../styles/scroll-reveal.css';
+import { brand } from '../data/brand';
 import { productInfo, siteConfig } from '../data/site';
 import ScrollReveal from '../components/ScrollReveal.astro';
 import MobileNavFallback from '../components/MobileNavFallback.astro';
@@ -57,6 +58,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = buildCanonicalUrl(canonicalPath);
+const faviconQuery = `?v=${brand.faviconVersion}`;
 const ogImageURL = new URL(ogImage, siteConfig.url).href;
 const logoURL = new URL(siteConfig.logoRaster, siteConfig.url).href;
 const ogImageIsLogo = ogImage === siteConfig.logo;
@@ -261,12 +263,13 @@ if (aboutNode) {
 		)}
 
 		<title>{title}</title>
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" href={`/favicon.ico${faviconQuery}`} sizes="any" />
+		<link rel="icon" type="image/png" sizes="32x32" href={`/favicon-32x32.png${faviconQuery}`} />
+		<link rel="icon" type="image/png" sizes="16x16" href={`/favicon-16x16.png${faviconQuery}`} />
+		<link rel="icon" type="image/png" sizes="192x192" href={`/favicon.png${faviconQuery}`} />
+		<link rel="shortcut icon" href={`/favicon.ico${faviconQuery}`} />
+		<link rel="apple-touch-icon" sizes="180x180" href={`/apple-touch-icon.png${faviconQuery}`} />
+		<link rel="manifest" href={`/site.webmanifest${faviconQuery}`} />
 		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 	</head>
 	<body>

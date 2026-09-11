@@ -5,10 +5,27 @@ import sharp from 'sharp';
 const root = path.resolve('.');
 const publicDir = path.join(root, 'public');
 const faviconSource = path.join(publicDir, 'images/eft-favicon-source.png');
-const BG = { r: 0, g: 0, b: 0, alpha: 1 };
+const BG = { r: 10, g: 12, b: 15, alpha: 1 };
+
+/** Portrait EFT logo — crop to the TARKOV wordmark so 16px tabs stay readable. */
+async function faviconPipeline() {
+	const meta = await sharp(faviconSource).metadata();
+	const width = meta.width ?? 381;
+	const height = meta.height ?? 424;
+	const cropHeight = Math.min(width, Math.round(height * 0.72));
+	const top = Math.max(0, Math.round(height * 0.22));
+
+	return sharp(faviconSource)
+		.extract({
+			left: 0,
+			top,
+			width,
+			height: Math.min(cropHeight, height - top),
+		});
+}
 
 async function faviconBuffer(size) {
-	return sharp(faviconSource)
+	return (await faviconPipeline())
 		.resize(size, size, { fit: 'contain', background: BG })
 		.png()
 		.toBuffer();

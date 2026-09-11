@@ -25,6 +25,8 @@ export const brand = {
 	logoRasterWidth: 512,
 	logoRasterHeight: 512,
 	logoAlt: 'Escape from Tarkov Cheats logo',
+	/** Bump when favicon files change — busts browser cache on tab icons. */
+	faviconVersion: '2',
 	defaultOgImage: '/images/tarkov-cheats-hero-1024w.webp',
 	heroImage: '/images/tarkov-cheats-hero-1024w.webp',
 

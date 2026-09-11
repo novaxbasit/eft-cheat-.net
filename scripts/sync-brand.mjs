@@ -27,9 +27,11 @@ function readBrand() {
 		return m ? m[1] : fallback;
 	};
 	const name = str('name');
+	const faviconVersion = optionalStr('faviconVersion', '1');
 	return {
 		name,
 		shortName: optionalStr('shortName', name),
+		faviconVersion,
 		url: str('url').replace(/\/$/, ''),
 		supportEmail: str('supportEmail'),
 		game: str('game'),
@@ -75,9 +77,23 @@ writeFileSync(
 			background_color: brand.themeBg,
 			theme_color: brand.themeBg,
 			icons: [
-				{ src: '/favicon.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-				{ src: '/favicon.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
-				{ src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+				{
+					src: `/favicon.png?v=${brand.faviconVersion}`,
+					sizes: '192x192',
+					type: 'image/png',
+					purpose: 'any',
+				},
+				{
+					src: `/favicon.png?v=${brand.faviconVersion}`,
+					sizes: '192x192',
+					type: 'image/png',
+					purpose: 'maskable',
+				},
+				{
+					src: `/apple-touch-icon.png?v=${brand.faviconVersion}`,
+					sizes: '180x180',
+					type: 'image/png',
+				},
 			],
 		},
 		null,
