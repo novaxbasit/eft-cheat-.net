@@ -7,6 +7,7 @@ const CSP_BASE = [
 	"frame-ancestors 'none'",
 	"form-action 'self' https://zadeyo.com",
 	"img-src 'self' data: blob: https:",
+	"media-src 'self' blob:",
 	"font-src 'self' data:",
 	"style-src 'self' 'unsafe-inline'",
 	"upgrade-insecure-requests",

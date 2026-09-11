@@ -479,7 +479,7 @@ export const enPages = {
 			section(
 				'Before you buy in 2026',
 				'Read the <a href="/tarkov-cheats/">Tarkov cheats</a> pillar, Features, Pricing, Setup, and Updates pages. Check undetected status notes after every major patch — responsible use and maintenance awareness matter.',
-				'Also compare the <a href="/tarkov-cheats/">Tarkov cheats</a> checklist, <a href="/blog/tarkov-cheats-2026-whats-new/">2026 blog guide</a>, and <a href="/faq/">FAQ</a>.',
+				'Also compare the <a href="/tarkov-cheats/">Tarkov cheats</a> checklist, <a href="/blog/worth/">are cheats worth it</a>, and <a href="/faq/">FAQ</a>.',
 				'Support is available at support@tarkovcheats.org via the <a href="/support/">Support page</a>.',
 			),
 		],
@@ -507,7 +507,7 @@ export const enPages = {
 				'How this Tarkov cheats pillar fits nearby pages',
 				'Use this pillar for the core product overview. For year-specific buying notes, see the <a href="/tarkov-cheats/">tarkov cheats 2026</a> and <a href="/tarkov-cheats/">Tarkov cheats</a> pages cover buyer comparisons in cheats wording.',
 				'Deep-dive modules: <a href="/tarkov-esp/">Tarkov ESP</a>, <a href="/tarkov-aimbot/">Tarkov Aimbot</a>, <a href="/tarkov-esp/">wallhack</a>, <a href="/tarkov-radar-hack/">radar hack</a>, and <a href="/tarkov-aimbot/">soft aim</a>.',
-				'Blog guides expand BattlEye keyword: <a href="/blog/tarkov-cheats-complete-guide-2026/">hacks complete guide</a>, <a href="/blog/escape-from-tarkov-cheats-buyers-guide/">cheats buyers guide</a>, and <a href="/blog/undetected-tarkov-cheats-battleye/">undetected BattlEye notes</a>.',
+				'Blog guides: <a href="/blog/cosmo/">vs Cosmo Cheats</a>, <a href="/blog/phoenix/">vs Phoenix</a>, and <a href="/blog/compare/">compare cheat sites</a>.',
 			),
 			section(
 				'Tarkov cheats vs single-feature tools',

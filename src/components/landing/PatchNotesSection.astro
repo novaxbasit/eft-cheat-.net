@@ -1,0 +1,49 @@
+---
+import { trustSignals } from '../../data/site';
+import { fillBrandTokens } from '../../data/brand';
+import { getLocaleContent, getPageContent } from '../../data/i18n';
+import { getLocalizedPath } from '../../data/i18n/routing';
+import { defaultLocale, type LocaleCode } from '../../data/i18n/locales';
+import { tarkovImages } from '../../data/tarkov';
+
+interface Props {
+	locale?: LocaleCode;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const { ui } = getLocaleContent(locale);
+const updates = getPageContent(locale, 'updates');
+const statusHref = getLocalizedPath('updates', locale);
+const patchTitle = locale === 'en' ? 'Patch Notes' : updates.h1;
+const statusLinkLabel = locale === 'en' ? 'Status updates' : ui.nav.updates;
+const statusHeading = locale === 'en' ? 'Live undetected status' : ui.trust.statusShort;
+const statusCta = locale === 'en' ? 'Read patch status' : ui.nav.updates;
+const statusNote = locale === 'en' ? trustSignals.statusNote : ui.trust.statusNote;
+---
+
+<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-patch-title">
+	<div class="pubg-wrap">
+		<header class="pubg-section__head">
+			<h2 class="pubg-section__title" id="pubg-patch-title">{patchTitle}</h2>
+			<a class="pubg-link" href={statusHref}>{statusLinkLabel}</a>
+		</header>
+
+		<a class="pubg-patch" href={statusHref} aria-label={`${statusHeading} — ${statusCta}`}>
+			<div class="pubg-patch__img">
+				<img src={tarkovImages.patchNotes} alt="" width="1024" height="576" loading="lazy" decoding="async" />
+			</div>
+			<div class="pubg-patch__shade" aria-hidden="true"></div>
+			<div class="pubg-patch__body">
+				<div class="pubg-patch__tabs">
+					<span class="pubg-patch__tab is-active">PC</span>
+					<span class="pubg-patch__tab">{ui.trust.status}</span>
+				</div>
+				<h3 class="pubg-patch__h">{statusHeading}</h3>
+				<p class="pubg-patch__p">
+					{fillBrandTokens('Check here after an {game} or {antiCheat} patch before you play.')} {statusNote}
+				</p>
+				<span class="pubg-patch__cta">{statusCta}</span>
+			</div>
+		</a>
+	</div>
+</section>

@@ -93,16 +93,16 @@ export const blogUi: Record<
 	}
 > = {
 	en: {
-		blogTitle: 'Tarkov Cheats Blog | Raid Guides',
+		blogTitle: 'Tarkov Cheat Blog | Cheats',
 		blogDescription:
-			'Escape from Tarkov guides — raid tips, ESP, aimbot notes, loot routes, and BattlEye update coverage. English blog at eftcheat.net/blog/.',
-		blogH1: 'Tarkov Intel',
+			'Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, settings, and buyer notes. English posts at eftcheat.net/blog/.',
+		blogH1: 'Blog',
 		blogIntro:
-			'Tarkov Intel guides for PMC raids and Scav runs. Pair these tips with Escape from Tarkov Cheats product pages when you need ESP, aimbot, or wallhack.',
-		readMore: 'Read guide',
+			'Tarkov cheat blog posts from real raid use — vs Cosmo Cheats, Phoenix, CheatVault, plus settings and buyer notes for this raids license.',
+		readMore: 'Read more',
 		published: 'Published',
 		updated: 'Updated',
-		relatedPosts: 'Related guides',
+		relatedPosts: 'Related posts',
 		allPosts: 'All blog posts',
 		home: 'Tarkov Cheats home',
 		language: 'Language',

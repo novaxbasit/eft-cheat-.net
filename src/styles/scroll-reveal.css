@@ -1,0 +1,96 @@
+/* Hide only until JS adds .is-revealed — :not() keeps this from beating the show rule. */
+html.has-reveal [data-reveal]:not(.is-revealed),
+html.has-reveal [data-reveal-immediate]:not(.is-revealed) {
+	opacity: 0;
+}
+
+html.has-reveal [data-reveal].is-revealed,
+html.has-reveal [data-reveal-immediate].is-revealed {
+	opacity: 1;
+	animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation-delay: calc(var(--reveal-index, 0) * 110ms);
+}
+
+html.has-reveal [data-reveal='fade'].is-revealed,
+html.has-reveal [data-reveal-immediate='fade'].is-revealed {
+	animation-name: reveal-fade;
+}
+
+html.has-reveal [data-reveal='left'].is-revealed,
+html.has-reveal [data-reveal-immediate='left'].is-revealed {
+	animation-name: reveal-left;
+}
+
+html.has-reveal [data-reveal='right'].is-revealed,
+html.has-reveal [data-reveal-immediate='right'].is-revealed {
+	animation-name: reveal-right;
+}
+
+html.has-reveal [data-reveal='scale'].is-revealed,
+html.has-reveal [data-reveal-immediate='scale'].is-revealed {
+	animation-name: reveal-scale;
+}
+
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 2.5rem, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes reveal-fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes reveal-left {
+	from {
+		opacity: 0;
+		transform: translate3d(-2rem, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes reveal-right {
+	from {
+		opacity: 0;
+		transform: translate3d(2rem, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes reveal-scale {
+	from {
+		opacity: 0;
+		transform: scale(0.94);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.has-reveal [data-reveal],
+	html.has-reveal [data-reveal-immediate],
+	html.has-reveal [data-reveal].is-revealed,
+	html.has-reveal [data-reveal-immediate].is-revealed {
+		opacity: 1;
+		animation: none;
+		transform: none;
+	}
+}

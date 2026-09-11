@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from './Navbar.astro';
+import SiteFooter from './SiteFooter.astro';
+import InnerPageBanner from './landing/InnerPageBanner.astro';
+import { brand, seoDescription, seoTitle } from '../data/brand';
+import { siteConfig } from '../data/site';
+import { brandCopy } from '../data/site-core';
+import { externalGuideSites, guidesBasePath, internalGuides } from '../data/guides';
+import { defaultLocale } from '../data/i18n/locales';
+
+const title = seoTitle('Guides');
+const description = seoDescription(
+	'{game} guides at the top — ESP, aimbot, and setup links. Browse other game cheat sites from our network below.',
+);
+const intro = `${brand.game} guides sit at the top. Other game guides from our network are listed below. These guides are separate from the main blog.`;
+---
+
+<Layout
+	title={title}
+	description={description}
+	canonicalPath={guidesBasePath}
+	locale={defaultLocale}
+	ogImage={siteConfig.defaultOgImage}
+	breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
+	lcpImage="/images/hero-banner.webm"
+	lcpImageSizes="100vw"
+>
+	<Navbar locale={defaultLocale} />
+	<main class="pubg-page guides">
+		<InnerPageBanner
+			title="Guides"
+			intro={intro}
+			ctaPrimary={{ href: siteConfig.checkoutUrl, label: brandCopy.ctaBuy }}
+			ctaSecondary={{ href: '/pricing/', label: 'View store' }}
+		/>
+
+		<div class="shell pubg-page__body">
+			<section class="guides__section" aria-labelledby="guides-eft-title">
+				<header class="guides__section-head">
+					<p class="guides__section-label">{brand.game}</p>
+					<h2 id="guides-eft-title">Our Escape from Tarkov guides</h2>
+				</header>
+				<div class="guides__cards">
+					{
+						internalGuides.map((guide, index) => (
+							<a class="guides__card pubg-panel pubg-panel--lift" href={guide.href}>
+								<img
+									src={guide.image}
+									alt={guide.imageAlt}
+									width="640"
+									height="360"
+									loading={index === 0 ? 'eager' : 'lazy'}
+									decoding="async"
+								/>
+								<div class="guides__card-body">
+									<h3>{guide.title}</h3>
+									<p>{guide.description}</p>
+								</div>
+							</a>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="guides__section guides__section--other" aria-labelledby="guides-other-title">
+				<header class="guides__section-head">
+					<p class="guides__section-label">Other games</p>
+					<h2 id="guides-other-title">Other game guides</h2>
+				</header>
+				<ul class="guides__grid">
+					{
+						externalGuideSites.map((site) => (
+							<li>
+								<a
+									href={site.url}
+									rel="noopener noreferrer"
+									title={`${site.label} — ${site.url}`}
+								>
+									<span class="guides__grid-game">{site.game}</span>
+									<span class="guides__grid-label">{site.label}</span>
+									<span class="guides__grid-url">{site.url}</span>
+									<span class="guides__grid-meta">Cheat guides for {site.game}.</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</main>
+	<SiteFooter locale={defaultLocale} />
+</Layout>
+
+<style>
+	.guides__section {
+		display: grid;
+		gap: 1.15rem;
+		width: min(100%, var(--page-max));
+	}
+
+	.guides__section--other {
+		margin-top: 0.25rem;
+		padding-top: clamp(1.5rem, 3vw, 2rem);
+		border-top: 1px solid var(--line-soft);
+	}
+
+	.guides__section-head {
+		display: grid;
+		gap: 0.25rem;
+	}
+
+	.guides__section-label {
+		margin: 0;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--magenta-soft);
+	}
+
+	.guides__section-head h2 {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	.guides__cards {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+
+	.guides__card {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		overflow: hidden;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.guides__card::before {
+		display: none;
+	}
+
+	.guides__card img {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
+	.guides__card-body {
+		display: grid;
+		gap: 0.35rem;
+		padding: 0.95rem 1rem 1.05rem;
+	}
+
+	.guides__card-body h3 {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: 0.98rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: #fff;
+	}
+
+	.guides__card-body p {
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: var(--ink-muted);
+	}
+
+	.guides__grid {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 0.65rem;
+	}
+
+	.guides__grid a {
+		display: grid;
+		gap: 0.2rem;
+		min-height: 100%;
+		padding: 0.95rem 1rem;
+		border: 1px solid var(--line);
+		background: var(--bg-panel);
+		text-decoration: none;
+		transition:
+			border-color 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.guides__grid a:hover {
+		border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
+		background: color-mix(in srgb, var(--accent) 6%, var(--bg-panel));
+	}
+
+	.guides__grid-game {
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+	}
+
+	.guides__grid-label {
+		font-family: var(--font-display);
+		font-size: 0.92rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: #fff;
+	}
+
+	.guides__grid-url {
+		font-size: 0.75rem;
+		line-height: 1.4;
+		color: var(--magenta-soft);
+		word-break: break-all;
+	}
+
+	.guides__grid-meta {
+		font-size: 0.8rem;
+		line-height: 1.45;
+		color: var(--ink-muted);
+	}
+
+	@media (max-width: 960px) {
+		.guides__grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 720px) {
+		.guides__cards {
+			grid-template-columns: 1fr;
+		}
+
+		.guides__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 480px) {
+		.guides__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

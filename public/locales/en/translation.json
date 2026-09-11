@@ -29,9 +29,9 @@
     "title": "Escape from Tarkov Cheats",
     "priceFrom": "from",
     "imageAlt": "{{brand}} — Escape from Tarkov ESP and aimbot overlay",
-    "chipEsp": "ESP / wallhack",
+    "chipEsp": "Player ESP",
     "chipAim": "Aimbot",
-    "chipRadar": "Stream-proof",
+    "chipRadar": "Loot ESP",
     "chipUpdates": "Patch updates"
   },
   "cta": {
@@ -56,7 +56,7 @@
     "gameBadge": "Escape from Tarkov",
     "platformBadge": "Windows PC",
     "statusBadge": "Undetected Escape from Tarkov cheats",
-    "days30": "30 days",
+    "days30": "31 days",
     "oneTime": "One-time",
     "plans": "Plans",
     "perMonth": "/ month",
@@ -103,6 +103,7 @@
     "shareReddit": "Share on Reddit",
     "shareFacebook": "Share on Facebook",
     "blog": "Blog",
+    "guides": "Guides",
     "support": "Support",
     "privacy": "Privacy",
     "terms": "Terms",
@@ -118,7 +119,7 @@
   },
   "home": {
     "aboutTitle": "Undetected Escape from Tarkov cheats for Windows PC",
-    "aboutP1": "Escape from Tarkov Cheats is an undetected Escape from Tarkov cheat package for Windows PC. One license includes PMC and bot ESP, loot container ESP, aimbot with FOV limit, and stream-proof overlay, with BattlEye rebuilds after game patches. Compare plans on Store, then check Status before you raid.",
+    "aboutP1": "Escape from Tarkov Cheats is an undetected Escape from Tarkov cheat for Windows PC raids. One license includes player ESP, loot ESP, aimbot, and a streamproof overlay, with BattlEye rebuilds after patches. Not Arena. Compare plans on Store, then check Status before you raid.",
     "aboutP2Before": "Start with the",
     "aboutPillar": "Escape from Tarkov Cheats pillar",
     "aboutEsp": "ESP guide",
@@ -166,9 +167,9 @@
     "pricing": "Pricing",
     "chooseLicense": "Choose your license",
     "features": "Features",
-    "featEsp": "ESP / wallhack",
-    "featAim": "Soft aim & hotkeys",
-    "featRadar": "Stream-proof",
+    "featEsp": "Player ESP",
+    "featAim": "Aimbot & hotkeys",
+    "featRadar": "Loot ESP",
     "featUpdates": "Patch updates"
   },
   "trustStrip": {
@@ -200,18 +201,18 @@
     "battleRoyaleIsland": "ESP markers for loot and extracts in Escape from Tarkov"
   },
   "blog": {
-    "blogTitle": "Escape from Tarkov Cheats Blog | ESP, Cheats & Meta Tips",
-    "blogDescription": "Escape from Tarkov Cheats guides — ESP, aimbot, raid tips, loot routes, and BattlEye updates. Global English blog at eftcheat.net/blog/.",
-    "blogH1": "Escape from Tarkov Cheats Intel",
-    "blogIntro": "Escape from Tarkov Cheats Intel for Escape from Tarkov — raid and scav-run guides, loot routes, weapon tiers, and warmup notes. Pair these tips with ESP, aimbot, wallhack, and cloud DMA pages when you need in-match tools.",
-    "readMore": "Read guide",
+    "blogTitle": "Tarkov Cheat Blog | Cheats",
+    "blogDescription": "Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, settings, and buyer notes. English posts at eftcheat.net/blog/.",
+    "blogH1": "Blog",
+    "blogIntro": "Tarkov cheat blog posts — comparisons, ESP, aimbot, loot ESP, Cloud DMA, and how to buy.",
+    "readMore": "Read more",
     "published": "Published",
     "updated": "Updated",
-    "relatedPosts": "Related Escape from Tarkov guides",
+    "relatedPosts": "Related posts",
     "allPosts": "All blog posts",
     "home": "Escape from Tarkov Cheats home",
     "language": "Language",
-    "label": "Tarkov Intel"
+    "label": "Blog"
   },
   "gallery": {
     "eyebrow": "Escape from Tarkov Cheats",

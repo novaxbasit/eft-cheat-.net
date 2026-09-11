@@ -71,34 +71,34 @@ const SITEMAP_TEXT_KEYS = [
 
 const DEFAULT_SITEMAP_IMAGES = [
 	{
-		src: '/images/tarkov-esp-player-tags.webp',
-		title: '{primaryKeyword} ESP',
-		caption: 'See players with {primaryKeyword}',
+		src: '/images/tarkov-cheats-esp.webp',
+		title: 'ESP overlay in {game}',
+		caption: 'PMC and bot ESP boxes during a raid',
 	},
 	{
-		src: '/images/tarkov-wallhack-skeleton.webp',
+		src: '/images/tarkov-cheats-wallhack.webp',
 		title: '{primaryKeyword} wallhack',
-		caption: 'See through walls with {primaryKeyword}',
+		caption: 'Enemy PMC outlines through walls',
 	},
 	{
-		src: '/images/tarkov-aimbot-sniper.webp',
+		src: '/images/tarkov-cheats-aimbot.webp',
 		title: '{primaryKeyword} aimbot',
-		caption: 'Aimbot in {primaryKeyword}',
+		caption: 'Aimbot FOV and bone priority',
 	},
 	{
-		src: '/images/tarkov-aimbot-skeleton.webp',
+		src: '/images/tarkov-cheats-aimbot-view.webp',
 		title: '{primaryKeyword} aimbot view',
-		caption: 'Aimbot bone view in {primaryKeyword}',
+		caption: 'In-menu aimbot controls for Windows PC',
 	},
 	{
-		src: '/images/tarkov-esp-radar.webp',
-		title: '{primaryKeyword} radar',
-		caption: 'Radar map in {primaryKeyword}',
+		src: '/images/tarkov-patch-notes-banner.jpg',
+		title: '{game} patch notes banner',
+		caption: 'Patch notes art for {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-cheats-combat.webp',
-		title: '{primaryKeyword} in a fight',
-		caption: 'Fight view with {primaryKeyword}',
+		src: '/images/tarkov-cheats-raid.webp',
+		title: '{brand} license plans',
+		caption: 'Monthly and lifetime plans for Windows PC',
 	},
 ];
 
@@ -367,8 +367,8 @@ export function validateBrandPayload(body) {
 	const lifetimeLabel = soft(b.lifetimeLabel, 'Lifetime', 40);
 	const logo = assetPath(b.logo ?? '/images/tarkov-cheats-logo.webp');
 	const logoRaster = assetPath(b.logoRaster ?? '/images/tarkov-cheats-logo.png');
-	const defaultOgImage = assetPath(b.defaultOgImage ?? '/images/tarkov-cheats-combat.webp');
-	const heroImage = assetPath(b.heroImage ?? '/images/tarkov-hero-banner.webp');
+	const defaultOgImage = assetPath(b.defaultOgImage ?? '/images/tarkov-cheats-hero-1024w.webp');
+	const heroImage = assetPath(b.heroImage ?? '/images/tarkov-cheats-hero-1024w.webp');
 	const logoAlt = soft(b.logoAlt, `${name || 'Brand'} logo`, 120);
 	const logoW = price(b.logoRasterWidth ?? 512) ?? 512;
 	const logoH = price(b.logoRasterHeight ?? 512) ?? 512;

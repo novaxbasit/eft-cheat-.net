@@ -4,9 +4,6 @@ import sharp from 'sharp';
 
 const imagesDir = path.resolve('public/images');
 
-/** Hero LCP asset — responsive widths for srcset */
-const HERO_WIDTHS = [480, 640, 960, 1400];
-
 /** Below-fold content images — smaller variants for gallery/product cards */
 const CONTENT_WIDTHS = [480, 960];
 
@@ -14,37 +11,16 @@ const SKIP_PATTERNS = [
 	/-\d+w\.webp$/i,
 	/tarkov-cheats-logo/i,
 	/favicon/i,
+	/hero-banner/i,
+	/patch-notes-banner/i,
 ];
-
-async function optimizeHero() {
-	const source = path.join(imagesDir, 'tarkov-esp-player-tags.webp');
-	const meta = await sharp(source).metadata();
-	const results = [];
-
-	for (const width of HERO_WIDTHS) {
-		if (meta.width && width > meta.width) continue;
-		const file = `tarkov-esp-player-tags-${width}w.webp`;
-		const dest = path.join(imagesDir, file);
-		const quality = width <= 480 ? 56 : width <= 640 ? 70 : 78;
-		const buffer = await sharp(source)
-			.resize({ width, withoutEnlargement: true })
-			.webp({ quality, effort: 6 })
-			.toBuffer();
-		await writeFile(dest, buffer);
-		results.push({ file, width, bytes: buffer.length });
-		console.log(`Wrote ${file} (${buffer.length} bytes)`);
-	}
-
-	return results;
-}
 
 async function optimizeContentImages() {
 	const files = await readdir(imagesDir);
 	const sources = files.filter(
 		(file) =>
 			file.endsWith('.webp') &&
-			!SKIP_PATTERNS.some((pattern) => pattern.test(file)) &&
-			file !== 'tarkov-esp-player-tags.webp',
+			!SKIP_PATTERNS.some((pattern) => pattern.test(file)),
 	);
 
 	const results = [];
@@ -71,6 +47,5 @@ async function optimizeContentImages() {
 	return results;
 }
 
-const heroResults = await optimizeHero();
 const contentResults = await optimizeContentImages();
-console.log(`Done — ${heroResults.length} hero + ${contentResults.length} content variants.`);
+console.log(`Done — ${contentResults.length} content variants.`);

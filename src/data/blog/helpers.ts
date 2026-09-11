@@ -17,9 +17,9 @@ const imageMap: Record<BlogImageKey, string> = {
 	aimbotCombat: tarkovImages.aimbotCombat,
 	aimbotSkeleton: tarkovImages.aimbotSkeleton,
 	squadFight: tarkovImages.aimbotCombat,
-	headerArt: tarkovImages.playerEsp,
-	cheatsPackage: tarkovImages.espWallhack,
-	playerEsp: tarkovImages.playerEsp,
+	headerArt: tarkovImages.patchNotes,
+	cheatsPackage: tarkovImages.patchNotes,
+	playerEsp: tarkovImages.patchNotes,
 	rebootFight: tarkovImages.aimbotCombat,
 	battleRoyaleCombat: tarkovImages.cheatsCombat,
 	battleRoyaleIslandMap: tarkovImages.espWallhack,
@@ -186,7 +186,7 @@ export function getBlogSitemapEntriesForLocale(locale: LocaleCode) {
 	for (const post of blogPosts) {
 		const t = post.translations[locale];
 		const imageSrc = getBlogImageSrc(post.imageKey);
-		const isProductPost = /Tarkov Cheats|Aimbot|ESP|Undetected|Comparisons/i.test(post.category);
+		const isProductPost = /Cheats|Aimbot|ESP|Wallhack|Combat|Status|Setup|Overlay|Store/i.test(post.category);
 		entries.push({
 			path: getBlogPostPath(locale, t.slug),
 			lastmod: post.updated,

@@ -1,0 +1,41 @@
+---
+import { siteConfig } from '../../data/site';
+import { tarkovImages } from '../../data/tarkov';
+
+/** Shared main banner — public/images/hero-banner.webm */
+interface Props {
+	/** Eager load on homepage / above-fold pages */
+	priority?: boolean;
+}
+
+const { priority = false } = Astro.props;
+const videoSrc = tarkovImages.heroVideo;
+const heroAlt = `${siteConfig.name} — Escape from Tarkov cheats hero banner on Windows PC`;
+---
+
+<div class="site-banner">
+	<video
+		class="site-banner__video"
+		autoplay
+		muted
+		loop
+		playsinline
+		preload={priority ? 'auto' : 'metadata'}
+		aria-label={heroAlt}
+	>
+		<source src={videoSrc} type="video/webm" />
+	</video>
+	<div class="site-banner__overlay" aria-hidden="true"></div>
+	<slot />
+</div>
+
+<script>
+	const root = document.currentScript?.previousElementSibling;
+	const video = root?.querySelector('.site-banner__video');
+	if (video instanceof HTMLVideoElement) {
+		video.muted = true;
+		const play = () => void video.play().catch(() => {});
+		if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) play();
+		else video.addEventListener('loadeddata', play, { once: true });
+	}
+</script>

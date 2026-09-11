@@ -2,18 +2,22 @@ import { siteConfig } from './site';
 
 /** Screenshots used across product pages — Escape from Tarkov cheats keyword alts. */
 export const tarkovImages = {
-	hero: '/images/tarkov-cheats-hero-full.png',
+	/** Static OG / schema image — banner itself is hero-banner.webm */
+	hero: '/images/tarkov-cheats-hero-1024w.webp',
+	/** Homepage / inner-page banner loop — public/images/hero-banner.webm */
+	heroVideo: '/images/hero-banner.webm',
 	espWallhack: '/images/tarkov-cheats-wallhack.webp',
 	aimbotCombat: '/images/tarkov-cheats-aimbot.webp',
 	aimbotSkeleton: '/images/tarkov-cheats-aimbot-view.webp',
-	playerEsp: '/images/tarkov-cheats-radar.webp',
+	playerEsp: '/images/tarkov-patch-notes-banner.jpg',
 	cheatsCombat: '/images/tarkov-cheats-raid.webp',
+	patchNotes: '/images/tarkov-patch-notes-banner.jpg',
 	logo: siteConfig.logo,
 	/** @deprecated Blog / legacy aliases — each maps to one of the six assets above */
 	cover: '/images/tarkov-cheats-raid.webp',
-	loadoutBuilder: '/images/tarkov-cheats-radar.webp',
+	loadoutBuilder: '/images/tarkov-patch-notes-banner.jpg',
 	squadFight: '/images/tarkov-cheats-aimbot-view.webp',
-	cheatsPackage: '/images/tarkov-cheats-radar.webp',
+	cheatsPackage: '/images/tarkov-patch-notes-banner.jpg',
 	headerArt: '/images/tarkov-cheats-aimbot-view.webp',
 	battleRoyaleCombat: '/images/tarkov-cheats-raid.webp',
 	extractFight: '/images/tarkov-cheats-aimbot.webp',
@@ -46,7 +50,7 @@ export const tarkovImages = {
 		{ src: '/images/tarkov-cheats-wallhack.webp', title: '', caption: '' },
 		{ src: '/images/tarkov-cheats-aimbot.webp', title: '', caption: '' },
 		{ src: '/images/tarkov-cheats-aimbot-view.webp', title: '', caption: '' },
-		{ src: '/images/tarkov-cheats-radar.webp', title: '', caption: '' },
+		{ src: '/images/tarkov-patch-notes-banner.jpg', title: '', caption: '' },
 		{ src: '/images/tarkov-cheats-raid.webp', title: '', caption: '' },
 	],
 } as const;

@@ -1,0 +1,71 @@
+---
+import SiteBanner from './SiteBanner.astro';
+
+interface CtaLink {
+	href: string;
+	label: string;
+	edit?: string;
+}
+
+interface Props {
+	title?: string;
+	intro?: string;
+	introEdit?: string;
+	introBelowBanner?: boolean;
+	ctaPrimary?: CtaLink;
+	ctaSecondary?: CtaLink;
+}
+
+const { title, intro, introEdit, introBelowBanner = false, ctaPrimary, ctaSecondary } = Astro.props;
+const showTitle = Boolean(title);
+const showCtas = Boolean(ctaPrimary || ctaSecondary);
+---
+
+<section class={`pubg-page__banner${showTitle ? '' : ' pubg-page__banner--media'}`}>
+	<SiteBanner>
+		{
+			showTitle ? (
+				<div class="shell pubg-page__banner-shell">
+					<div class="pubg-page__banner-content">
+						<h1 class="pubg-page__banner-title">{title}</h1>
+						{intro && !introBelowBanner ? (
+							<p class="pubg-page__banner-intro" data-edit={introEdit || undefined}>{intro}</p>
+						) : null}
+						{showCtas ? (
+							<div class="pubg-page__banner-actions pubg-cta-row">
+								{ctaPrimary ? (
+									<a
+										class="pubg-btn pubg-btn--lg"
+										href={ctaPrimary.href}
+										target={ctaPrimary.href.startsWith('http') ? '_blank' : undefined}
+										rel={ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+									>
+										<span data-edit={ctaPrimary.edit || undefined}>{ctaPrimary.label}</span>
+									</a>
+								) : null}
+								{ctaSecondary ? (
+									<a
+										class="pubg-play pubg-play--ghost"
+										href={ctaSecondary.href}
+										target={ctaSecondary.href.startsWith('http') ? '_blank' : undefined}
+										rel={ctaSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+									>
+										{ctaSecondary.label}
+									</a>
+								) : null}
+							</div>
+						) : null}
+					</div>
+					<slot />
+				</div>
+			) : (
+				<slot />
+			)
+		}
+	</SiteBanner>
+	{intro && introBelowBanner ? (
+		<div class="shell pubg-page__banner-intro-below">
+			<p class="pubg-page__banner-intro pubg-page__banner-intro--below">{intro}</p>
+		</div>
+	) : null}
+</section>

@@ -29,23 +29,23 @@ export const brand = {
 	heroImage: '/images/tarkov-cheats-hero-1024w.webp',
 
 	plans: [
-		{ id: 'monthly', label: 'Monthly', price: 35, duration: 'P30D' },
+		{ id: 'monthly', label: 'Monthly', price: 35, duration: 'P31D' },
 		{ id: 'lifetime', label: 'Lifetime', price: 150, duration: 'P99Y' },
 	] as const,
 	currency: 'USD',
 	platforms: ['Windows PC'] as const,
 
 	/**
-	 * Site color tones — accent + canvas + soft/deep/hover/panel.
+	 * Warehouse raid tones — cool charcoal, fog-lit steel blue (from hero banner).
 	 * Edit in Brand Studio → Colors (tones are fully customizable).
 	 */
 	theme: {
-		accent: '#c084fc',
-		bg: '#0a0614',
-		soft: '#e9d5ff',
-		deep: '#7e22ce',
-		hover: '#d8b4fe',
-		panel: '#14081e',
+		accent: '#7a94a8',
+		bg: '#0a0c0f',
+		soft: '#b8c8d4',
+		deep: '#3a4d5a',
+		hover: '#92aaba',
+		panel: '#14181c',
 	},
 
 	/**
@@ -75,19 +75,19 @@ export const brand = {
 		/** Home = brand hub. Money URL /tarkov-cheats/ owns the head term. */
 		homeTitle: 'Escape from Tarkov Cheats | Features & Store',
 		homeDescription:
-			'Official Escape from Tarkov Cheats site for Windows PC. Compare features, store plans, and live status — then buy ESP, aimbot, and wallhack in one license.',
+			'Official Escape from Tarkov Cheats site for Windows PC. Player ESP, loot ESP, and aimbot for raids — not Arena. Check status, then buy.',
 		featuresTitle: 'Escape from Tarkov Features | Cheats',
 		featuresDescription:
-			'Everything in one Escape from Tarkov license for Windows PC — PMC ESP, loot ESP, aimbot, wallhack, no recoil, and patch updates after BattlEye.',
+			'One Escape from Tarkov license for Windows PC — player ESP, loot ESP, aimbot, no recoil, streamproof overlay, and Cloud DMA.',
 		storeTitle: 'Escape from Tarkov Store | Cheats',
 		storeDescription:
-			'Monthly and lifetime Escape from Tarkov cheat plans for Windows PC. Same ESP, aimbot, and wallhack on both. Instant delivery after payment checkout.',
+			'Monthly $35 and lifetime $150 Escape from Tarkov cheat plans. Same player ESP, loot ESP, and aimbot on both. Instant delivery after checkout.',
 		statusTitle: 'Escape from Tarkov Status | Cheats',
 		statusDescription:
 			'Live undetected status for Escape from Tarkov Cheats after game or BattlEye patches. Check Status here before you raid on a Windows PC today.',
 		previewTitle: 'Escape from Tarkov Cheats | Undetected ESP & Aimbot',
 		previewDescription:
-			'Buy undetected Escape from Tarkov cheats for Windows PC. ESP, aimbot, wallhack, stream-proof overlay, and BattlEye patch updates in one license.',
+			'Buy Escape from Tarkov cheats for Windows PC raids. Player ESP, loot ESP, aimbot, streamproof overlay. Separate key from Arena.',
 		setupTitle: 'Escape from Tarkov Setup | Cheats',
 		setupDescription:
 			'Install Escape from Tarkov Cheats on Windows PC after checkout. Short setup steps so you can raid faster. Follow each step in order before you raid.',
@@ -100,32 +100,32 @@ export const brand = {
 		reviewsTitle: 'Escape from Tarkov Cheats Reviews | Buyers',
 		reviewsDescription:
 			'Buyer reviews for Escape from Tarkov Cheats — ESP, aimbot, wallhack, and patch updates on Windows PC. Real feedback from current license holders.',
-		blogTitle: 'Escape from Tarkov Intel | Cheats',
+		blogTitle: 'Tarkov Cheat Blog | Cheats',
 		blogDescription:
-			'Guides and notes for Escape from Tarkov cheats — raid tips, ESP, aimbot, loot routes, and BattlEye update coverage for Windows PC players before you buy.',
+			'Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, ESP vs aimbot, settings, and buyer notes. Raids on Windows PC.',
 	},
 
 	/** On-page marketing copy (tokens allowed) */
 	copy: {
-		tagline: 'Undetected {primaryKeyword} — ESP, aimbot, and wallhack for PC',
+		tagline: 'Undetected {primaryKeyword} — player ESP, loot ESP, and aimbot for PC raids',
 		summary:
-			'{brand} is an undetected {game} cheat package for Windows PC. Includes PMC and bot ESP, aimbot, and wallhack, with {antiCheat} maintenance after patches.',
-		heroLede: 'Escape from Tarkov Cheats — undetected ESP, aimbot, and wallhack for Windows PC.',
-		blogLabel: 'Tarkov Intel',
+			'{brand} is an undetected {game} cheat for Windows PC raids. Player ESP, loot ESP, aimbot, and no recoil, with streamproof overlay and {antiCheat} updates after patches. Separate key from Arena.',
+		heroLede: 'Escape from Tarkov Cheats — player ESP, loot ESP, and aimbot for raids on Windows PC.',
+		blogLabel: 'Blog',
 		ctaBuy: 'Get Access',
 		ctaBuyShort: 'Buy',
-		featuresIntro: 'These Features are included in one license for {game} on Windows PC.',
+		featuresIntro: 'These Features are in one license for {game} raids on Windows PC. Not Arena.',
 		storeIntro: 'Store plans for {brand}. Same features on both. Instant delivery after payment.',
 		statusIntro: 'Live Status for {brand} — check here after a {game} or {antiCheat} patch before you queue.',
 		previewIntro:
-			'Escape from Tarkov Cheats for Windows PC — PMC and bot ESP, loot container ESP, extract helicopter markers, aimbot with FOV limit, and stream-proof overlay.',
+			'Escape from Tarkov Cheats for Windows PC raids — player ESP, loot ESP, aimbot, no recoil, and a streamproof overlay. Separate key from Arena.',
 		setupIntro: 'Setup guide for {brand} on Windows PC after you buy. Follow these short steps.',
 		supportIntro: 'Support for {brand} — email {email} with your order ID.',
 		faqIntro: 'FAQ with short answers about delivery, setup, updates, and refunds.',
-		reviewsIntro: '{brand} reviews from buyers — ESP, aimbot, wallhack, and support.',
-		chipEsp: 'ESP / wallhack',
+		reviewsIntro: '{brand} reviews from buyers — ESP, loot ESP, aimbot, and support.',
+		chipEsp: 'Player ESP',
 		chipAim: 'Aimbot',
-		chipRadar: 'Stream-proof',
+		chipRadar: 'Loot ESP',
 		chipUpdates: 'Patch updates',
 		navPreview: 'Cheats',
 		navFeatures: 'Features',
@@ -168,9 +168,9 @@ export const brand = {
 				caption: 'In-menu aimbot controls for Windows PC',
 			},
 			{
-				src: '/images/tarkov-cheats-radar.webp',
-				title: 'Stream-proof overlay',
-				caption: 'Stream-proof ESP overlay for PMC raids',
+				src: '/images/tarkov-patch-notes-banner.jpg',
+				title: 'Tarkov patch notes banner',
+				caption: 'Escape from Tarkov operators patch notes art',
 			},
 			{
 				src: '/images/tarkov-cheats-raid.webp',

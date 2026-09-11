@@ -85,7 +85,7 @@ export const footerExplore = [
 	{ label: fillBrandTokens('{game} hack setup guide'), href: '/setup/' },
 	{ label: fillBrandTokens('{game} hacks FAQ'), href: '/faq/' },
 	{ label: fillBrandTokens('{brand} reviews'), href: '/reviews/' },
-	{ label: fillBrandTokens('{game} Intel blog'), href: '/blog/' },
+	{ label: fillBrandTokens('{game} cheat guides'), href: '/blog/' },
 	{ label: fillBrandTokens('Contact {brand} support'), href: '/support/' },
 ] as const;
 
@@ -101,11 +101,11 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'What is {brand}?',
 		answer:
-			'What is {brand}? {brand} is an undetected {primaryKeyword} package for Escape from Tarkov on Windows PC. It includes ESP wallhack, aimbot with FOV limit, and stream-proof overlay, with {antiCheat} maintenance and setup support.',
+			'What is {brand}? {brand} is an undetected {primaryKeyword} package for Escape from Tarkov raids on Windows PC. It includes player ESP, loot ESP, aimbot, no recoil, and a streamproof overlay, with {antiCheat} maintenance. Arena needs a separate key.',
 		slug: 'what-are-tarkov-cheats',
 		seoTitle: 'What is {brand}? | FAQ',
 		seoDescription:
-			'{brand} explained: undetected ESP, radar, and aimbot for {game} on Windows PC with {antiCheat} maintenance.',
+			'{brand} explained: player ESP, loot ESP, and aimbot for {game} raids on Windows PC with {antiCheat} maintenance.',
 	}),
 	faq({
 		question: 'Are {primaryKeyword} undetected in 2026?',
@@ -117,22 +117,22 @@ export const homeFaqs: readonly FaqItem[] = [
 			'How {brand} stays maintained after {antiCheat} patches in 2026 — and why no cheat can promise permanent undetected status.',
 	}),
 	faq({
-		question: 'Does this work in PMC raids and Scav runs?',
+		question: 'Does this work in Tarkov raids? Is it the same as Arena?',
 		answer:
-			'Does this work in PMC raids and Scav runs? Yes — this does work in PMC raids and Scav runs. ESP, aimbot, and wallhack are built for {game} raid flow — reading PMCs and bots, spotting loot containers, and staying aware near extracts.',
+			'Does this work in Tarkov raids? Is it the same as Arena? Yes — this works in Tarkov raids. No — it is not the same as Arena. This key is for main Tarkov raids only. Arena needs a separate key.',
 		slug: 'pmc-raids-and-scav-runs',
-		seoTitle: 'PMC Raids and Scav Runs | FAQ',
+		seoTitle: 'Tarkov Raids vs Arena | FAQ',
 		seoDescription:
-			'{brand} works in PMC raids and Scav runs — ESP, aimbot, and wallhack for Windows PC.',
+			'{brand} is for Tarkov raids only. Arena needs a separate key. Player ESP, loot ESP, and aimbot on Windows PC.',
 	}),
 	faq({
-		question: 'What is included — ESP, wallhack, or Aimbot?',
+		question: 'What is included — player ESP, loot ESP, or aimbot?',
 		answer:
-			'What is included — ESP, wallhack, or Aimbot? ESP, wallhack, or Aimbot are what is included in one {brand} license, plus PMC and bot ESP, loot container ESP, aimbot with FOV limit, and no recoil tuning. See Features for the full list.',
+			'What is included — player ESP, loot ESP, or aimbot? One {brand} license includes player ESP, loot ESP, aimbot, no recoil, streamproof overlay, and a config system. Cloud DMA is required for full functionality. See Features for the list.',
 		slug: 'esp-wallhack-radar-or-aimbot',
-		seoTitle: 'What Is Included: ESP, Wallhack, Aimbot | FAQ',
+		seoTitle: 'What Is Included: ESP, Loot, Aimbot | FAQ',
 		seoDescription:
-			'One {brand} license includes ESP, wallhack, loot markers, and configurable Aimbot for Windows PC.',
+			'One {brand} license includes player ESP, loot ESP, and aimbot for Tarkov raids on Windows PC.',
 	}),
 	faq({
 		question: 'How are licenses delivered?',
@@ -168,20 +168,20 @@ export const seoFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'What is an {game} wallhack?',
 		answer:
-			'What is an {game} wallhack? An {game} wallhack is an ESP overlay that shows PMCs, bots, and loot through walls. {brand} includes distance readouts, extract cues, and toggleable categories.',
+			'What is an {game} wallhack? An {game} wallhack here means chams and ESP that show PMCs, Scavs, and loot through walls. {brand} includes box, skeleton, radar, and a streamproof overlay.',
 		slug: 'what-is-a-tarkov-wallhack',
 		seoTitle: 'What Is a {game} Wallhack? | FAQ',
 		seoDescription:
 			'A {game} wallhack is ESP that reveals PMCs, Scavs, and loot through walls — with distance, extracts, and category toggles.',
 	}),
 	faq({
-		question: 'Does {brand} include a stream-proof overlay?',
+		question: 'Does {brand} include a streamproof overlay?',
 		answer:
-			'Does {brand} include a stream-proof overlay? Yes — {brand} does include a stream-proof overlay so ESP and wallhack stay hidden on capture software — useful for raid sessions.',
+			'Does {brand} include a streamproof overlay? Yes — ESP and menus stay off OBS and most capture tools.',
 		slug: 'does-tarkov-cheats-include-stream-proof',
-		seoTitle: 'Does {brand} Include Stream-Proof Overlay? | FAQ',
+		seoTitle: 'Does {brand} Include Streamproof Overlay? | FAQ',
 		seoDescription:
-			'Yes — {brand} includes a stream-proof overlay for ESP and wallhack on Windows PC.',
+			'Yes — {brand} includes a streamproof overlay so ESP and menus stay off OBS on Windows PC.',
 	}),
 	faq({
 		question: 'How does {antiCheat} affect {primaryKeyword}?',
@@ -193,13 +193,22 @@ export const seoFaqs: readonly FaqItem[] = [
 			'{antiCheat} may require {brand} rebuilds after patches. Status notes explain the update workflow.',
 	}),
 	faq({
+		question: 'Is Cloud DMA required?',
+		answer:
+			'Is Cloud DMA required? Cloud DMA is required for full functionality. Windows 10 / 11 with HVCI, Core Isolation, TPM, and Secure Boot on.',
+		slug: 'is-cloud-dma-required',
+		seoTitle: 'Is Cloud DMA Required? | FAQ',
+		seoDescription:
+			'Cloud DMA is required for full {brand} functionality on Windows 10 / 11 with HVCI, TPM, and Secure Boot.',
+	}),
+	faq({
 		question: 'Can I buy undetected {game} cheats for Windows PC?',
 		answer:
-			'Can I buy undetected {game} cheats for Windows PC? Yes — you can buy undetected {game} cheats for Windows PC. {brand} sells monthly and lifetime licenses with ESP, wallhack, and aimbot in one stack. Compare plans on Store before checkout.',
+			'Can I buy undetected {game} cheats for Windows PC? Yes — you can buy undetected {game} cheats for Windows PC. {brand} sells monthly ($35) and lifetime ($150) licenses with player ESP, loot ESP, and aimbot. This key is for raids, not Arena.',
 		slug: 'buy-undetected-tarkov-cheats-windows-pc',
 		seoTitle: 'Buy Undetected {game} Cheats for Windows PC | FAQ',
 		seoDescription:
-			'Buy monthly or lifetime {brand} licenses for Windows PC — ESP, radar, and aimbot in one stack. Compare pricing before checkout.',
+			'Buy monthly ($35) or lifetime ($150) {brand} licenses for Windows PC — player ESP, loot ESP, and aimbot. Compare pricing before checkout.',
 	}),
 ] as const;
 

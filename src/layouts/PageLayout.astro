@@ -2,23 +2,14 @@
 import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import InnerPageBanner from '../components/landing/InnerPageBanner.astro';
+import InGameGallery from '../components/landing/InGameGallery.astro';
 import { getUi } from '../data/i18n';
 import { getLocalizedPath, resolvePageContextFromPath, type PageId } from '../data/i18n/routing';
 import { tarkovImages } from '../data/tarkov';
-import {
-	heroPreloadSrc,
-	heroSizes,
-	heroSrcSet,
-	heroWidth,
-	heroHeight,
-	contentSrcSet,
-	galleryTileSizes,
-} from '../lib/responsive-images';
 import { defaultLocale } from '../data/i18n/locales';
 import { siteConfig } from '../data/site';
 import { getT } from '../i18n/server';
-
-type GalleryInput = string | { src: string; alt: string };
 
 interface Props {
 	title: string;
@@ -29,12 +20,13 @@ interface Props {
 	eyebrow?: string;
 	heroImage?: string;
 	heroAlt?: string;
-	gallery?: ReadonlyArray<GalleryInput>;
+	gallery?: ReadonlyArray<string | { src: string; alt: string }>;
 	galleryTitle?: string;
 	ctaPrimary?: { href: string; label: string; edit?: string };
 	ctaSecondary?: { href: string; label: string };
 	introEdit?: string;
 	showGallery?: boolean;
+	galleryPosition?: 'top' | 'bottom';
 	locale?: import('../data/i18n/locales').LocaleCode;
 	pageId?: import('../data/i18n/content.generated').PageId;
 	extraGraph?: Record<string, unknown>[];
@@ -46,15 +38,13 @@ const {
 	canonicalPath = '/',
 	heading,
 	intro,
-	eyebrow,
 	heroImage = tarkovImages.hero,
 	heroAlt,
-	gallery = tarkovImages.product.slice(0, 3),
-	galleryTitle,
 	ctaPrimary,
 	ctaSecondary,
 	introEdit,
-	showGallery = true,
+	showGallery = false,
+	galleryPosition = 'top',
 	locale = defaultLocale,
 	pageId: pageIdProp,
 	extraGraph = [],
@@ -65,7 +55,6 @@ const resolvedHeroAlt =
 	(heroAlt && heroAlt.trim()) ||
 	t('images.hero') ||
 	`${siteConfig.name} — Escape from Tarkov ESP and aimbot`;
-const resolvedGalleryTitle = galleryTitle ?? t('common.inGameLook');
 
 function resolvePageId(path: string): PageId | undefined {
 	return resolvePageContextFromPath(path).pageId;
@@ -74,29 +63,14 @@ function resolvePageId(path: string): PageId | undefined {
 const pageId = pageIdProp ?? resolvePageId(canonicalPath);
 const ui = getUi(locale);
 const homeHref = getLocalizedPath('home', locale);
-const resolvedEyebrow = eyebrow ?? ui.product.title;
-
-const normalizedGallery = gallery
-	.map((item) => {
-		if (typeof item !== 'string') {
-			const alt = item.alt?.trim() || resolvedHeroAlt;
-			return { src: item.src, alt };
-		}
-		return { src: item, alt: resolvedHeroAlt };
-	})
-	.filter((item) => Boolean(item.src));
 
 const breadcrumbs = [
 	{ label: ui.nav.home, href: homeHref },
 	{ label: heading },
 ];
 
-const whiteBannerTitle = true;
-
-const useHomeHero =
-	heroImage === tarkovImages.hero ||
-	heroImage === siteConfig.defaultOgImage ||
-	heroImage.includes('tarkov-cheats-hero');
+const showGalleryTop = showGallery && galleryPosition !== 'bottom';
+const showGalleryBottom = showGallery && galleryPosition === 'bottom';
 ---
 
 <Layout
@@ -109,498 +83,28 @@ const useHomeHero =
 	locale={locale}
 	pageId={pageId}
 	extraGraph={extraGraph}
-	lcpImage={useHomeHero ? heroPreloadSrc : heroImage.endsWith('.webp') ? heroImage : undefined}
-	lcpImageSrcSet={useHomeHero ? heroSrcSet : contentSrcSet(heroImage)}
-	lcpImageSizes={useHomeHero ? heroSizes : '100vw'}
+	lcpImage="/images/hero-banner.webm"
+	lcpImageSizes="100vw"
 >
 	<Navbar locale={locale} pageId={pageId} />
-	<main class="page">
-		<section class="banner">
-			<div class="banner__media">
-				{
-					useHomeHero ? (
-						<img
-							src={heroPreloadSrc}
-							srcset={heroSrcSet}
-							sizes={heroSizes}
-							alt={resolvedHeroAlt}
-							width={heroWidth}
-							height={heroHeight}
-							class="banner__img"
-							fetchpriority="high"
-							loading="eager"
-							decoding="async"
-						/>
-					) : (
-						<img
-							src={heroImage}
-							{...(contentSrcSet(heroImage)
-								? { srcset: contentSrcSet(heroImage), sizes: '100vw' }
-								: {})}
-							alt={resolvedHeroAlt}
-							width="1280"
-							height="720"
-							class="banner__img"
-							fetchpriority="high"
-							loading="eager"
-							decoding="async"
-						/>
-					)
-				}
-				<div class="banner__scrim" aria-hidden="true"></div>
-			</div>
+	<main class="pubg-page">
+		<InnerPageBanner
+			title={heading}
+			intro={intro}
+			introEdit={introEdit}
+			ctaPrimary={ctaPrimary}
+			ctaSecondary={ctaSecondary}
+		/>
 
-			<div class="shell banner__shell">
-				<div class="banner__content">
-					<nav class="banner__crumbs" aria-label={t('common.breadcrumb')}>
-						<a href={homeHref}>{ui.nav.home}</a>
-						<span aria-hidden="true">/</span>
-						<span aria-current="page">{heading}</span>
-					</nav>
-					<p class="banner__eyebrow">{resolvedEyebrow}</p>
-					<h1 class:list={['banner__title', whiteBannerTitle && 'banner__title--white']}>{heading}</h1>
-					<p class="banner__intro" data-edit={introEdit || undefined}>{intro}</p>
-					{
-						(ctaPrimary || ctaSecondary) && (
-							<div class="banner__actions">
-								{ctaPrimary && (
-									<a
-										class="btn-buy"
-										href={ctaPrimary.href}
-										target={ctaPrimary.href.startsWith('http') ? '_blank' : undefined}
-										rel={ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-									>
-										<span data-edit={ctaPrimary.edit || undefined}>{ctaPrimary.label}</span>
-									</a>
-								)}
-								{ctaSecondary && (
-									<a
-										class="btn btn--ghost"
-										href={ctaSecondary.href}
-										rel={ctaSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-									>
-										{ctaSecondary.label}
-									</a>
-								)}
-							</div>
-						)
-					}
-				</div>
-			</div>
-		</section>
+		{showGalleryTop && <InGameGallery locale={locale} />}
 
-		<div class="shell page__wrap">
-			<article class="article">
+		<div class="shell pubg-page__body">
+			<article class="pubg-article">
 				<slot />
 			</article>
-
-			{
-				showGallery && normalizedGallery.length > 0 && (
-					<section class="gallery-block" aria-labelledby="page-gallery-title">
-						<header class="gallery-block__head">
-							<p class="gallery-block__eyebrow">{t('common.gallery')}</p>
-							<h2 id="page-gallery-title">{resolvedGalleryTitle}</h2>
-						</header>
-						<div class="gallery-block__grid">
-							{normalizedGallery.map((image) => (
-								<figure class="gallery-block__item">
-									<img
-										src={image.src}
-										srcset={contentSrcSet(image.src)}
-										sizes={galleryTileSizes}
-										alt={image.alt}
-										width="800"
-										height="500"
-										loading="lazy"
-										decoding="async"
-									/>
-								</figure>
-							))}
-						</div>
-					</section>
-				)
-			}
 		</div>
+
+		{showGalleryBottom && <InGameGallery locale={locale} />}
 	</main>
 	<SiteFooter locale={locale} />
 </Layout>
-
-<style>
-	.page {
-		overflow-x: clip;
-		padding-bottom: calc(3rem + env(safe-area-inset-bottom, 0px));
-	}
-
-	.banner {
-		position: relative;
-		isolation: isolate;
-		min-height: clamp(16rem, 32vw, 22rem);
-		display: grid;
-		align-items: end;
-		border-bottom: 1px solid var(--line-soft);
-		background: var(--bg);
-	}
-
-	.banner__media {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-		overflow: hidden;
-	}
-
-	.banner__media picture,
-	.banner__img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center center;
-	}
-
-	.banner__scrim {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			90deg,
-			rgba(8, 9, 10, 0.94) 0%,
-			rgba(8, 9, 10, 0.72) 42%,
-			rgba(8, 9, 10, 0.25) 100%
-		);
-	}
-
-	.banner__shell {
-		position: relative;
-		z-index: 1;
-		padding-block: clamp(2.25rem, 4.5vw, 3.25rem) clamp(1.5rem, 3vw, 2.25rem);
-	}
-
-	.banner__content {
-		width: min(100%, 34rem);
-	}
-
-	.banner__crumbs {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.4rem;
-		margin: 0 0 0.75rem;
-		font-size: 0.8rem;
-		color: var(--ink-faint);
-	}
-
-	.banner__crumbs a {
-		color: var(--ink-muted);
-		font-weight: 600;
-	}
-
-	.banner__crumbs a:hover {
-		color: var(--magenta-soft);
-	}
-
-	.banner__eyebrow {
-		margin: 0 0 0.4rem;
-		font-size: 0.72rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--magenta-soft);
-	}
-
-	.banner__title {
-		margin: 0;
-		font-family: var(--font-display);
-		font-size: clamp(1.75rem, 3.6vw, 2.4rem);
-		font-weight: 800;
-		letter-spacing: -0.035em;
-		line-height: 1.1;
-		color: var(--heading);
-	}
-
-	.banner__title--white {
-		color: #fff;
-	}
-
-	.banner__intro {
-		margin: 0.7rem 0 0;
-		color: var(--ink-muted);
-		font-size: 0.975rem;
-		line-height: 1.55;
-	}
-
-	.banner__actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.65rem;
-		margin-top: 1.2rem;
-	}
-
-	.btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 2.5rem;
-		padding: 0.65rem 1.15rem;
-		border-radius: 999px;
-		font-size: 0.9rem;
-		font-weight: 600;
-	}
-
-	.btn--ghost {
-		border: 1px solid color-mix(in srgb, #fff 20%, transparent);
-		color: var(--ink);
-		background: color-mix(in srgb, var(--bg) 40%, transparent);
-	}
-
-	.btn--ghost:hover {
-		border-color: var(--magenta-soft);
-		color: var(--magenta-soft);
-	}
-
-	.page__wrap {
-		display: grid;
-		gap: 2rem;
-		padding-block: clamp(1.5rem, 3vw, 2.25rem) 3rem;
-	}
-
-	.article {
-		width: min(100%, var(--content-max));
-		display: grid;
-		gap: 0.75rem;
-		color: var(--ink-muted);
-		line-height: 1.55;
-	}
-
-	.article :global(.card-panel) {
-		padding: 1.1rem 1.15rem;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		background: var(--bg-panel);
-	}
-
-	.article :global(h2) {
-		margin: 0 0 0.4rem;
-		font-family: var(--font-display);
-		font-size: 1.05rem;
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		color: var(--heading);
-	}
-
-	.article :global(h2.is-title-white) {
-		color: #fff;
-	}
-
-	.article :global(p) {
-		margin: 0;
-		font-size: 0.9375rem;
-	}
-
-	.article :global(ul) {
-		margin: 0.55rem 0 0;
-		padding: 0;
-		list-style: none;
-		display: grid;
-		gap: 0.35rem;
-	}
-
-	.article :global(li) {
-		position: relative;
-		padding-left: 0.95rem;
-		font-size: 0.9rem;
-		color: var(--ink-muted);
-	}
-
-	.article :global(li::before) {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0.55em;
-		width: 0.35rem;
-		height: 0.35rem;
-		border-radius: 999px;
-		background: var(--magenta-soft);
-	}
-
-	.article :global(a) {
-		color: var(--magenta-soft);
-		font-weight: 500;
-	}
-
-	.article :global(a:hover) {
-		color: var(--ink);
-	}
-
-	.article :global(.price-grid) {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.65rem;
-		margin-top: 0.55rem;
-	}
-
-	.article :global(.price-card) {
-		display: grid;
-		gap: 0.2rem;
-		justify-items: center;
-		padding: 1.2rem 0.9rem;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		background: var(--bg-elevated);
-		text-align: center;
-		text-decoration: none;
-		color: inherit;
-		transition: border-color 0.2s ease;
-	}
-
-	.article :global(.price-card:hover) {
-		border-color: color-mix(in srgb, var(--magenta) 40%, var(--line));
-	}
-
-	.article :global(.price-card.is-featured) {
-		border-color: color-mix(in srgb, var(--magenta) 45%, var(--line));
-		background: color-mix(in srgb, var(--magenta) 12%, var(--bg-panel));
-	}
-
-	.article :global(.price-card__label) {
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--ink-faint);
-	}
-
-	.article :global(.price-card__price) {
-		font-family: var(--font-display);
-		font-size: 1.85rem;
-		font-weight: 800;
-		letter-spacing: -0.04em;
-		color: var(--ink);
-	}
-
-	.article :global(.price-card.is-featured .price-card__price) {
-		color: var(--magenta-soft);
-	}
-
-	.article :global(.price-card__meta) {
-		font-size: 0.8rem;
-		color: var(--ink-muted);
-	}
-
-	.gallery-block {
-		width: 100%;
-		display: grid;
-		gap: 0.85rem;
-		content-visibility: auto;
-		contain-intrinsic-size: 1px 420px;
-	}
-
-	.gallery-block__head h2 {
-		margin: 0;
-		font-family: var(--font-display);
-		font-size: 1.15rem;
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		color: #fff;
-	}
-
-	.gallery-block__eyebrow {
-		margin: 0 0 0.3rem;
-		font-size: 0.72rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--magenta-soft);
-	}
-
-	.gallery-block__grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.65rem;
-	}
-
-	.gallery-block__item {
-		margin: 0;
-		overflow: hidden;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		background: var(--bg-elevated);
-		aspect-ratio: 16 / 10;
-	}
-
-	.gallery-block__item img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	@media (max-width: 800px) {
-		.article :global(.price-grid) {
-			grid-template-columns: 1fr;
-		}
-
-		.gallery-block__grid {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-
-	@media (max-width: 760px) {
-		.banner {
-			min-height: min(52svh, 22rem);
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
-		}
-
-		.banner__shell {
-			padding-block: 1.75rem 1.35rem;
-			padding-bottom: max(1.35rem, var(--safe-bottom, env(safe-area-inset-bottom, 0px)));
-		}
-
-		.banner__scrim {
-			background: linear-gradient(
-				180deg,
-				rgba(8, 9, 10, 0.35) 0%,
-				rgba(8, 9, 10, 0.82) 62%,
-				rgba(8, 9, 10, 0.96) 100%
-			);
-		}
-
-		.banner__content {
-			width: 100%;
-			max-width: 100%;
-			min-width: 0;
-		}
-
-		.banner__title {
-			font-size: clamp(1.55rem, 7.5vw, 2rem);
-			overflow-wrap: anywhere;
-		}
-
-		.banner__intro {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 3;
-			overflow: hidden;
-		}
-
-		.banner__actions {
-			flex-direction: column;
-			align-items: stretch;
-		}
-
-		.banner__actions :global(.btn-buy),
-		.banner__actions .btn {
-			width: 100%;
-			min-height: var(--touch-min);
-		}
-
-		.article {
-			width: 100%;
-			min-width: 0;
-		}
-	}
-
-	@media (max-width: 640px) {
-		.gallery-block__grid {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>

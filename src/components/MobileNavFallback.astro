@@ -1,0 +1,22 @@
+---
+/** Close mobile nav drawer when resizing to desktop. */
+---
+<script is:inline>
+	(function () {
+		function closeDrawers() {
+			if (!window.matchMedia('(min-width: 1025px)').matches) return;
+			document.querySelectorAll('.site-nav-drawer[open]').forEach(function (drawer) {
+				drawer.removeAttribute('open');
+			});
+			document.body.classList.remove('nav-lock');
+		}
+
+		document.addEventListener('toggle', function (event) {
+			var drawer = event.target;
+			if (!(drawer instanceof HTMLDetailsElement) || !drawer.classList.contains('site-nav-drawer')) return;
+			document.body.classList.toggle('nav-lock', drawer.open);
+		});
+
+		window.addEventListener('resize', closeDrawers);
+	})();
+</script>

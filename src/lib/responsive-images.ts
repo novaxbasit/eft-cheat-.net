@@ -1,5 +1,5 @@
 /**
- * Responsive image helpers — prefer compressed WebP for LCP and below-fold media.
+ * Responsive image helpers — prefer compressed WebP for below-fold media.
  */
 
 export interface ResponsiveWidth {
@@ -37,29 +37,10 @@ export function contentSrcSet(baseSrc: string): string | undefined {
 	);
 }
 
-/**
- * Homepage / banner hero — native PNG at 1024w so quality is not re-compressed.
- * 640w WebP only for small screens. Native art 1024×409 (~2.5:1).
- */
-export const heroResponsive: ResponsiveWidth[] = [
-	{ src: '/images/tarkov-cheats-hero-640w.webp', width: 640 },
-	{ src: '/images/tarkov-cheats-hero-full.png', width: 1024 },
-];
-
-export const heroDesktopResponsive: ResponsiveWidth[] = heroResponsive;
-
-/** Default LCP src — lossless PNG master (same pixels as the attached hero). */
-export const heroSrc = '/images/tarkov-cheats-hero-full.png';
-export const heroSrcSet = buildSrcSet(heroResponsive);
-export const heroSizes = '100vw';
-
-/** LCP preload — same PNG master. */
-export const heroPreloadSrc = heroSrc;
+/** Default LCP mime when a page does not pass an explicit image type. */
 export const heroMimeType = 'image/png';
 
-/** Exact native dimensions (no zoom crop). */
-export const heroWidth = 1024;
-export const heroHeight = 409;
+export const heroVideoMimeType = 'video/webm';
 
 /** Responsive widths for below-fold content images. */
 export const contentWidths = [480, 960] as const;

@@ -3,296 +3,55 @@ import type { BlogPostDefinition } from './types';
 
 export const blogPosts: BlogPostDefinition[] = [
 	{
-		id: "patch-notes-breakdown",
-		imageKey: "squadFight",
-		published: "2026-07-29",
-		updated: "2026-08-13",
-		category: "Patch Notes",
-		featured: false,
-		translations: {
-		en: {
-		slug: "tarkov-patch-notes-guide",
-		title: "How to Read Escape from Tarkov Patch Notes",
-		metaDescription: "Learn how Escape from Tarkov patch notes change PMC loadouts, ammo economy, and maps. What to do after BattlEye and wipe updates in 2026.",
-		h1: "How to Read Escape from Tarkov Patch Notes Without Guessing",
-		intro: "When Battlestate Games drops a patch, most players skim the headline and queue anyway. That is how you walk into Customs with the wrong ammo and a gun that just lost its armor pen. Here is a calmer way to read Escape from Tarkov patch notes without guessing so your next raid still makes sense.",
-		keywords: ["escape from tarkov patch notes","tarkov wipe update","battleye patch","pmc loadout","tarkov intel"],
-		imageAlt: "Player reviewing Escape from Tarkov patch notes before a PMC raid",
-		sections: [
-			{
-				h2: "What actually matters in a Tarkov patch?",
-				paragraphs: [
-					"Official notes live on <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a>. Treat that page as the source of truth — Discord rumors and streamer hot takes come second. Ask three plain questions for every bullet: Does this change how I kill armored PMCs? Does this change what loot is worth looting? Does this change which extract or map I should run tonight?",
-					"Ammo tables, armor classes, boss spawn rates, and trader unlocks move the real economy. A small recoil tweak on an M4 looks boring in a video title, but it quietly reshapes mid-range fights on Woods and Interchange. Cosmetic lines and UI polish almost never decide whether you survive dorms.",
-					"If you also run third-party tools, separate game balance from anti-cheat maintenance. After a <a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> or client update, check our <a href=\"/updates/\">Tarkov Cheats status page</a> before you blame your own aim.",
-				],
-			},
-			{
-				h2: "Buffs, nerfs, and removed items — a simple framework",
-				paragraphs: [
-					"When an item is removed from raid loot pools, delete it from your mental shopping list the same day. Heavy nerfs demote a weapon from “default kit” to “situational.” Light nerfs are fine if you already shoot cleaner than most lobbies. Buffs deserve a short test block — ten focused raids — before you rebuild your entire stash around them.",
-					"Armor and ammunition changes usually matter more than a single gun’s recoil number. If a popular round loses penetration against class-five plates, your Customs push into three-stacks suddenly needs a different mag. Pair this reading habit with our <a href=\"/blog/tarkov-weapon-tier-list/\">Tarkov weapon tier list</a> so you are not chasing streamer kits that ignore your budget.",
-				],
-			},
-			{
-				h2: "How patches reshuffle loadouts and map plans",
-				paragraphs: [
-					"When mid-range rifles feel strong, prioritize optics and ammo that win 40–70 meter peeks. When healing items get tighter, play more conservatively near extracts and avoid ego third-parties. When a map POI shifts — new locked rooms, moved spawns, boss path changes — rewrite your first three minutes on that map before you farm it for quests.",
-					"Keep cosmetic shop chatter out of patch-day focus. Skin talk is fun; time-to-kill and extract camping patterns are what get you killed. For aggressive Scav timing after a meta shift, see our <a href=\"/blog/tarkov-scav-run-aggressive-strategies/\">Scav run strategies</a>.",
-					"On big mornings, confirm <a href=\"https://www.escapefromtarkov.com/support/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov Support</a> looks healthy before you assume your client is broken. Then run a short checklist: note removed items, update your stash “buy list,” play five intentional raids, and only then lock a new main kit.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-skin-leaks",
-		imageKey: "headerArt",
-		published: "2026-07-27",
-		updated: "2026-08-13",
-		category: "Cosmetics",
-		featured: false,
-		translations: {
-		en: {
-		slug: "tarkov-skin-leaks-guide",
-		title: "Tarkov Cosmetics & Skin Leaks: What Is Worth Buying",
-		metaDescription: "Sensible advice on Escape from Tarkov cosmetics and skin leaks — what to buy on the Flea Market, what to skip, and how looks affect raid readability.",
-		h1: "Tarkov Cosmetics and Skin Leaks: Buy Smart, Not Impulsive",
-		intro: "Buy Tarkov cosmetics and skin leaks smart, not impulsive. Leaks make every wipe feel like a fashion drop. Before you dump roubles into another loud outfit, decide whether the skin helps you play Escape from Tarkov — or just looks cool in a screenshot.",
-		keywords: ["tarkov skins","tarkov cosmetics","flea market skins","escape from tarkov apparel","tarkov intel"],
-		imageAlt: "Escape from Tarkov character cosmetics and gear appearance options",
-		sections: [
-			{
-				h2: "Why most impulse cosmetic buys feel bad after a week",
-				paragraphs: [
-					"Shop rotations and official apparel come from <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a>. Leaks are entertainment, not a shopping list. Many players spend hard-earned flea money the night before a wipe, then realize they still need meds, ammo, and a backup kit.",
-					"Controversial but useful: most cosmetics do not raise your survival rate. Some loud patterns even make you easier to spot in bushes on Woods or in dark Interchange hallways. Pros often prefer quieter silhouettes so enemy outlines stay readable in chaotic peeks.",
-				],
-			},
-			{
-				h2: "A simple worth-it checklist for Tarkov cosmetics",
-				paragraphs: [
-					"Buy if you will still wear it in ninety days and it stays readable in night raids. Pause if it overlaps three outfits you already own. Skip FOMO bundles packed with fillers you will never equip. Always keep a rouble floor for ammo and healing before fashion.",
-					"Do the math on bundles. Paying extra for two fillers you hate is worse than waiting for a single piece on the Flea Market. If a leak only hypes one jacket, wait for confirmation instead of panic-buying a full set.",
-				],
-			},
-			{
-				h2: "How to use leaks without getting played",
-				paragraphs: [
-					"Treat late-wipe leak waves as theme previews, not release dates. Decide a budget before something hits the store, not during the five-minute panic. A quiet daily habit works: open the shop for one minute, check your wishlist, then leave.",
-					"For competitive readability tips that actually affect fights, pair this with our <a href=\"/blog/tarkov-pro-settings-guide/\">pro settings guide</a>. Looking clean matters less than seeing the other PMC first.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-weapon-tier-list",
-		imageKey: "aimbotCombat",
-		published: "2026-07-25",
-		updated: "2026-08-13",
-		category: "Weapons",
-		featured: true,
-		translations: {
-		en: {
-		slug: "tarkov-weapon-tier-list",
-		title: "Tarkov Weapon Tier List: Best Guns for Raids",
-		metaDescription: "A practical Escape from Tarkov weapon tier list for PMC and Scav raids — ARs, SMGs, bolt-actions, ammo, and when each gun actually wins fights.",
-		h1: "Tarkov Weapon Tier List: What Wins Raids in 2026",
-		intro: "Creator tier lists love flashy guns. Escape from Tarkov rewards expected value: armor penetration, recoil you can control, and a kit you can rebuild after you die. Here is how to rank weapons for what wins raids in 2026 — not highlight reels.",
-		keywords: ["tarkov weapon tier list","best tarkov guns","tarkov meta weapons","m4a1 tarkov","tarkov intel"],
-		imageAlt: "Escape from Tarkov weapons laid out for a PMC loadout comparison",
-		sections: [
-			{
-				h2: "How should you define S-tier in Tarkov?",
-				paragraphs: [
-					"S-tier means the best expected value across a hundred PMC fights on maps like Customs, Woods, and Interchange — not the gun that looks strongest in a controlled offline range. Mid-range rifles win many of the fights that actually decide raids: forty to seventy meters through doorways, parking lots, and tree lines.",
-					"Shotguns still own tight interiors. Bolt-actions still punish long peeks on Shoreline and Lighthouse. Everything between those extremes is usually assault-rifle country, which is why a well-built M4A1 or similar 5.56 platform stays relevant wipe after wipe when ammo and mods are available.",
-					"Always re-check live values after patches on <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a>. The hierarchy logic stays useful even when numbers nudge.",
-				],
-			},
-			{
-				h2: "Ammo, TTK, and peek discipline matter more than brand names",
-				paragraphs: [
-					"Time-to-kill in Tarkov is really time-to-pen. A soft gun with the right rounds beats a loud meta rifle feeding trash ammo into class-five armor. Learn which rounds you can afford this wipe, then pick a platform that controls recoil at your skill level.",
-					"First-shot accuracy decides many peeks. A clean cadence — peek, fire a short burst, jiggle back, re-peek — beats standing still for ego sprays. Pair this mid-range plan with loot discipline from our <a href=\"/blog/tarkov-loot-routes-guide/\">loot routes guide</a> so you actually spawn with the ammo you planned to use.",
-				],
-			},
-			{
-				h2: "Loadout pairings and common mistakes",
-				paragraphs: [
-					"A durable kit is usually a reliable mid rifle, a close-range option for dorms or Factory, enough meds, and an armor class you can replace after deaths. In Scav runs, that same spine supports the aggression patterns in our <a href=\"/blog/tarkov-scav-run-aggressive-strategies/\">Scav strategies article</a>.",
-					"Common mistakes: full-spraying from eighty meters, re-peeking the same pixel, swapping to an SMG at forty meters out of habit, and never practicing controlled bursts offline. If you also use aim-assist tooling, lock sensitivity and fundamentals first, then review <a href=\"/tarkov-aimbot/\">Tarkov aimbot settings</a>.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-scav-run-meta",
-		imageKey: "battleRoyaleCombat",
-		published: "2026-07-22",
-		updated: "2026-08-13",
-		category: "Scav Runs",
-		featured: true,
-		translations: {
-		en: {
-		slug: "tarkov-scav-run-aggressive-strategies",
-		title: "Tarkov Scav Run Strategies That Actually Print Loot",
-		metaDescription: "Five aggressive but smart Escape from Tarkov Scav strategies — timings, extracts, third-parties, and how to leave raids with gear instead of empty pockets.",
-		h1: "Tarkov Scav Run Strategies: How to Leave With Gear",
-		intro: "How to leave with gear: Tarkov Scav run strategies help you extract with loot. Passive Scav players wait behind a bush while two PMC teams erase each other, then spray into the mess and die. Strong Scav runs manufacture a short advantage, grab what matters, and extract before the map collapses on you.",
-		keywords: ["tarkov scav run","scav strategies","escape from tarkov scav","tarkov extracts","tarkov esp"],
-		imageAlt: "Scav player moving toward extract with loot in Escape from Tarkov",
-		sections: [
-			{
-				h2: "Why so many Scav runs feel soft",
-				paragraphs: [
-					"Scav kits are random, timers are limited, and player Scavs can turn on you. Waiting forever for a “perfect” third-party often means you arrive late to a wiped lobby with nothing left. Information tools like <a href=\"/tarkov-esp/\">Tarkov ESP</a> can help you see fights early — but you still need an exit plan.",
-					"Decide your extract before you swing. Take a clear damage window, grab high-value loot, then leave. The usual third-party clock in hot POIs is only a few seconds long once gunfire starts.",
-				],
-			},
-			{
-				h2: "Five aggressive habits that still work",
-				paragraphs: [
-					"Pre-aim common corners on Customs dorms and Interchange tech stores so you clear angles in under a second. Enter rooms with an exit path, not a panic turn. Fake one side of a doorway, then finish from the safer angle when their magazine is weak.",
-					"Stay close to hard cover while you move — never more than a short sprint from a wall or vehicle. Pressure late rotates near extracts when players are silhouetted and greedy. Mode rules evolve with <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a> wipes; the geometry of first-shot advantage does not.",
-				],
-			},
-			{
-				h2: "Warmup checklist before you queue a Scav",
-				paragraphs: [
-					"Know your map’s main extracts, bring a simple med plan, and pick two POIs with cover ladders instead of open fields. Pair this article with <a href=\"/blog/tarkov-loot-routes-guide/\">loot routes</a>, <a href=\"/blog/tarkov-weapon-tier-list/\">weapon tiers</a>, and <a href=\"/blog/tarkov-warmup-maps-ranked/\">warmup routines</a>.",
-					"Try one session where you force early contact only when you have armor and a usable gun — then track whether you extracted before the third-party window closed.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-tournament-meta",
-		imageKey: "rebootFight",
-		published: "2026-07-20",
-		updated: "2026-08-13",
-		category: "Competitive",
-		featured: false,
-		translations: {
-		en: {
-		slug: "tarkov-tournament-meta-guide",
-		title: "What Competitive Tarkov Players Optimize For",
-		metaDescription: "What strong Escape from Tarkov competitors optimize — spawn plans, loadouts, mid-raid habits, and which tournament habits help normal PMC queues.",
-		h1: "What Competitive Tarkov Players Optimize For",
-		intro: "Competitive Tarkov players optimize for expected value. Tournament winners and high-level duos are not lucky spawn gods. They pick safer loot paths, cleaner mid-raid habits, and fights they choose on purpose. Here is what translates into your normal Escape from Tarkov queues.",
-		keywords: ["tarkov competitive","tarkov tournament","tarkov meta","pmc habits","tarkov intel"],
-		imageAlt: "Competitive Escape from Tarkov players reviewing raid strategy",
-		sections: [
-			{
-				h2: "Watch competitive VODs like a coach, not a fan",
-				paragraphs: [
-					"Start with schedules and film from <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a> community events or trusted creators, then tag habits instead of memorizing a single POI name. Note the landing plan, first heal, first rotate, first voluntary fight, and the key late-raid decision.",
-					"Five clear timestamps beat a full passive watch. You are stealing decision patterns, not cosplaying someone else’s spawn.",
-				],
-			},
-			{
-				h2: "Spawn EV and loadout patterns that keep showing up",
-				paragraphs: [
-					"Score every spawn on contest rate, loot quality in the first few minutes, extract pain, exit paths, and split potential with teammates. Edge spawns with clean exits often beat “sexy” mid-map landmarks that look good on stream and then get third-partied.",
-					"Expect a reliable mid rifle, a close-range option, mobility or stamina management, and enough meds. High-tier loot is taken when free, not forced — matching the mindset in our <a href=\"/blog/tarkov-weapon-tier-list/\">weapon tier list</a>.",
-				],
-			},
-			{
-				h2: "What actually translates to normal raids",
-				paragraphs: [
-					"Steal loot-timer discipline, a simple loadout spine, earlier rotates, and selective fights. Do not blindly mirror a trio drop when you solo queue. Winners rotate early enough to choose sides — the same idea shows up in our <a href=\"/blog/tarkov-scav-run-aggressive-strategies/\">Scav aggression guide</a>.",
-					"Try this: watch fifteen minutes of a strong VOD with five timestamps. Steal one mid-raid habit only. Run it for a six-raid PMC block before adding another.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-loot-routes",
-		imageKey: "battleRoyaleIslandMap",
-		published: "2026-07-18",
-		updated: "2026-08-13",
-		category: "Loot Routes",
-		featured: true,
-		translations: {
-		en: {
-		slug: "tarkov-loot-routes-guide",
-		title: "Tarkov Loot Routes That Leave Spawn Ready to Fight",
-		metaDescription: "High-percentage Escape from Tarkov loot routes for Customs, Woods, and Interchange — how to leave spawn with guns, armor, and meds that win mid-raid fights.",
-		h1: "Tarkov Loot Routes: Leave Spawn Ready to Fight",
-		intro: "Tarkov loot routes help you leave spawn ready to fight. Winning in Escape from Tarkov starts before the first gunfight. Random looting gets you killed with a pistol and no meds. These route habits consistently convert a spawn into a kit you can actually fight with.",
-		keywords: ["tarkov loot routes","customs loot path","interchange loot","tarkov spawn guide","tarkov esp"],
-		imageAlt: "Loot route planning across an Escape from Tarkov map",
-		sections: [
-			{
-				h2: "Why early inventory is the real bottleneck",
-				paragraphs: [
-					"Many early raid deaths happen because players loot like tourists. Strong players treat the first ninety seconds like a shopping list: usable gun, enough ammo, basic armor, and a heal. Drop spot matters less than sequence — a mediocre POI with discipline beats a stacked landmark with panic looting.",
-					"Secure a primary weapon and meds before hunting kills. Early ego chases are how hot-spawn players stay broke.",
-				],
-			},
-			{
-				h2: "Three route archetypes that keep printing gear",
-				paragraphs: [
-					"Contested edge POI: land outer loot, snake inward, leave before late third parties. Uncontested chain: sacrifice early fights for a fuller kit by minute three. Mid-map surge: vacuum piles ninety to one hundred fifty seconds after hot spawns empty out.",
-					"Timing targets help: first gun quickly, clear a cluster, grab heals, then upgrade or leave. Slot priority is usually gun, ammo, armor, meds, then flex loot. POI names shift with <a href=\"https://www.escapefromtarkov.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov</a> wipes — keep the geometry, not just the landmark brand.",
-				],
-			},
-			{
-				h2: "Convert a strong spawn into a win",
-				paragraphs: [
-					"Pair these routes with <a href=\"/blog/tarkov-scav-run-aggressive-strategies/\">Scav aggression</a> and <a href=\"/blog/tarkov-weapon-tier-list/\">weapon tiers</a>. Leave spawn rich so mid-raid becomes a skill check instead of a scavenger panic.",
-					"If you practice with loot markers, read <a href=\"/tarkov-esp/\">Tarkov ESP</a> for category toggles — then still run the timer so your habits stay sharp without overlays.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-pro-settings",
+		id: "worth",
 		imageKey: "cheatsPackage",
-		published: "2026-07-12",
-		updated: "2026-08-13",
-		category: "Settings",
-		featured: false,
+		published: "2026-08-20",
+		updated: "2026-09-11",
+		category: "Opinion",
+		featured: true,
 		translations: {
 		en: {
-		slug: "tarkov-pro-settings-guide",
-		title: "Tarkov Pro Settings That Actually Help You See Enemies",
-		metaDescription: "Practical Escape from Tarkov settings used by strong players — visibility, audio cues, sensitivity, and what to copy vs ignore from pro configs.",
-		h1: "Tarkov Settings Guide: See More, Panic Less",
-		intro: "This Tarkov settings guide helps you see more and panic less. Copying a champion’s entire config will not make you one. But a few Escape from Tarkov settings reliably improve visibility, audio reads, and aim consistency. Here is what is worth stealing.",
-		keywords: ["tarkov settings","tarkov sensitivity","tarkov visibility","tarkov audio settings","tarkov intel"],
-		imageAlt: "Escape from Tarkov graphics and control settings menu",
+		slug: "worth",
+		title: "Are Tarkov Cheats Worth It?",
+		metaDescription: "Honest take on whether Tarkov cheats are worth it for raids — time saved, wipe grind, ESP vs aimbot value. Monthly $35 or lifetime $150.",
+		h1: "Are Tarkov Cheats Worth It?",
+		intro: "I asked the same question before I bought. After three wipes playing vanilla, I was tired of dying with quest items and losing hours on loot routes I already knew. This is the math I used — not hype from a reseller page.",
+		keywords: ["tarkov cheats worth it","are tarkov cheats worth it","eft cheats worth it","should i buy tarkov cheats"],
+		imageAlt: "Tarkov cheats license for raids on Windows PC",
 		sections: [
 			{
-				h2: "Visibility and performance before fancy numbers",
+				h2: "When it pays off",
 				paragraphs: [
-					"If your frame rate collapses in Streets of Tarkov or Interchange interiors, no sensitivity tip will save you. Prioritize a stable FPS and readable shadows over maximum eye candy. Many strong players lower clutter so PMC silhouettes pop sooner in tree lines and warehouse lighting.",
-					"Test changes in offline mode or a quiet Scav before locking them for serious PMC raids. Your eyes adapt in a few sessions — give settings that long before declaring them useless.",
+					"If your goal is loot and extract, player ESP and loot ESP save real time. You see PMCs before they see you, skip dead raids early, and route to high-value spots on Interchange, Streets, and Labs without opening every drawer.",
+					"Aimbot matters when you take fights — Factory stairwells, Dorms third floor, Labs raider pushes. A tight FOV aimbot with vis check turned a lot of 50/50 duels into extracts for me. No recoil in Misc helps spray control without looking like a rage clip.",
+					"Streamproof overlay mattered because I stream sometimes. ESP and menus stay off OBS on most capture tools. That is included here — some competitors charge extra or ship a separate “stream safe” build.",
+					"I tracked one wipe: vanilla I averaged two profitable extracts per night. With loot ESP and light player ESP I doubled that without touching aimbot — mostly by leaving raids earlier when a third party was already in the building.",
 				],
 			},
 			{
-				h2: "Sensitivity, ADS, and muscle memory",
+				h2: "When it does not",
 				paragraphs: [
-					"Pick one hip-fire and ADS relationship and stick with it for at least a week. Constantly rewriting sens after every death trains nothing. Warm up with the routine in our <a href=\"/blog/tarkov-warmup-maps-ranked/\">warmup guide</a> so your hands match the new numbers.",
-					"If you later add soft aim tooling, match the in-game sens first, then tune FOV in the <a href=\"/tarkov-aimbot/\">aimbot guide</a>. Tools on top of a chaotic sens feel robotic and obvious.",
+					"Cheats do not replace map knowledge. You still need extracts, quest triggers, and raid timing. I died plenty of times with full ESP because I pushed a fight I should have walked away from.",
+					"This license is for main Tarkov raids only. Arena needs a separate key. If you only play Arena, this product is not for you — read <a href=\"/blog/arena/\">raids vs Arena key</a> before checkout.",
+					"After every BSG or BattlEye patch, undetected is temporary. If Status is red, wait. No cheat is worth a ban on an account you care about during a rebuild window.",
+					"If you are brand new to Tarkov, spend a few raids learning extracts first. ESP does not teach you where the ZB-1011 door is on Customs.",
 				],
 			},
 			{
-				h2: "Audio cues that win extracts",
+				h2: "Cost vs time",
 				paragraphs: [
-					"Footsteps, magazine reloads, and extract buzzing often matter more than a tiny graphics slider. Use headphones, keep voice chat from drowning game audio, and learn the sound difference between a scav AI shuffle and a player PMC push.",
-					"Settings are leverage, not a cheat code. Pair them with map knowledge from our <a href=\"/blog/tarkov-loot-routes-guide/\">loot routes</a> article so you know where those sounds are coming from.",
+					"Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, and streamproof overlay on both — see <a href=\"/pricing/\">Store</a>.",
+					"I started monthly during one wipe, tracked how many extra extracts I got, then moved to lifetime when break-even looked obvious. Plan math: <a href=\"/blog/monthly/\">monthly vs lifetime</a>.",
+					"Compared to buying keys on a marketplace and hoping the seller answers Discord, one official product page with Status, Setup, and Support was worth the price to me.",
+					"Compare that to buying a red keycard once and dying in Labs anyway — the license paid for itself in rubles saved on gear tax, not just speed.",
+				],
+			},
+			{
+				h2: "Before you buy",
+				paragraphs: [
+					"Check <a href=\"/updates/\">Status</a> after patches. Read <a href=\"/blog/compare/\">how to compare cheat sites</a> if you are still shopping Cosmo Cheats, Phoenix, CheatVault, Ghostware, or Kernaim.",
+					"Cloud DMA is required for full functionality on Windows 10/11 with HVCI, TPM, and Secure Boot on. Setup walkthrough: <a href=\"/blog/dma/\">Cloud DMA</a>.",
+					"Read buyer reviews on <a href=\"/reviews/\">Reviews</a> and cross-check <a href=\"/blog/cosmo/\">Cosmo Cheats</a>, <a href=\"/blog/phoenix/\">Phoenix</a>, and <a href=\"/blog/cheatvault/\">CheatVault</a> before you pick a provider.",
 				],
 			}
 		],
@@ -300,90 +59,125 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "tarkov-warmup-maps",
+		id: "compare",
+		imageKey: "cheatsPackage",
+		published: "2026-08-19",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: true,
+		translations: {
+		en: {
+		slug: "compare",
+		title: "How to Compare Tarkov Cheat Sites",
+		metaDescription: "Compare Tarkov cheat sites in 2026 — Cosmo Cheats, Phoenix, CheatVault, features, pricing, Status, and raids vs Arena. Buyer checklist before you pay.",
+		h1: "Compare Cheat Sites",
+		intro: "Every Tarkov cheat site claims undetected. The useful comparisons are boring: what is in the license, what happens after a patch, and whether support answers with your order ID. Here is the checklist I use before I pay anyone.",
+		keywords: ["compare tarkov cheats","best tarkov cheats 2026","tarkov cheat sites comparison","cosmo cheats vs phoenix tarkov","tarkov cheats review"],
+		imageAlt: "Compare Tarkov cheat providers before buying",
+		sections: [
+			{
+				h2: "Features in one license",
+				paragraphs: [
+					"Count what is actually included without upsells. Player ESP, loot ESP, aimbot, no recoil, streamproof overlay, and Cloud DMA should be clear on one Features page — not spread across three SKUs.",
+					"Loot ESP with price filters matters for farming. Some sites sell ESP-only cheap and aimbot separate. Here everything is one plan: <a href=\"/features/\">Features</a>.",
+					"Ask if the key covers raids or Arena. Many providers split modes. This product is raids-only; Arena is a separate key — <a href=\"/blog/arena/\">raids vs Arena</a>.",
+					"Write down your playstyle: loot farmer, quest rusher, or PvP main. That tells you whether loot ESP filters matter more than aimbot Humanizer-style randomization on another site.",
+				],
+			},
+			{
+				h2: "Status and patches",
+				paragraphs: [
+					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> updates often. A good provider posts a live Status page after game patches and tells you when the loader is safe again. If they only post “undetected” in Discord with no date, treat that as a red flag.",
+					"I check Status before every session. After a big wipe patch I wait until the note says the build is signed off — even if friends say they are “fine.”",
+					"Compare patch communication across sites: CheatVault listings vary by seller; Cosmo Cheats, Phoenix, Ghostware, and Kernaim each run their own status pages. Read each before launch — our live page is <a href=\"/updates/\">Status</a>.",
+					"Screenshot the status page with the date when you buy. If support argues later, you have proof of what was live that day.",
+				],
+			},
+			{
+				h2: "Pricing and support",
+				paragraphs: [
+					"Here: monthly $35 for 31 days, lifetime $150, instant email delivery. No hidden “loader fee” or spoofer upsell on the same checkout.",
+					"Support should answer with an order ID on setup, billing, and HWID resets. If a marketplace seller ghosts you after payment, you have no recourse.",
+					"Side-by-side writeups: <a href=\"/blog/cosmo/\">vs Cosmo Cheats</a>, <a href=\"/blog/phoenix/\">vs Phoenix</a>, <a href=\"/blog/cheatvault/\">vs CheatVault</a>, <a href=\"/blog/ghostware/\">vs Ghostware</a>, <a href=\"/blog/kernaim/\">vs Kernaim</a>.",
+					"Reseller keys on forums often have no refund path. Official checkout with email delivery and order ID is easier to dispute.",
+				],
+			},
+			{
+				h2: "My short list",
+				paragraphs: [
+					"Match the product to how you play: loot runs need loot ESP; PvP-heavy wipes need aimbot you can tune low.",
+					"When Status is green, buy on <a href=\"/pricing/\">Store</a>. First-time setup: <a href=\"/blog/buy/\">how to buy</a> and <a href=\"/blog/week/\">my first week</a>.",
+					"If two sites look identical on features, pick the one with clearer Arena vs raids wording and a public Status URL.",
+				],
+			},
+			{
+				h2: "Quick checklist",
+				paragraphs: [
+					"□ Status page with date □ Raids vs Arena clear □ Loot ESP filters □ Streamproof included □ Email support with order ID □ Cloud DMA docs",
+					"Popular comparisons: <a href=\"/blog/cosmo/\">Cosmo Cheats</a> · <a href=\"/blog/phoenix/\">Phoenix</a> · <a href=\"/blog/cheatvault/\">CheatVault</a>. All checked here — <a href=\"/features/\">Features</a>.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "cheatvault",
 		imageKey: "playerEsp",
-		published: "2026-07-10",
-		updated: "2026-08-13",
-		category: "Warmup",
-		featured: false,
-		translations: {
-		en: {
-		slug: "tarkov-warmup-maps-ranked",
-		title: "Tarkov Warmup Routine Before Serious PMC Raids",
-		metaDescription: "A short Escape from Tarkov warmup routine before PMC raids — aim, peeks, audio focus, and what to practice offline so your first fight is not your warmup.",
-		h1: "Tarkov Warmup Routine Before You Queue PMC",
-		intro: "Use a Tarkov warmup routine before you queue PMC. Queuing cold into Factory or dorms is how you donate a kit. A short Escape from Tarkov warmup — even ten to fifteen minutes — makes your first real fight feel like your third.",
-		keywords: ["tarkov warmup","tarkov aim practice","pmc warmup routine","tarkov offline practice","tarkov intel"],
-		imageAlt: "Player warming up aim before an Escape from Tarkov PMC raid",
-		sections: [
-			{
-				h2: "Why your first raid should not be the warmup",
-				paragraphs: [
-					"Most players boot the game, slap on a kit, and die to the first clean peeker. Hands are cold, audio is not dialed, and map timing feels off. Treat warmup as part of the session, not optional fluff.",
-					"Offline practice, shooting range habits, and a couple of low-stakes Scav runs exist so your expensive PMC kit is not the experiment.",
-				],
-			},
-			{
-				h2: "A simple 15-minute routine that scales",
-				paragraphs: [
-					"Minutes 1–5: tracking and short bursts on a range or offline bots. Minutes 6–10: peek practice on common angles — jiggle, counter-strafe, pre-aim head height. Minutes 11–15: one focused Scav or offline fight block where you only work one habit, like holding an extract or clearing a room.",
-					"Keep the routine identical for a week so improvements are measurable. Rotate maps later — Customs one day, Woods the next — after the habit sticks.",
-				],
-			},
-			{
-				h2: "What to do right before you ready up",
-				paragraphs: [
-					"Check stash meds and ammo, confirm your map extracts, and skim <a href=\"/updates/\">cheat status</a> if you use overlays after a patch. Pair warmup with <a href=\"/blog/tarkov-pro-settings-guide/\">settings</a> and <a href=\"/blog/tarkov-weapon-tier-list/\">weapon tiers</a> so you are not reinventing the kit every night.",
-					"If the first two PMC deaths feel mechanical, stop stacking kits and repeat five minutes of peek practice. Ego queueing while tilted is not a strategy.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-cheats-complete-guide",
-		imageKey: "espWallhack",
-		published: "2026-07-30",
-		updated: "2026-08-13",
-		category: "Cheats Guide",
+		published: "2026-08-18",
+		updated: "2026-09-11",
+		category: "Comparison",
 		featured: true,
 		translations: {
 		en: {
-		slug: "tarkov-cheats-complete-guide-2026",
-		title: "Tarkov Cheats 2026: Complete Undetected Guide",
-		metaDescription: "A clear 2026 guide to tarkov cheats — what ESP, soft aim, and radar actually do in Escape from Tarkov, how BattlEye maintenance works, and how to buy safely.",
-		h1: "Tarkov Cheats in 2026: What They Are and How to Use Them Carefully",
-		intro: "Tarkov cheats in 2026 exist — use them carefully. People search “tarkov cheats” for a simple reason: Escape from Tarkov is information-heavy, punishing, and full of extract campers. This guide explains what modern undetected packages actually include, how BattlEye maintenance works, and how to decide whether a tool fits your play style.",
-		keywords: ["tarkov cheats","undetected tarkov cheats","tarkov esp","tarkov aimbot","battleye"],
-		imageAlt: "Overview of Tarkov Cheats ESP soft aim and radar tools for 2026",
+		slug: "cheatvault",
+		title: "Escape from Tarkov Cheats vs CheatVault",
+		metaDescription: "Escape from Tarkov Cheats vs CheatVault — one license vs marketplace listings, pricing, support, and what to check before you buy Tarkov cheats.",
+		h1: "vs CheatVault",
+		intro: "CheatVault is a marketplace: many sellers, many products, prices all over the map. I compared it to buying direct from this site when I was shopping for Tarkov raids cheats.",
+		keywords: ["tarkov cheats vs cheatvault","cheatvault tarkov","cheatvault eft cheats","cheatvault comparison"],
+		imageAlt: "Escape from Tarkov Cheats compared to CheatVault marketplace",
 		sections: [
 			{
-				h2: "What do people mean when they say tarkov cheats?",
+				h2: "Marketplace vs one product",
 				paragraphs: [
-					"In plain language, tarkov cheats are third-party tools that add information or aim assistance on top of the Escape from Tarkov client. The common stack is ESP wallhack for players and loot, a 2D radar for threats outside your view, and configurable soft aim for firefights. One license should cover that loop instead of forcing you to juggle separate downloads.",
-					"Searchers also say “escape from tarkov cheats,” “eft hacks,” or “tarkov wallhack.” Those phrases usually point at the same intent: survive raids with better reads. Start at our <a href=\"/tarkov-cheats/\">tarkov cheats pillar</a> if you want the product overview without the long essay.",
+					"CheatVault lists multiple Tarkov cheats from different teams. Features, update speed, and support quality depend on which listing you pick — not the marketplace brand.",
+					"Escape from Tarkov Cheats is one product: player ESP, loot ESP, aimbot, no recoil, streamproof overlay, Cloud DMA. Same menu on monthly and lifetime. Full list: <a href=\"/features/\">Features</a>.",
+					"On a marketplace you might buy ESP from seller A and find aimbot is a second key from seller B. Here it is one license for raids.",
+					"On CheatVault the same game can have three “undetected” listings with different loaders. You are trusting the seller, not the marketplace brand.",
 				],
 			},
 			{
-				h2: "ESP, soft aim, and radar — what each tool is for",
+				h2: "Pricing",
 				paragraphs: [
-					"ESP answers “who is near me and what is worth looting?” Soft aim answers “can I finish the fight once I choose it?” Radar answers “is someone flanking while I heal?” Used together, they cover information and combat. Used badly, they create noisy overlays and obvious aim corrections.",
-					"Deep dives live on <a href=\"/tarkov-esp/\">ESP</a>, <a href=\"/tarkov-aimbot/\">aimbot</a>, <a href=\"/tarkov-esp/\">wallhack</a>, and <a href=\"/tarkov-radar-hack/\">radar</a>. Read those before you buy if you only need one job done well.",
+					"CheatVault prices swing by seller — daily keys, weekly subs, lifetime from different shops. Cheap listings often mean reseller markup or an old build.",
+					"This site: $35 for 31 days or $150 lifetime. No auction-style pricing. Compare plans: <a href=\"/blog/monthly/\">monthly vs lifetime</a> and <a href=\"/pricing/\">Store</a>.",
+					"Hidden costs to watch on any marketplace: HWID reset fees, “premium support” tiers, or a spoofer sold separately.",
+					"A $8 daily key sounds cheap until you play four weeks every wipe — run the monthly math on <a href=\"/pricing/\">Store</a> before you stack daily keys.",
 				],
 			},
 			{
-				h2: "BattlEye, “undetected,” and honest expectations",
+				h2: "Updates and support",
 				paragraphs: [
-					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> protects Escape from Tarkov. No seller can promise permanent undetected status. What a serious vendor can offer is maintenance: rebuilds after patches, a public status note, and clear setup steps. That workflow is documented on <a href=\"/tarkov-cheats/\">undetected tarkov cheats</a> and <a href=\"/updates/\">BattlEye maintenance</a>.",
-					"Before every patch-day queue, read <a href=\"/updates/\">Updates</a>. If status is quiet, wait. Responsible settings matter as much as the binary itself.",
+					"After a BattlEye patch, marketplace sellers update at different speeds. You might get a Discord ping from one seller while another listing still shows green from last week.",
+					"We post live notes on <a href=\"/updates/\">Status</a>. Email support@eftcheat.net with your order ID — not a random reseller ticket queue.",
+					"If you still buy on CheatVault, verify the seller’s status channel the same day you launch Tarkov. Treat “undetected” without a date as unknown.",
+					"When BattlEye drops a Friday patch, good sellers post within hours. Bad sellers leave the listing green until Monday.",
 				],
 			},
 			{
-				h2: "How to buy and set up without wasting a night",
+				h2: "Which I picked",
 				paragraphs: [
-					"Compare monthly and lifetime on <a href=\"/pricing/\">Pricing</a>, then follow <a href=\"/setup/\">Setup</a> after delivery. Keep your order ID ready for <a href=\"/support/\">Support</a>. If you are still shopping, the <a href=\"/blog/escape-from-tarkov-cheats-buyers-guide/\">buyers guide</a> lists the checklist we wish every shopper used.",
-					"Tarkov Cheats is built for Windows PC PMC and Scav play. It will not replace map knowledge — it amplifies the reads you already practice in raids.",
+					"I wanted one known feature set for raids, streamproof included, and a Status page I could check before every wipe weekend.",
+					"More comparisons: <a href=\"/blog/ghostware/\">vs Ghostware</a>, <a href=\"/blog/kernaim/\">vs Kernaim</a>. Buy path: <a href=\"/blog/buy/\">how to buy</a>.",
+					"I still read CheatVault for price checks — then buy direct when I want one known raids build.",
+				],
+			},
+			{
+				h2: "Bottom line",
+				paragraphs: [
+					"CheatVault is useful for price discovery across sellers. This site is one product, one Status page, one support email — better when you want a known raids menu without guessing which listing is current.",
+					"When Status is green: <a href=\"/pricing/\">Store</a>. Compare first: <a href=\"/blog/compare/\">compare cheat sites</a>.",
 				],
 			}
 		],
@@ -391,83 +185,363 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "escape-from-tarkov-cheats-buyers-guide",
+		id: "ghostware",
+		imageKey: "playerEsp",
+		published: "2026-08-17",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: false,
+		translations: {
+		en: {
+		slug: "ghostware",
+		title: "Escape from Tarkov Cheats vs Ghostware",
+		metaDescription: "Escape from Tarkov Cheats vs Ghostware — features, loot ESP, pricing, raids license, and Cloud DMA compared for Windows PC.",
+		h1: "vs Ghostware",
+		intro: "Ghostware is another name that comes up when people search Tarkov cheats. I lined up their typical full-package pitch against this license before I renewed for another wipe.",
+		keywords: ["tarkov cheats vs ghostware","ghostware tarkov cheats","ghostware eft","ghostware comparison tarkov"],
+		imageAlt: "Escape from Tarkov Cheats vs Ghostware feature comparison",
+		sections: [
+			{
+				h2: "Feature overlap",
+				paragraphs: [
+					"Ghostware-style full packages usually advertise ESP, aimbot, and misc combat helpers. Loot ESP depth varies — price filters, container tags, and corpse loot are not always in the base tier.",
+					"This license includes player ESP (PMC, Scav, boss, bot), loot ESP with minimum price and categories, aimbot with FOV and vis check, no recoil, and streamproof overlay. Raids only — not Arena.",
+					"Check their current feature list on their site before you assume parity. Our locked list is on <a href=\"/features/\">Features</a> and <a href=\"/tarkov-esp/\">ESP</a>.",
+					"Ask Ghostware support if loot ESP includes corpse search and minimum price or only ground loot. Small menu gaps matter on Streets.",
+				],
+			},
+			{
+				h2: "Pricing model",
+				paragraphs: [
+					"Ghostware often sells tiered subs — shorter keys cost less per day but add up if you play every wipe. Lifetime deals exist on some products but read what “lifetime” means (product lifetime vs account lifetime).",
+					"Here: monthly $35 for 31 days, lifetime $150 once. Same features on both. No separate “ESP-only” checkout unless you choose not to use aimbot in-menu.",
+					"Plan breakdown: <a href=\"/blog/monthly/\">monthly vs lifetime</a>.",
+					"Weekly subs add up fast during a long wipe. Calculate 31-day cost vs lifetime on any site before you auto-renew.",
+				],
+			},
+			{
+				h2: "Cloud DMA and setup",
+				paragraphs: [
+					"Both serious Tarkov products expect modern Windows security settings. Cloud DMA is required here for full functionality — HVCI, TPM, Secure Boot on.",
+					"Ghostware may document different setup steps per build. Follow their loader guide if you buy there; follow <a href=\"/setup/\">Setup</a> here.",
+					"System deep dive: <a href=\"/blog/dma/\">Cloud DMA</a>.",
+					"If their loader fails with HVCI on, do not disable security permanently — fix Secure Boot first, then retry.",
+				],
+			},
+			{
+				h2: "Before you choose",
+				paragraphs: [
+					"Compare live Status pages after the last patch — not YouTube reviews from three months ago.",
+					"Other writeups: <a href=\"/blog/cheatvault/\">vs CheatVault</a>, <a href=\"/blog/kernaim/\">vs Kernaim</a>. Worth-it angle: <a href=\"/blog/worth/\">are cheats worth it</a>.",
+					"Side-by-side: <a href=\"/blog/kernaim/\">vs Kernaim</a> and <a href=\"/blog/compare/\">compare cheat sites</a>.",
+				],
+			},
+			{
+				h2: "Bottom line",
+				paragraphs: [
+					"Ghostware and this product overlap on paper — ESP, aimbot, misc. The difference is packaging: one raids license with loot ESP filters and streamproof included vs their tiered subs.",
+					"Read both Status pages after the next patch, then buy the one that posted a dated rebuild note first.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "kernaim",
+		imageKey: "playerEsp",
+		published: "2026-08-16",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: false,
+		translations: {
+		en: {
+		slug: "kernaim",
+		title: "Escape from Tarkov Cheats vs Kernaim",
+		metaDescription: "Escape from Tarkov Cheats vs Kernaim — external cheat vs this raids package, pricing, loot ESP, support, and what to verify before buying.",
+		h1: "vs Kernaim",
+		intro: "Kernaim markets developer-direct Escape from Tarkov cheats with a long undetected streak and external architecture. I compared that model to this raids license when friends asked which to buy.",
+		keywords: ["tarkov cheats vs kernaim","kernaim tarkov","kernaim eft cheats","kernaim comparison"],
+		imageAlt: "Escape from Tarkov Cheats vs Kernaim EFT product",
+		sections: [
+			{
+				h2: "Product shape",
+				paragraphs: [
+					"Kernaim sells its own external build with a large feature count and direct developer support. Distribution is tighter than open marketplaces — they emphasize smaller user pools and faster patch turnaround.",
+					"Escape from Tarkov Cheats is sold as one raids package: player ESP, loot ESP, aimbot, no recoil, streamproof overlay, Cloud DMA required. Not a catalog of ten different Tarkov SKUs.",
+					"If you want a single known menu for Streets and Labs farming, a focused product page helps. If you want to browse multiple architectures, Kernaim’s own site is the source of truth.",
+					"Kernaim’s pitch is developer-direct and smaller pools. This site’s pitch is one raids SKU with loot ESP and aimbot bundled — different buyers, different fit.",
+				],
+			},
+			{
+				h2: "Loot ESP and aim",
+				paragraphs: [
+					"Kernaim lists vis check and broad combat tools. Loot filtering and container ESP depth depend on their current menu — verify on their feature page before buying for loot-only play.",
+					"Loot ESP here uses price floors, categories, stashes, corpses, and containers — details in <a href=\"/blog/loot/\">loot ESP filters</a> and <a href=\"/tarkov-esp/\">ESP page</a>.",
+					"Aim tuning: <a href=\"/blog/settings/\">ESP and aimbot settings</a> and <a href=\"/blog/esp-aim/\">ESP vs aimbot</a>.",
+					"If you only quest and loot, verify Kernaim’s filter UI on their site. If you PvP nightly, compare aimbot toggles on <a href=\"/tarkov-aimbot/\">our aimbot page</a>.",
+				],
+			},
+			{
+				h2: "Price and status",
+				paragraphs: [
+					"Kernaim pricing changes by period and promos. Compare their live checkout to $35 for 31 days and $150 lifetime here — <a href=\"/pricing/\">Store</a>.",
+					"Both sides should publish status after BattlEye updates. We use <a href=\"/updates/\">Status</a>; check Kernaim’s public status before you launch either product.",
+					"No provider can promise permanent undetected. Read <a href=\"/blog/battleye/\">undetected after BattlEye</a>.",
+					"Promo codes change weekly on big brands. Compare checkout totals the day you buy, not a month-old Reddit thread.",
+				],
+			},
+			{
+				h2: "My takeaway",
+				paragraphs: [
+					"Kernaim fits buyers who want a named external team with developer branding. This site fits buyers who want one raids license with loot ESP and aimbot bundled and a clear Arena split.",
+					"More comparisons: <a href=\"/blog/compare/\">compare cheat sites</a>, <a href=\"/blog/cheatvault/\">vs CheatVault</a>.",
+					"I know players happy with Kernaim and players happy here — the split is usually raids-only vs wanting a named external brand.",
+				],
+			},
+			{
+				h2: "Bottom line",
+				paragraphs: [
+					"Kernaim fits buyers who want a developer-branded external cheat. This fits buyers who want one raids checkout with loot ESP and aimbot on the same key.",
+					"Neither replaces map knowledge. Pick by support style, pricing today, and Arena vs raids coverage.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "cosmo",
+		imageKey: "playerEsp",
+		published: "2026-08-15",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: true,
+		translations: {
+		en: {
+		slug: "cosmo",
+		title: "Escape from Tarkov Cheats vs Cosmo Cheats",
+		metaDescription: "Cosmo Cheats vs Escape from Tarkov Cheats — Cosmo EFT aimbot, ESP, pricing, loot filters, and raids license compared. Which to buy in 2026.",
+		h1: "vs Cosmo Cheats",
+		intro: "Cosmo Cheats is one of the most searched names for EFT hacks — Cosmo EFT shows up in almost every “best Tarkov cheats” thread. I compared their listing to this raids license before I renewed for another wipe.",
+		keywords: ["cosmo cheats tarkov","cosmo eft cheats","cosmocheats tarkov","tarkov cheats vs cosmo cheats","cosmo cheats eft review"],
+		imageAlt: "Escape from Tarkov Cheats vs Cosmo Cheats EFT product",
+		sections: [
+			{
+				h2: "What Cosmo EFT includes",
+				paragraphs: [
+					"Cosmo EFT advertises aimbot (normal and silent), player ESP, ground loot, extracts, no recoil, no sway, and a long misc list — thermal, night vision, and movement tweaks on their public feature sheet. HWID spoofer is often bundled on their store page.",
+					"Escape from Tarkov Cheats is one raids license: player ESP, loot ESP with price filters, aimbot, no recoil, streamproof overlay, Cloud DMA required. Full list: <a href=\"/features/\">Features</a>. Not a separate Cosmo-style misc catalog.",
+					"If you search “Cosmo cheats Tarkov,” you are usually comparing feature volume. Count what you will actually toggle in raids — not the total bullet list.",
+					"Reddit threads often mention Cosmo for support speed — still verify Status on patch day yourself.",
+				],
+			},
+			{
+				h2: "Loot ESP and aimbot",
+				paragraphs: [
+					"Cosmo lists min price sliders, filtered items, and ground loot ESP — good for farming if those filters match how you play Interchange and Streets.",
+					"Here loot ESP covers containers, stashes, corpses, and categories — walkthrough: <a href=\"/blog/loot/\">loot ESP filters</a>. Aimbot FOV and vis check: <a href=\"/blog/settings/\">settings guide</a>.",
+					"Search intent tip: “Cosmo aimbot Tarkov” and “Cosmo ESP Tarkov” are feature checks — verify both menus on the provider’s live page before checkout.",
+					"Compare Cosmo min-price loot sliders to our <a href=\"/blog/loot/\">loot ESP filters</a> walkthrough side by side in one raid.",
+				],
+			},
+			{
+				h2: "Price and undetected status",
+				paragraphs: [
+					"Cosmo EFT uses subscription tiers on their store — daily, weekly, and monthly prices change with promos. Compare their live checkout to $35 for 31 days and $150 lifetime on <a href=\"/pricing/\">Store</a>.",
+					"Both sides claim undetected after BattlEye patches. Cosmo posts product status on their site; we post on <a href=\"/updates/\">Status</a>. Neither replaces checking the date before you launch.",
+					"Read <a href=\"/blog/battleye/\">undetected after BattlEye</a> before you trust any green banner.",
+					"Search “Cosmo cheats price” on their store the same day you compare our <a href=\"/blog/monthly/\">monthly vs lifetime</a> math.",
+				],
+			},
+			{
+				h2: "Raids vs Arena",
+				paragraphs: [
+					"Confirm Cosmo’s key covers main Tarkov raids if that is what you play. This license is raids-only — Arena needs a separate key: <a href=\"/blog/arena/\">raids vs Arena</a>.",
+					"More comparisons: <a href=\"/blog/phoenix/\">vs Phoenix</a>, <a href=\"/blog/compare/\">compare cheat sites</a>.",
+					"If Cosmo also lists Arena, budget two products — this key is raids-only.",
+				],
+			},
+			{
+				h2: "Bottom line",
+				paragraphs: [
+					"Cosmo Cheats is a strong search term for a reason — big feature sheet and store presence. This site wins on one raids license, streamproof included, and a single Status page without picking between ten store SKUs.",
+					"Compare live: <a href=\"/blog/phoenix/\">vs Phoenix</a>. Buy when green: <a href=\"/pricing/\">Store</a>.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "phoenix",
+		imageKey: "playerEsp",
+		published: "2026-08-14",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: true,
+		translations: {
+		en: {
+		slug: "phoenix",
+		title: "Escape from Tarkov Cheats vs Phoenix",
+		metaDescription: "Phoenix Tarkov cheats vs Escape from Tarkov Cheats — Phoenix Full vs Lite, loot ESP, aimbot, pricing, and what to check before you buy EFT hacks.",
+		h1: "vs Phoenix Cheats",
+		intro: "Phoenix is another head term in Tarkov cheat searches — often sold as Phoenix Full and Phoenix Lite with 50+ features on reseller pages. I lined it up against this single raids package when choosing where to spend for the wipe.",
+		keywords: ["phoenix cheats tarkov","phoenix eft cheat","phoenix tarkov hacks","tarkov cheats vs phoenix","phoenix cheat review tarkov"],
+		imageAlt: "Escape from Tarkov Cheats vs Phoenix Tarkov cheat",
+		sections: [
+			{
+				h2: "Phoenix Full vs Lite",
+				paragraphs: [
+					"Phoenix Full is marketed as the full menu — player ESP, loot ESP with flea prices, aimbot, chams, recoil control, and a large misc block. Phoenix Lite trims to chams, stamina, and recoil for “legit” play on many reseller sites.",
+					"Escape from Tarkov Cheats does not split Full vs Lite. One plan includes player ESP, loot ESP, aimbot, no recoil, and streamproof overlay — see <a href=\"/features/\">Features</a>.",
+					"If you search “Phoenix cheats Tarkov,” decide whether you need the full combat stack or a lighter ESP-only style — then compare price per day on each checkout.",
+					"Lite buyers searching “Phoenix chams Tarkov” may still want loot ESP — confirm Lite includes item filters on the seller page.",
+				],
+			},
+			{
+				h2: "Features people search for",
+				paragraphs: [
+					"Common Phoenix search pairs: “Phoenix ESP Tarkov,” “Phoenix aimbot Tarkov,” and “Phoenix loot ESP.” Their pages highlight price filters on loot and customizable aimbot FOV — same categories buyers check here.",
+					"Our loot and aim guides: <a href=\"/blog/loot/\">loot ESP filters</a>, <a href=\"/blog/esp-aim/\">ESP vs aimbot</a>, <a href=\"/tarkov-aimbot/\">aimbot page</a>.",
+					"Streamproof overlay is included in this license — ask Phoenix resellers if OBS-safe overlay is a separate build.",
+					"“Phoenix undetected Tarkov” should always lead to a dated status post — not a static homepage badge.",
+				],
+			},
+			{
+				h2: "Pricing and support",
+				paragraphs: [
+					"Phoenix pricing varies by reseller and period — daily keys add up fast during a long wipe. Compare their live total to monthly $35 / lifetime $150 here: <a href=\"/blog/monthly/\">monthly vs lifetime</a> and <a href=\"/pricing/\">Store</a>.",
+					"Support quality depends on who sold the key. Buying direct here means one support email with order ID — not a random Discord reseller.",
+					"Check <a href=\"/updates/\">Status</a> after every BattlEye patch regardless of provider.",
+					"Reseller markup on Phoenix keys is common — compare official reseller checkout to buying direct here.",
+				],
+			},
+			{
+				h2: "Which fits your raids",
+				paragraphs: [
+					"Phoenix fits buyers who want a branded kernel menu with Full vs Lite choice. This fits buyers who want one raids SKU with loot ESP and aimbot bundled and a clear Arena split.",
+					"Also read: <a href=\"/blog/cosmo/\">vs Cosmo Cheats</a>, <a href=\"/blog/cheatvault/\">vs CheatVault</a>, <a href=\"/blog/worth/\">are Tarkov cheats worth it</a>.",
+					"Full Phoenix vs one bundled license here is the usual fork — feature count vs simple raids checkout.",
+				],
+			},
+			{
+				h2: "Bottom line",
+				paragraphs: [
+					"Phoenix Full vs Lite is the main fork Phoenix buyers search for. Here there is one menu with player ESP, loot ESP, and aimbot — no Lite tier missing loot filters.",
+					"Compare live: <a href=\"/blog/cosmo/\">vs Cosmo Cheats</a>. Guide: <a href=\"/blog/compare/\">compare cheat sites</a>.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "esp-aim",
+		imageKey: "playerEsp",
+		published: "2026-08-13",
+		updated: "2026-09-11",
+		category: "Comparison",
+		featured: false,
+		translations: {
+		en: {
+		slug: "esp-aim",
+		title: "ESP vs Aimbot in Tarkov",
+		metaDescription: "ESP vs aimbot for Tarkov raids — which to enable first, risk, loot runs vs PvP, and how both work in one license.",
+		h1: "ESP vs Aimbot",
+		intro: "Most people search ESP vs aimbot because they want to know what to turn on first. In Tarkov raids they solve different problems — information vs gunfights — and they behave differently under BattlEye over time.",
+		keywords: ["tarkov esp vs aimbot","eft esp or aimbot","tarkov esp vs aim","esp or aimbot tarkov"],
+		imageAlt: "Tarkov ESP boxes next to aimbot FOV ring",
+		sections: [
+			{
+				h2: "What ESP does",
+				paragraphs: [
+					"Player ESP shows PMCs, Scavs, bosses, and bots through walls — box, skeleton, chams, health, nickname, weapon, distance, and radar arrows. Loot ESP names items and containers with price filters.",
+					"ESP does not pull the trigger. It helps you avoid third parties, pick fights, and farm without walking into a camper on Interchange tech light.",
+					"Full control list: <a href=\"/tarkov-esp/\">ESP page</a>. Visual style: <a href=\"/blog/chams/\">chams vs box ESP</a>.",
+					"Quest marks and exfil overlays are underrated — they cut menu time when you are rushing a daily.",
+				],
+			},
+			{
+				h2: "What aimbot does",
+				paragraphs: [
+					"Aimbot moves your crosshair to a bone inside your FOV. Vis check, smart bone, prediction, and target lock matter on moving PMCs. No recoil and no sway sit in Misc.",
+					"Aimbot is more noticeable than ESP in clips and reports. Wide FOV and instant snap get flagged. Most players keep FOV small and use visible-only.",
+					"Menu reference: <a href=\"/tarkov-aimbot/\">aimbot page</a>.",
+					"Prediction helps on Streets long angles; on Factory it is almost always off for me.",
+				],
+			},
+			{
+				h2: "Which to run first",
+				paragraphs: [
+					"For loot runs I enable loot ESP + light player ESP and leave aimbot off until I am forced to fight.",
+					"For quest-heavy wipes I add player ESP at medium distance, then aimbot with hold-to-aim and tight FOV for close quarters only.",
+					"Some competitors sell ESP-only cheaper. Here both are one plan — <a href=\"/features/\">Features</a>.",
+					"Duos: one player runs heavy player ESP, the other runs loot ESP — split screen clutter.",
+				],
+			},
+			{
+				h2: "Settings that stuck",
+				paragraphs: [
+					"Baseline config: <a href=\"/blog/settings/\">ESP and aimbot settings</a>. First-week mistakes: <a href=\"/blog/week/\">my first week</a>.",
+					"Buy when Status is green: <a href=\"/pricing/\">Store</a>.",
+					"Export your config after a good raid. Re-import beats rebuilding from a YouTube clip meant for another cheat.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "buy",
 		imageKey: "cheatsPackage",
-		published: "2026-07-28",
-		updated: "2026-08-13",
-		category: "Buyers Guide",
-		featured: true,
-		translations: {
-		en: {
-		slug: "escape-from-tarkov-cheats-buyers-guide",
-		title: "Escape from Tarkov Cheats Buyers Guide",
-		metaDescription: "What to check before you buy escape from tarkov cheats — status pages, ESP features, soft aim, refunds, pricing, and red flags in 2026.",
-		h1: "Escape from Tarkov Cheats: What to Check Before You Buy",
-		intro: "Buying escape from tarkov cheats is noisy. Every storefront promises “undetected,” instant delivery, and god mode. This buyers guide slows you down with a practical checklist so you spend money on maintenance and clarity — not banners.",
-		keywords: ["escape from tarkov cheats","tarkov cheats buyers guide","buy tarkov cheats","undetected eft cheats","tarkov pricing"],
-		imageAlt: "Checklist for buying Escape from Tarkov cheats safely",
-		sections: [
-			{
-				h2: "Start with status, not screenshots",
-				paragraphs: [
-					"Ask whether the seller publishes a dated status page after BattlEye or client patches. Fancy galleries do not help if the tool is offline for three days. Tarkov Cheats posts rebuild notes on <a href=\"/updates/\">Updates</a> for that reason.",
-					"If a shop only answers in private Discord and never writes public notes, assume you will miss patch windows.",
-				],
-			},
-			{
-				h2: "Feature checklist that matches real Tarkov raids",
-				paragraphs: [
-					"For Escape from Tarkov, useful features usually mean player ESP with distance, loot filters, extract awareness, radar for flanks, and soft aim you can tone down. “Unlock all” marketing and battle-royale leftovers are red flags that the page was cloned from another game.",
-					"Compare the stack on <a href=\"/features/\">Features</a>, <a href=\"/tarkov-esp/\">ESP</a>, and <a href=\"/tarkov-aimbot/\">Aimbot</a>. If radar matters to how you hold extracts, confirm it exists before checkout.",
-				],
-			},
-			{
-				h2: "Price, delivery, and support questions worth asking",
-				paragraphs: [
-					"Know whether you are paying monthly or lifetime, how the license arrives, and how fast support replies with an order ID. Read the <a href=\"/refund-policy/\">refund policy</a> before you pay — digital tools often have narrow windows.",
-					"Our plans live on <a href=\"/pricing/\">Pricing</a>. Setup steps are on <a href=\"/setup/\">Setup</a>. If something fails after a patch, <a href=\"/support/\">Support</a> needs your order details, Windows version, and what you already tried.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-cheats-2026-whats-new",
-		imageKey: "hero",
-		published: "2026-07-26",
-		updated: "2026-08-13",
-		category: "Product Updates",
+		published: "2026-08-14",
+		updated: "2026-09-11",
+		category: "Store",
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-cheats-2026-whats-new",
-		title: "Tarkov Cheats 2026: What Changed This Year",
-		metaDescription: "What changed for tarkov cheats in 2026 — wipe cadence, BattlEye maintenance habits, ESP focus, and how Tarkov Cheats adapted for Escape from Tarkov.",
-		h1: "What Changed for Tarkov Cheats in 2026",
-		intro: "2026 did not invent cheating in Escape from Tarkov — it raised the bar for maintenance. Wipes, BattlEye pushes, and map updates punish stale builds. Here is what changed in how serious tarkov cheats packages need to operate.",
-		keywords: ["tarkov cheats 2026","eft cheats 2026","battleye 2026","tarkov wipe","tarkov cheats updates"],
-		imageAlt: "2026 updates for Tarkov Cheats on Escape from Tarkov",
+		slug: "buy",
+		title: "How to Buy Tarkov Cheats",
+		metaDescription: "How to buy Tarkov cheats safely — Status check, monthly or lifetime, instant delivery, Cloud DMA, raids-only license. Step-by-step for Windows PC.",
+		h1: "How to Buy Tarkov Cheats",
+		intro: "Buying Tarkov cheats should take five minutes if you do it in the right order. I wasted a key once by paying while Status was rebuilding — here is the flow I use now.",
+		keywords: ["buy tarkov cheats","how to buy tarkov cheats","eft cheats buy","tarkov cheats purchase"],
+		imageAlt: "Buy Tarkov cheats monthly or lifetime on Store",
 		sections: [
 			{
-				h2: "Why 2026 buyers care more about status pages",
+				h2: "Before checkout",
 				paragraphs: [
-					"Players got tired of “undetected forever” slogans. They want a dated note after patches. That is why we invest in the <a href=\"/updates/\">Updates</a> log and the <a href=\"/tarkov-cheats/\">undetected explainer</a> instead of empty guarantees.",
-					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> and Battlestate client updates still force rebuilds. The shops that survive are the ones that communicate during those windows.",
+					"Open <a href=\"/updates/\">Status</a> after any game or BattlEye patch. If the build is rebuilding, wait — do not launch with an old loader.",
+					"Confirm Windows 10 or 11, Intel or AMD, HVCI, TPM, and Secure Boot on. Cloud DMA is required for full functionality.",
+					"Still comparing providers? Read <a href=\"/blog/compare/\">how to compare cheat sites</a> and <a href=\"/blog/cheatvault/\">vs CheatVault</a>.",
+					"Use the same email you will contact support from. Mismatched PayPal email and support ticket email slows HWID resets.",
 				],
 			},
 			{
-				h2: "Feature focus shifted toward raid information",
+				h2: "Pick a plan",
 				paragraphs: [
-					"The winning feature set in 2026 is still ESP, radar, and tunable soft aim — because Tarkov fights are about information and first peeks. Loud rage features matter less than readable overlays you can turn down near extracts.",
-					"See the current stack on <a href=\"/features/\">Features</a> and the pillar at <a href=\"/tarkov-cheats/\">tarkov cheats</a>.",
+					"Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, and streamproof overlay on both.",
+					"This key is for main Tarkov raids — Arena is a separate product. Plan math: <a href=\"/blog/monthly/\">monthly vs lifetime</a>.",
+					"Checkout is instant delivery by email. Keep the order ID for support.",
+					"Lifetime is not urgent day one — monthly lets you validate Status communication during the first patch weekend.",
 				],
 			},
 			{
-				h2: "What we recommend you do differently this year",
+				h2: "After payment",
 				paragraphs: [
-					"Check status before patch-day queues. Keep soft aim conservative. Use loot ESP filters so your screen stays clean. Read the <a href=\"/blog/tarkov-cheats-complete-guide-2026/\">complete 2026 guide</a> if you are new to the category.",
-					"Pricing remains monthly and lifetime on <a href=\"/pricing/\">Pricing</a> with digital delivery after payment.",
+					"Follow <a href=\"/setup/\">Setup</a> in order: loader, license key, then Tarkov. Do not skip HVCI or Secure Boot steps if the menu looks empty.",
+					"Save one config after you tune ESP distance and aimbot FOV — <a href=\"/blog/settings/\">settings guide</a>.",
+					"Questions: <a href=\"/support/\">Support</a> with order ID. Product overview: <a href=\"/tarkov-cheats/\">Tarkov cheats</a>.",
+					"Do not raid until Setup is finished. Half the “menu not working” tickets are skipped HVCI steps.",
+				],
+			},
+			{
+				h2: "First raid",
+				paragraphs: [
+					"Start on a map you know. Day-one notes: <a href=\"/blog/week/\">my first week</a>.",
+					"Worth-it discussion: <a href=\"/blog/worth/\">are Tarkov cheats worth it</a>.",
+					"Scav run first — lower gear fear, same ESP practice.",
 				],
 			}
 		],
@@ -475,40 +549,55 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "tarkov-aimbot-settings-guide",
-		imageKey: "aimbotCombat",
-		published: "2026-07-24",
-		updated: "2026-08-13",
-		category: "Aimbot",
+		id: "monthly",
+		imageKey: "headerArt",
+		published: "2026-08-13",
+		updated: "2026-09-11",
+		category: "Comparison",
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-aimbot-settings-guide",
-		title: "Tarkov Aimbot Settings: Smooth FOV Without Looking Robotic",
-		metaDescription: "How to tune tarkov aimbot and soft aim settings — FOV, smoothness, bone priority, and per-weapon profiles that feel natural in Escape from Tarkov raids.",
-		h1: "Tarkov Aimbot Settings That Feel Natural",
-		intro: "Tarkov aimbot settings that feel natural beat a harsh snap. A harsh aimbot gets you killed by reports and by your own bad habits. Soft, tunable aim assistance is what most Escape from Tarkov players actually want. Here is how to think about FOV, smoothness, and weapon profiles.",
-		keywords: ["tarkov aimbot settings","tarkov soft aim","aimbot fov","tarkov aim assist","tarkov cheats"],
-		imageAlt: "Soft aim and FOV settings for Tarkov aimbot on Windows PC",
+		slug: "monthly",
+		title: "Monthly vs Lifetime Tarkov Cheats",
+		metaDescription: "Monthly $35 for 31 days vs lifetime $150 — same ESP, loot ESP, aimbot. Break-even math and when each plan fits your wipe schedule.",
+		h1: "Monthly vs Lifetime",
+		intro: "The only difference between monthly and lifetime here is how long you plan to raid. Features are identical. I ran the numbers across two wipes before I switched to lifetime.",
+		keywords: ["tarkov cheats monthly vs lifetime","tarkov cheats lifetime","tarkov cheats monthly price","eft cheats subscription"],
+		imageAlt: "Monthly and lifetime Tarkov cheat plans compared",
 		sections: [
 			{
-				h2: "Start softer than you think you need",
+				h2: "Monthly — $35 for 31 days",
 				paragraphs: [
-					"Begin with a smaller FOV and higher smoothness so the assist helps tracking instead of snapping. Play five raids on Customs or Factory and only then widen FOV. If friends watching a demo say it looks robotic, you went too far.",
-					"Full control docs live on <a href=\"/tarkov-aimbot/\">Tarkov Aimbot</a> and <a href=\"/tarkov-aimbot/\">soft aim</a>.",
+					"Best for testing one wipe, returning players, or anyone unsure they will play thirty days straight.",
+					"Lower upfront cost. Renew only when Status is green after patches.",
+					"After 31 days the key stops until you renew — same full menu, no downgrade to “ESP only.”",
+					"Good for wipe tourists or returning after a break. Cancel by not renewing — no subscription trap if you forget.",
 				],
 			},
 			{
-				h2: "Per-weapon profiles beat one global slider",
+				h2: "Lifetime — $150 once",
 				paragraphs: [
-					"ARs, SMGs, and bolt-actions want different assist. Save separate profiles so dorms sprays and long Woods peeks do not share the same magnet. Bone priority should favor what you can actually hit under stress — usually upper chest to head transitions, not miracles.",
-					"Hotkeys matter mid-raid. You need to disable assist when you are looting friendlies or holding a suspicious angle where obvious corrections would look wrong.",
+					"Break-even is about five months of monthly. If you raid every wipe, lifetime removes rebilling.",
+					"Lifetime does not mean ignore patches. Still check <a href=\"/updates/\">Status</a> after BattlEye updates.",
+					"Compared to daily keys on marketplaces, lifetime here is simpler if you already know the product.",
+					"If you play three+ wipes a year, lifetime is the lazy choice. You stop re-entering card details every month.",
 				],
 			},
 			{
-				h2: "Pair aim settings with information tools",
+				h2: "How competitors price",
 				paragraphs: [
-					"Soft aim finishes fights that ESP and radar help you choose. If your overlays are noisy, fix <a href=\"/tarkov-esp/\">ESP categories</a> before blaming aim. After BattlEye patches, confirm <a href=\"/updates/\">Updates</a> before you tune anything on an old build.",
+					"CheatVault listings vary by seller — weekly and monthly keys do not always match feature sets.",
+					"Cosmo Cheats, Phoenix, Ghostware, and Kernaim use their own period pricing; compare their checkout to this Store before you assume lifetime is cheaper elsewhere.",
+					"Feature parity matters more than $5 difference — <a href=\"/blog/compare/\">compare cheat sites</a>.",
+					"Some sites hide lifetime behind support DMs. Public pricing on <a href=\"/pricing/\">Store</a> was a trust signal for me.",
+				],
+			},
+			{
+				h2: "What I did",
+				paragraphs: [
+					"Month one: learned the menu. Month two: lifetime. Live prices: <a href=\"/pricing/\">Store</a>.",
+					"Worth-it writeup: <a href=\"/blog/worth/\">are Tarkov cheats worth it</a>.",
+					"Renewed monthly twice during patch season, then lifetime once Status stayed green for a full month.",
 				],
 			}
 		],
@@ -516,40 +605,111 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "tarkov-esp-wallhack-explained",
-		imageKey: "espWallhack",
-		published: "2026-07-21",
-		updated: "2026-08-13",
+		id: "week",
+		imageKey: "squadFight",
+		published: "2026-08-12",
+		updated: "2026-09-11",
+		category: "Experience",
+		featured: false,
+		translations: {
+		en: {
+		slug: "week",
+		title: "My First Week With Tarkov Cheats",
+		metaDescription: "First-week diary using Tarkov cheats in raids — ESP clutter, aimbot FOV mistakes, loot filters, and the routine that stuck.",
+		h1: "My First Week",
+		intro: "Week one with Tarkov cheats is messy. You toggle too much, die anyway, and wonder if you wasted $35. I wrote down what actually changed between day one and day seven.",
+		keywords: ["first time tarkov cheats","tarkov cheats beginner","tarkov esp first week","learning tarkov cheats"],
+		imageAlt: "First week learning Tarkov cheats in raids",
+		sections: [
+			{
+				h2: "Day 1–2: too much on screen",
+				paragraphs: [
+					"I turned on every ESP option and loot filter at once. Customs looked like a spreadsheet. I died to a player I ignored because twelve boxes blocked my view.",
+					"Loot ESP without a price floor highlighted every bolt and bandage. Interchange was unreadable.",
+					"Fix: max distance on player ESP, 60k+ minimum price on loot ESP, one map at a time. Start on a map you already know.",
+					"I recorded a 10-minute clip and watched it back — half the boxes were Scavs I would never fight. Filter them.",
+				],
+			},
+			{
+				h2: "Day 3–5: fights",
+				paragraphs: [
+					"ESP told me where PMCs were. I still lost because I sprinted into every fight. Aimbot with wide FOV made it worse — obvious snaps, more reports.",
+					"I watched a clip back and it looked like a different game. Vis check was off and FOV was huge.",
+					"Fix: vis check on, FOV under 15°, hold-to-aim only. No recoil at 70%, not zero. Full list: <a href=\"/blog/settings/\">settings</a>.",
+					"Thermals plus ESP is loud. I only toggle thermal for one quest, not whole raids.",
+				],
+			},
+			{
+				h2: "Day 6–7: routine",
+				paragraphs: [
+					"Check <a href=\"/updates/\">Status</a> before each session. Save one config. Same loader order: loader, key, Tarkov.",
+					"I stopped comparing my menu to random YouTube configs from other cheat brands — those builds do not match this loader.",
+					"By day seven I was extracting more and resetting less.",
+					"Pinned Status tab in the browser. Same as checking server status before ranked in other games.",
+				],
+			},
+			{
+				h2: "Would I buy again",
+				paragraphs: [
+					"Yes — but I would read <a href=\"/blog/compare/\">compare cheat sites</a> first instead of impulse-buying from a Discord ad.",
+					"Product recap: <a href=\"/features/\">Features</a>. Buy path: <a href=\"/blog/buy/\">how to buy</a>.",
+					"Yes for raids looting. No if I only wanted Arena — wrong product.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "loot",
+		imageKey: "battleRoyaleIslandMap",
+		published: "2026-08-11",
+		updated: "2026-09-11",
 		category: "ESP",
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-esp-wallhack-explained",
-		title: "Tarkov ESP and Wallhack Explained in Plain English",
-		metaDescription: "What tarkov ESP and wallhack actually show in Escape from Tarkov — players, loot, distance, extracts — and how to keep overlays readable in raids.",
-		h1: "Tarkov ESP and Wallhack Explained Clearly",
-		intro: "Tarkov ESP and wallhack explained clearly: they are not the same label. “ESP” and “wallhack” get used interchangeably. In Escape from Tarkov they both mean information through walls — but the useful details are distance, filters, and what you choose to hide so your screen stays readable.",
-		keywords: ["tarkov esp","tarkov wallhack","eft esp","loot esp tarkov","tarkov cheats"],
-		imageAlt: "ESP wallhack overlay showing players and loot in Escape from Tarkov",
+		slug: "loot",
+		title: "Loot ESP Filters That Pay Off",
+		metaDescription: "Loot ESP filters for Tarkov raids — price floors, categories, containers, corpses, and map-specific presets for Interchange and Streets.",
+		h1: "Loot ESP Filters",
+		intro: "Loot ESP is why a lot of people buy Tarkov cheats. Out of the box it shows everything. These filters are what turned loot runs from chaos into steady ruble/hour for me.",
+		keywords: ["tarkov loot esp","eft loot esp","tarkov item esp","loot filter tarkov cheat"],
+		imageAlt: "Loot ESP price filters on items in a Tarkov raid",
 		sections: [
 			{
-				h2: "What ESP shows during a real raid",
+				h2: "Price floor first",
 				paragraphs: [
-					"Player ESP outlines PMCs and Scavs through walls and terrain, often with distance. Loot ESP highlights containers or high-value items. Extract cues help you avoid camping surprises. That information gap is why people search for tarkov esp in the first place.",
-					"Read the dedicated pages for <a href=\"/tarkov-esp/\">ESP</a> and <a href=\"/tarkov-esp/\">wallhack</a> if you want category-level detail.",
+					"Set a minimum price before anything else. On Interchange and Streets, 50k–80k rubles cuts most junk while keeping keys, GPUs, and barter items.",
+					"Raise the floor on dense maps. Lower it when you are questing and need specific items.",
+					"Some budget ESP-only products from marketplace sellers skip advanced filters — verify before you buy for farming.",
+					"Wipe start: lower floor for barter items. Mid-wipe: raise floor when everyone is rich and junk spawns more.",
 				],
 			},
 			{
-				h2: "How to keep overlays from becoming noise",
+				h2: "Containers and corpses",
 				paragraphs: [
-					"Toggle categories. During a hot push you may want players only. During a loot route you may want containers. Near extract you may want threats and exits. Too many boxes at once create hesitation — the opposite of an advantage.",
-					"Pair ESP with <a href=\"/tarkov-radar-hack/\">radar</a> for flanks outside your field of view. Visibility wins information wars; aim tools cover the firefight afterward.",
+					"Turn on stashes, weapon boxes, and corpses when you are full-send looting. Turn them off when rotating to extract.",
+					"Color by category so meds, keys, and electronics do not blur together.",
+					"Full control list: <a href=\"/tarkov-esp/\">ESP page</a>.",
+					"Wood crates and duffels on Customs reward container ESP — turn on when running outer map, off in Dorms.",
 				],
 			},
 			{
-				h2: "Maintenance and responsible use",
+				h2: "Map habits",
 				paragraphs: [
-					"ESP modules rebuild after BattlEye patches like everything else. Check <a href=\"/updates/\">Updates</a> and the <a href=\"/tarkov-cheats/\">undetected guide</a>. No overlay replaces listening and map knowledge — it shortens the time between “I heard something” and “I know where.”",
+					"Interchange: high price floor, containers on, corpses on in mall fights.",
+					"Streets: medium floor, watch player ESP distance — loot ESP does not hear footsteps.",
+					"Labs: lower floor for high-value spawns but tighten player ESP — fights are fast.",
+					"Reserve bunkers: corpses on, price floor high — PvP loot is the product.",
+				],
+			},
+			{
+				h2: "Included here",
+				paragraphs: [
+					"Loot ESP ships with aimbot in one license — <a href=\"/pricing/\">Store</a>.",
+					"Visual compare: <a href=\"/blog/chams/\">chams vs box ESP</a>. ESP vs aim: <a href=\"/blog/esp-aim/\">ESP vs aimbot</a>.",
+					"No separate loot SKU — same key as aimbot. Competitors sometimes charge ESP-only then upsell combat.",
 				],
 			}
 		],
@@ -557,82 +717,54 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "undetected-tarkov-cheats-battleye",
-		imageKey: "playerEsp",
-		published: "2026-07-19",
-		updated: "2026-08-13",
-		category: "Undetected",
-		featured: true,
-		translations: {
-		en: {
-		slug: "undetected-tarkov-cheats-battleye",
-		title: "Undetected Tarkov Cheats and BattlEye Reality",
-		metaDescription: "What “undetected tarkov cheats” really means under BattlEye — maintenance, patch days, risk, and how to read status before you queue Escape from Tarkov.",
-		h1: "Undetected Tarkov Cheats: What BattlEye Reality Looks Like",
-		intro: "Undetected Tarkov cheats: here is what BattlEye reality looks like. “Undetected” is the most abused word in cheat marketing. Under BattlEye, it means a package is being maintained against current detections — not that bans are impossible. Here is the honest version for Escape from Tarkov players.",
-		keywords: ["undetected tarkov cheats","battleye tarkov","tarkov ban risk","eft undetected","tarkov status"],
-		imageAlt: "BattlEye maintenance status for undetected Tarkov cheats",
-		sections: [
-			{
-				h2: "What undetected can honestly mean",
-				paragraphs: [
-					"BattlEye is documented at <a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a>. It evolves. Vendors who care publish rebuild notes when ESP, radar, or aim modules need work. Tarkov Cheats does that on <a href=\"/updates/\">Updates</a> and explains the workflow on <a href=\"/updates/\">BattlEye maintenance</a>.",
-					"If a seller says “100% undetected forever,” treat it as advertising. Your risk also depends on how obviously you play.",
-				],
-			},
-			{
-				h2: "Patch-day habits that reduce pain",
-				paragraphs: [
-					"After a Tarkov or BattlEye update, wait for a status note before queueing. Confirm Battlestate services on <a href=\"https://www.escapefromtarkov.com/support/\" target=\"_blank\" rel=\"noopener noreferrer\">Escape from Tarkov Support</a> if the launcher itself is failing. Do not run yesterday’s build into today’s anti-cheat and call it bad luck.",
-					"Keep soft aim conservative and avoid highlight-reel rage settings that attract reports even when the binary is clean.",
-				],
-			},
-			{
-				h2: "Where to go next",
-				paragraphs: [
-					"Read <a href=\"/tarkov-cheats/\">undetected tarkov cheats</a>, the <a href=\"/blog/tarkov-cheats-complete-guide-2026/\">2026 complete guide</a>, and <a href=\"/pricing/\">Pricing</a> if you want the maintained stack. Undetected status is a process you check — not a sticker on the box.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-cheats-vs-cheatvault",
-		imageKey: "cheatsPackage",
-		published: "2026-07-15",
-		updated: "2026-08-13",
-		category: "Comparisons",
+		id: "settings",
+		imageKey: "aimbotCombat",
+		published: "2026-08-10",
+		updated: "2026-09-11",
+		category: "Guide",
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-cheats-vs-cheatvault-comparison",
-		title: "Tarkov Cheats vs Typical Budget EFT Shops",
-		metaDescription: "How Tarkov Cheats compares to typical budget Escape from Tarkov cheat shops — ESP depth, radar, status pages, pricing, and what “cheap” usually skips.",
-		h1: "Tarkov Cheats vs Typical Budget EFT Cheat Shops",
-		intro: "Tarkov Cheats vs typical budget EFT cheat shops is a maintenance gap, not a banner gap. Budget Escape from Tarkov stores often look identical: neon banners, “undetected” badges, and a low weekly price. Tarkov Cheats costs more than the cheapest tier on purpose. Here is what you usually trade when you chase the lowest sticker.",
-		keywords: ["tarkov cheats comparison","budget eft cheats","tarkov cheats vs other shops","esp radar pricing","tarkov cheats"],
-		imageAlt: "Comparing Tarkov Cheats features against budget EFT cheat shops",
+		slug: "settings",
+		title: "ESP and Aimbot Settings for Raids",
+		metaDescription: "ESP and aimbot settings for Tarkov raids — distance, FOV, vis check, no recoil, per-map notes. Save a config after BattlEye patches.",
+		h1: "ESP and Aimbot Settings",
+		intro: "There is no perfect config for every map. These are the baselines I reset to after each BattlEye patch — tuned for raids, not Arena.",
+		keywords: ["tarkov cheat settings","tarkov aimbot settings","tarkov esp settings","best tarkov cheat settings"],
+		imageAlt: "Tarkov ESP distance and aimbot FOV settings",
 		sections: [
 			{
-				h2: "What budget shops usually optimize for",
+				h2: "Player ESP",
 				paragraphs: [
-					"Low entry price and fast checkout. That can be fine for a weekend experiment. The common gaps are thin loot ESP, no real radar, Discord-only status, and slow rebuild communication after BattlEye pushes.",
-					"Tarkov Cheats focuses on a full raid stack — player ESP, loot filters, radar, soft aim profiles — with a public <a href=\"/updates/\">Updates</a> page. See <a href=\"/features/\">Features</a> for the list.",
+					"Max distance 150–250m on Customs and Shoreline; 80–120m on Factory and Labs. Box + health + weapon is enough for most raids.",
+					"Vis check on if you only want shootable targets. Radar and out-of-FOV arrows help on Streets flanks.",
+					"Skeleton and chams add clutter — enable when you need wall outlines, not by default.",
+					"Boss and bot filters save frames on Lighthouse. Turn off bots if you only care about PMCs.",
 				],
 			},
 			{
-				h2: "Price versus what you touch every raid",
+				h2: "Loot ESP",
 				paragraphs: [
-					"If you only want basic player boxes in casual raids, a cheaper shop might feel enough. If you hold extracts, run loot routes, and hate dying to unseen flanks, radar and clean filters pay for themselves quickly.",
-					"Our monthly and lifetime options are on <a href=\"/pricing/\">Pricing</a>. Read the <a href=\"/blog/escape-from-tarkov-cheats-buyers-guide/\">buyers guide</a> before you compare three storefronts at once.",
+					"Minimum price 60k–80k for general farming. Category colors on. Containers toggled per raid goal.",
+					"Deep filter guide: <a href=\"/blog/loot/\">loot ESP filters</a>.",
+					"Preset per map saved as config slot 2 — faster than retuning every queue.",
 				],
 			},
 			{
-				h2: "How to decide without brand loyalty",
+				h2: "Aimbot and Misc",
 				paragraphs: [
-					"Write down must-haves: dated status, loot ESP, radar, soft aim profiles, Windows PC support. Open each seller’s status channel and feature list side by side. If a shop fails the status test, price does not matter.",
-					"Then return to <a href=\"/tarkov-cheats/\">tarkov cheats</a> and <a href=\"/tarkov-cheats/\">undetected notes</a> if that checklist matches what we ship.",
+					"FOV 8–15°, vis check on, smart bone on, hold-to-aim. No recoil at 60–80%, not literal zero.",
+					"Instant ADS is fine. Instant reload and no malfunctions are louder — use sparingly on a main account.",
+					"Menu reference: <a href=\"/tarkov-aimbot/\">aimbot page</a>.",
+					"Shoulder swap and lean meta still matter — aimbot does not auto-win off-angle fights.",
+				],
+			},
+			{
+				h2: "After patches",
+				paragraphs: [
+					"Save one global safe preset plus optional Factory preset. Check <a href=\"/updates/\">Status</a> before importing old configs.",
+					"Philosophy: <a href=\"/blog/esp-aim/\">ESP vs aimbot</a>. First week: <a href=\"/blog/week/\">my first week</a>.",
+					"Patch day: defaults first, then re-import old config one toggle at a time.",
 				],
 			}
 		],
@@ -640,97 +772,215 @@ export const blogPosts: BlogPostDefinition[] = [
 		},
 	},
 	{
-		id: "elitefn-two-week-test",
-		imageKey: "aimbotSkeleton",
-		published: "2026-07-08",
-		updated: "2026-08-13",
-		category: "Comparisons",
-		featured: false,
-		translations: {
-		en: {
-		slug: "elitefn-vs-tarkov-cheats-two-week-test",
-		title: "I Tested Another Tarkov Cheat for 2 Weeks First",
-		metaDescription: "A two-week test of another Escape from Tarkov cheat before switching to Tarkov Cheats — ESP feel, soft aim, patch downtime, and support differences.",
-		h1: "I Tested Another Tarkov Cheat for Two Weeks Before Switching",
-		intro: "I tested another Tarkov cheat for two weeks before switching. My Discord kept recommending a popular Escape from Tarkov cheat brand. I gave it fourteen days on the same PC and playlists, then moved to Tarkov Cheats. This is what actually differed — without the usual affiliate script.",
-		keywords: ["tarkov cheats review","eft cheat comparison","tarkov cheat downtime","soft aim test","tarkov cheats"],
-		imageAlt: "Two week hands-on comparison between Tarkov cheat providers",
-		sections: [
-			{
-				h2: "Week one — setup and first impressions",
-				paragraphs: [
-					"Delivery was fine: license in email, loader as admin, overlays disabled. Menu learning took a couple evenings. Player ESP was readable. Loot ESP felt secondary. I ran several nights with information tools only and no aim assist so I could judge visibility on its own.",
-					"Tarkov Cheats later felt similar on install time, but filters for loot and extracts were easier to toggle independently during loot routes.",
-				],
-			},
-			{
-				h2: "Soft aim and the mid-raid feel",
-				paragraphs: [
-					"Conservative FOV soft aim helped SMG and AR tracking. Sniping needed manual profile swaps that slowed me down. When I pushed smoothness too low, corrections looked obvious in review clips. Tuning toward smoother tracking fixed kills and reduced the robotic look.",
-					"On Tarkov Cheats I relied more on per-weapon profiles so dorms and long peeks did not share one magnet. Details are in the <a href=\"/tarkov-aimbot/\">aimbot guide</a>.",
-				],
-			},
-			{
-				h2: "The patch window that ended the trial",
-				paragraphs: [
-					"A Tarkov plus BattlEye update landed mid-test. The other tool’s status went quiet without a clear ETA. I skipped queues while my group played without me. A rebuild arrived days later; stability was mixed. That downtime — not a single feature screenshot — pushed me to switch.",
-					"Tarkov Cheats won me over with written notes on <a href=\"/updates/\">Updates</a>. I still do not queue blind after patches on any tool.",
-				],
-			},
-			{
-				h2: "After switching — what improved for my raids",
-				paragraphs: [
-					"Independent loot and player toggles cleaned late-raid screens. Radar helped extract holds. Support replies with order ID were fast enough during setup week. Pricing math favored a single full stack over stacking weekly subs — see <a href=\"/pricing/\">Pricing</a>.",
-					"If you run your own test, measure patch downtime hours, not just day-one vibes. Then read <a href=\"/setup/\">Setup</a> before you buy anything.",
-				],
-			}
-		],
-	},
-		},
-	},
-	{
-		id: "tarkov-cheats-vs-ghostware",
+		id: "chams",
 		imageKey: "espWallhack",
-		published: "2026-07-05",
-		updated: "2026-08-13",
-		category: "Comparisons",
+		published: "2026-08-09",
+		updated: "2026-09-11",
+		category: "Comparison",
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-cheats-vs-ghostware-features-pricing",
-		title: "Full-Stack Tarkov Cheats vs Minimal ESP Tools",
-		metaDescription: "Full-stack Tarkov Cheats versus minimal ESP-only Escape from Tarkov tools — feature depth, radar, soft aim, pricing, and who should buy which style.",
-		h1: "Full-Stack Tarkov Cheats vs Minimal ESP-Only Tools",
-		intro: "Full-stack Tarkov Cheats vs minimal ESP-only tools is a play-style choice. Some Escape from Tarkov tools sell a slim ESP module and call it a day. Tarkov Cheats ships the wider raid stack. Neither philosophy is automatically wrong — they fit different players. Here is a clear comparison.",
-		keywords: ["tarkov esp only cheat","tarkov cheats features","radar vs esp","tarkov cheat pricing","tarkov cheats"],
-		imageAlt: "Full stack Tarkov Cheats compared with minimal ESP-only tools",
+		slug: "chams",
+		title: "Chams vs Box ESP in Tarkov",
+		metaDescription: "Chams vs box ESP for Tarkov — readability, stream clips, CQC vs open maps, and using both in one license.",
+		h1: "Chams vs Box ESP",
+		intro: "Chams vs box ESP — both show players through walls. They read differently on screen and on stream. I switch based on map, fight range, and whether I am recording.",
+		keywords: ["tarkov chams vs esp","tarkov chams","tarkov box esp","chams or esp tarkov"],
+		imageAlt: "Chams and box ESP compared in a Tarkov raid",
 		sections: [
 			{
-				h2: "Two philosophies: minimal surface vs full raid loop",
+				h2: "Box ESP",
 				paragraphs: [
-					"Minimal tools focus on player boxes and light assist. Fewer features can mean a simpler menu and a lower price. Full-stack tools add loot filters, radar, and soft aim profiles so one menu covers information and fights.",
-					"Tarkov Cheats is intentionally full-stack. If you only need outlines in quiet raids, a slim ESP product may feel enough. If you rotate, loot, and hold extracts, missing radar becomes obvious.",
+					"Boxes show distance, health, weapon, and nickname as text. Easy to scan at range on Customs or Shoreline.",
+					"Downside: busy screen in CQC. Pair with max distance and filters so boxes do not stack in Dorms.",
+					"Most marketplace “ESP only” listings are box-style overlays — chams may cost extra elsewhere.",
+					"Nickname ESP helps on Labs — know if it is a sweaty tag before you push.",
 				],
 			},
 			{
-				h2: "Feature and pricing reality check",
+				h2: "Chams",
 				paragraphs: [
-					"Tarkov Cheats monthly is $35 and lifetime is $150 for ESP, radar, and soft aim together. Slimmer competitors often undercut sticker price while charging extra for modules you assumed were included. Always read the feature list, not the banner.",
-					"Our public comparison points live on <a href=\"/features/\">Features</a>, <a href=\"/tarkov-esp/\">ESP</a>, <a href=\"/tarkov-radar-hack/\">radar</a>, and <a href=\"/pricing/\">Pricing</a>.",
+					"Chams color the player model through walls. Less text clutter. Better when you know the angle and need a silhouette.",
+					"Chams do not show health numbers unless you add ESP text. Many players run chams + minimal box.",
+					"Wallhack page: <a href=\"/tarkov-radar-hack/\">chams and wallhack</a>.",
+					"Night raids: chams read better than gray boxes in rain.",
 				],
 			},
 			{
-				h2: "Detection talk without fairy tales",
+				h2: "Streamproof note",
 				paragraphs: [
-					"Smaller user bases generate fewer public ban screenshots — that is not proof of safety. Larger brands generate more noise even when maintenance is solid. Judge sellers by patch communication speed and whether you can find a dated status note.",
-					"Tarkov Cheats documents maintenance on <a href=\"/updates/\">BattlEye workflow</a> and <a href=\"/tarkov-cheats/\">undetected notes</a>.",
+					"Streamproof overlay hides both from OBS on most capture tools — included here, not a second SKU.",
+					"Test your own OBS scene before going live. Chams can still look odd to you locally even if hidden on stream.",
+					"Clips for Discord still show locally — streamproof is for OBS output, not your eyes.",
 				],
 			},
 			{
-				h2: "Which style should you buy?",
+				h2: "What I use",
 				paragraphs: [
-					"Choose minimal ESP if budget is tight, you play casually, and you accept Discord-only status tracking. Choose Tarkov Cheats if radar, loot filters, configurable soft aim, and a public Updates URL are must-haves.",
-					"Decide your must-haves on paper first. Then open <a href=\"/tarkov-cheats/\">tarkov cheats</a> or keep shopping slim tools — but do not skip patch-day checks on either path.",
+					"Open maps: box ESP with distance. Factory and Labs: chams with tight player ESP distance.",
+					"Both in one license: <a href=\"/features/\">Features</a>. Settings: <a href=\"/blog/settings/\">ESP and aimbot settings</a>.",
+					"Tournament-style VOD review: box for info, chams off — less visual noise in post.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "battleye",
+		imageKey: "squadFight",
+		published: "2026-08-08",
+		updated: "2026-09-11",
+		category: "Status",
+		featured: false,
+		translations: {
+		en: {
+		slug: "battleye",
+		title: "Undetected After BattlEye Patches",
+		metaDescription: "What undetected means after BattlEye patches — Status checks, rebuild windows, Cloud DMA, and how providers compare on update speed.",
+		h1: "Undetected After BattlEye",
+		intro: "Undetected does not mean forever. It means the current build matches the last game or BattlEye patch. I check Status every launch — and I compare how fast providers post rebuild notes.",
+		keywords: ["undetected tarkov cheats","tarkov cheats undetected","battleye tarkov cheats","eft undetected 2026"],
+		imageAlt: "Tarkov cheat Status after a BattlEye update",
+		sections: [
+			{
+				h2: "How patches work",
+				paragraphs: [
+					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> protects Escape from Tarkov. When BSG or BattlEye ships an update, loaders need a rebuild. Live notes: <a href=\"/updates/\">Status</a>.",
+					"No seller can promise permanent undetected — not Cosmo Cheats, Phoenix, CheatVault listings, Ghostware, or Kernaim. If anyone does, verify against a dated status page.",
+					"If Status says wait, do not queue with an old loader.",
+					"Minor client patches sometimes do not need a cheat rebuild — major wipe patches almost always do.",
+				],
+			},
+			{
+				h2: "Provider comparison",
+				paragraphs: [
+					"Good signs: dated status posts, “do not launch” warnings during rebuilds, support that answers with order ID.",
+					"Bad signs: silent Discord for days after a major patch, or green banners with no patch number.",
+					"Shopping guide: <a href=\"/blog/compare/\">compare cheat sites</a>.",
+					"CheatVault sellers vary; Cosmo Cheats, Phoenix, Ghostware, and Kernaim post their own notes. Compare dates, not logos.",
+				],
+			},
+			{
+				h2: "Before you raid",
+				paragraphs: [
+					"Update loader before Tarkov. Cloud DMA required for full functionality — <a href=\"/blog/dma/\">Cloud DMA</a>.",
+					"Windows 10 or 11 with HVCI, TPM, and Secure Boot on.",
+					"Close overlay apps you do not need — fewer hooks, fewer false positives on loader start.",
+				],
+			},
+			{
+				h2: "Buy when green",
+				paragraphs: [
+					"Green Status means the team signed off the current build. Then buy or renew on <a href=\"/pricing/\">Store</a>.",
+					"Buy safely: <a href=\"/blog/buy/\">how to buy</a>.",
+					"Yellow “use caution” Status is still a wait for me — I queue only on green.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "arena",
+		imageKey: "headerArt",
+		published: "2026-08-07",
+		updated: "2026-09-11",
+		category: "Product",
+		featured: false,
+		translations: {
+		en: {
+		slug: "arena",
+		title: "Raids vs Arena Cheat Key",
+		metaDescription: "Tarkov raids vs Arena cheat keys — what this license covers, what needs a separate Arena key, and how other providers split modes.",
+		h1: "Raids vs Arena Key",
+		intro: "A lot of buyers assume one Tarkov cheats key covers everything. It does not. This license is Escape from Tarkov raids — not Arena. Some competitors blur that line in ads.",
+		keywords: ["tarkov arena cheats","tarkov raids vs arena cheat","eft arena hack","tarkov cheat arena key"],
+		imageAlt: "Tarkov raids license vs separate Arena key",
+		sections: [
+			{
+				h2: "What this key covers",
+				paragraphs: [
+					"Main Tarkov raids — PMC and Scav runs on live maps. Player ESP, loot ESP, aimbot, no recoil, streamproof overlay, Cloud DMA.",
+					"Streets, Customs, Labs, wipe progression — this is the product. Overview: <a href=\"/tarkov-cheats/\">Tarkov cheats</a>.",
+					"Quest-heavy wipes still live in raids — Arena progress does not carry over to PMC quest lines.",
+				],
+			},
+			{
+				h2: "What it does not cover",
+				paragraphs: [
+					"Arena is a separate mode and needs its own key from the seller. Do not buy this license if you only play Arena.",
+					"Some marketplace listings do not say “raids only” in the title — read the feature page before you pay.",
+					"Refund requests for “wrong mode” are harder everywhere — read the product title before pay.",
+				],
+			},
+			{
+				h2: "How others sell Arena",
+				paragraphs: [
+					"CheatVault may list Arena-specific products from different sellers. Ghostware and Kernaim document their own mode coverage on their sites.",
+					"When comparing, ask support directly: “Does this key work in Arena?” Our answer for this product is no — raids only.",
+					"Some CheatVault sellers bundle “all modes” in the title but fine print says raids only. Ctrl+F “Arena” on checkout.",
+				],
+			},
+			{
+				h2: "Still deciding",
+				paragraphs: [
+					"Raids-first: <a href=\"/blog/buy/\">how to buy</a>. Features: <a href=\"/features/\">Features</a>. Plans: <a href=\"/pricing/\">Store</a>.",
+					"Play both modes? Budget two keys or pick raids — this license will not work in Arena.",
+				],
+			}
+		],
+	},
+		},
+	},
+	{
+		id: "dma",
+		imageKey: "headerArt",
+		published: "2026-08-06",
+		updated: "2026-09-11",
+		category: "Setup",
+		featured: false,
+		translations: {
+		en: {
+		slug: "dma",
+		title: "Cloud DMA for Tarkov Cheats",
+		metaDescription: "Cloud DMA setup for Tarkov cheats — HVCI, TPM, Secure Boot, loader order, and how requirements compare to other EFT products.",
+		h1: "Cloud DMA Setup",
+		intro: "Cloud DMA is required for full functionality here. I hit a wall on day one until HVCI and Secure Boot were actually on — not just “enabled in BIOS once.” Other providers document similar Windows security reqs under different names.",
+		keywords: ["tarkov cloud dma","eft dma cheat","cloud dma tarkov","tarkov dma setup"],
+		imageAlt: "Cloud DMA requirements for Tarkov cheats on Windows PC",
+		sections: [
+			{
+				h2: "System checklist",
+				paragraphs: [
+					"Windows 10 or 11. Intel or AMD. HVCI on. Core Isolation on. TPM on. Secure Boot on.",
+					"Without Cloud DMA you will not get the full feature set. Steps: <a href=\"/setup/\">Setup</a>. FAQ: <a href=\"/faq/is-cloud-dma-required/\">Is Cloud DMA required?</a>.",
+					"Hardware DMA cards are a different product category — this license uses Cloud DMA as a system requirement, not a PCIe card.",
+					"BIOS Secure Boot keys matter on some boards — if loader fails after Windows update, re-check firmware.",
+				],
+			},
+			{
+				h2: "Loader order",
+				paragraphs: [
+					"Run loader, paste license key, launch Tarkov. If the menu is empty, re-check HVCI and Secure Boot before blaming the patch.",
+					"After a BattlEye update, check <a href=\"/updates/\">Status</a> before you change BIOS settings randomly.",
+					"Run as admin only if Setup says so — extra admin launches can trip HVCI on some builds.",
+				],
+			},
+			{
+				h2: "vs other providers",
+				paragraphs: [
+					"Kernaim emphasizes external architecture; Ghostware and marketplace listings may use different loaders with different setup PDFs.",
+					"The constant is: modern Windows security on, dated loader, live status page.",
+					"Hardware DMA PCIe cards are a different budget tier — Cloud DMA here is a software requirement, not a $300 card.",
+				],
+			},
+			{
+				h2: "What unlocks",
+				paragraphs: [
+					"Player ESP, loot ESP, aimbot, no recoil, streamproof overlay — one license. <a href=\"/features/\">Features</a> · <a href=\"/pricing/\">Store</a>.",
+					"First week: <a href=\"/blog/week/\">my first week</a>.",
+					"Without Cloud DMA you may see a partial menu — do not assume full ESP is broken until reqs are met.",
 				],
 			}
 		],

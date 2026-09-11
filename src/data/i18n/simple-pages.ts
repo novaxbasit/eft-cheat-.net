@@ -48,41 +48,53 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		galleryTitle: 'In-game look',
 		sections: [
 			{
-				h2: 'ESP & wallhack',
+				h2: 'Player ESP',
 				paragraphs: [
-					'These ESP and wallhack Features show PMCs, bots, and loot through walls with distance readouts.',
-					'Use filters so the overlay stays clear in PMC raids and Scav runs.',
+					'Player ESP shows PMCs, bosses, bots, and Scavs with box, skeleton, chams, health, and distance.',
+					'Quest marks, nicknames, weapons, and radar sit in the same overlay.',
 				],
 				list: [
-					'PMC and bot ESP',
-					'Loot container ESP',
-					'Extract helicopter markers',
-					'Key and quest item highlights',
+					'Player, boss, bot, and Scav ESP',
+					'Box, skeleton, chams, and health',
+					'Quest ESP, exfils, and transitions',
+					'Radar and out-of-FOV arrows',
 				],
 			},
 			{
-				h2: 'Aimbot & no recoil',
+				h2: 'Loot ESP and world',
 				paragraphs: [
-					'Aimbot with FOV limit you can tune to feel natural.',
-					'Set FOV, smoothness, and no recoil tuning per weapon before you queue.',
+					'Loot ESP filters items by category, price, and distance. Containers, stashes, corpses, and computers can show too.',
+					'World tools include weather, fog, rain, and custom loot colors.',
 				],
-				list: ['Aimbot with FOV limit', 'No recoil tuning', 'Hotkeys mid-match'],
+				list: [
+					'Loot names, price, and filters',
+					'Containers, stashes, and corpses',
+					'Weather, fog, and rain controls',
+				],
 			},
 			{
-				h2: 'Stream-proof & cloud DMA',
+				h2: 'Aimbot and combat',
 				paragraphs: [
-					'Stream-proof overlay for ranked sessions.',
-					'Cloud-DMA option and AWS hosting available for advanced setups.',
+					'Aimbot includes FOV, vis check, smart bone, prediction, and lock. No recoil and no sway sit in Misc.',
+					'Thermal, third person, loot through walls, and a config system are in the same menu.',
 				],
-				list: ['Stream-proof overlay', 'Cloud-DMA option', 'AWS option'],
+				list: [
+					'FOV, vis check, and prediction',
+					'No recoil, no sway, and instant ADS',
+					'Thermal, third person, and configs',
+				],
 			},
 			{
-				h2: 'Updates & support',
+				h2: 'System, streamproof, updates',
 				paragraphs: [
-					'We rebuild after big {game} or {antiCheat} patches.',
-					'Check Status before you play after a patch day.',
+					'This license is for Tarkov raids only. Arena needs a separate key.',
+					'Streamproof overlay keeps ESP and menus off OBS. Cloud DMA is required for full functionality. Check Status after a patch.',
 				],
-				list: ['Status on the Status page', 'Setup guide included', 'Email support with your order ID'],
+				list: [
+					'Windows 10 / 11 — HVCI, TPM, and Secure Boot on',
+					'Cloud DMA required for full functionality',
+					'Status on the Status page',
+				],
 			},
 		],
 	}),
@@ -99,10 +111,10 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'The Store includes full package access for Windows 10 / 11.',
-					'Same ESP, aimbot, and wallhack on monthly and lifetime plans.',
+					'The Store includes full package access for Windows 10 / 11 raids.',
+					'Same player ESP, loot ESP, and aimbot on monthly ($35) and lifetime ($150). Not Arena.',
 				],
-				list: ['ESP, aimbot, and wallhack', 'Patch rebuilds while active', 'Digital delivery after checkout'],
+				list: ['Player ESP, loot ESP, and aimbot', 'Patch rebuilds while active', 'Digital delivery after checkout'],
 			},
 			{
 				h2: 'Plans',
@@ -110,12 +122,14 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 					'Pick monthly to try first, or lifetime for one payment.',
 					'Both plans unlock the same features after checkout.',
 				],
-				list: ['Monthly — 30 days', 'Lifetime — one-time', 'Instant license by email'],
+				list: ['Monthly — 31 days ($35)', 'Lifetime — one-time ($150)', 'Instant license by email'],
 			},
 			{
 				h2: 'Before you buy',
 				paragraphs: ['Read the refund policy if you need it. Contact support with your order ID for help.'],
 				list: [
+					'Cloud DMA required for full functionality',
+					'Windows 10 / 11 — HVCI, TPM, and Secure Boot on',
 					'<a href="/refund-policy/">Refund policy</a>',
 					'<a href="/faq/">FAQ</a>',
 					'<a href="/support/">Support</a>',
@@ -172,28 +186,28 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'Escape from Tarkov Cheats is one license for Escape from Tarkov on Windows PC — built for PMC raids and Scav runs.',
+					'Escape from Tarkov Cheats is one license for Tarkov raids on Windows PC. Arena needs a separate key.',
 				],
 				list: [
-					'PMC and bot ESP / wallhack',
-					'Loot container ESP',
-					'Extract helicopter markers',
-					'Key and quest item highlights',
-					'Aimbot with FOV limit',
-					'No recoil tuning',
-					'Stream-proof overlay',
-					'Cloud-DMA option and AWS option',
+					'Player, boss, bot, and Scav ESP',
+					'Loot ESP with filters and containers',
+					'Quest ESP, exfils, and radar',
+					'Aimbot with FOV, vis check, and prediction',
+					'No recoil, no sway, and instant ADS',
+					'Streamproof overlay',
+					'Cloud DMA for full functionality',
+					'Config save, load, import, and export',
 				],
 			},
 			{
 				h2: 'Built for Escape from Tarkov',
 				paragraphs: [
-					'Escape from Tarkov Cheats helps you read PMCs and bots before you push, mark loot worth the risk, and stay aware near extracts. Tune aimbot FOV and no recoil per weapon for close quarters and long-range gunfights.',
+					'Escape from Tarkov Cheats helps you read PMCs, Scavs, and bosses before you push, filter loot worth the risk, and mark exfils. Tune aimbot FOV and vis check for close quarters and long-range fights.',
 				],
 				list: [
 					'<a href="/tarkov-esp/">ESP guide</a>',
 					'<a href="/tarkov-aimbot/">Aimbot controls</a>',
-					'<a href="/tarkov-radar-hack/">Stream-proof overlay</a>',
+					'<a href="/guides/">Guides</a>',
 					'<a href="/updates/">Live status</a>',
 				],
 			},
@@ -213,9 +227,9 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	'tarkov-esp': page({
 		title: 'Escape from Tarkov ESP | {brand}',
 		description:
-			'Escape from Tarkov ESP and wallhack for Windows PC — PMC boxes, loot containers, extract markers, and clear overlays in raids.',
+			'Escape from Tarkov ESP for Windows PC — player, loot, quest, and exfil overlays in raids.',
 		h1: 'ESP',
-		intro: 'Escape from Tarkov ESP shows PMCs, bots, and loot containers through walls. Part of the same {brand} license.',
+		intro: 'Escape from Tarkov ESP shows PMCs, Scavs, bosses, and loot through walls. Part of the same {brand} license for raids.',
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Full product',
 		ctaSecondaryHref: '/tarkov-cheats/',
@@ -224,14 +238,14 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'What ESP shows',
 				paragraphs: [
-					'Escape from Tarkov ESP includes boxes, distance, and filters for PMCs, bots, and loot containers.',
+					'Player ESP includes box, skeleton, chams, health, nickname, weapon, and distance. Boss, bot, Scav, and quest ESP share the same menu.',
 				],
-				list: ['PMC and bot ESP', 'Loot container ESP', 'Extract helicopter markers', 'Key and quest item highlights'],
+				list: ['Player, boss, bot, and Scav ESP', 'Loot ESP with filters and price', 'Quest ESP, exfils, and radar'],
 			},
 			{
 				h2: 'When to use it',
-				paragraphs: ['Clear PMC raids without flooding the screen.'],
-				list: ['Tune opacity', 'Filter noise', 'Pair with stream-proof overlay'],
+				paragraphs: ['Filter loot by price and category so the overlay stays clear in a raid.'],
+				list: ['Tune max distance', 'Filter loot noise', 'Pair with the streamproof overlay'],
 			},
 			{
 				h2: 'Next steps',
@@ -247,9 +261,9 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	'tarkov-aimbot': page({
 		title: 'Escape from Tarkov Aimbot | {brand}',
 		description:
-			'Escape from Tarkov aimbot for Windows PC — FOV limit, smoothness, and no recoil tuning you can set per weapon.',
+			'Escape from Tarkov aimbot for Windows PC — FOV, vis check, prediction, no recoil, and no sway.',
 		h1: 'Aimbot',
-		intro: 'Escape from Tarkov aimbot with FOV limit and no recoil tuning. Included in the same {brand} license.',
+		intro: 'Escape from Tarkov aimbot with FOV, vis check, and no recoil. Included in the same {brand} license for raids.',
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Full product',
 		ctaSecondaryHref: '/tarkov-cheats/',
@@ -257,13 +271,13 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'Controls',
-				paragraphs: ['Set FOV limit, smoothness, and no recoil before you queue.'],
-				list: ['Aimbot with FOV limit', 'No recoil tuning', 'Hotkeys mid-match'],
+				paragraphs: ['Set FOV, vis check, smart bone, prediction, and lock before you queue.'],
+				list: ['FOV, vis check, and prediction', 'No recoil and no sway', 'Hotkeys and config saves'],
 			},
 			{
 				h2: 'Play styles',
-				paragraphs: ['Keep settings subtle for longer sessions. Raise strength only when you accept more risk.'],
-				list: ['Legit aim settings', 'Per-weapon profiles', 'Works with ESP'],
+				paragraphs: ['Keep FOV tight for raids. Raise strength only when you accept more risk.'],
+				list: ['Visible-only aim', 'Bone priority', 'Works with player ESP'],
 			},
 			{
 				h2: 'Next steps',
@@ -279,9 +293,9 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	radar: page({
 		title: 'Escape from Tarkov Wallhack | {brand}',
 		description:
-			'Escape from Tarkov wallhack for Windows PC — see PMCs and bots through walls with a stream-proof overlay.',
+			'Escape from Tarkov wallhack for Windows PC — chams and ESP through walls with a streamproof overlay.',
 		h1: 'Wallhack',
-		intro: 'Escape from Tarkov wallhack with stream-proof overlay. Included in the same {brand} license.',
+		intro: 'Escape from Tarkov wallhack uses chams and ESP so you read PMCs through walls. Streamproof overlay included.',
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Full product',
 		ctaSecondaryHref: '/tarkov-cheats/',
@@ -289,8 +303,8 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'What it shows',
-				paragraphs: ['This Wallhack shows enemy PMC and bot outlines through walls with adjustable range.'],
-				list: ['See through walls', 'Stream-proof overlay', 'Adjustable filters'],
+				paragraphs: ['Chams, skeleton, and box ESP show enemies through walls. Radar and out-of-FOV arrows help on the flanks.'],
+				list: ['Chams and skeleton ESP', 'Streamproof overlay', 'Radar and OOF arrows'],
 			},
 			{
 				h2: 'With ESP',
@@ -315,12 +329,16 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'Before you install',
-				paragraphs: ['Start Setup after you buy a plan. You get a license by email.'],
-				list: ['Windows 10 / 11 PC', 'Disable conflicting overlays', 'Have your order email ready'],
+				paragraphs: ['Start Setup after you buy a plan. You get a license by email. This key is for raids, not Arena.'],
+				list: [
+					'Windows 10 / 11 PC, Intel or AMD',
+					'HVCI, Core Isolation, TPM, and Secure Boot on',
+					'Have your order email ready',
+				],
 			},
 			{
 				h2: 'Install steps',
-				paragraphs: ['Run the loader as admin, paste your license, then launch {game}.'],
+				paragraphs: ['Run the loader as admin, paste your license, then launch {game}. Cloud DMA is required for full functionality.'],
 				list: ['Download the loader from your delivery email', 'Paste license key', 'Launch the game'],
 			},
 			{

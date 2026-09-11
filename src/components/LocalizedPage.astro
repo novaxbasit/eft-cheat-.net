@@ -5,7 +5,6 @@ import { getLocalizedPath, localizeInternalHref } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
 import { productInfo, seoFaqs, siteConfig, customerReviewStats } from '../data/site';
 import { absoluteFaqUrl, getFaqPath } from '../data/faq';
-import { tarkovImages } from '../data/tarkov';
 import { simplePageCopy } from '../data/i18n/simple-pages';
 import { getT } from '../i18n/server';
 import { getPageCrawlImage } from '../data/page-images';
@@ -35,7 +34,6 @@ const sections = simple?.sections ?? page.sections;
 const ctaPrimaryLabel = simple?.ctaPrimary ?? page.ctaPrimary;
 const ctaSecondaryLabel = simple?.ctaSecondary ?? page.ctaSecondary;
 const ctaSecondaryPath = simple?.ctaSecondaryHref ?? page.ctaSecondaryHref;
-const galleryTitle = simple?.galleryTitle ?? page.galleryTitle ?? t('common.inGameLook');
 
 const introEditByPage: Partial<Record<PageId, string>> = {
 	features: 'featuresIntro',
@@ -47,7 +45,7 @@ const introEditByPage: Partial<Record<PageId, string>> = {
 	faq: 'faqIntro',
 };
 const introEdit = locale === 'en' ? introEditByPage[pageId] : undefined;
-const gallery = tarkovImages.product.slice(0, 3);
+const showInGameGallery = pageId === 'hacks' || pageId === 'pricing';
 
 const pageUrl = new URL(getLocalizedPath(pageId, locale), siteConfig.url).href;
 const priceValidUntil = '2027-12-31';
@@ -107,8 +105,11 @@ const storeSchema =
 
 const extraGraph = [faqSchema, storeSchema].filter(Boolean) as Record<string, unknown>[];
 
-const buyCta = /\b(buy|access|checkout|comprar|acheter|kaufen|kopen|acquista)\b/i.test(ctaPrimaryLabel);
-const ctaPrimaryHref = buyCta ? siteConfig.checkoutUrl : `mailto:${siteConfig.supportEmail}`;
+/** Primary banner CTA — support/legal pages email; all product pages checkout */
+const mailtoPageIds = new Set(['support', 'privacy', 'refund', 'terms']);
+const ctaPrimaryHref = mailtoPageIds.has(pageId)
+	? `mailto:${siteConfig.supportEmail}`
+	: siteConfig.checkoutUrl;
 
 const ctaSecondaryHref = ctaSecondaryPath
 	? localizeInternalHref(ctaSecondaryPath, locale)
@@ -143,12 +144,12 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	eyebrow={eyebrowByPage[pageId]}
 	heroImage={crawl.src}
 	heroAlt={page.imageAlt || crawl.caption}
-	gallery={gallery}
-	galleryTitle={galleryTitle}
+	showGallery={showInGameGallery}
+	galleryPosition={pageId === 'pricing' || pageId === 'hacks' ? 'bottom' : 'top'}
 	locale={locale}
 	pageId={pageId}
 	extraGraph={extraGraph}
-	ctaPrimary={{ href: ctaPrimaryHref, label: ctaPrimaryLabel, edit: buyCta ? 'ctaBuy' : undefined }}
+	ctaPrimary={{ href: ctaPrimaryHref, label: ctaPrimaryLabel, edit: !mailtoPageIds.has(pageId) ? 'ctaBuy' : undefined }}
 	ctaSecondary={
 		ctaSecondaryLabel
 			? { href: ctaSecondaryHref, label: ctaSecondaryLabel }
@@ -159,7 +160,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		showStorePlans && (
-			<section class="card-panel">
+			<section class="pubg-panel pubg-panel--lift">
 				<h2>{t('product.plans')}</h2>
 				<div class="price-grid">
 					<a class="price-card" href={siteConfig.checkoutUrl} target="_blank" rel="noopener noreferrer">
@@ -179,7 +180,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		sections.map((section) => (
-			<section class="card-panel">
+			<section class="pubg-panel pubg-panel--lift">
 				<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
 				{section.paragraphs.map((p) => (
 					<p set:html={localizeParagraphHtml(p)} />
@@ -197,7 +198,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		pageId === 'faq' && locale === 'en' && (
-			<section class="card-panel faq-index">
+			<section class="pubg-panel pubg-panel--lift faq-index">
 				<h2>{t('common.allQuestions')}</h2>
 				<p>{t('common.openAnyQuestion')}</p>
 				<ul class="faq-index__list">

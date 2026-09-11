@@ -54,10 +54,11 @@ const IMAGE_SITEMAP_ENTRIES = countBrandSitemapImages();
 
 const BLOG_PAGES = 18; // /blog/ index + 17 posts
 const REVIEW_PAGES = 11; // /reviews/ index + 10 review detail pages
-const FAQ_PAGES = 11; // FAQ answer pages (index is in the product pages)
+const FAQ_PAGES = 12; // FAQ answer pages (index is in the product pages)
+const GUIDES_PAGES = 1; // /guides/
 /** Product pages in sitemap — excludes cannibal EN URLs that 301 to stronger pillars */
 const ENGLISH_PRODUCT_PAGES = 14;
-const ENGLISH_PAGES = ENGLISH_PRODUCT_PAGES + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES;
+const ENGLISH_PAGES = ENGLISH_PRODUCT_PAGES + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES + GUIDES_PAGES;
 const I18N_LOCALES = 21;
 /** Locale product pages also exclude the same cannibal pageIds */
 const PRODUCT_PAGES_PER_LOCALE = 14;
@@ -66,8 +67,8 @@ const PAGES_PER_LOCALE = PRODUCT_PAGES_PER_LOCALE + BLOG_PAGES_PER_LOCALE;
 const I18N_URLS = I18N_LOCALES * PAGES_PER_LOCALE;
 const TOTAL_PAGES = ENGLISH_PAGES + I18N_URLS;
 /** Full EN HTML may still emit redirect stubs for cannibal URLs; sitemaps omit them */
-const ENGLISH_HTML_PAGES = 25 + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES;
-/** Locale HTML = product pages + blog redirect stubs (index + 17 posts) that are omitted from sitemaps */
+const ENGLISH_HTML_PAGES = 25 + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES + GUIDES_PAGES;
+/** Locale HTML = product pages + blog redirect stubs (index + 10 posts) that are omitted from sitemaps */
 const LOCALE_BLOG_REDIRECT_PAGES = 18;
 const TOTAL_HTML_PAGES =
 	ENGLISH_HTML_PAGES + I18N_LOCALES * (PRODUCT_PAGES_PER_LOCALE + LOCALE_BLOG_REDIRECT_PAGES);
@@ -113,34 +114,35 @@ const ENGLISH_PATHS = [
 	'/refund-policy/',
 	'/terms/',
 	'/blog/',
-	'/blog/tarkov-scav-run-aggressive-strategies/',
-	'/blog/tarkov-loot-routes-guide/',
-	'/blog/tarkov-weapon-tier-list/',
-	'/blog/tarkov-skin-leaks-guide/',
-	'/blog/tarkov-tournament-meta-guide/',
-	'/blog/tarkov-pro-settings-guide/',
-	'/blog/tarkov-warmup-maps-ranked/',
-	'/blog/tarkov-patch-notes-guide/',
-	'/blog/tarkov-cheats-complete-guide-2026/',
-	'/blog/escape-from-tarkov-cheats-buyers-guide/',
-	'/blog/tarkov-cheats-2026-whats-new/',
-	'/blog/tarkov-aimbot-settings-guide/',
-	'/blog/tarkov-esp-wallhack-explained/',
-	'/blog/undetected-tarkov-cheats-battleye/',
-	'/blog/tarkov-cheats-vs-cheatvault-comparison/',
-	'/blog/elitefn-vs-tarkov-cheats-two-week-test/',
-	'/blog/tarkov-cheats-vs-ghostware-features-pricing/',
+	'/blog/worth/',
+	'/blog/compare/',
+	'/blog/cheatvault/',
+	'/blog/ghostware/',
+	'/blog/kernaim/',
+	'/blog/cosmo/',
+	'/blog/phoenix/',
+	'/blog/esp-aim/',
+	'/blog/buy/',
+	'/blog/monthly/',
+	'/blog/week/',
+	'/blog/loot/',
+	'/blog/settings/',
+	'/blog/chams/',
+	'/blog/battleye/',
+	'/blog/arena/',
+	'/blog/dma/',
+	'/guides/',
 	'/reviews/',
-	'/reviews/tarkov-soft-aim-review-xkrypt0/',
-	'/reviews/tarkov-esp-scav-run-review-buildsr4k/',
+	'/reviews/tarkov-aimbot-review-xkrypt0/',
+	'/reviews/tarkov-esp-raid-review-buildsr4k/',
 	'/reviews/tarkov-cloud-dma-review-dma-wizard/',
-	'/reviews/tarkov-soft-aim-review-ctrl-player99/',
+	'/reviews/tarkov-aimbot-review-ctrl-player99/',
 	'/reviews/tarkov-cheat-setup-review-stormchaser07/',
 	'/reviews/tarkov-loot-esp-review-lootgoblinx/',
-	'/reviews/tarkov-soft-aim-raid-review-rankedgrind42/',
-	'/reviews/tarkov-radar-hack-review-vanlifeeft/',
+	'/reviews/tarkov-no-recoil-review-raidgrind42/',
+	'/reviews/tarkov-stream-proof-review-vanlifeeft/',
 	'/reviews/tarkov-battleye-update-review-patchdaymike/',
-	'/reviews/tarkov-sniper-soft-aim-review-snipezonly/',
+	'/reviews/tarkov-sniper-aimbot-review-snipezonly/',
 	'/faq/what-are-tarkov-cheats/',
 	'/faq/are-tarkov-cheats-undetected-in-2026/',
 	'/faq/pmc-raids-and-scav-runs/',
@@ -149,8 +151,9 @@ const ENGLISH_PATHS = [
 	'/faq/where-to-check-updates/',
 	'/faq/how-to-contact-support/',
 	'/faq/what-is-a-tarkov-wallhack/',
-	'/faq/does-tarkov-cheats-include-radar-hack/',
+	'/faq/does-tarkov-cheats-include-stream-proof/',
 	'/faq/battleye-anti-cheat-and-tarkov-cheats/',
+	'/faq/is-cloud-dma-required/',
 	'/faq/buy-undetected-tarkov-cheats-windows-pc/',
 ];
 

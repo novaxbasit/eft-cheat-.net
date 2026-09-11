@@ -1,11 +1,16 @@
 ---
 import '../styles/global.css';
+import '../styles/pubg-home.css';
+import '../styles/pubg-site.css';
+import '../styles/scroll-reveal.css';
 import { productInfo, siteConfig } from '../data/site';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import MobileNavFallback from '../components/MobileNavFallback.astro';
 import { brandTheme, brandThemeInlineStyle, brandThemeRootCss } from '../data/brand-theme';
 import I18nHead from '../components/I18nHead.astro';
 import LocaleSuggest from '../components/LocaleSuggest.astro';
 import InlineBrandEditor from '../components/InlineBrandEditor.astro';
-import { heroMimeType } from '../lib/responsive-images';
+import { heroMimeType, heroVideoMimeType } from '../lib/responsive-images';
 import { defaultLocale, localeMap, locales, type LocaleCode } from '../data/i18n/locales';
 import type { PageId } from '../data/i18n/content.generated';
 import { buildCanonicalUrl, type HreflangAlternate } from '../data/i18n/routing';
@@ -191,7 +196,15 @@ if (aboutNode) {
 		<meta name="author" content={siteConfig.name} />
 		<link rel="canonical" href={canonicalURL} />
 		{
-			lcpImageSrcSet ? (
+			lcpImage?.endsWith('.webm') ? (
+				<link
+					rel="preload"
+					as="video"
+					href={lcpImage}
+					type={heroVideoMimeType}
+					fetchpriority="high"
+				/>
+			) : lcpImageSrcSet ? (
 				<link
 					rel="preload"
 					as="image"
@@ -257,8 +270,10 @@ if (aboutNode) {
 		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 	</head>
 	<body>
+		<MobileNavFallback />
 		{pageId && <LocaleSuggest currentLocale={locale} pageId={pageId} />}
 		<slot />
+		<ScrollReveal />
 		<InlineBrandEditor />
 		{/* After Vite/Tailwind CSS so brand tokens win over @theme defaults */}
 		<style id="brand-theme-vars" set:html={brandThemeRootCss()}></style>

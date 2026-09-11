@@ -1,0 +1,118 @@
+---
+/**
+ * PUBG-style conversion landing — SEO schema lives in LocalizedHome.
+ */
+import SiteBanner from './SiteBanner.astro';
+import InGameGallery from './InGameGallery.astro';
+import HomeOverview from './HomeOverview.astro';
+import HomeGuides from './HomeGuides.astro';
+import PatchNotesSection from './PatchNotesSection.astro';
+import { siteConfig, productInfo, homeFaqs, customerReviews } from '../../data/site';
+import { brand, fillBrandTokens } from '../../data/brand';
+import { getLocaleContent, getPageContent } from '../../data/i18n';
+import { getLocalizedPath } from '../../data/i18n/routing';
+import { defaultLocale, type LocaleCode } from '../../data/i18n/locales';
+import { reviewsBasePath } from '../../data/reviews';
+
+interface Props {
+	locale?: LocaleCode;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const { ui } = getLocaleContent(locale);
+const home = getPageContent(locale, 'home');
+const faqPage = getPageContent(locale, 'faq');
+
+const checkout = siteConfig.checkoutUrl;
+const ctaLabel = locale === 'en' ? fillBrandTokens(brand.copy.ctaBuy) : home.ctaPrimary;
+const heroSub = locale === 'en' ? (productInfo.heroLede ?? ui.hero.subtitle) : home.intro;
+const seeCheatsHref = getLocalizedPath('hacks', locale);
+const seeCheatsLabel = locale === 'en' ? 'See Cheats' : home.ctaSecondary ?? ui.hero.seeFeatures;
+const faqHref = getLocalizedPath('faq', locale);
+const reviewsHref = reviewsBasePath;
+const reviewsTitle = locale === 'en' ? 'Reviews' : ui.reviews.title;
+const reviewsLinkLabel = locale === 'en' ? 'All reviews' : ui.reviews.countLabel;
+const faqTitle = ui.nav.faq;
+const faqLinkLabel = locale === 'en' ? 'All FAQ' : ui.nav.faq;
+
+const topReviews = customerReviews.slice(0, 3);
+const topFaqs = homeFaqs;
+---
+
+<div class="pubg-landing">
+	<section class="pubg-hero" aria-label={locale === 'en' ? productInfo.name : home.h1}>
+		<SiteBanner priority>
+			<div class="pubg-hero__inner">
+				{
+					locale === 'en' ? (
+						<h1 class="pubg-hero__title" data-edit="heroH1">
+							<span>Escape from Tarkov</span>
+							<span class="pubg-hero__title-accent">Cheats</span>
+						</h1>
+					) : (
+						<h1 class="pubg-hero__title pubg-hero__title--locale">{home.h1}</h1>
+					)
+				}
+				<p class="pubg-hero__sub" data-edit="heroLede">{heroSub}</p>
+				<div class="pubg-hero__cta">
+					<a class="pubg-btn pubg-btn--lg" href={checkout} target="_blank" rel="noopener noreferrer" data-edit="ctaBuy">
+						{ctaLabel}
+					</a>
+					<a class="pubg-play pubg-play--ghost" href={seeCheatsHref}>{seeCheatsLabel}</a>
+				</div>
+			</div>
+		</SiteBanner>
+	</section>
+
+	<HomeOverview locale={locale} />
+
+	<InGameGallery locale={locale} />
+
+	<HomeGuides locale={locale} />
+
+	<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-reviews-title">
+		<div class="pubg-wrap">
+			<header class="pubg-section__head">
+				<h2 class="pubg-section__title" id="pubg-reviews-title">{reviewsTitle}</h2>
+				<a class="pubg-link" href={reviewsHref}>{reviewsLinkLabel}</a>
+			</header>
+			<div class="pubg-community">
+				{
+					topReviews.map((r) => (
+						<article class="pubg-community__card">
+							<div class="pubg-community__stars" aria-hidden="true">
+								{'★'.repeat(r.rating)}
+								{'☆'.repeat(5 - r.rating)}
+							</div>
+							<p class="pubg-community__text">{r.short}</p>
+							<p class="pubg-community__author">{r.handle}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<PatchNotesSection locale={locale} />
+
+	<section class="pubg-section pubg-section--faq" aria-labelledby="pubg-faq-title">
+		<div class="pubg-wrap pubg-faq">
+			<header class="pubg-section__head">
+				<h2 class="pubg-section__title pubg-section__title--sm" id="pubg-faq-title">{faqTitle}</h2>
+				<a class="pubg-link" href={faqHref}>{faqLinkLabel}</a>
+			</header>
+			{
+				locale === 'en' ? (
+					topFaqs.map((item) => (
+						<details>
+							<summary>{item.question}</summary>
+							<p class="pubg-faq__a">{item.answer}</p>
+						</details>
+					))
+				) : (
+					<p class="pubg-faq__lede">{faqPage.intro}</p>
+				)
+			}
+		</div>
+	</section>
+</div>

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { isPastBanner } from '../../lib/navbar-scroll';
 import I18nProvider from './I18nProvider';
 import LanguageSwitcher, { type LocaleMeta } from './LanguageSwitcher';
 
@@ -20,6 +21,7 @@ type Props = {
 	locales: LocaleMeta[];
 	hrefForLocale: Record<string, string>;
 	links: NavLink[];
+	hasHeroBanner?: boolean;
 };
 
 const icons: Record<string, string> = {
@@ -34,6 +36,16 @@ const icons: Record<string, string> = {
 		'M12 4.5l1.8 4.9H19l-4.1 3.2 1.6 5L12 14.9 7.5 17.6l1.6-5L5 9.4h5.2L12 4.5z',
 };
 
+function splitBrandName(name: string): { game: string; rest: string } {
+	const parts = name.trim().split(/\s+/);
+	if (parts.length < 2) return { game: name, rest: '' };
+	const last = parts[parts.length - 1] ?? '';
+	if (/^(cheats|hacks|cheat|hack)$/i.test(last)) {
+		return { game: parts.slice(0, -1).join(' '), rest: last };
+	}
+	return { game: parts[0] ?? name, rest: parts.slice(1).join(' ') };
+}
+
 function NavbarInner({
 	locale,
 	siteName,
@@ -44,9 +56,9 @@ function NavbarInner({
 	locales,
 	hrefForLocale,
 	links,
+	hasHeroBanner = false,
 }: Props) {
 	const { t } = useTranslation();
-	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 
 	const isActive = (href: string) => {
@@ -55,30 +67,32 @@ function NavbarInner({
 		return currentPath === href || currentPath.startsWith(href);
 	};
 
-	useEffect(() => {
-		const onScroll = () => setScrolled(window.scrollY > 8);
-		onScroll();
-		window.addEventListener('scroll', onScroll, { passive: true });
-		return () => window.removeEventListener('scroll', onScroll);
-	}, []);
+	const closeDrawer = (event: React.SyntheticEvent<HTMLAnchorElement>) => {
+		const drawer = event.currentTarget.closest<HTMLDetailsElement>('.site-nav-drawer');
+		drawer?.removeAttribute('open');
+	};
 
 	useEffect(() => {
-		document.body.classList.toggle('nav-lock', open);
-		return () => document.body.classList.remove('nav-lock');
-	}, [open]);
+		const onChange = () => setScrolled(isPastBanner());
 
-	useEffect(() => {
-		const onKey = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') setOpen(false);
-		};
-		const onResize = () => {
-			if (window.matchMedia('(min-width: 1025px)').matches) setOpen(false);
-		};
-		document.addEventListener('keydown', onKey);
-		window.addEventListener('resize', onResize);
+		onChange();
+		window.addEventListener('load', onChange, { once: true });
+		window.addEventListener('scroll', onChange, { passive: true });
+		window.addEventListener('resize', onChange);
+
+		const hero =
+			document.querySelector<HTMLElement>('.pubg-hero') ??
+			document.querySelector<HTMLElement>('.pubg-page__banner');
+		let ro: ResizeObserver | undefined;
+		if (hero && typeof ResizeObserver !== 'undefined') {
+			ro = new ResizeObserver(onChange);
+			ro.observe(hero);
+		}
+
 		return () => {
-			document.removeEventListener('keydown', onKey);
-			window.removeEventListener('resize', onResize);
+			window.removeEventListener('scroll', onChange);
+			window.removeEventListener('resize', onChange);
+			ro?.disconnect();
 		};
 	}, []);
 
@@ -92,15 +106,33 @@ function NavbarInner({
 		[links, t, currentPath, locale, reviewsBasePath],
 	);
 
+	const brandParts = splitBrandName(siteName);
+
 	return (
-		<header className={`site-header${scrolled || open ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`} data-nav>
+		<header
+			className={`site-header${hasHeroBanner && !scrolled ? ' is-transparent' : ''}${scrolled ? ' is-scrolled' : ''}`}
+			data-nav
+		>
 			<div className="shell site-header__bar">
 				<a className="site-brand" href={homeHref} data-edit="name">
-					{siteName}
+					{brandParts.rest ? (
+						<>
+							<span className="site-brand__game">{brandParts.game}</span>
+							<span className="site-brand__rest">{brandParts.rest}</span>
+						</>
+					) : (
+						siteName
+					)}
 				</a>
+
 				<nav className="site-nav" aria-label={t('nav.primaryAria')}>
 					{navLinks.map((item) => (
-						<a key={item.id} href={item.href} className={item.active ? 'is-active' : undefined}>
+						<a
+							key={item.id}
+							href={item.href}
+							className={item.active ? 'is-active' : undefined}
+							onClick={closeDrawer}
+						>
 							<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
 								<path
 									d={icons[item.id]}
@@ -116,87 +148,34 @@ function NavbarInner({
 				</nav>
 
 				<div className="site-tools">
-					<div className="site-tools__lang">
-						<LanguageSwitcher
-							currentLocale={locale}
-							locales={locales}
-							hrefForLocale={hrefForLocale}
-						/>
-					</div>
-					<a
-						href={checkoutUrl}
-						className="site-tools__buy"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label={t('cta.buyShort')}
-					>
-						<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-							<path
-								d="M4.5 6.5h2.1l1.2 9.2h9.4l1.8-6.6H8.1M9.2 19.2a.9.9 0 100-1.8.9.9 0 000 1.8zm7.4 0a.9.9 0 100-1.8.9.9 0 000 1.8z"
-								stroke="currentColor"
-								strokeWidth="1.6"
-								strokeLinecap="round"
-								strokeLinejoin="round"
+					<div className="site-tools__pair">
+						<div className="site-tools__lang">
+							<LanguageSwitcher
+								currentLocale={locale}
+								locales={locales}
+								hrefForLocale={hrefForLocale}
 							/>
-						</svg>
-						<span data-edit="ctaBuyShort">{t('cta.buyShort')}</span>
-					</a>
-					<button
-						type="button"
-						className="site-menu"
-						aria-expanded={open}
-						aria-controls="site-nav-panel"
-						aria-label={open ? t('nav.closeMenu') : t('nav.openMenu')}
-						onClick={() => setOpen((v) => !v)}
-					>
-						<span className="site-menu__bars" aria-hidden="true">
-							<span />
-							<span />
-							<span />
-						</span>
-					</button>
+						</div>
+						<a
+							href={checkoutUrl}
+							className="site-tools__buy site-tools__pill site-tools__pill--buy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span data-edit="ctaBuyShort">{t('cta.buyShort')}</span>
+						</a>
+					</div>
+					<details className="site-nav-drawer">
+						<summary className="site-menu" aria-label={t('nav.openMenu')}>
+							<span className="site-menu__bars" aria-hidden="true">
+								<span />
+								<span />
+								<span />
+							</span>
+						</summary>
+					</details>
 				</div>
 			</div>
-
-			{open ? (
-				<div className="site-panel" id="site-nav-panel">
-					<div className="shell site-panel__inner">
-						<nav className="site-panel__nav" aria-label={t('nav.mobileAria')}>
-							{navLinks.map((item) => (
-								<a
-									key={item.id}
-									href={item.href}
-									className={item.active ? 'is-active' : undefined}
-									onClick={() => setOpen(false)}
-								>
-									<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-										<path
-											d={icons[item.id]}
-											stroke="currentColor"
-											strokeWidth="1.6"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										/>
-									</svg>
-									<span>{item.label}</span>
-								</a>
-							))}
-						</nav>
-						<div className="site-panel__foot">
-							<div className="site-panel__lang">
-								<LanguageSwitcher
-									currentLocale={locale}
-									locales={locales}
-									hrefForLocale={hrefForLocale}
-								/>
-							</div>
-							<a href={checkoutUrl} className="site-panel__buy" target="_blank" rel="noopener noreferrer">
-								<span data-edit="ctaBuy">{t('cta.buy')}</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			) : null}
 		</header>
 	);
 }

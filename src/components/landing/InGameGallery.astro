@@ -1,0 +1,43 @@
+---
+import { getLocalizedPath } from '../../data/i18n/routing';
+import { getLocaleContent, getPageContent } from '../../data/i18n';
+import { defaultLocale, type LocaleCode } from '../../data/i18n/locales';
+import { tarkovImages } from '../../data/tarkov';
+
+interface Props {
+	locale?: LocaleCode;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const { ui } = getLocaleContent(locale);
+const home = getPageContent(locale, 'home');
+const featuresHref = getLocalizedPath('features', locale);
+const galleryTitle = locale === 'en' ? 'In-Game Look' : home.galleryTitle;
+const galleryLinkLabel = locale === 'en' ? 'Full feature list' : home.ctaSecondary ?? ui.nav.features;
+
+const screenshots = [
+	{ src: tarkovImages.scavRunMode, alt: 'Escape from Tarkov Cheats ESP — PMC boxes and distance in a raid' },
+	{ src: tarkovImages.espWallhack, alt: 'Escape from Tarkov Cheats wallhack — enemy PMC outlines through walls' },
+	{ src: tarkovImages.aimbotCombat, alt: 'Escape from Tarkov Cheats aimbot — FOV overlay during a raid' },
+];
+---
+
+<div>
+	<section class="pubg-section" aria-labelledby="pubg-gallery-title">
+		<div class="pubg-wrap">
+			<header class="pubg-section__head">
+				<h2 class="pubg-section__title" id="pubg-gallery-title">{galleryTitle}</h2>
+				<a class="pubg-link" href={featuresHref}>{galleryLinkLabel}</a>
+			</header>
+			<div class="pubg-gallery">
+				{
+					screenshots.map(({ src, alt }) => (
+						<div class="pubg-gallery__item">
+							<img src={src} alt={alt} width="800" height="500" loading="lazy" decoding="async" draggable="false" />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</div>

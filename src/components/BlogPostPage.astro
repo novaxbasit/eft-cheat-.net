@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from './Navbar.astro';
 import SiteFooter from './SiteFooter.astro';
+import InnerPageBanner from './landing/InnerPageBanner.astro';
 import { blogUi, defaultLocale, type LocaleCode } from '../data/i18n/locales';
 import {
 	absoluteBlogUrl,
@@ -89,14 +90,14 @@ function pageTitle(headline: string): string {
 	extraGraph={[articleSchema]}
 >
 	<Navbar locale={locale} />
-	<main class="post">
-		<div class="shell">
-			<div class="shell-content post__inner">
-		<article>
+	<main class="pubg-page post">
+		<InnerPageBanner title={t.h1} intro={t.intro} />
+
+		<div class="shell pubg-page__body post__body">
+			<div class="post__inner">
+		<article class="pubg-panel pubg-panel--glow">
 			<header class="post__header">
-				<p class="post__cat">{post.category}</p>
-				<h1>{t.h1}</h1>
-				<p class="post__intro">{t.intro}</p>
+				<p class="pubg-eyebrow">{post.category}</p>
 				<p class="post__meta">
 					{ui.published} {post.published} · {ui.updated} {post.updated}
 				</p>
@@ -135,11 +136,13 @@ function pageTitle(headline: string): string {
 		{
 			related.length > 0 && (
 				<section class="post__related" aria-label={ui.relatedPosts}>
-					<h2>{ui.relatedPosts}</h2>
+					<h2 class="pubg-section-title">{ui.relatedPosts}</h2>
 					<ul>
 						{related.map((item) => (
 							<li>
-								<a href={item.canonicalPath}>{item.translation.title}</a>
+								<a class="pubg-list-link" href={item.canonicalPath}>
+									<span>{item.translation.title}</span>
+								</a>
 							</li>
 						))}
 					</ul>
@@ -153,13 +156,9 @@ function pageTitle(headline: string): string {
 </Layout>
 
 <style>
-	.post {
-		padding: 2.5rem 0 4rem;
-	}
-
 	.post__inner {
 		display: grid;
-		gap: 0;
+		gap: 1.25rem;
 	}
 	.post__cat {
 		margin: 0 0 0.5rem;

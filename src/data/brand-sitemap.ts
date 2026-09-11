@@ -33,9 +33,9 @@ const defaultImages: BrandSitemapImage[] = [
 		caption: 'tarkov cheats aimbot view',
 	},
 	{
-		src: '/images/tarkov-cheats-radar.webp',
-		title: 'tarkov cheats radar',
-		caption: 'tarkov cheats radar hack',
+		src: '/images/tarkov-patch-notes-banner.jpg',
+		title: 'tarkov cheats patch notes',
+		caption: 'Escape from Tarkov patch notes banner',
 	},
 	{
 		src: '/images/tarkov-cheats-raid.webp',

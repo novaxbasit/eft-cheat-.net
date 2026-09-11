@@ -1,16 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import HomeReviews from '../components/HomeReviews.astro';
-import HomeSeo from '../components/HomeSeo.astro';
-import HomeAboutApp from '../components/react/HomeAbout';
+import PubgLanding from '../components/landing/PubgLanding.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { getLocaleContent, getPageContent } from '../data/i18n';
 import { getLocalizedPath } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
 import { homeFaqs, homeSeo, productInfo, siteConfig, customerReviewStats } from '../data/site';
-import { heroPreloadSrc, heroSizes, heroSrcSet } from '../lib/responsive-images';
 import { defaultCrawlImageSrc } from '../data/page-images';
 import { MONEY_PATH } from '../data/seo-canonical';
 
@@ -38,7 +34,6 @@ const aggregateRating = {
 	worstRating: '1',
 };
 
-/** One commerce type only — Product. Reviews live on /reviews/. */
 const extraGraph: Record<string, unknown>[] = [
 	{
 		'@type': 'Product',
@@ -99,39 +94,12 @@ const extraGraph: Record<string, unknown>[] = [
 	pageId="home"
 	breadcrumbs={[{ label: ui.nav.home }]}
 	extraGraph={locale === 'en' ? extraGraph : extraGraph.filter((n) => n['@type'] !== 'FAQPage')}
-	lcpImage={heroPreloadSrc}
-	lcpImageSrcSet={heroSrcSet}
-	lcpImageSizes={heroSizes}
+	lcpImage="/images/hero-banner.webm"
+	lcpImageSizes="100vw"
 >
 	<Navbar locale={locale} pageId="home" />
 	<main class="home">
-		<Hero locale={locale} />
-		<HomeReviews locale={locale} />
-		<div class="home__seo">
-			{
-				locale === 'en' ? (
-					<>
-						<HomeAboutApp client:visible locale={locale} />
-						<HomeSeo locale={locale} />
-					</>
-				) : (
-					<div class="shell home__prose">
-						<h2>{home.h1}</h2>
-						<p>{home.intro}</p>
-						{
-							home.sections.map((section) => (
-								<div>
-									<h3 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h3>
-									{section.paragraphs.map((p) => (
-										<p set:html={p} />
-									))}
-								</div>
-							))
-						}
-					</div>
-				)
-			}
-		</div>
+		<PubgLanding locale={locale} />
 		<SiteFooter locale={locale} />
 	</main>
 </Layout>
@@ -140,62 +108,5 @@ const extraGraph: Record<string, unknown>[] = [
 	.home {
 		width: 100%;
 		overflow-x: clip;
-	}
-
-	.home__seo {
-		border-top: 1px solid var(--line-soft);
-		background: var(--bg-panel);
-		content-visibility: auto;
-		contain-intrinsic-size: 1px 900px;
-	}
-
-	.home__prose {
-		padding-block: var(--section-space);
-		color: var(--ink-muted);
-		line-height: 1.65;
-		font-size: 0.9375rem;
-	}
-
-	.home__prose--en {
-		padding-block: clamp(2rem, 4vw, 2.75rem) 0.5rem;
-		border-bottom: 1px solid var(--line-soft);
-	}
-
-	.home__prose--en a {
-		color: var(--magenta-soft);
-		font-weight: 600;
-		text-decoration: none;
-	}
-
-	.home__prose--en a:hover {
-		color: var(--heading);
-	}
-
-	.home__prose--en h2 {
-		margin: 0 0 0.75rem;
-		font-family: var(--font-display);
-		font-size: clamp(1.95rem, 3.7vw, 2.6rem);
-		font-weight: 800;
-		letter-spacing: -0.03em;
-		color: var(--ink);
-	}
-
-	.home__prose h2 {
-		margin: 0 0 0.75rem;
-		font-family: var(--font-display);
-		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-		font-weight: 800;
-		letter-spacing: -0.03em;
-		color: var(--ink);
-	}
-
-	.home__prose h3 {
-		margin: 1.25rem 0 0.5rem;
-		font-size: 1rem;
-		color: var(--heading);
-	}
-
-	.home__prose h3.is-title-white {
-		color: #fff;
 	}
 </style>
