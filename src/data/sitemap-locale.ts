@@ -8,6 +8,7 @@ import { escapeXml, assertCrawlableAssetUrl } from './sitemap-xml';
 import { sitemapLastmod } from './brand-sitemap';
 import { getPageCrawlImage } from './page-images';
 import { sitemapExcludedPageIds } from './seo-canonical';
+import { getHtmlSitemapXmlEntries, htmlSitemapHreflangXml } from './html-sitemap';
 
 export type LocaleSitemapEntry = {
 	path: string;
@@ -64,7 +65,15 @@ export function buildLocaleSitemapEntries(locale: LocaleCode): LocaleSitemapEntr
 		image: entry.images[0],
 	}));
 
-	return [...productEntries, ...blogEntries];
+	const htmlSitemapEntries: LocaleSitemapEntry[] = getHtmlSitemapXmlEntries(locale).map((entry) => ({
+		path: entry.path,
+		lastmod: entry.lastmod,
+		priority: entry.priority,
+		changefreq: entry.changefreq,
+		image: entry.images[0],
+	}));
+
+	return [...productEntries, ...blogEntries, ...htmlSitemapEntries];
 }
 
 
@@ -80,7 +89,11 @@ export function localeSitemapUrl(locale: LocaleCode): string {
 
 export function renderLocaleSitemapUrlBlock(entry: LocaleSitemapEntry): string {
 	const loc = new URL(entry.path, siteConfig.url).href;
-	const hreflangBlock = entry.pageId ? `\n${hreflangLinksXml(entry.pageId, escapeXml)}` : '';
+	const hreflangBlock = entry.pageId
+		? `\n${hreflangLinksXml(entry.pageId, escapeXml)}`
+		: entry.path.includes('/site-map/')
+			? `\n${htmlSitemapHreflangXml(escapeXml, entry.path.split('/').filter(Boolean)[0] as LocaleCode)}`
+			: '';
 	if (!entry.image) {
 		throw new Error(`[sitemap] Missing image for locale URL ${entry.path}`);
 	}

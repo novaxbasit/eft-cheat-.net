@@ -75,18 +75,18 @@ export const brand = {
 	seo: {
 		/** Titles ≤60 chars; descriptions ~140–160 (Google SERP display). */
 		/** Home = brand hub. Money URL /tarkov-cheats/ owns the head term. */
-		homeTitle: 'Escape from Tarkov Cheats | Features & Store',
+		homeTitle: 'Escape from Tarkov Cheats | Features & Pricing',
 		homeDescription:
-			'Official Escape from Tarkov Cheats site for Windows PC. Player ESP, loot ESP, and aimbot for raids — not Arena. Check status, then buy.',
-		featuresTitle: 'Escape from Tarkov Features | Cheats',
+			'Official Escape from Tarkov Cheats site for Windows PC. Player ESP, loot ESP, and aimbot for raids — not Arena. Check updates, then buy.',
+		featuresTitle: 'Features | Escape from Tarkov Cheats',
 		featuresDescription:
-			'One Escape from Tarkov license for Windows PC — player ESP, loot ESP, aimbot, no recoil, streamproof overlay, and Cloud DMA.',
-		storeTitle: 'Escape from Tarkov Store | Cheats',
+			'Feature list for Escape from Tarkov Cheats — player ESP, loot ESP, aimbot, overlay, and Cloud DMA. Buy on the product page.',
+		storeTitle: 'Escape from Tarkov Pricing | Cheats',
 		storeDescription:
 			'Monthly $35 and lifetime $150 Escape from Tarkov cheat plans. Same player ESP, loot ESP, and aimbot on both. Instant delivery after checkout.',
-		statusTitle: 'Escape from Tarkov Status | Cheats',
+		statusTitle: 'Escape from Tarkov Updates | Cheats',
 		statusDescription:
-			'Live undetected status for Escape from Tarkov Cheats after game or BattlEye patches. Check Status here before you raid on a Windows PC today.',
+			'Live updates for Escape from Tarkov Cheats after game or BattlEye patches. Check Updates here before you raid on a Windows PC today.',
 		previewTitle: 'Escape from Tarkov Cheats | Undetected ESP & Aimbot',
 		previewDescription:
 			'Buy Escape from Tarkov cheats for Windows PC raids. Player ESP, loot ESP, aimbot, streamproof overlay. Separate key from Arena.',
@@ -116,9 +116,9 @@ export const brand = {
 		blogLabel: 'Blog',
 		ctaBuy: 'Get Access',
 		ctaBuyShort: 'Buy',
-		featuresIntro: 'These Features are in one license for {game} raids on Windows PC. Not Arena.',
-		storeIntro: 'Store plans for {brand}. Same features on both. Instant delivery after payment.',
-		statusIntro: 'Live Status for {brand} — check here after a {game} or {antiCheat} patch before you queue.',
+		featuresIntro: 'Feature list for {brand} on Windows PC. The product page is where you buy. Not Arena.',
+		storeIntro: 'Pricing plans for {brand}. Same features on both. Instant delivery after payment.',
+		statusIntro: 'Live Updates for {brand} — check here after a {game} or {antiCheat} patch before you queue.',
 		previewIntro:
 			'Escape from Tarkov Cheats for Windows PC raids — player ESP, loot ESP, aimbot, no recoil, and a streamproof overlay. Separate key from Arena.',
 		setupIntro: 'Setup guide for {brand} on Windows PC after you buy. Follow these short steps.',
@@ -131,8 +131,8 @@ export const brand = {
 		chipUpdates: 'Patch updates',
 		navPreview: 'Cheats',
 		navFeatures: 'Features',
-		navStore: 'Store',
-		navStatus: 'Status',
+		navStore: 'Pricing',
+		navStatus: 'Updates',
 		navReviews: 'Reviews',
 	},
 

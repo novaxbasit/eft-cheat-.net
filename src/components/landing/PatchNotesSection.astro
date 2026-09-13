@@ -1,7 +1,7 @@
 ---
 import { trustSignals } from '../../data/site';
 import { fillBrandTokens } from '../../data/brand';
-import { getLocaleContent, getPageContent } from '../../data/i18n';
+import { getLocaleContent } from '../../data/i18n';
 import { getLocalizedPath } from '../../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../../data/i18n/locales';
 import { tarkovImages } from '../../data/tarkov';
@@ -12,27 +12,28 @@ interface Props {
 
 const { locale = defaultLocale } = Astro.props;
 const { ui } = getLocaleContent(locale);
-const updates = getPageContent(locale, 'updates');
-const statusHref = getLocalizedPath('updates', locale);
-const patchTitle = locale === 'en' ? 'Patch Notes' : updates.h1;
-const statusLinkLabel = locale === 'en' ? 'Status updates' : ui.nav.updates;
-const statusHeading = locale === 'en' ? 'Live undetected status' : ui.trust.statusShort;
-const statusCta = locale === 'en' ? 'Read patch status' : ui.nav.updates;
-const statusNote = locale === 'en' ? trustSignals.statusNote : ui.trust.statusNote;
+const updatesHref = getLocalizedPath('updates', locale);
+const heading = locale === 'en' ? 'Updates' : ui.nav.updates;
+const linkLabel = locale === 'en' ? 'Open Updates' : ui.nav.updates;
+const note = locale === 'en' ? trustSignals.statusNote : ui.trust.statusNote;
+const body =
+	locale === 'en'
+		? `${fillBrandTokens('See live notes on Updates after an {game} or {antiCheat} patch.')} ${note}`
+		: note;
 ---
 
-<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-patch-title">
+<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-updates-title">
 	<div class="pubg-wrap">
 		<header class="pubg-section__head">
-			<h2 class="pubg-section__title" id="pubg-patch-title">{patchTitle}</h2>
-			<a class="pubg-link" href={statusHref}>{statusLinkLabel}</a>
+			<h2 class="pubg-section__title" id="pubg-updates-title">{heading}</h2>
+			<a class="pubg-link" href={updatesHref}>{linkLabel}</a>
 		</header>
 
-		<a class="pubg-patch" href={statusHref}>
+		<a class="pubg-patch" href={updatesHref}>
 			<div class="pubg-patch__img">
 				<img
 					src={tarkovImages.patchNotes}
-					alt="Escape from Tarkov Cheats patch notes banner — live undetected status after BattlEye updates"
+					alt="Escape from Tarkov Cheats updates — live undetected notes after BattlEye patches"
 					width="1024"
 					height="576"
 					loading="lazy"
@@ -45,11 +46,9 @@ const statusNote = locale === 'en' ? trustSignals.statusNote : ui.trust.statusNo
 					<span class="pubg-patch__tab is-active">PC</span>
 					<span class="pubg-patch__tab">{ui.trust.status}</span>
 				</div>
-				<h3 class="pubg-patch__h">{statusHeading}</h3>
-				<p class="pubg-patch__p">
-					{fillBrandTokens('Check here after an {game} or {antiCheat} patch before you play.')} {statusNote}
-				</p>
-				<span class="pubg-patch__cta">{statusCta}</span>
+				<h3 class="pubg-patch__h">{heading}</h3>
+				<p class="pubg-patch__p">{body}</p>
+				<span class="pubg-patch__cta">{linkLabel}</span>
 			</div>
 		</a>
 	</div>

@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getPageContent, getUi, type PageId } from '../data/i18n';
 import { getLocalizedPath, localizeInternalHref } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { productInfo, seoFaqs, siteConfig, customerReviewStats } from '../data/site';
+import { productInfo, hubFaqs, uniqueFaqSlugs, siteConfig, customerReviewStats } from '../data/site';
 import { absoluteFaqUrl, getFaqPath } from '../data/faq';
 import { simplePageCopy } from '../data/i18n/simple-pages';
 import { getT } from '../i18n/server';
@@ -55,10 +55,10 @@ const faqSchema =
 		? {
 				'@type': 'FAQPage',
 				'@id': `${pageUrl}#faq`,
-				mainEntity: seoFaqs.map((item) => ({
+				mainEntity: hubFaqs.map((item) => ({
 					'@type': 'Question',
 					name: item.question,
-					url: absoluteFaqUrl(item.slug),
+					url: uniqueFaqSlugs.has(item.slug) ? absoluteFaqUrl(item.slug) : `${pageUrl}#${item.slug}`,
 					acceptedAnswer: { '@type': 'Answer', text: item.answer },
 				})),
 			}
@@ -200,50 +200,55 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 		pageId === 'faq' && locale === 'en' && (
 			<section class="pubg-panel pubg-panel--lift faq-index">
 				<h2>{t('common.allQuestions')}</h2>
-				<p>{t('common.openAnyQuestion')}</p>
-				<ul class="faq-index__list">
-					{seoFaqs.map((item) => (
-						<li>
-							<a href={getFaqPath(item.slug)}>
-								<span>{item.question}</span>
-								<span aria-hidden="true">→</span>
-							</a>
-						</li>
+				<p>Short answers live on this FAQ hub. Unique topics also have their own page.</p>
+				<div class="faq-index__hub">
+					{hubFaqs.map((item) => (
+						<details class="faq-index__item" id={item.slug}>
+							<summary>{item.question}</summary>
+							<p>{item.answer}</p>
+							{uniqueFaqSlugs.has(item.slug) && (
+								<p>
+									<a href={getFaqPath(item.slug)}>Open full page</a>
+								</p>
+							)}
+						</details>
 					))}
-				</ul>
+				</div>
 			</section>
 		)
 	}
 </PageLayout>
 
 <style>
-	.faq-index__list {
+	.faq-index__hub {
 		margin: 1rem 0 0;
-		padding: 0;
-		list-style: none;
 		display: grid;
 		gap: 0.45rem;
 	}
 
-	.faq-index__list a {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		padding: 0.85rem 1rem;
+	.faq-index__item {
 		border: 1px solid var(--line);
 		border-radius: var(--radius-md, 0.75rem);
 		background: var(--bg-elevated);
-		color: var(--ink);
-		font-weight: 600;
-		text-decoration: none;
-		transition:
-			border-color 0.2s ease,
-			color 0.2s ease;
+		padding: 0.35rem 1rem 0.55rem;
 	}
 
-	.faq-index__list a:hover {
-		border-color: color-mix(in srgb, var(--magenta) 35%, var(--line));
+	.faq-index__item summary {
+		cursor: pointer;
+		font-weight: 600;
+		padding: 0.55rem 0;
+		color: var(--ink);
+	}
+
+	.faq-index__item p {
+		margin: 0 0 0.65rem;
+		color: var(--ink-muted);
+		line-height: 1.6;
+	}
+
+	.faq-index__item a {
 		color: var(--magenta-soft);
+		font-weight: 600;
+		text-decoration: none;
 	}
 </style>

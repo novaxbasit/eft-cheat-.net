@@ -9,6 +9,7 @@ import {
 import { defaultLocale, locales, type LocaleCode } from '../data/i18n/locales';
 import { reviewsBasePath } from '../data/reviews';
 import { siteConfig } from '../data/site';
+import { getBlogBasePath } from '../data/blog/helpers';
 import { getBlogLocaleSwitchHref, isBlogPath } from '../data/blog/helpers';
 
 interface Props {
@@ -48,10 +49,13 @@ const localeMetas = locales.map((l) => ({
 
 const links = [
 	{ id: 'hacks', labelKey: 'nav.preview', edit: 'navPreview', href: getLocalizedPath('hacks', locale) },
-	{ id: 'esp', labelKey: 'nav.features', edit: 'navFeatures', href: getLocalizedPath('features', locale) },
-	{ id: 'pricing', labelKey: 'nav.store', edit: 'navStore', href: getLocalizedPath('pricing', locale) },
-	{ id: 'updates', labelKey: 'nav.status', edit: 'navStatus', href: getLocalizedPath('updates', locale) },
-	{ id: 'reviews', labelKey: 'nav.reviews', edit: 'navReviews', href: reviewsBasePath },
+	{ id: 'features', labelKey: 'nav.features', edit: 'navFeatures', href: getLocalizedPath('features', locale) },
+	{ id: 'pricing', labelKey: 'nav.pricing', edit: 'navStore', href: getLocalizedPath('pricing', locale) },
+	{ id: 'updates', labelKey: 'nav.updates', edit: 'navStatus', href: getLocalizedPath('updates', locale) },
+	{ id: 'blog', labelKey: 'common.blog', href: getBlogBasePath(defaultLocale) },
+	{ id: 'faq', labelKey: 'nav.faq', href: getLocalizedPath('faq', locale) },
+	{ id: 'setup', labelKey: 'nav.setup', href: getLocalizedPath('setup', locale) },
+	{ id: 'support', labelKey: 'common.support', href: getLocalizedPath('support', locale) },
 ];
 
 const hasHeroBanner = !current.includes('/brand-studio');
@@ -484,7 +488,7 @@ const hasHeroBanner = !current.includes('/brand-studio');
 		}
 	}
 
-	@media (max-width: 1024px) {
+	@media (max-width: 1280px) {
 		.site-nav {
 			display: none;
 			position: fixed;

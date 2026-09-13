@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from './Navbar.astro';
+import SiteFooter from './SiteFooter.astro';
+import InnerPageBanner from './landing/InnerPageBanner.astro';
+import { seoDescription, seoTitle } from '../data/brand';
+import { brandCopy } from '../data/site-core';
+import { siteConfig } from '../data/site';
+import {
+	getHtmlSitemapGroups,
+	getHtmlSitemapHreflangAlternates,
+	getHtmlSitemapPath,
+} from '../data/html-sitemap';
+import { getLocalizedPath } from '../data/i18n/routing';
+import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
+
+interface Props {
+	locale?: LocaleCode;
+}
+
+const locale = Astro.props.locale ?? defaultLocale;
+const groups = getHtmlSitemapGroups(locale);
+const canonicalPath = getHtmlSitemapPath(locale);
+const hreflangAlternates = getHtmlSitemapHreflangAlternates(locale);
+const title = seoTitle('Sitemap');
+const description = seoDescription(
+	'HTML sitemap of canonical {brand} pages — Cheats, Features, Pricing, Updates, Blog, FAQ, Setup, and Support.',
+);
+const intro =
+	locale === 'en'
+		? 'This sitemap lists canonical Escape from Tarkov Cheats pages. Labels match the URLs they point to.'
+		: 'This sitemap lists canonical pages for this language.';
+---
+
+<Layout
+	title={title}
+	description={description}
+	canonicalPath={canonicalPath}
+	hreflangAlternates={hreflangAlternates}
+	locale={locale}
+	ogImage={siteConfig.defaultOgImage}
+	breadcrumbs={[{ label: 'Home', href: getLocalizedPath('home', locale) }, { label: 'Sitemap' }]}
+>
+	<Navbar locale={locale} />
+	<main class="pubg-page sitemap-html">
+		<InnerPageBanner
+			title="Sitemap"
+			intro={intro}
+			ctaPrimary={{ href: siteConfig.checkoutUrl, label: brandCopy.ctaBuy }}
+			ctaSecondary={{ href: getLocalizedPath('pricing', locale), label: 'Pricing' }}
+		/>
+		<div class="shell pubg-page__body">
+			{
+				groups.map((group) => (
+					<section class="sitemap-html__group pubg-panel">
+						<h2>{group.title}</h2>
+						<ul>
+							{group.links.map((link) => (
+								<li>
+									<a href={link.href}>{link.label}</a>
+									<span>{link.href}</span>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+		</div>
+	</main>
+	<SiteFooter locale={locale} />
+</Layout>
+
+<style>
+	.sitemap-html__group {
+		display: grid;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	.sitemap-html__group h2 {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	.sitemap-html__group ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.sitemap-html__group li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.35rem 1rem;
+		padding: 0.55rem 0;
+		border-bottom: 1px solid var(--line-soft);
+	}
+
+	.sitemap-html__group a {
+		color: var(--ink);
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.sitemap-html__group a:hover {
+		color: var(--magenta-soft);
+	}
+
+	.sitemap-html__group span {
+		font-size: 0.8rem;
+		color: var(--ink-faint);
+		word-break: break-all;
+	}
+</style>

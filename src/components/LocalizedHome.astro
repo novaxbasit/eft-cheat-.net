@@ -6,7 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { getLocaleContent, getPageContent } from '../data/i18n';
 import { getLocalizedPath } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { homeFaqs, homeSeo, productInfo, siteConfig, customerReviewStats } from '../data/site';
+import { homeSeo, productInfo, siteConfig, customerReviewStats } from '../data/site';
 import { defaultCrawlImageSrc } from '../data/page-images';
 import { MONEY_PATH } from '../data/seo-canonical';
 
@@ -64,19 +64,6 @@ const extraGraph: Record<string, unknown>[] = [
 			})),
 		},
 	},
-	{
-		'@type': 'FAQPage',
-		'@id': `${canonicalURL}#faq`,
-		mainEntity: homeFaqs.map((item) => ({
-			'@type': 'Question',
-			name: item.question,
-			url: `${siteConfig.url}/faq/${item.slug}/`,
-			acceptedAnswer: {
-				'@type': 'Answer',
-				text: item.answer,
-			},
-		})),
-	},
 ];
 ---
 
@@ -93,7 +80,7 @@ const extraGraph: Record<string, unknown>[] = [
 	locale={locale}
 	pageId="home"
 	breadcrumbs={[{ label: ui.nav.home }]}
-	extraGraph={locale === 'en' ? extraGraph : extraGraph.filter((n) => n['@type'] !== 'FAQPage')}
+	extraGraph={extraGraph}
 	lcpImage="/images/hero-banner.webm"
 	lcpImageSizes="100vw"
 >

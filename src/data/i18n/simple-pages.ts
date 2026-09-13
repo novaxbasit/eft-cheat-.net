@@ -43,10 +43,21 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Features',
 		intro: brandCopy.featuresIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'View store',
-		ctaSecondaryHref: '/pricing/',
+		ctaSecondary: 'Main product',
+		ctaSecondaryHref: '/tarkov-cheats/',
 		galleryTitle: 'In-game look',
 		sections: [
+			{
+				h2: 'How this list supports the product page',
+				paragraphs: [
+					'This Features page lists what is in the license. The main product landing is <a href="/tarkov-cheats/">Escape from Tarkov Cheats</a>. Use this page to scan modules, then buy there.',
+				],
+				list: [
+					'<a href="/tarkov-cheats/">Main product</a>',
+					'<a href="/pricing/">Pricing</a>',
+					'<a href="/updates/">Updates</a>',
+				],
+			},
 			{
 				h2: 'Player ESP',
 				paragraphs: [
@@ -88,12 +99,12 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				h2: 'System, streamproof, updates',
 				paragraphs: [
 					'This license is for Tarkov raids only. Arena needs a separate key.',
-					'Streamproof overlay keeps ESP and menus off OBS. Cloud DMA is required for full functionality. Check Status after a patch.',
+					'Streamproof overlay keeps ESP and menus off OBS. Cloud DMA is required for full functionality. Check Updates after a patch.',
 				],
 				list: [
 					'Windows 10 / 11 — HVCI, TPM, and Secure Boot on',
 					'Cloud DMA required for full functionality',
-					'Status on the Status page',
+					'Updates on the Updates page',
 				],
 			},
 		],
@@ -101,7 +112,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	pricing: page({
 		title: brandSeo.storeTitle,
 		description: brandSeo.storeDescription,
-		h1: 'Store',
+		h1: 'Pricing',
 		intro: brandCopy.storeIntro,
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Setup guide',
@@ -111,7 +122,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'What you get',
 				paragraphs: [
-					'The Store includes full package access for Windows 10 / 11 raids.',
+					'Pricing includes full package access for Windows 10 / 11 raids.',
 					'Same player ESP, loot ESP, and aimbot on monthly ($35) and lifetime ($150). Not Arena.',
 				],
 				list: ['Player ESP, loot ESP, and aimbot', 'Patch rebuilds while active', 'Digital delivery after checkout'],
@@ -140,7 +151,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 	updates: page({
 		title: brandSeo.statusTitle,
 		description: brandSeo.statusDescription,
-		h1: 'Status',
+		h1: 'Updates',
 		intro: brandCopy.statusIntro,
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Full product',
@@ -148,15 +159,15 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		galleryTitle: 'In-game look',
 		sections: [
 			{
-				h2: 'Current status',
+				h2: 'Current updates',
 				paragraphs: [
-					'As of 21 Aug 2026 the package is online for Escape from Tarkov on Windows PC. We post a new note here when a game or BattlEye patch needs a rebuild.',
-					'If Status is green, you can raid. If we are rebuilding, wait for the next note.',
+					'As of 21 Aug 2026 the package is online for Escape from Tarkov on Windows PC. We post a new Updates note here when a game or BattlEye patch needs a rebuild.',
+					'If Updates is green, you can raid. If we are rebuilding, wait for the next note.',
 				],
 				list: [
 					'Check this page before every match after a patch',
 					'Monthly and lifetime licenses get rebuilds while active',
-					'No cheat stays undetected forever — status first, then play',
+					'No cheat stays undetected forever — Updates first, then play',
 				],
 			},
 			{
@@ -164,12 +175,12 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				paragraphs: [
 					'Wait for our rebuild note, then launch. Do not play on an old build after a big update.',
 				],
-				list: ['Read the latest status note', 'Follow setup if something fails', 'Email support with your order ID'],
+				list: ['Read the latest Updates note', 'Follow setup if something fails', 'Email support with your order ID'],
 			},
 			{
 				h2: 'Important',
 				paragraphs: ['No cheat is 100% safe forever. Stay updated and use safe settings.'],
-				list: ['Status first, then play', '<a href="/support/">Support</a> for license help'],
+				list: ['Updates first, then play', '<a href="/support/">Support</a> for license help'],
 			},
 		],
 	}),
@@ -207,19 +218,19 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				list: [
 					'<a href="/tarkov-esp/">ESP guide</a>',
 					'<a href="/tarkov-aimbot/">Aimbot controls</a>',
-					'<a href="/guides/">Guides</a>',
-					'<a href="/updates/">Live status</a>',
+					'<a href="/blog/">Blog</a>',
+					'<a href="/updates/">Updates</a>',
 				],
 			},
 			{
 				h2: 'How to start',
 				paragraphs: [
-					'Buy a plan, get your license by email, then follow setup. Check Status after every major patch.',
+					'Buy a plan, get your license by email, then follow setup. Check Updates after every major patch.',
 				],
 				list: [
-					'<a href="/pricing/">Open store</a>',
+					'<a href="/pricing/">Pricing</a>',
 					'<a href="/setup/">Setup guide</a>',
-					'<a href="/updates/">Check status</a>',
+					'<a href="/updates/">Updates</a>',
 				],
 			},
 		],
@@ -253,7 +264,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				list: [
 					'<a href="/tarkov-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
-					'<a href="/pricing/">Store</a>',
+					'<a href="/pricing/">Pricing</a>',
 				],
 			},
 		],
@@ -285,7 +296,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				list: [
 					'<a href="/tarkov-cheats/">Full product</a>',
 					'<a href="/features/">All features</a>',
-					'<a href="/pricing/">Store</a>',
+					'<a href="/pricing/">Pricing</a>',
 				],
 			},
 		],
@@ -312,7 +323,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				list: [
 					'<a href="/tarkov-esp/">ESP guide</a>',
 					'<a href="/tarkov-cheats/">Full product</a>',
-					'<a href="/pricing/">Store</a>',
+					'<a href="/pricing/">Pricing</a>',
 				],
 			},
 		],
@@ -323,7 +334,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Setup',
 		intro: brandCopy.setupIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Check status',
+		ctaSecondary: 'Updates',
 		ctaSecondaryHref: '/updates/',
 		galleryTitle: 'In-game look',
 		sections: [
@@ -343,8 +354,8 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			},
 			{
 				h2: 'If something fails',
-				paragraphs: ['Check Status after a patch. Email {email} with your order ID.'],
-				list: ['<a href="/updates/">Status page</a>', '<a href="/support/">Support</a>', '<a href="/faq/">FAQ</a>'],
+				paragraphs: ['Check Updates after a patch. Email {email} with your order ID.'],
+				list: ['<a href="/updates/">Updates</a>', '<a href="/support/">Support</a>', '<a href="/faq/">FAQ</a>'],
 			},
 		],
 	}),
@@ -365,8 +376,8 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			},
 			{
 				h2: 'Faster answers',
-				paragraphs: ['Check FAQ and Status before you write. Many setup questions are already covered.'],
-				list: ['<a href="/faq/">FAQ</a>', '<a href="/updates/">Status</a>', '<a href="/setup/">Setup</a>'],
+				paragraphs: ['Check FAQ and Updates before you write. Many setup questions are already covered.'],
+				list: ['<a href="/faq/">FAQ</a>', '<a href="/updates/">Updates</a>', '<a href="/setup/">Setup</a>'],
 			},
 		],
 	}),
@@ -387,8 +398,8 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			},
 			{
 				h2: 'Setup & updates',
-				paragraphs: ['Follow Setup after you buy. Check Status after big {game} or {antiCheat} patches.'],
-				list: ['<a href="/setup/">Setup guide</a>', '<a href="/updates/">Status</a>'],
+				paragraphs: ['Follow Setup after you buy. Check Updates after big {game} or {antiCheat} patches.'],
+				list: ['<a href="/setup/">Setup guide</a>', '<a href="/updates/">Updates</a>'],
 			},
 			{
 				h2: 'Refunds',

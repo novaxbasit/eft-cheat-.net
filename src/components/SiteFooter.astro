@@ -3,6 +3,7 @@ import SiteFooterApp from './react/SiteFooter';
 import { getLocalizedPath } from '../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
 import { getBlogBasePath } from '../data/blog/helpers';
+import { getHtmlSitemapPath } from '../data/html-sitemap';
 import { siteConfig, productInfo } from '../data/site';
 
 interface Props {
@@ -12,14 +13,14 @@ interface Props {
 const locale = Astro.props.locale ?? defaultLocale;
 
 const explore = [
-	{ labelKey: 'nav.hacks', href: getLocalizedPath('hacks', locale) },
+	{ labelKey: 'nav.preview', href: getLocalizedPath('hacks', locale) },
+	{ labelKey: 'nav.features', href: getLocalizedPath('features', locale) },
+	{ labelKey: 'nav.pricing', href: getLocalizedPath('pricing', locale) },
+	{ labelKey: 'nav.updates', href: getLocalizedPath('updates', locale) },
+	{ labelKey: 'common.blog', href: getBlogBasePath(defaultLocale) },
+	{ labelKey: 'nav.faq', href: getLocalizedPath('faq', locale) },
 	{ labelKey: 'nav.esp', href: getLocalizedPath('tarkov-esp', locale) },
 	{ labelKey: 'nav.aimbot', href: getLocalizedPath('tarkov-aimbot', locale) },
-	{ labelKey: 'common.featureList', href: getLocalizedPath('features', locale) },
-	{ labelKey: 'common.pricingPlans', href: getLocalizedPath('pricing', locale) },
-	{ labelKey: 'nav.faq', href: getLocalizedPath('faq', locale) },
-	{ labelKey: 'common.guides', href: '/guides/' },
-	{ labelKey: 'common.blog', href: getBlogBasePath(locale) },
 ];
 
 const help = [
@@ -27,6 +28,7 @@ const help = [
 	{ labelKey: 'nav.updates', href: getLocalizedPath('updates', locale) },
 	{ labelKey: 'common.buyerReviewsNav', href: '/reviews/' },
 	{ labelKey: 'common.support', href: getLocalizedPath('support', locale) },
+	{ labelKey: 'common.sitemap', href: getHtmlSitemapPath(locale), fallback: 'Sitemap' },
 	{ labelKey: 'common.privacy', href: getLocalizedPath('privacy', locale) },
 	{ labelKey: 'common.terms', href: getLocalizedPath('terms', locale) },
 ];

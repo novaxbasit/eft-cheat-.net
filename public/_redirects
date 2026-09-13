@@ -9,6 +9,32 @@
 # Legacy sitemap URL → primary index (GSC / old crawlers)
 /sitemap-index.xml /sitemap.xml 301
 
+# Legacy IA aliases (labels now match canonical URLs)
+/status /updates/ 301
+/status/ /updates/ 301
+/store /pricing/ 301
+/store/ /pricing/ 301
+/hacks /tarkov-cheats/ 301
+/hacks/ /tarkov-cheats/ 301
+/guides /tarkov-cheats/ 301
+/guides/ /tarkov-cheats/ 301
+
+# Hub-only FAQ pages → /faq/
+/faq/what-are-tarkov-cheats /faq/ 301
+/faq/what-are-tarkov-cheats/ /faq/ 301
+/faq/are-tarkov-cheats-undetected-in-2026 /faq/ 301
+/faq/are-tarkov-cheats-undetected-in-2026/ /faq/ 301
+/faq/pmc-raids-and-scav-runs /faq/ 301
+/faq/pmc-raids-and-scav-runs/ /faq/ 301
+/faq/esp-wallhack-radar-or-aimbot /faq/ 301
+/faq/esp-wallhack-radar-or-aimbot/ /faq/ 301
+/faq/how-are-licenses-delivered /faq/ 301
+/faq/how-are-licenses-delivered/ /faq/ 301
+/faq/where-to-check-updates /faq/ 301
+/faq/where-to-check-updates/ /faq/ 301
+/faq/how-to-contact-support /faq/ 301
+/faq/how-to-contact-support/ /faq/ 301
+
 # Cannibalization → canonical EN landings (not in sitemap; internal links go to pillars)
 /tarkov-esp-hack /tarkov-esp/ 301
 /tarkov-esp-hack/ /tarkov-esp/ 301
@@ -38,8 +64,8 @@
 /blog/worth/ /blog/tarkov-cheats-review/ 301
 /blog/eft-cheats /blog/tarkov-cheats-review/ 301
 /blog/eft-cheats/ /blog/tarkov-cheats-review/ 301
-/blog/compare /blog/best-tarkov-cheats/ 301
-/blog/compare/ /blog/best-tarkov-cheats/ 301
+/blog/compare /blog/comparing-tarkov-cheats/ 301
+/blog/compare/ /blog/comparing-tarkov-cheats/ 301
 /blog/cheatvault /blog/cheatvault-tarkov/ 301
 /blog/cheatvault/ /blog/cheatvault-tarkov/ 301
 /blog/ghostware /blog/ghostware-tarkov/ 301
@@ -50,10 +76,10 @@
 /blog/cosmo/ /blog/cosmo-tarkov/ 301
 /blog/phoenix /blog/phoenix-tarkov/ 301
 /blog/phoenix/ /blog/phoenix-tarkov/ 301
-/blog/esp-aim /blog/tarkov-esp/ 301
-/blog/esp-aim/ /blog/tarkov-esp/ 301
-/blog/esp /blog/tarkov-esp/ 301
-/blog/esp/ /blog/tarkov-esp/ 301
+/blog/esp-aim /blog/tarkov-esp-notes/ 301
+/blog/esp-aim/ /blog/tarkov-esp-notes/ 301
+/blog/esp /blog/tarkov-esp-notes/ 301
+/blog/esp/ /blog/tarkov-esp-notes/ 301
 /blog/buy /blog/buy-tarkov-cheats/ 301
 /blog/buy/ /blog/buy-tarkov-cheats/ 301
 /blog/buy-cheats /blog/buy-tarkov-cheats/ 301
@@ -66,20 +92,20 @@
 /blog/loot/ /blog/tarkov-loot-esp/ 301
 /blog/loot-esp /blog/tarkov-loot-esp/ 301
 /blog/loot-esp/ /blog/tarkov-loot-esp/ 301
-/blog/settings /blog/tarkov-aimbot/ 301
-/blog/settings/ /blog/tarkov-aimbot/ 301
-/blog/aimbot /blog/tarkov-aimbot/ 301
-/blog/aimbot/ /blog/tarkov-aimbot/ 301
-/blog/chams /blog/tarkov-wallhack/ 301
-/blog/chams/ /blog/tarkov-wallhack/ 301
-/blog/wallhack /blog/tarkov-wallhack/ 301
-/blog/wallhack/ /blog/tarkov-wallhack/ 301
-/blog/streamproof /blog/tarkov-wallhack/ 301
-/blog/streamproof/ /blog/tarkov-wallhack/ 301
-/blog/battleye /blog/undetected-tarkov-cheats/ 301
-/blog/battleye/ /blog/undetected-tarkov-cheats/ 301
-/blog/undetected /blog/undetected-tarkov-cheats/ 301
-/blog/undetected/ /blog/undetected-tarkov-cheats/ 301
+/blog/settings /blog/tarkov-aimbot-notes/ 301
+/blog/settings/ /blog/tarkov-aimbot-notes/ 301
+/blog/aimbot /blog/tarkov-aimbot-notes/ 301
+/blog/aimbot/ /blog/tarkov-aimbot-notes/ 301
+/blog/chams /blog/tarkov-wallhack-notes/ 301
+/blog/chams/ /blog/tarkov-wallhack-notes/ 301
+/blog/wallhack /blog/tarkov-wallhack-notes/ 301
+/blog/wallhack/ /blog/tarkov-wallhack-notes/ 301
+/blog/streamproof /blog/tarkov-wallhack-notes/ 301
+/blog/streamproof/ /blog/tarkov-wallhack-notes/ 301
+/blog/battleye /blog/patch-day-notes/ 301
+/blog/battleye/ /blog/patch-day-notes/ 301
+/blog/undetected /blog/patch-day-notes/ 301
+/blog/undetected/ /blog/patch-day-notes/ 301
 /blog/arena /blog/tarkov-arena/ 301
 /blog/arena/ /blog/tarkov-arena/ 301
 /blog/dma /blog/cloud-dma/ 301
@@ -87,21 +113,35 @@
 /blog/no-recoil /blog/tarkov-no-recoil/ 301
 /blog/no-recoil/ /blog/tarkov-no-recoil/ 301
 
+# Previous keyword blog slugs that matched product URLs
+/blog/best-tarkov-cheats /blog/comparing-tarkov-cheats/ 301
+/blog/best-tarkov-cheats/ /blog/comparing-tarkov-cheats/ 301
+/blog/tarkov-esp /blog/tarkov-esp-notes/ 301
+/blog/tarkov-esp/ /blog/tarkov-esp-notes/ 301
+/blog/tarkov-aimbot /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-aimbot/ /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-wallhack /blog/tarkov-wallhack-notes/ 301
+/blog/tarkov-wallhack/ /blog/tarkov-wallhack-notes/ 301
+/blog/undetected-tarkov-cheats /blog/patch-day-notes/ 301
+/blog/undetected-tarkov-cheats/ /blog/patch-day-notes/ 301
+/blog/tarkov-radar /blog/tarkov-radar-notes/ 301
+/blog/tarkov-radar/ /blog/tarkov-radar-notes/ 301
+
 # Old long blog slugs → keyword posts
-/blog/tarkov-patch-notes-guide /blog/undetected-tarkov-cheats/ 301
-/blog/tarkov-patch-notes-guide/ /blog/undetected-tarkov-cheats/ 301
+/blog/tarkov-patch-notes-guide /blog/patch-day-notes/ 301
+/blog/tarkov-patch-notes-guide/ /blog/patch-day-notes/ 301
 /blog/tarkov-skin-leaks-guide /blog/tarkov-cheats-review/ 301
 /blog/tarkov-skin-leaks-guide/ /blog/tarkov-cheats-review/ 301
-/blog/tarkov-weapon-tier-list /blog/tarkov-aimbot/ 301
-/blog/tarkov-weapon-tier-list/ /blog/tarkov-aimbot/ 301
+/blog/tarkov-weapon-tier-list /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-weapon-tier-list/ /blog/tarkov-aimbot-notes/ 301
 /blog/tarkov-scav-run-aggressive-strategies /blog/tarkov-loot-esp/ 301
 /blog/tarkov-scav-run-aggressive-strategies/ /blog/tarkov-loot-esp/ 301
 /blog/tarkov-tournament-meta-guide /blog/tarkov-cheats-review/ 301
 /blog/tarkov-tournament-meta-guide/ /blog/tarkov-cheats-review/ 301
 /blog/tarkov-loot-routes-guide /blog/tarkov-loot-esp/ 301
 /blog/tarkov-loot-routes-guide/ /blog/tarkov-loot-esp/ 301
-/blog/tarkov-pro-settings-guide /blog/tarkov-aimbot/ 301
-/blog/tarkov-pro-settings-guide/ /blog/tarkov-aimbot/ 301
+/blog/tarkov-pro-settings-guide /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-pro-settings-guide/ /blog/tarkov-aimbot-notes/ 301
 /blog/tarkov-warmup-maps-ranked /blog/cloud-dma/ 301
 /blog/tarkov-warmup-maps-ranked/ /blog/cloud-dma/ 301
 /blog/tarkov-cheats-complete-guide-2026 /blog/tarkov-cheats-review/ 301
@@ -110,12 +150,12 @@
 /blog/escape-from-tarkov-cheats-buyers-guide/ /blog/buy-tarkov-cheats/ 301
 /blog/tarkov-cheats-2026-whats-new /blog/tarkov-cheats-review/ 301
 /blog/tarkov-cheats-2026-whats-new/ /blog/tarkov-cheats-review/ 301
-/blog/tarkov-aimbot-settings-guide /blog/tarkov-aimbot/ 301
-/blog/tarkov-aimbot-settings-guide/ /blog/tarkov-aimbot/ 301
-/blog/tarkov-esp-wallhack-explained /blog/tarkov-esp/ 301
-/blog/tarkov-esp-wallhack-explained/ /blog/tarkov-esp/ 301
-/blog/undetected-tarkov-cheats-battleye /blog/undetected-tarkov-cheats/ 301
-/blog/undetected-tarkov-cheats-battleye/ /blog/undetected-tarkov-cheats/ 301
+/blog/tarkov-aimbot-settings-guide /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-aimbot-settings-guide/ /blog/tarkov-aimbot-notes/ 301
+/blog/tarkov-esp-wallhack-explained /blog/tarkov-esp-notes/ 301
+/blog/tarkov-esp-wallhack-explained/ /blog/tarkov-esp-notes/ 301
+/blog/undetected-tarkov-cheats-battleye /blog/patch-day-notes/ 301
+/blog/undetected-tarkov-cheats-battleye/ /blog/patch-day-notes/ 301
 /blog/tarkov-cheats-vs-cheatvault-comparison /blog/cheatvault-tarkov/ 301
 /blog/tarkov-cheats-vs-cheatvault-comparison/ /blog/cheatvault-tarkov/ 301
 /blog/elitefn-vs-tarkov-cheats-two-week-test /blog/tarkov-cheats-pc/ 301
@@ -130,8 +170,8 @@
 /blog/phoenix-cheats-tarkov/ /blog/phoenix-tarkov/ 301
 /blog/phoenix-tarkov-cheats-review /blog/phoenix-tarkov/ 301
 /blog/phoenix-tarkov-cheats-review/ /blog/phoenix-tarkov/ 301
-/blog/cosmo-vs-phoenix-tarkov /blog/best-tarkov-cheats/ 301
-/blog/cosmo-vs-phoenix-tarkov/ /blog/best-tarkov-cheats/ 301
+/blog/cosmo-vs-phoenix-tarkov /blog/comparing-tarkov-cheats/ 301
+/blog/cosmo-vs-phoenix-tarkov/ /blog/comparing-tarkov-cheats/ 301
 /blog/tarkov-cheats-vs-kernaim /blog/kernaim-tarkov/ 301
 /blog/tarkov-cheats-vs-kernaim/ /blog/kernaim-tarkov/ 301
 /blog/kernaim-tarkov-cheats-review /blog/kernaim-tarkov/ 301

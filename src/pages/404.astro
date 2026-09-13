@@ -7,7 +7,7 @@ import { fillBrandTokens, productInfo, siteConfig } from '../data/site';
 
 const title = fillBrandTokens('Page Not Found | {brand}');
 const description = fillBrandTokens(
-	'That {brand} page is missing. Return home or browse features, store, setup, reviews, and the blog.',
+	'That {brand} page is missing. Return home or browse Features, Pricing, Setup, reviews, and the blog.',
 );
 const canonicalPath = Astro.url.pathname;
 const hreflangAlternates = getSelfHreflangAlternates(canonicalPath);
@@ -27,13 +27,13 @@ const hreflangAlternates = getSelfHreflangAlternates(canonicalPath);
 			<p class="missing__code">404</p>
 			<h1 class="missing__title">Page not found</h1>
 			<p class="missing__text">
-				This page was not found. The URL you opened is not on {siteConfig.name}. Use the links below for ESP, aimbot, store, and setup
+				This page was not found. The URL you opened is not on {siteConfig.name}. Use the links below for Cheats, Pricing, and Setup
 				for {productInfo.game} on Windows PC.
 			</p>
 			<div class="missing__actions">
 				<a class="btn-buy" href="/">Back to {siteConfig.name} home</a>
-				<a class="missing__ghost" href="/tarkov-cheats/">{productInfo.game} preview</a>
-				<a class="missing__ghost" href="/pricing/">Store</a>
+				<a class="missing__ghost" href="/tarkov-cheats/">Cheats</a>
+				<a class="missing__ghost" href="/pricing/">Pricing</a>
 				<a class="missing__ghost" href="/reviews/">Reviews</a>
 				<a class="missing__ghost" href="/blog/">Blog</a>
 				<a class="missing__ghost" href="/support/">Support</a>

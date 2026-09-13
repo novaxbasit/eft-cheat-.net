@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import I18nProvider from './I18nProvider';
 
-type FooterLink = { labelKey: string; href: string };
+type FooterLink = { labelKey: string; href: string; fallback?: string };
 
 type Props = {
 	locale: string;
@@ -60,6 +60,8 @@ function SiteFooterInner({
 	const { t } = useTranslation();
 	const year = new Date().getFullYear();
 	const brandParts = splitBrandName(siteName);
+	const footerLabel = (link: FooterLink) =>
+		t(link.labelKey, link.fallback ? { defaultValue: link.fallback } : undefined);
 
 	const legal = help.filter((l) => l.labelKey.includes('privacy') || l.labelKey.includes('terms'));
 	const helpNav = help.filter((l) => !l.labelKey.includes('privacy') && !l.labelKey.includes('terms'));
@@ -97,7 +99,7 @@ function SiteFooterInner({
 							{t('cta.buy')}
 						</a>
 						<a className="site-footer__cta site-footer__cta--ghost" href={storeHref}>
-							{t('nav.store')}
+							{t('nav.pricing')}
 						</a>
 					</div>
 					<div className="site-footer__social" aria-label={t('common.share')}>
@@ -121,7 +123,7 @@ function SiteFooterInner({
 					<ul>
 						{explore.map((link) => (
 							<li key={link.href}>
-								<a href={link.href}>{t(link.labelKey)}</a>
+								<a href={link.href}>{footerLabel(link)}</a>
 							</li>
 						))}
 					</ul>
@@ -132,7 +134,7 @@ function SiteFooterInner({
 					<ul>
 						{helpNav.map((link) => (
 							<li key={link.href}>
-								<a href={link.href}>{t(link.labelKey)}</a>
+								<a href={link.href}>{footerLabel(link)}</a>
 							</li>
 						))}
 					</ul>

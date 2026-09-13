@@ -56,13 +56,13 @@ export const seoLandingPages = [
 export const mainNav = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Cheats', href: '/tarkov-cheats/' },
-	{ label: 'Aimbot', href: '/tarkov-aimbot/' },
-	{ label: 'ESP', href: '/tarkov-esp/' },
 	{ label: 'Features', href: '/features/' },
 	{ label: 'Pricing', href: '/pricing/' },
-	{ label: 'Setup', href: '/setup/' },
 	{ label: 'Updates', href: '/updates/' },
+	{ label: 'Blog', href: '/blog/' },
 	{ label: 'FAQ', href: '/faq/' },
+	{ label: 'Setup', href: '/setup/' },
+	{ label: 'Support', href: '/support/' },
 ] as const;
 
 export const footerNav = [
@@ -110,7 +110,7 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Are {primaryKeyword} undetected in 2026?',
 		answer:
-			'Are {primaryKeyword} undetected in 2026? Yes — {primaryKeyword} stay undetected in 2026 only while we rebuild after {antiCheat} and game patches. Check the Status page before you queue. No cheat can guarantee permanent undetected status — maintenance and responsible use matter.',
+			'Are {primaryKeyword} undetected in 2026? Yes — {primaryKeyword} stay undetected in 2026 only while we rebuild after {antiCheat} and game patches. Check the Updates page before you queue. No cheat can guarantee permanent undetected status — maintenance and responsible use matter.',
 		slug: 'are-tarkov-cheats-undetected-in-2026',
 		seoTitle: 'Are {brand} Undetected in 2026? | FAQ',
 		seoDescription:
@@ -146,11 +146,11 @@ export const homeFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'Where do I check updates after an Escape from Tarkov or {antiCheat} patch?',
 		answer:
-			'Where do I check updates after an Escape from Tarkov or {antiCheat} patch? Check updates on the Status page after an Escape from Tarkov or {antiCheat} patch. Maintenance notes post there when a patch affects the package. That is the fastest place to confirm whether a new {brand} build is live.',
+			'Where do I check updates after an Escape from Tarkov or {antiCheat} patch? Check updates on the Updates page after an Escape from Tarkov or {antiCheat} patch. Maintenance notes post there when a patch affects the package. That is the fastest place to confirm whether a new {brand} build is live.',
 		slug: 'where-to-check-updates',
 		seoTitle: 'Where to Check {game} / {antiCheat} Updates | FAQ',
 		seoDescription:
-			'Check the Status page after {game} or {antiCheat} patches to confirm the latest {brand} build status.',
+			'Check the Updates page after {game} or {antiCheat} patches to confirm the latest {brand} build status.',
 	}),
 	faq({
 		question: 'How do I contact support?',
@@ -163,8 +163,8 @@ export const homeFaqs: readonly FaqItem[] = [
 	}),
 ] as const;
 
-export const seoFaqs: readonly FaqItem[] = [
-	...homeFaqs,
+/** Unique FAQ answers that deserve their own URL. Hub duplicates redirect to /faq/. */
+export const uniqueFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'What is an {game} wallhack?',
 		answer:
@@ -186,11 +186,11 @@ export const seoFaqs: readonly FaqItem[] = [
 	faq({
 		question: 'How does {antiCheat} affect {primaryKeyword}?',
 		answer:
-			'How does {antiCheat} affect {primaryKeyword}? {antiCheat} can affect {primaryKeyword} because it monitors {game} on Windows PC. {brand} posts maintenance notes after patches that may need a rebuild. Check Status before you raid.',
+			'How does {antiCheat} affect {primaryKeyword}? {antiCheat} can affect {primaryKeyword} because it monitors {game} on Windows PC. {brand} posts maintenance notes after patches that may need a rebuild. Check Updates before you raid.',
 		slug: 'battleye-anti-cheat-and-tarkov-cheats',
 		seoTitle: 'How {antiCheat} Affects {brand} | FAQ',
 		seoDescription:
-			'{antiCheat} may require {brand} rebuilds after patches. Status notes explain the update workflow.',
+			'{antiCheat} may require {brand} rebuilds after patches. Updates notes explain the update workflow.',
 	}),
 	faq({
 		question: 'Is Cloud DMA required?',
@@ -211,6 +211,13 @@ export const seoFaqs: readonly FaqItem[] = [
 			'Buy monthly ($35) or lifetime ($150) {brand} licenses for Windows PC — player ESP, loot ESP, and aimbot. Compare pricing before checkout.',
 	}),
 ] as const;
+
+/** All questions shown on /faq/. Child URLs exist only for uniqueFaqs. */
+export const hubFaqs: readonly FaqItem[] = [...homeFaqs, ...uniqueFaqs];
+export const uniqueFaqSlugs = new Set(uniqueFaqs.map((item) => item.slug));
+export const hubOnlyFaqSlugs = new Set(homeFaqs.map((item) => item.slug));
+/** Child FAQ routes — unique answers only. */
+export const seoFaqs = uniqueFaqs;
 
 export type CustomerReview = {
 	handle: string;

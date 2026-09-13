@@ -8,14 +8,12 @@ import {
 	absoluteBlogUrl,
 	getAllPostsForLocale,
 	getBlogBasePath,
-	getFeaturedPosts,
 	getBlogIndexHreflangAlternates,
 } from '../data/blog/helpers';
 import { siteConfig } from '../data/site';
 import { brandSeo, seoPageTitle } from '../data/site-core';
 import { seoDescription } from '../data/brand';
 import { getLocalizedPath } from '../data/i18n/routing';
-import { getT } from '../i18n/server';
 
 interface Props {
 	locale: LocaleCode;
@@ -23,9 +21,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const ui = blogUi[locale];
-const t = getT(locale);
 const posts = getAllPostsForLocale(locale);
-const featured = getFeaturedPosts(locale, 3);
 const canonicalPath = getBlogBasePath(locale);
 const canonicalURL = absoluteBlogUrl(locale);
 const hreflangAlternates = getBlogIndexHreflangAlternates(locale);
@@ -71,38 +67,9 @@ const articleListSchema = {
 		<InnerPageBanner title={ui.blogH1} intro={ui.blogIntro} />
 
 		<div class="shell pubg-page__body blog__inner">
-
-		{
-			featured.length > 0 && (
-				<section class="blog__featured" aria-label={t('common.featured')}>
-					{
-						featured.map((post, index) => (
-							<a class="blog__feature-card pubg-panel pubg-panel--lift" href={post.canonicalPath}>
-								<img
-									src={post.imageSrc}
-									alt={post.translation.imageAlt}
-									width="640"
-									height="360"
-									loading={index === 0 ? 'eager' : 'lazy'}
-									decoding="async"
-									fetchpriority={index === 0 ? 'high' : undefined}
-								/>
-								<div>
-									<span class="blog__cat">{post.category}</span>
-									<h2>{post.translation.title}</h2>
-									<p>{post.translation.intro}</p>
-									<span class="blog__more">{ui.readMore}</span>
-								</div>
-							</a>
-						))
-					}
-				</section>
-			)
-		}
-
 		<section class="blog__list" aria-label={ui.allPosts}>
 			{
-				posts.map((post) => (
+				posts.map((post, index) => (
 					<article class="blog__card pubg-panel pubg-panel--lift">
 						<a href={post.canonicalPath}>
 							<img
@@ -110,8 +77,9 @@ const articleListSchema = {
 								alt={post.translation.imageAlt}
 								width="480"
 								height="270"
-								loading="lazy"
+								loading={index === 0 ? 'eager' : 'lazy'}
 								decoding="async"
+								fetchpriority={index === 0 ? 'high' : undefined}
 							/>
 							<span class="blog__cat">{post.category}</span>
 							<h2>{post.translation.title}</h2>

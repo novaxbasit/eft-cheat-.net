@@ -52,26 +52,40 @@ async function resolveDistRoot() {
 const SITE = readBrandUrl();
 const IMAGE_SITEMAP_ENTRIES = countBrandSitemapImages();
 
-const BLOG_PAGES = 18; // /blog/ index + 17 posts
+const BLOG_PAGES = 20; // /blog/ index + 19 posts
 const REVIEW_PAGES = 11; // /reviews/ index + 10 review detail pages
-const FAQ_PAGES = 12; // FAQ answer pages (index is in the product pages)
-const GUIDES_PAGES = 1; // /guides/
+const FAQ_PAGES = 5; // unique FAQ answer pages (hub duplicates 301 to /faq/)
+const HTML_SITEMAP_PAGES = 1; // /site-map/
+const BLOG_SLUG_REDIRECTS = 6; // old keyword slugs that matched product URLs
+const IA_ALIAS_REDIRECTS = 4; // /status/ /store/ /hacks/ /guides/
+const FAQ_HUB_REDIRECTS = 7; // generic FAQ answers now on /faq/
 /** Product pages in sitemap — excludes cannibal EN URLs that 301 to stronger pillars */
 const ENGLISH_PRODUCT_PAGES = 14;
-const ENGLISH_PAGES = ENGLISH_PRODUCT_PAGES + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES + GUIDES_PAGES;
+const ENGLISH_PAGES =
+	ENGLISH_PRODUCT_PAGES + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES + HTML_SITEMAP_PAGES;
 const I18N_LOCALES = 21;
 /** Locale product pages also exclude the same cannibal pageIds */
 const PRODUCT_PAGES_PER_LOCALE = 14;
 const BLOG_PAGES_PER_LOCALE = 0; // Locale blog URLs 301 to EN; not in sitemaps
-const PAGES_PER_LOCALE = PRODUCT_PAGES_PER_LOCALE + BLOG_PAGES_PER_LOCALE;
+const HTML_SITEMAP_PER_LOCALE = 1;
+const PAGES_PER_LOCALE = PRODUCT_PAGES_PER_LOCALE + BLOG_PAGES_PER_LOCALE + HTML_SITEMAP_PER_LOCALE;
 const I18N_URLS = I18N_LOCALES * PAGES_PER_LOCALE;
 const TOTAL_PAGES = ENGLISH_PAGES + I18N_URLS;
 /** Full EN HTML may still emit redirect stubs for cannibal URLs; sitemaps omit them */
-const ENGLISH_HTML_PAGES = 25 + BLOG_PAGES + REVIEW_PAGES + FAQ_PAGES + GUIDES_PAGES;
-/** Locale HTML = product pages + blog redirect stubs (index + 10 posts) that are omitted from sitemaps */
-const LOCALE_BLOG_REDIRECT_PAGES = 18;
+const ENGLISH_HTML_PAGES =
+	25 +
+	IA_ALIAS_REDIRECTS +
+	BLOG_PAGES +
+	BLOG_SLUG_REDIRECTS +
+	REVIEW_PAGES +
+	FAQ_PAGES +
+	FAQ_HUB_REDIRECTS +
+	HTML_SITEMAP_PAGES;
+/** Locale HTML = product pages + blog redirect stubs + HTML sitemap */
+const LOCALE_BLOG_REDIRECT_PAGES = 20;
 const TOTAL_HTML_PAGES =
-	ENGLISH_HTML_PAGES + I18N_LOCALES * (PRODUCT_PAGES_PER_LOCALE + LOCALE_BLOG_REDIRECT_PAGES);
+	ENGLISH_HTML_PAGES +
+	I18N_LOCALES * (PRODUCT_PAGES_PER_LOCALE + LOCALE_BLOG_REDIRECT_PAGES + HTML_SITEMAP_PER_LOCALE);
 const HREFLANG_PER_URL = 23;
 const SITEMAP_INDEX_ENTRIES = 1 + I18N_LOCALES + 1; // EN + locales + images
 
@@ -88,6 +102,23 @@ const REDIRECT_ONLY_PATHS = new Set([
 	'/tarkov-wallhack/',
 	'/tarkov-cheat-download/',
 	'/battleye-bypass/',
+	'/status/',
+	'/store/',
+	'/hacks/',
+	'/guides/',
+	'/faq/what-are-tarkov-cheats/',
+	'/faq/are-tarkov-cheats-undetected-in-2026/',
+	'/faq/pmc-raids-and-scav-runs/',
+	'/faq/esp-wallhack-radar-or-aimbot/',
+	'/faq/how-are-licenses-delivered/',
+	'/faq/where-to-check-updates/',
+	'/faq/how-to-contact-support/',
+	'/blog/best-tarkov-cheats/',
+	'/blog/tarkov-esp/',
+	'/blog/tarkov-aimbot/',
+	'/blog/tarkov-wallhack/',
+	'/blog/undetected-tarkov-cheats/',
+	'/blog/tarkov-radar/',
 ]);
 
 const ENGLISH_PATHS = [
@@ -115,25 +146,25 @@ const ENGLISH_PATHS = [
 	'/terms/',
 	'/blog/',
 	'/blog/tarkov-cheats-review/',
-	'/blog/best-tarkov-cheats/',
+	'/blog/comparing-tarkov-cheats/',
 	'/blog/cheatvault-tarkov/',
 	'/blog/ghostware-tarkov/',
 	'/blog/kernaim-tarkov/',
 	'/blog/cosmo-tarkov/',
 	'/blog/phoenix-tarkov/',
-	'/blog/tarkov-esp/',
+	'/blog/tarkov-esp-notes/',
 	'/blog/buy-tarkov-cheats/',
 	'/blog/tarkov-cheats-price/',
 	'/blog/tarkov-cheats-pc/',
 	'/blog/tarkov-loot-esp/',
-	'/blog/tarkov-aimbot/',
-	'/blog/tarkov-wallhack/',
-	'/blog/undetected-tarkov-cheats/',
+	'/blog/tarkov-aimbot-notes/',
+	'/blog/tarkov-wallhack-notes/',
+	'/blog/patch-day-notes/',
 	'/blog/tarkov-arena/',
 	'/blog/cloud-dma/',
 	'/blog/tarkov-no-recoil/',
-	'/blog/tarkov-radar/',
-	'/guides/',
+	'/blog/tarkov-radar-notes/',
+	'/site-map/',
 	'/reviews/',
 	'/reviews/tarkov-aimbot-review-xkrypt0/',
 	'/reviews/tarkov-esp-raid-review-buildsr4k/',
@@ -145,13 +176,6 @@ const ENGLISH_PATHS = [
 	'/reviews/tarkov-stream-proof-review-vanlifeeft/',
 	'/reviews/tarkov-battleye-update-review-patchdaymike/',
 	'/reviews/tarkov-sniper-aimbot-review-snipezonly/',
-	'/faq/what-are-tarkov-cheats/',
-	'/faq/are-tarkov-cheats-undetected-in-2026/',
-	'/faq/pmc-raids-and-scav-runs/',
-	'/faq/esp-wallhack-radar-or-aimbot/',
-	'/faq/how-are-licenses-delivered/',
-	'/faq/where-to-check-updates/',
-	'/faq/how-to-contact-support/',
 	'/faq/what-is-a-tarkov-wallhack/',
 	'/faq/does-tarkov-cheats-include-stream-proof/',
 	'/faq/battleye-anti-cheat-and-tarkov-cheats/',
@@ -299,7 +323,7 @@ async function main() {
 		}
 	}
 	if (errors === 0) {
-		ok('Core pages present in sitemap-en.xml: /features/ /pricing/ (Store) /updates/ (Status)');
+		ok('Core pages present in sitemap-en.xml: /features/ /pricing/ /updates/');
 	}
 
 	for (const required of [`${SITE}/features/`, `${SITE}/pricing/`, `${SITE}/updates/`]) {
@@ -309,7 +333,7 @@ async function main() {
 		}
 	}
 	if (errors === 0) {
-		ok('Image sitemap hosts Features, Store (/pricing/), and Status (/updates/)');
+		ok('Image sitemap hosts Features, Pricing (/pricing/), and Updates (/updates/)');
 	}
 
 	// English path coverage (skip intentional 301 stubs)

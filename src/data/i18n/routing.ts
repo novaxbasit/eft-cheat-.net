@@ -860,15 +860,14 @@ export function localeFromAcceptLanguage(header: string | null): LocaleCode {
 export function getNavForLocale(locale: LocaleCode, labels: Record<string, string>) {
 	const items: { label: string; href: string; pageId?: PageId }[] = [
 		{ label: labels.home, href: getLocalizedPath('home', locale), pageId: 'home' },
-	{ label: labels.hacks ?? 'Hacks', href: getLocalizedPath('hacks', locale), pageId: 'hacks' },
-		{ label: labels.aimbot, href: getLocalizedPath('tarkov-aimbot', locale), pageId: 'tarkov-aimbot' },
-		{ label: labels.esp, href: getLocalizedPath('tarkov-esp', locale), pageId: 'tarkov-esp' },
-		{ label: 'Blog', href: locale === defaultLocale ? '/blog/' : `/${locale}/blog/` },
+		{ label: labels.preview ?? labels.hacks ?? 'Cheats', href: getLocalizedPath('hacks', locale), pageId: 'hacks' },
 		{ label: labels.features, href: getLocalizedPath('features', locale), pageId: 'features' },
 		{ label: labels.pricing, href: getLocalizedPath('pricing', locale), pageId: 'pricing' },
-		{ label: labels.setup, href: getLocalizedPath('setup', locale), pageId: 'setup' },
 		{ label: labels.updates, href: getLocalizedPath('updates', locale), pageId: 'updates' },
+		{ label: 'Blog', href: '/blog/' },
 		{ label: labels.faq, href: getLocalizedPath('faq', locale), pageId: 'faq' },
+		{ label: labels.setup, href: getLocalizedPath('setup', locale), pageId: 'setup' },
+		{ label: labels.support ?? 'Support', href: getLocalizedPath('support', locale), pageId: 'support' },
 	];
 	return items;
 }

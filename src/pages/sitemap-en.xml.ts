@@ -3,7 +3,8 @@ import { absolutePageUrl, pageSitemapEntries } from '../data/page-sitemap';
 import { getBlogSitemapEntries } from '../data/blog/helpers';
 import { getReviewSitemapEntries } from '../data/reviews';
 import { getFaqSitemapEntries } from '../data/faq';
-import { getGuidesSitemapEntries } from '../data/guides';
+import { defaultLocale } from '../data/i18n/locales';
+import { getHtmlSitemapPath, getHtmlSitemapXmlEntries, htmlSitemapHreflangXml } from '../data/html-sitemap';
 import { hreflangLinksXml, resolvePageIdFromPath } from '../data/i18n/routing';
 import { escapeXml, renderImageExtension, renderUrlsetXml, sitemapResponseHeaders } from '../data/sitemap-xml';
 
@@ -23,16 +24,20 @@ export const GET: APIRoute = () => {
 
 	const reviewEntries = getReviewSitemapEntries();
 	const faqEntries = getFaqSitemapEntries();
-	const guidesEntries = getGuidesSitemapEntries();
+	const htmlSitemapEntries = getHtmlSitemapXmlEntries(defaultLocale);
 
-	const urls = [...pageSitemapEntries, ...blogEntries, ...reviewEntries, ...faqEntries, ...guidesEntries].map((entry) => {
+	const urls = [...pageSitemapEntries, ...blogEntries, ...reviewEntries, ...faqEntries, ...htmlSitemapEntries].map((entry) => {
 		const images = entry.images
 			.map((image) => renderImageExtension(image, entry.path))
 			.join('\n');
 
 		const imageBlock = images ? `\n${images}` : '';
 		const pageId = resolvePageIdFromPath(entry.path);
-		const hreflangBlock = pageId ? `\n${hreflangLinksXml(pageId, escapeXml)}` : '';
+		const hreflangBlock = pageId
+			? `\n${hreflangLinksXml(pageId, escapeXml)}`
+			: entry.path === getHtmlSitemapPath(defaultLocale)
+				? `\n${htmlSitemapHreflangXml(escapeXml, defaultLocale)}`
+				: '';
 
 		return `  <url>
     <loc>${escapeXml(absolutePageUrl(entry.path))}</loc>

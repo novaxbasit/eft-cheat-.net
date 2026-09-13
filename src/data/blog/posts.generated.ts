@@ -41,8 +41,8 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Cheats do not teach extracts. ESP does not show you ZB-1011 if you never learned Customs. I died with full boxes because I pushed a fight I should have walked.",
 					"Factory is still loud. Sound and timing matter more than a silhouette when someone is already on the stairs. I keep max player range tight there or the screen is junk.",
 					"Yellow Status weeks eat play time. I queued once because a YouTube comment said the loader still worked. Half the menu was grey. Support said wait. The page already said wait. That was me being impatient, not the product lying.",
-					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> moves. Every shop rebuilds. Lifetime does not skip that. Context: <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
-					"Wide aimbot looks wrong in clips. A friend sent me a VOD and I could tell in two seconds. I run vis check and a small FOV. Writeup: <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
+					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> moves. Every shop rebuilds. Lifetime does not skip that. Context: <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
+					"Wide aimbot looks wrong in clips. A friend sent me a VOD and I could tell in two seconds. I run vis check and a small FOV. Writeup: <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
 					"If you only play Arena, this review is not for that product. Raids key stays raids.",
 					"Try This Today: Write down the last five deaths that actually cost you a kit. Mark which ones ESP would have warned you about. For me it was about half — third parties and campers — not the 1v1 I took on purpose.",
 					"Woods is a bad example of “ESP wins.” You still get beamed from a tree line if you sprint a ridge because a name tag made you brave. I did that twice. I will probably do it again.",
@@ -56,19 +56,19 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Phoenix Full vs Lite is the trap I watched a friend hit. He wanted ESP. Lite kept recoil and dropped loot filters. Dorms still had PMCs. Notes: <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a>.",
 					"Cosmo has the longest feature sheet I saw. I do not toggle half of it. I wanted price floors and vis check, not a misc museum. <a href=\"/blog/cosmo-tarkov/\">Cosmo Tarkov</a>.",
 					"CheatVault was cheaper per day until I realized I was buying a seller. Three green listings, three different loaders. <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
-					"Shopping frame I still send people: <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a>. Dates beat logos.",
-					"Price here is $35 for 31 days or $150 lifetime. Same stack. I started monthly, then lifetime after two wipes. Math: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · live numbers on <a href=\"/pricing/\">Store</a>.",
+					"Shopping frame I still send people: <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a>. Dates beat logos.",
+					"Price here is $35 for 31 days or $150 lifetime. Same stack. I started monthly, then lifetime after two wipes. Math: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · live numbers on <a href=\"/pricing/\">Pricing</a>.",
 					"I did not pick this site because the banner was prettier. I picked it because Features matched checkout, Status had a date, and Arena was written as a no. Boring reasons. Good reasons.",
 				],
 			},
 			{
 				h2: "Would I buy again",
 				paragraphs: [
-					"Yes for raids on Windows PC. I send friends <a href=\"/updates/\">Status</a> first, then Features, then this review. Hype comments without dates get ignored.",
+					"Yes for raids on Windows PC. I send friends <a href=\"/updates/\">Updates</a> first, then Features, then this review. Hype comments without dates get ignored.",
 					"I would not buy it for a clip account. I would not buy it if I only wanted Arena. I would not buy it on a yellow week just because Discord said go.",
 					"More voices on <a href=\"/reviews/\">Reviews</a> — the ones that name Customs and Interchange sound like my notes. The ones that only say undetected do not.",
 					"Buy path I use now: <a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>. First week on a real PC: <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>.",
-					"ESP is still the toggle I would keep if I could only keep one. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
+					"ESP is still the toggle I would keep if I could only keep one. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
 					"If Status stays dated and the menu stays one SKU, I renew here. If a competitor beats that without a Lite trap, I will read them. I am not married to a logo.",
 				],
 			}
@@ -85,11 +85,11 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: true,
 		translations: {
 		en: {
-		slug: "best-tarkov-cheats",
-		title: "Best Tarkov Cheats",
-		metaDescription: "I typed best Tarkov cheats into Google the night before I paid. Phoenix, Cosmo, CheatVault, Ghostware, Kernaim — what each key actually ships.",
-		h1: "Best Tarkov Cheats",
-		intro: "I typed best Tarkov cheats into Google the night before I paid. Every shop had the same banner — undetected, silent aim, day keys. I opened Phoenix, Cosmo, CheatVault, Ghostware, Kernaim, and this site in tabs and wrote down what each key actually ships after checkout.",
+		slug: "comparing-tarkov-cheats",
+		title: "Comparing Tarkov Cheats",
+		metaDescription: "I compared Tarkov cheat shops the night before I paid. Phoenix, Cosmo, CheatVault, Ghostware, Kernaim — what each key actually ships.",
+		h1: "Comparing Tarkov Cheats",
+		intro: "Comparing Tarkov Cheats is the notes doc I wrote the night before I paid. Every shop had the same banner — undetected, silent aim, day keys. I opened Phoenix, Cosmo, CheatVault, Ghostware, Kernaim, and this site in tabs and wrote down what each key actually ships after checkout.",
 		keywords: ["best tarkov cheats","best tarkov cheats 2026","compare tarkov cheats","tarkov cheat sites"],
 		imageAlt: "Compare the best Tarkov cheats before buying",
 		sections: [
@@ -98,7 +98,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Count features on one page. Player ESP. Loot ESP with a price floor. Aimbot. No recoil. Streamproof. If loot filters are a second cart, that is not one license. I got burned by that on a reseller once.",
 					"Raids vs Arena. Ads blur this. This product is raids only. I asked every shop the same sentence: does this key work in Arena. Answers were messy. Ours is no. <a href=\"/blog/tarkov-arena/\">Tarkov Arena</a>.",
-					"Dated Status beats undetected badges. If the last note has no day, I treat it as unknown. Bookmark: <a href=\"/updates/\">Status</a>.",
+					"Dated Status beats undetected badges. If the last note has no day, I treat it as unknown. Bookmark: <a href=\"/updates/\">Updates</a>.",
 					"Support with an order ID. Marketplace tickets vanish. Email here is support@eftcheat.net. I keep the receipt in the same folder as the screenshot of the store page from the day I paid.",
 					"Cloud DMA is required here — not a PCIe card. <a href=\"/blog/cloud-dma/\">Cloud DMA</a>. If a shop tells you to turn Windows security off forever, that is a different risk than I wanted.",
 					"Pro Tip: Screenshot the store page the day you pay. Resellers edit feature lists mid-wipe. Proof beats Discord arguments when a toggle disappears after patch week.",
@@ -121,10 +121,10 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "Price without the tiny daily number",
 				paragraphs: [
-					"Here: $35 for 31 days or $150 lifetime. Same menu on both. <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · <a href=\"/pricing/\">Store</a>.",
+					"Here: $35 for 31 days or $150 lifetime. Same menu on both. <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · <a href=\"/pricing/\">Pricing</a>.",
 					"I multiplied Phoenix day-key numbers by thirty before I believed any cheap daily listing. Four “cheap” days plus a spoofer line plus a radar SKU beat one monthly here on the spreadsheet.",
 					"Feature parity beat a five-dollar gap. Streamproof included. Loot ESP not an upsell. That is what I was actually shopping for.",
-					"Yellow weeks still happen on lifetime. You wait. No shop I know refunds BattlEye downtime. Patience is the cost. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Yellow weeks still happen on lifetime. You wait. No shop I know refunds BattlEye downtime. Patience is the cost. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"Try This Today: Multiply any day-key price by thirty. Write the number next to $35. Then count cart lines for ESP plus aimbot plus loot. Boring. It is how I stopped getting baited.",
 					"Hidden math I keep seeing: Lite plus aimbot plus loot plus radar. Four lines. One monthly here. I do not care if the daily key is $6 if I need three of them.",
 				],
@@ -133,7 +133,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "How I pick now",
 				paragraphs: [
 					"Green Status the same day I pay. Menu matches the store page on first launch. One support email. Windows PC only — <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>.",
-					"ESP vs combat if you are still deciding what you will actually use: <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a> · <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
+					"ESP vs combat if you are still deciding what you will actually use: <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a> · <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
 					"Honest month-four take: <a href=\"/blog/tarkov-cheats-review/\">Tarkov Cheats Review</a>. Buy flow: <a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>.",
 					"I picked this site when Status was green and the Features page listed the same toggles I saw after checkout. That sounds boring. That is the point.",
 					"Green Status. One SKU. Windows PC. Raids. If a shop cannot say those four things in one paragraph, I close the tab.",
@@ -177,10 +177,10 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "The cheap daily key",
 				paragraphs: [
 					"An $8 daily key sounds cheap until you play four weeks of a wipe. Run the month against $35 here. I did it on paper because the cart makes daily numbers look friendly.",
-					"Lifetime $150 on <a href=\"/pricing/\">Store</a>. No auction-style pricing. Plan notes: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a>.",
+					"Lifetime $150 on <a href=\"/pricing/\">Pricing</a>. No auction-style pricing. Plan notes: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a>.",
 					"Watch HWID reset fees and “premium support” on marketplace carts. Those add up. I saw a listing that looked cheaper until the reset fee sat under the fold.",
 					"I still open CheatVault for price checks. Then I buy direct when I want one known raids menu. That is not loyalty. That is fewer variables on patch night.",
-					"Radar as a second SKU showed up on one cart. Distance and arrows already live in ESP here. <a href=\"/blog/tarkov-radar/\">Tarkov Radar</a>.",
+					"Radar as a second SKU showed up on one cart. Distance and arrows already live in ESP here. <a href=\"/blog/tarkov-radar-notes/\">Tarkov Radar</a>.",
 					"I almost stacked seven daily keys “just for the weekend.” That is a monthly with extra clicks. I bought monthly here instead and stopped doing cart yoga.",
 				],
 			},
@@ -188,9 +188,9 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Support when it breaks",
 				paragraphs: [
 					"Marketplace tickets bounce between seller Discord and the vault brand. I wanted one email with order ID. Grey menu screenshot plus Status color got me a faster reply than a rage paragraph.",
-					"We post on <a href=\"/updates/\">Status</a>. If a CheatVault listing has no dated note, I do not launch that key just because a stranger in chat said it is fine.",
+					"We post on <a href=\"/updates/\">Updates</a>. If a CheatVault listing has no dated note, I do not launch that key just because a stranger in chat said it is fine.",
 					"Setup scares on a clean PC are usually HVCI or Secure Boot, not “detected.” <a href=\"/blog/cloud-dma/\">Cloud DMA</a> · <a href=\"/setup/\">Setup</a>.",
-					"More named packages: <a href=\"/blog/ghostware-tarkov/\">Ghostware Tarkov</a> · <a href=\"/blog/kernaim-tarkov/\">Kernaim Tarkov</a>. Frame: <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a>.",
+					"More named packages: <a href=\"/blog/ghostware-tarkov/\">Ghostware Tarkov</a> · <a href=\"/blog/kernaim-tarkov/\">Kernaim Tarkov</a>. Frame: <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a>.",
 					"Screenshot of grey toggles plus Status color got a reply. A paragraph about my feelings did not. I learned to write short tickets.",
 				],
 			},
@@ -230,8 +230,8 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Ghostware-style full packages advertise ESP, aimbot, and misc combat. Loot ESP depth varies. Price filters and corpse loot are not always in the base tier. I asked in support chat before I assumed parity.",
 					"This license includes player ESP, loot ESP with a minimum price, aimbot with FOV and vis check, no recoil, streamproof. Raids only. Locked list: <a href=\"/features/\">Features</a> · <a href=\"/tarkov-esp/\">ESP</a>.",
 					"Ask their support if loot ESP includes containers and corpses. Small gaps hurt on Streets when you are farming and a PMC is sitting in a room you thought was empty junk.",
-					"Rage presets import badly. I tried a “feed” FOV once on Factory. The clip looked like a different game. I deleted it. Small FOV, vis check, hold-to-aim. <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
-					"ESP first if you are shopping combat vs information: <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
+					"Rage presets import badly. I tried a “feed” FOV once on Factory. The clip looked like a different game. I deleted it. Small FOV, vis check, hold-to-aim. <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
+					"ESP first if you are shopping combat vs information: <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
 					"The trailer is designed to look like a kill montage. My raids are stash runs and quests with the occasional Factory night. If that sentence bores you, Ghostware ads are probably for you. They were not for me.",
 					"I asked about corpse loot and minimum price. If a shop cannot answer loot questions, I assume combat is the only thing they tested.",
 				],
@@ -242,7 +242,7 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Weekly subs add up on a long wipe. Calculate 31 days vs lifetime before you auto-renew. Here: monthly $35, lifetime $150. Same features. <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a>.",
 					"Cloud DMA with HVCI on is required here. Ghostware may document a different loader. Follow their PDF there. Follow <a href=\"/setup/\">Setup</a> here. Mixing steps is how I got a grey menu on a green day.",
 					"<a href=\"/blog/cloud-dma/\">Cloud DMA</a> if boxes never render on green Status. Empty ESP is usually reqs, not “aimbot detected, ESP fine.” Forums invent that split at 2 a.m.",
-					"Compare live Status pages after the last patch — not a three-month-old YouTube review. Ours: <a href=\"/updates/\">Status</a>.",
+					"Compare live Status pages after the last patch — not a three-month-old YouTube review. Ours: <a href=\"/updates/\">Updates</a>.",
 					"Pro Tip: If their hero says rage and your main is a stash run on Interchange, you are shopping the wrong feeling. Buy for the raids you actually queue.",
 					"Weekly auto-renew is how you pay for a wipe you already quit. I like seeing an end date. 31 days is honest. Lifetime is honest in a different way.",
 				],
@@ -253,14 +253,14 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Ghostware and Phoenix compete in the loud-combat lane. I read both. <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a>. Different logos. Similar clip energy.",
 					"CheatVault will list Ghostware-shaped products from sellers. That is another layer. <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
 					"I wanted vis-check hold and loot filters in one menu. Feed clips are someone else’s problem.",
-					"Wall style if their ads say wallhack: <a href=\"/blog/tarkov-wallhack/\">Tarkov Wallhack</a>.",
+					"Wall style if their ads say wallhack: <a href=\"/blog/tarkov-wallhack-notes/\">Tarkov Wallhack</a>.",
 					"Loud combat branding is a type. Phoenix, Ghostware, some CheatVault rows. I grouped them in my notes as “clip shops.” Not an insult. A filter.",
 				],
 			},
 			{
 				h2: "Before you choose",
 				paragraphs: [
-					"<a href=\"/blog/kernaim-tarkov/\">Kernaim Tarkov</a> if you want developer-direct branding instead of rage ads. <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> for the checklist I actually used.",
+					"<a href=\"/blog/kernaim-tarkov/\">Kernaim Tarkov</a> if you want developer-direct branding instead of rage ads. <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> for the checklist I actually used.",
 					"Try This Today: Mute the trailer. Read the feature list and the last status date. If you cannot find a date, wait.",
 					"Review after I had lived with this key: <a href=\"/blog/tarkov-cheats-review/\">Tarkov Cheats Review</a>.",
 					"If you want vis-check and loot floors, start at <a href=\"/features/\">Features</a> and ignore the trailer music. That is what I wish I had done week one of shopping.",
@@ -303,16 +303,16 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Verify Kernaim loot filters on their live page before you buy for farming only. Filter UI changes. A Reddit screenshot from last wipe is not a checkout.",
 					"Loot ESP here: price floors, categories, stashes, corpses, containers. Walkthrough from actual Interchange nights: <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a>.",
-					"Aim tuning: <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a> · <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>. I run ESP heavier than aimbot. That is a taste thing, not a brand thing.",
-					"Promo codes change weekly on big brands. Compare checkout totals the day you buy. Live here: <a href=\"/pricing/\">Store</a>.",
+					"Aim tuning: <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a> · <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>. I run ESP heavier than aimbot. That is a taste thing, not a brand thing.",
+					"Promo codes change weekly on big brands. Compare checkout totals the day you buy. Live here: <a href=\"/pricing/\">Pricing</a>.",
 					"If you only quest, loot UI is the product. If you only PvP, aimbot toggles are the product. Kernaim and this site both need you to be honest about which one you are. I am a loot person who panics on Factory. That is who I bought for.",
 				],
 			},
 			{
 				h2: "Status after BattlEye",
 				paragraphs: [
-					"Both sides should publish status after BattlEye. We use <a href=\"/updates/\">Status</a>. Check theirs before you launch either product.",
-					"Nobody promises forever. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Both sides should publish status after BattlEye. We use <a href=\"/updates/\">Updates</a>. Check theirs before you launch either product.",
+					"Nobody promises forever. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"I know players happy with Kernaim. I know players happy here. The split is usually raids-only plus bundled loot vs wanting a named external brand.",
 					"Pro Tip: If a friend swears by Kernaim, ask which wipe and which map. “Undetected” without Customs or Labs in the sentence is not useful.",
 					"Long undetected streaks are marketing until you see a dated post after the last patch. Streaks do not raid. Dates do.",
@@ -322,7 +322,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "My takeaway",
 				paragraphs: [
 					"Kernaim fits buyers who want developer branding. This fits buyers who want one raids key with loot ESP and aimbot bundled and a clear Arena split.",
-					"<a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> · <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
+					"<a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> · <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
 					"Try This Today: Open both feature pages and mark loot filters, streamproof, and raids vs Arena. The first blank box is your real decision.",
 					"I told the friend to stay on Kernaim if support already knows his order ID. I stayed here because I already had Status bookmarked and loot filters I like. Switching shops for a logo is how you lose a wipe to setup.",
 				],
@@ -363,7 +363,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Loot sliders and aim",
 				paragraphs: [
 					"Cosmo min-price loot sliders are the farming check. I compared them to <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a> on one Interchange run. Price floor behavior is what matters, not the word ESP in a bullet list.",
-					"Aimbot FOV and vis check here: <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>. I do not run silent-aim branding. I run hold-to-aim. Different feel. Different clips.",
+					"Aimbot FOV and vis check here: <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>. I do not run silent-aim branding. I run hold-to-aim. Different feel. Different clips.",
 					"If you quest more than you PvP, loot filters will decide the key more than aimbot. That was true for my wipe.",
 					"Farming is a slider sport. If min price does not stick after a restart, I do not care about the rest of the sheet. That is the test I ran.",
 				],
@@ -372,8 +372,8 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Price tiers and green banners",
 				paragraphs: [
 					"Cosmo uses daily, weekly, and monthly tiers. Promos move. Compare the same day to <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a>. A weekly that looks cheaper for a weekend is not cheaper for a wipe.",
-					"Both sides claim undetected after BattlEye. Cosmo posts on their site. We post on <a href=\"/updates/\">Status</a>. Dates beat banners.",
-					"<a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a> before you trust any green badge. I have watched badges lag a patch.",
+					"Both sides claim undetected after BattlEye. Cosmo posts on their site. We post on <a href=\"/updates/\">Updates</a>. Dates beat banners.",
+					"<a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a> before you trust any green badge. I have watched badges lag a patch.",
 					"Pro Tip: Search “Cosmo cheats price” on their store the same hour you open our Store. Do not mix a sale from last month with a full-price monthly here.",
 					"Daily Cosmo keys are for people who play Friday and vanish. I play most nights of a wipe until I burn out. Monthly math won. Lifetime won later.",
 				],
@@ -382,9 +382,9 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Raids vs Arena, then pick",
 				paragraphs: [
 					"Confirm Cosmo’s key covers main Tarkov raids if that is what you play. This license is raids-only — <a href=\"/blog/tarkov-arena/\">Tarkov Arena</a>.",
-					"<a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a> is the other name in the same threads. <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> is the checklist.",
+					"<a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a> is the other name in the same threads. <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> is the checklist.",
 					"Try This Today: List three toggles you will use on your next raid. If Cosmo’s extra misc is not on that list, do not pay for the feeling of a longer page.",
-					"Store when green: <a href=\"/pricing/\">Store</a>.",
+					"Store when green: <a href=\"/pricing/\">Pricing</a>.",
 					"Cosmo may sell Arena too. I did not audit their whole catalog. I audited whether I needed it. I did not. <a href=\"/blog/tarkov-arena/\">Tarkov Arena</a> is still the warning I send.",
 				],
 			}
@@ -425,8 +425,8 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Price and Status",
 				paragraphs: [
 					"Add Phoenix day-key price times thirty before you compare to monthly here. Tiny daily numbers hide wipe cost. I spreadsheeted a month before I chose.",
-					"Live numbers: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · <a href=\"/pricing/\">Store</a>.",
-					"Status dates matter more than undetected banners. I compare when Phoenix last flipped green versus <a href=\"/updates/\">Status</a> here. Green without a day is marketing.",
+					"Live numbers: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a> · <a href=\"/pricing/\">Pricing</a>.",
+					"Status dates matter more than undetected banners. I compare when Phoenix last flipped green versus <a href=\"/updates/\">Updates</a> here. Green without a day is marketing.",
 					"Support quality depends on who sold the Phoenix key. Buying direct here is one email with order ID — not a random Discord reseller.",
 					"Pro Tip: Do not import a Phoenix rage FOV into this menu on day one. Delete old configs. Start ESP-only on a map you know. I almost queued Customs with someone else’s snap.",
 					"Reseller markup is real. Two Phoenix carts, two prices, same logo. Direct checkout here had one number. I like one number.",
@@ -438,8 +438,8 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Buy Phoenix if you want silent-aim branding and accept louder clip risk. Buy here if you want one key, dated Status, and vis-check combat with ESP in the same menu.",
 					"Everon is not Tarkov, but the lesson is the same: wide snaps look wrong in VOD review even when Status is green. I keep FOV tight on Factory peeks too.",
-					"<a href=\"/blog/cosmo-tarkov/\">Cosmo Tarkov</a> · <a href=\"/blog/ghostware-tarkov/\">Ghostware Tarkov</a> · <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a>.",
-					"Aim tone: <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>. Wall style: <a href=\"/blog/tarkov-wallhack/\">Tarkov Wallhack</a>.",
+					"<a href=\"/blog/cosmo-tarkov/\">Cosmo Tarkov</a> · <a href=\"/blog/ghostware-tarkov/\">Ghostware Tarkov</a> · <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a>.",
+					"Aim tone: <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>. Wall style: <a href=\"/blog/tarkov-wallhack-notes/\">Tarkov Wallhack</a>.",
 					"Loot without a second cart: <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a>.",
 					"Do not bring Phoenix rage FOV into a stash run. Delete it. Walk Dorms with ESP-only like a person who wants to extract. That is my actual advice, not a slogan.",
 				],
@@ -468,11 +468,11 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-esp",
-		title: "Tarkov ESP",
-		metaDescription: "Tarkov ESP is why I bought a PC license before aimbot. Player boxes, loot filters, and distance on Customs and Interchange.",
-		h1: "Tarkov ESP",
-		intro: "Tarkov ESP is why I bought a PC license before I touched aimbot on Windows. Player boxes, loot names, health bars, and distance turned Customs dorms from guesswork into timed routes. I still die when I rotate late on Streets or greed-loot Interchange with five minutes on the clock.",
+		slug: "tarkov-esp-notes",
+		title: "Tarkov ESP Notes",
+		metaDescription: "Raid notes on Tarkov ESP after I bought a PC license. Player boxes, loot filters, and distance on Customs and Interchange.",
+		h1: "Tarkov ESP Notes",
+		intro: "Tarkov ESP Notes: Tarkov ESP is why I bought a PC license before I touched aimbot on Windows. Player boxes, loot names, health bars, and distance turned Customs dorms from guesswork into timed routes. I still die when I rotate late on Streets or greed-loot Interchange with five minutes on the clock.",
 		keywords: ["tarkov esp","eft esp","tarkov player esp","tarkov esp vs aimbot"],
 		imageAlt: "Tarkov ESP player boxes and loot names in a raid",
 		sections: [
@@ -482,7 +482,7 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Player box, skeleton option, health, name, weapon, distance, bosses, Scavs, bots — that is the core stack. On Customs I lean on distance and name so I know if someone is pushing Dorms before I commit a crate.",
 					"On Factory I cut max range so hallway fights stay readable instead of painting the whole map. Open Shoreline can take more distance. Same cheat. Different config. I save customs_dorms and factory_cqc as separate names so I do not retune at 2 a.m.",
 					"Loot filters share the menu but do a different job. Player ESP is for fights. Loot ESP is for farming. Split writeup: <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a>.",
-					"Wall style — boxes versus chams — changes how fast I read fights. Boxes on Customs sight lines. Skeleton in Factory where a door frame already blocks half a model. <a href=\"/blog/tarkov-wallhack/\">Tarkov Wallhack</a>. Product page: <a href=\"/tarkov-esp/\">ESP</a>.",
+					"Wall style — boxes versus chams — changes how fast I read fights. Boxes on Customs sight lines. Skeleton in Factory where a door frame already blocks half a model. <a href=\"/blog/tarkov-wallhack-notes/\">Tarkov Wallhack</a>. Product page: <a href=\"/tarkov-esp/\">ESP</a>.",
 					"Boss and bot filters save frames on Lighthouse. I turn bots down if I only care about PMCs. Scav tags still matter when you are trying not to dump a kit into a random.",
 					"Pro Tip: Name configs after the map, not config1. interchange_mall beats whatever you thought you would remember after a patch.",
 					"Weapon tags told me shotgun vs sniper before a Shoreline peek. That is worth more than a health bar at 180 meters. Up close I want health. Far away I want the gun name.",
@@ -492,10 +492,10 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "ESP vs aimbot",
 				paragraphs: [
-					"ESP is information. <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a> moves the crosshair. I leave ESP on whole raids because it is quieter in clips. Aimbot is what people notice when FOV is too wide on a Shoreline hill or a Factory window.",
+					"ESP is information. <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a> moves the crosshair. I leave ESP on whole raids because it is quieter in clips. Aimbot is what people notice when FOV is too wide on a Shoreline hill or a Factory window.",
 					"On farming nights I run loot ESP and light player ESP with aimbot off until someone contests tech light. Both ship in one plan — <a href=\"/features/\">Features</a>. Reseller pages love splitting farming and fighting into two carts. I paid once here.",
 					"If you only buy one toggle mentally, buy ESP. Aimbot without knowing where players are is spraying into walls on Shoreline rocks. I ran aimbot week one with player ESP maxed wrong and died to audio anyway because I stared at a crate.",
-					"Radar SKUs elsewhere pitch snaplines and a minimap. Distance and out-of-FOV arrows here covered my single monitor. <a href=\"/blog/tarkov-radar/\">Tarkov Radar</a>.",
+					"Radar SKUs elsewhere pitch snaplines and a minimap. Distance and out-of-FOV arrows here covered my single monitor. <a href=\"/blog/tarkov-radar-notes/\">Tarkov Radar</a>.",
 					"Yellow Status can grey combat while loot still glows. I do not treat a partial menu as permission to push Labs.",
 					"Week two I added aimbot for Factory only. Customs stayed ESP-only for a while. You can mix. The menu does not force a personality.",
 					" vis-check on ESP is not the same as vis-check on aimbot. I run both. Walls still show people. I just do not snap through them.",
@@ -547,11 +547,11 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "Before you pay",
 				paragraphs: [
-					"Open <a href=\"/updates/\">Status</a> first. Green means the build matches live Tarkov on PC. Yellow means make coffee. Paying then complaining about grey toggles is a self-inflicted problem I already made once.",
+					"Open <a href=\"/updates/\">Updates</a> first. Green means the build matches live Tarkov on PC. Yellow means make coffee. Paying then complaining about grey toggles is a self-inflicted problem I already made once.",
 					"Cloud DMA is required for the full menu — HVCI, Secure Boot, TPM actually enabled, not “I think they are on.” <a href=\"/blog/cloud-dma/\">Cloud DMA</a> · <a href=\"/setup/\">Setup</a>. Fix BIOS before you blame the cheat after checkout.",
 					"Confirm you are on Windows PC. Mobile Tarkov is a different client. Hero images with phones almost tricked me once. <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>.",
 					"Read what ships in one key: player ESP, loot ESP, aimbot, no recoil, streamproof on <a href=\"/features/\">Features</a>. No Lite SKU that drops combat when Dorms gets contested.",
-					"Still scrolling shops? <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> · <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a> · <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>. Dates beat logos.",
+					"Still scrolling shops? <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> · <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a> · <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>. Dates beat logos.",
 					"Use the same email you will contact support from. Mismatched PayPal and ticket email slows HWID resets. I learned that the slow way.",
 					"Pro Tip: Screenshot the store page the day you pay. Resellers edit feature lists mid-wipe. Proof beats Discord arguments when a toggle disappears after patch week.",
 					"I almost paid on a yellow Customs night because a Discord pin said go. Status already said wait. Loader opened. Grey toggles. Support told me the same thing. Ten seconds on Status would have saved the evening.",
@@ -561,12 +561,12 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "Monthly or lifetime",
 				paragraphs: [
-					"Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. Live numbers: <a href=\"/pricing/\">Store</a>.",
+					"Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. Live numbers: <a href=\"/pricing/\">Pricing</a>.",
 					"I started monthly to survive one wipe trial. Went lifetime after month four when I was still raiding weekends. Your break-even depends on BattlEye downtime and how often you actually queue. I tracked it on paper.",
 					"This key is for main Tarkov raids. Arena is separate — <a href=\"/blog/tarkov-arena/\">Tarkov Arena</a>. Ctrl+F Arena on any checkout if a listing says all modes.",
 					"Day keys elsewhere look cheap until you multiply by thirty. Spreadsheet: <a href=\"/blog/tarkov-cheats-price/\">Tarkov Cheats Price</a>.",
 					"Lifetime is not urgent day one. Monthly lets you watch Status through the first patch weekend. Yellow weeks still happen on lifetime. You wait. No shop refunds that I know of.",
-					"Undetected is a snapshot, not forever: <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>. Buy for green windows, not rage headlines.",
+					"Undetected is a snapshot, not forever: <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>. Buy for green windows, not rage headlines.",
 					"Monthly first if you have never used this loader. Lifetime after you have lived through a patch weekend and still want to queue. That was my order. It does not have to be yours. It should not be impulse lifetime on night one.",
 				],
 			},
@@ -576,8 +576,8 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Delivery was minutes for me — loader link, key, short setup note. I did not install until Setup was done and Status was still green.",
 					"Loader order: Status check, launch loader, enter key, then open Tarkov. Skipping steps after reboot brought grey toggles back once. Secure Boot off in firmware while Windows said on cost me an hour.",
 					"Defender flagged the loader first launch. Support replied with steps. Reboot once. Normal on Windows. Not the same as detected. ESP worked after.",
-					"First week I ran ESP and loot floor only on Customs. Aimbot off. Learned extracts without clip pressure. Combat toggles came week two on Factory nights. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
-					"Save configs per map. Re-tuning mid-fight on Labs is how you die with full menu enabled. <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
+					"First week I ran ESP and loot floor only on Customs. Aimbot off. Learned extracts without clip pressure. Combat toggles came week two on Factory nights. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
+					"Save configs per map. Re-tuning mid-fight on Labs is how you die with full menu enabled. <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
 					"Keep the order ID. Support: <a href=\"/support/\">Support</a>. Order ID in the first email beat a paragraph of rage. Half my tickets were Secure Boot, not BattlEye.",
 					"Do not raid until Setup is finished. Half the empty-menu tickets are skipped HVCI steps. I was one of them. I am not proud of the ticket.",
 					"Scav first. Lower gear fear. Same ESP. If boxes look wrong, you fix Setup before you lose a GPU.",
@@ -619,8 +619,8 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "The two numbers here",
 				paragraphs: [
 					"Monthly is $35 for 31 days. Best for testing one wipe or returning after a break. Lower upfront. After 31 days the key stops until you renew. Same full menu. No downgrade to ESP only.",
-					"Lifetime is $150 once. Break-even is about five months of monthly. If you raid every wipe, lifetime removes rebilling. It does not skip patches. Still check <a href=\"/updates/\">Status</a>.",
-					"Live checkout: <a href=\"/pricing/\">Store</a>. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. I started monthly. Month two I was still playing. Lifetime after that.",
+					"Lifetime is $150 once. Break-even is about five months of monthly. If you raid every wipe, lifetime removes rebilling. It does not skip patches. Still check <a href=\"/updates/\">Updates</a>.",
+					"Live checkout: <a href=\"/pricing/\">Pricing</a>. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. I started monthly. Month two I was still playing. Lifetime after that.",
 					"Good for wipe tourists: monthly. Good if you forget to cancel things: monthly, because you just do not renew. Good if you hate re-entering a card every wipe: lifetime.",
 					"Pro Tip: Set a calendar reminder on day 28 of a monthly if you are still deciding. Do not let a dead key surprise you mid-Labs.",
 					"$35 is a wipe tourist number. $150 is a “I will be here in three months” number. I was a tourist. Then I was not. I did not need a sale. I needed to notice I had renewed twice.",
@@ -631,9 +631,9 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"CheatVault daily keys, Phoenix Lite plus aimbot plus loot on three tabs — I added it up. One $35 monthly here won the spreadsheet. Tiny daily numbers are a trick. I fell for it once in another game. Not again.",
 					"Cosmo weekly promos look cheaper until you play the whole wipe. Compare the same day: <a href=\"/blog/cosmo-tarkov/\">Cosmo Tarkov</a> · <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a>.",
-					"Feature parity matters more than a five-dollar gap. If the cheap key is missing loot filters, you will buy them later. <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a>.",
+					"Feature parity matters more than a five-dollar gap. If the cheap key is missing loot filters, you will buy them later. <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a>.",
 					"Spoofer bundles look like value until you realize you wanted ESP, not HWID theater. Clean DMA pass here. <a href=\"/blog/cloud-dma/\">Cloud DMA</a>.",
-					"Yellow weeks still happen on lifetime. You wait. I never got a refund for a patch window. Patience is part of the price. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Yellow weeks still happen on lifetime. You wait. I never got a refund for a patch window. Patience is part of the price. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"Phoenix daily times thirty sat next to Cosmo weekly times four. Both beat $35 until I added the missing loot SKU. Then they did not. Write the missing SKU down. It has a price even when the cart hides it.",
 				],
 			},
@@ -691,7 +691,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"I turned on every ESP option and loot filter at once. Customs looked like a spreadsheet. I died to a player I ignored because twelve boxes blocked my view.",
 					"Loot ESP without a price floor highlighted every bolt and bandage. Interchange was unreadable. Fix: max distance on player ESP, 60k+ minimum on loot, one map I already knew.",
-					"I recorded a ten-minute clip and watched it back. Half the boxes were Scavs I would never fight. Filter them. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a> · <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a>.",
+					"I recorded a ten-minute clip and watched it back. Half the boxes were Scavs I would never fight. Filter them. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a> · <a href=\"/blog/tarkov-loot-esp/\">Tarkov Loot ESP</a>.",
 					"Pro Tip: Start on a map where you already know extracts. ESP does not teach ZB-1011. It just makes dying with a GPU more embarrassing.",
 					"I thought more boxes meant more information. It meant I could not see a doorway. Information you cannot read is decoration.",
 				],
@@ -700,9 +700,9 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Day 3–7: fights, then a routine",
 				paragraphs: [
 					"ESP told me where PMCs were. I still lost because I sprinted into every fight. Wide FOV made clips look like a different game. Vis check was off. I watched it once and turned it on forever.",
-					"Vis check on, FOV under 15°, hold-to-aim. No recoil at 70%, not zero. <a href=\"/blog/tarkov-no-recoil/\">Tarkov No Recoil</a> · <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
+					"Vis check on, FOV under 15°, hold-to-aim. No recoil at 70%, not zero. <a href=\"/blog/tarkov-no-recoil/\">Tarkov No Recoil</a> · <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
 					"Thermals plus ESP is loud. I only toggle thermal for one quest. Not whole raids.",
-					"Check <a href=\"/updates/\">Status</a> before each session. Same loader order: loader, key, Tarkov. I pinned the Status tab like server status in other games.",
+					"Check <a href=\"/updates/\">Updates</a> before each session. Same loader order: loader, key, Tarkov. I pinned the Status tab like server status in other games.",
 					"I stopped importing YouTube configs from other brands. Those menus do not match this loader. customs_dorms is mine. config_final_FINAL is how you lose a night.",
 					"Pinned Status. Same loader order. Same config names. That routine extracted more than any FOV tweak. I know that sounds like a blog. It is also true.",
 				],
@@ -711,7 +711,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Would I buy again on PC",
 				paragraphs: [
 					"Yes for raids on PC. No if I only wanted Arena — <a href=\"/blog/tarkov-arena/\">Tarkov Arena</a>.",
-					"<a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> first instead of a Discord ad. Buy: <a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>.",
+					"<a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> first instead of a Discord ad. Buy: <a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>.",
 					"Try This Today: After first green launch, one Scav ESP-only. Confirms boxes, loot floor, and extracts before you take a juiced PMC into Labs.",
 					"Month-four voice: <a href=\"/blog/tarkov-cheats-review/\">Tarkov Cheats Review</a>.",
 					"I would buy again for raids on this PC. I would not buy a phone listing. I would not buy Arena by accident. Those two almost-mistakes are why this post exists.",
@@ -755,7 +755,7 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Stashes, weapon boxes, and corpses on when you are full-send looting. Off when rotating to extract. I used to leave corpses on and stare at a dead Scav while a PMC walked parking.",
 					"Color by category so meds, keys, and electronics do not blur. I am not fancy about palettes. I just need keys to not look like painkillers at 2 a.m.",
 					"Wood crates and duffels on Customs reward container ESP. Turn on when running the outer map. Off in Dorms when the screen is already busy.",
-					"Control list: <a href=\"/tarkov-esp/\">ESP</a>. Player layer sits above this. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
+					"Control list: <a href=\"/tarkov-esp/\">ESP</a>. Player layer sits above this. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
 					"Reserve bunkers: corpses on, floor high. PvP loot is the product there. Woods stashes: containers on, players still kill you if you greed a cache with four minutes left.",
 					"Corpses on Reserve. Corpses off when I am running for extract with a full backpack. A dead PMC is not loot if a live one is closer. Distance is still the parent toggle.",
 				],
@@ -766,17 +766,17 @@ export const blogPosts: BlogPostDefinition[] = [
 					"Interchange: high floor, containers on, corpses on in mall fights. Tech light is not a museum. Get in, grab, leave when boxes show a third party.",
 					"Streets: medium floor. Watch player distance. Loot ESP does not hear footsteps. I still die when I tunnel a marked room.",
 					"Labs: lower floor for high-value spawns, tighter player ESP. Fights are fast. I do not farm Labs like Interchange. Different brain.",
-					"Factory: loot ESP almost off. Time is the loot. Player ESP tight. <a href=\"/blog/tarkov-wallhack/\">Tarkov Wallhack</a> for the silhouette, not the GPU glow.",
+					"Factory: loot ESP almost off. Time is the loot. Player ESP tight. <a href=\"/blog/tarkov-wallhack-notes/\">Tarkov Wallhack</a> for the silhouette, not the GPU glow.",
 					"Labs is not Interchange. If you loot Labs like a mall you will die to a player you saw. I have a labs_fast config with loot quieter and players louder. That config paid for itself in one raid I did not greed.",
 				],
 			},
 			{
 				h2: "It is on the same key",
 				paragraphs: [
-					"Loot ESP ships with aimbot in one license. No second farming SKU. <a href=\"/pricing/\">Store</a>. Competitors sometimes charge ESP-only then upsell combat. I did not want that trap after watching a Phoenix Lite friend.",
+					"Loot ESP ships with aimbot in one license. No second farming SKU. <a href=\"/pricing/\">Pricing</a>. Competitors sometimes charge ESP-only then upsell combat. I did not want that trap after watching a Phoenix Lite friend.",
 					"<a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a> Lite story is in that post. I will not retell it.",
 					"Try This Today: One Interchange Scav. Floor at 70k. Containers on. Count how many drawers you skip. That skip is the product.",
-					"Farming without a radar tax: <a href=\"/blog/tarkov-radar/\">Tarkov Radar</a>.",
+					"Farming without a radar tax: <a href=\"/blog/tarkov-radar-notes/\">Tarkov Radar</a>.",
 					"I do not want a farming SKU and a fighting SKU. I want one key I can turn down. That is the whole pitch. <a href=\"/features/\">Features</a> lists it. The menu matches.",
 				],
 			}
@@ -793,11 +793,11 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-aimbot",
-		title: "Tarkov Aimbot",
-		metaDescription: "Tarkov aimbot was the second toggle I touched after ESP. Small FOV, vis check, hold-to-aim. Wide snap looks wrong in clips.",
-		h1: "Tarkov Aimbot",
-		intro: "Tarkov aimbot was the second toggle I touched after ESP. Reseller ads sell silent aim like it is the default way to raid on PC. I run a small FOV with vis check on because wide snap looks wrong in clips and worse if someone reviews the fight later.",
+		slug: "tarkov-aimbot-notes",
+		title: "Tarkov Aimbot Notes",
+		metaDescription: "Raid notes on Tarkov aimbot after ESP. Small FOV, vis check, hold-to-aim. Wide snap looks wrong in clips.",
+		h1: "Tarkov Aimbot Notes",
+		intro: "Tarkov Aimbot Notes: Tarkov aimbot was the second toggle I touched after ESP. Reseller ads sell silent aim like it is the default way to raid on PC. I run a small FOV with vis check on because wide snap looks wrong in clips and worse if someone reviews the fight later.",
 		keywords: ["tarkov aimbot","eft aimbot","tarkov aimbot settings","best tarkov aimbot"],
 		imageAlt: "Tarkov aimbot FOV and vis check settings",
 		sections: [
@@ -816,7 +816,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "ESP first, then combat",
 				paragraphs: [
-					"Aimbot without ESP is spraying into walls. I learned that week one. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
+					"Aimbot without ESP is spraying into walls. I learned that week one. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
 					"Farming nights: loot ESP on, aimbot off until someone contests. Both in one plan — <a href=\"/features/\">Features</a>. I paid for both. I do not owe the menu a spray every raid.",
 					"No recoil sits beside aimbot in the menu but solves spray, not aim. Different row. <a href=\"/blog/tarkov-no-recoil/\">Tarkov No Recoil</a>. Max both and you look like a highlight reel I do not want on my main.",
 					"Ghostware ads sell the opposite mood. Fine for them. Not my raids. <a href=\"/blog/ghostware-tarkov/\">Ghostware Tarkov</a>.",
@@ -826,8 +826,8 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "After a patch",
 				paragraphs: [
-					"Save one global safe preset plus a Factory preset. Check <a href=\"/updates/\">Status</a> before importing old configs. Patch day: defaults first, then re-import one toggle at a time.",
-					"Yellow Status can grey combat. I do not “test” an old loader. That wastes a key. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Save one global safe preset plus a Factory preset. Check <a href=\"/updates/\">Updates</a> before importing old configs. Patch day: defaults first, then re-import one toggle at a time.",
+					"Yellow Status can grey combat. I do not “test” an old loader. That wastes a key. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"Pro Tip: Screenshot your FOV and vis-check after a raid that felt clean. Patch weeks reset brains along with toggles.",
 					"Defaults first. Then FOV. Then recoil. Then loot floor. That order. Importing a month-old config on patch day is how mystery toggles come back.",
 				],
@@ -854,11 +854,11 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-wallhack",
-		title: "Tarkov Wallhack",
-		metaDescription: "Tarkov wallhack is what people type when they mean chams — seeing player models through walls. Boxes on Customs, skeleton in Factory.",
-		h1: "Tarkov Wallhack",
-		intro: "Tarkov wallhack is what people type when they mean chams — seeing player models through walls. I run boxes on open maps like Customs and Shoreline, and skeleton lines in Factory and Labs where a full box blocks the door angle I care about.",
+		slug: "tarkov-wallhack-notes",
+		title: "Tarkov Wallhack Notes",
+		metaDescription: "Raid notes on Tarkov wallhack — chams and boxes through walls. Boxes on Customs, skeleton in Factory.",
+		h1: "Tarkov Wallhack Notes",
+		intro: "Tarkov Wallhack Notes: Tarkov wallhack is what people type when they mean chams — seeing player models through walls. I run boxes on open maps like Customs and Shoreline, and skeleton lines in Factory and Labs where a full box blocks the door angle I care about.",
 		keywords: ["tarkov wallhack","eft wallhack","tarkov chams","tarkov chams vs esp"],
 		imageAlt: "Tarkov wallhack chams and box ESP in a raid",
 		sections: [
@@ -868,7 +868,7 @@ export const blogPosts: BlogPostDefinition[] = [
 					"People google wallhack. The menu says chams and box ESP. Same job, different read. Boxes show distance, health, weapon, nickname. Easy to scan at range on Customs or Shoreline.",
 					"Chams color the model through walls. Less text. Better when you already have the angle and need a silhouette. Night raids: chams read better than gray boxes in rain.",
 					"Many players run chams plus a thin box. I do that on Labs. Nickname ESP helps — know if it is a sweaty tag before you push.",
-					"Wallhack landing: <a href=\"/tarkov-radar-hack/\">chams and wallhack</a>. Parent stack: <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>.",
+					"Wallhack landing: <a href=\"/tarkov-radar-hack/\">chams and wallhack</a>. Parent stack: <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>.",
 					"Most marketplace “ESP only” listings are box-style overlays. Chams may cost extra elsewhere. Here both are on the same key.",
 					"Chams without distance is a silhouette game. Fine in Factory. Bad on Shoreline when you need to know if they are 40 meters or 140. I add a thin box for the number.",
 				],
@@ -878,7 +878,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Open maps: box ESP with distance. Factory and Labs: chams with tight max range. Dorms: boxes, but cap distance or third floor is noise.",
 					"I do not leave a Christmas tree on. Too much glow and I stare at walls while audio says someone flanked. Happened on Shoreline rocks. I still think about it.",
-					"Radar arrows are a cousin of this, not a second product for me. <a href=\"/blog/tarkov-radar/\">Tarkov Radar</a>.",
+					"Radar arrows are a cousin of this, not a second product for me. <a href=\"/blog/tarkov-radar-notes/\">Tarkov Radar</a>.",
 					"Pro Tip: If you cannot see the door because the box is huge, switch to skeleton for that map. Save it. Stop arguing with yourself mid-fight.",
 					"Lighthouse bots can turn chams into a rave. Filter them. Your eyes are not a GPU benchmark.",
 				],
@@ -895,10 +895,10 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "One license",
 				paragraphs: [
-					"Boxes and chams ship with loot ESP and aimbot. <a href=\"/features/\">Features</a>. Settings start: <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>.",
+					"Boxes and chams ship with loot ESP and aimbot. <a href=\"/features/\">Features</a>. Settings start: <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>.",
 					"Try This Today: Customs with boxes only. Next raid Factory with skeleton only. Keep the one you can actually read when someone is already shooting.",
 					"People who only wanted wallhack still need player distance. That is ESP. Do not buy a second SKU for a synonym.",
-					"Wallhack, ESP, loot, aimbot. Same checkout. If a shop sells wallhack as a personality, they are selling a synonym. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a> is the parent.",
+					"Wallhack, ESP, loot, aimbot. Same checkout. If a shop sells wallhack as a personality, they are selling a synonym. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a> is the parent.",
 				],
 			}
 		],
@@ -914,18 +914,18 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: false,
 		translations: {
 		en: {
-		slug: "undetected-tarkov-cheats",
-		title: "Undetected Tarkov Cheats",
-		metaDescription: "Undetected Tarkov cheats does not mean forever. It means the loader matches the last BattlEye wave today. Check Status before you queue.",
-		h1: "Undetected Tarkov Cheats",
-		intro: "Undetected Tarkov cheats does not mean forever on Windows PC. It means the loader on your desk matches the live game and the last BattlEye wave today. I burned a night on yellow Status once — half the menu grey, Customs extract lost anyway, and the page already told me to wait.",
+		slug: "patch-day-notes",
+		title: "Patch Day Notes",
+		metaDescription: "Patch day notes for Tarkov cheats after BattlEye. Undetected today does not mean forever. Check Updates before you queue.",
+		h1: "Patch Day Notes",
+		intro: "Patch Day Notes: undetected Tarkov cheats does not mean forever on Windows PC. It means the loader on your desk matches the live game and the last BattlEye wave today. I burned a night on yellow Updates once — half the menu grey, Customs extract lost anyway, and the page already told me to wait.",
 		keywords: ["undetected tarkov cheats","tarkov cheats undetected","battleye tarkov cheats","eft undetected"],
 		imageAlt: "Undetected Tarkov cheats Status after a BattlEye patch",
 		sections: [
 			{
 				h2: "What undetected means today",
 				paragraphs: [
-					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> protects Escape from Tarkov. When BSG or BattlEye ships an update, loaders need a rebuild. Live notes: <a href=\"/updates/\">Status</a>.",
+					"<a href=\"https://www.battleye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">BattlEye</a> protects Escape from Tarkov. When BSG or BattlEye ships an update, loaders need a rebuild. Live notes: <a href=\"/updates/\">Updates</a>.",
 					"No seller promises permanent undetected — not Cosmo, Phoenix, CheatVault listings, Ghostware, or Kernaim. If anyone does, verify against a dated status page. I treat a badge with no day as unknown.",
 					"Minor client patches sometimes skip a cheat rebuild. Wipe patches almost never do. I do not guess. I read the note.",
 					"If Status says wait, do not queue with an old loader. Launching it does not test BattlEye. It wastes a key. I did that once because Discord said go. Support said the same thing the page said.",
@@ -938,7 +938,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Good signs: dated posts, do-not-launch warnings, support that answers with order ID.",
 					"Bad signs: silent Discord for days, or a green banner with no patch number. CheatVault sellers vary. Compare dates, not logos. <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
-					"Shopping frame: <a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a>.",
+					"Shopping frame: <a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a>.",
 					"I queue only on green. Yellow “use caution” is still a wait for me. I like the account more than I like one more raid.",
 					"Pro Tip: Screenshot Status with the date when you buy. If support argues later, you have proof of what was live that day.",
 					"If Discord is louder than Status, I trust Status. Pins without dates are campfire stories. I like campfires. I do not launch on them.",
@@ -956,7 +956,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "Buy when it is actually green",
 				paragraphs: [
-					"Green Status means the team signed off the current build. Then buy or renew on <a href=\"/pricing/\">Store</a>. Reverse that order and you get my yellow-week story.",
+					"Green Status means the team signed off the current build. Then buy or renew on <a href=\"/pricing/\">Pricing</a>. Reverse that order and you get my yellow-week story.",
 					"<a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>. Review: <a href=\"/blog/tarkov-cheats-review/\">Tarkov Cheats Review</a>.",
 					"Try This Today: Open Status before you open Tarkov. Every session. Same as checking servers. It takes ten seconds. It saved me more kits than aimbot did on patch weeks.",
 					"I have waited a night and played the next day. I have also queued yellow and gotten grey. Waiting is cheaper.",
@@ -1006,7 +1006,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "How other shops sell it",
 				paragraphs: [
 					"CheatVault may list Arena products from different sellers. Ghostware and Kernaim document mode coverage on their own sites. Ask. Do not assume the YouTube title is the SKU.",
-					"<a href=\"/blog/best-tarkov-cheats/\">Best Tarkov Cheats</a> is still the checklist. Mode split is item one after Status.",
+					"<a href=\"/blog/comparing-tarkov-cheats/\">Best Tarkov Cheats</a> is still the checklist. Mode split is item one after Status.",
 					"Play both modes? Budget two keys or pick raids. This license will not work in Arena. I picked raids. I do not own an Arena key. That is a choice, not a bonus.",
 					"If you play both, budget both. Do not expect a raids key to grow Arena coverage after purchase. That is not how keys work.",
 				],
@@ -1014,7 +1014,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "If you are here for raids",
 				paragraphs: [
-					"<a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a> · <a href=\"/features/\">Features</a> · <a href=\"/pricing/\">Store</a>.",
+					"<a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a> · <a href=\"/features/\">Features</a> · <a href=\"/pricing/\">Pricing</a>.",
 					"Try This Today: If you queued Arena last night and raids tonight, write down which one you will actually play this wipe. Buy that key. Not both because a banner mixed them.",
 					"PC raids notes: <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>.",
 					"Good. Buy the raids key. Ignore Arena ads this week. Your wipe does not care about a second mode you will not grind.",
@@ -1055,7 +1055,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Loader order that actually worked",
 				paragraphs: [
 					"Run loader, paste license key, launch Tarkov. If the menu is empty, re-check HVCI and Secure Boot before blaming the patch.",
-					"After a BattlEye update, check <a href=\"/updates/\">Status</a> before you change BIOS settings randomly. I flipped a switch I did not understand once. Do not be me.",
+					"After a BattlEye update, check <a href=\"/updates/\">Updates</a> before you change BIOS settings randomly. I flipped a switch I did not understand once. Do not be me.",
 					"Run as admin only if Setup says so. Extra admin launches can trip HVCI on some builds.",
 					"Defender flag first launch is normal. Support steps. Reboot. ESP after. Not a detected event.",
 					"Pro Tip: Take a photo of the BIOS HVCI/Secure Boot screens. Support tickets go faster when you are not describing a menu from memory.",
@@ -1066,7 +1066,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Grey menu scares",
 				paragraphs: [
 					"Grey half menu on green Status — walk Setup again. Half my tickets were Secure Boot still off in BIOS, not BattlEye.",
-					"Empty ESP on a compliant PC after green return usually means reboot order, not a broken product. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Empty ESP on a compliant PC after green return usually means reboot order, not a broken product. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"Kernaim and Ghostware use different loaders and different PDFs. Do not mix their steps into this Setup. <a href=\"/blog/kernaim-tarkov/\">Kernaim Tarkov</a>.",
 					"I posted in my head that I was detected. I had not opened BIOS. Do the boring checks. Then write support if it is still grey. Order ID. Screenshot. Short.",
 				],
@@ -1074,7 +1074,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "What unlocks after it passes",
 				paragraphs: [
-					"Player ESP, loot ESP, aimbot, no recoil, streamproof — one license. <a href=\"/features/\">Features</a> · <a href=\"/pricing/\">Store</a>.",
+					"Player ESP, loot ESP, aimbot, no recoil, streamproof — one license. <a href=\"/features/\">Features</a> · <a href=\"/pricing/\">Pricing</a>.",
 					"Without Cloud DMA you may see a partial menu. Do not assume ESP is broken until reqs are met. I almost refund-raged. It was firmware.",
 					"First week on PC: <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>. Buy after Status is green: <a href=\"/blog/buy-tarkov-cheats/\">Buy Tarkov Cheats</a>.",
 					"Try This Today: Open Windows security and your BIOS. If they disagree, trust BIOS. That mismatch is the whole story of my day one.",
@@ -1105,7 +1105,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "It is spray, not aim",
 				paragraphs: [
-					"No recoil flattens vertical climb. It does not aim for you. Aimbot is a different row — <a href=\"/blog/tarkov-aimbot/\">Tarkov Aimbot</a>. People google them together. The menu does not treat them as the same toggle.",
+					"No recoil flattens vertical climb. It does not aim for you. Aimbot is a different row — <a href=\"/blog/tarkov-aimbot-notes/\">Tarkov Aimbot</a>. People google them together. The menu does not treat them as the same toggle.",
 					"I run 60 to 80 percent, not literal zero. Zero spray on an M4 in a Discord clip looks like a different game. I have that clip. I do not post it.",
 					"No sway sits nearby. I leave sway reduction milder than recoil. Both at max is loud. I like seeing my own gun behave a little.",
 					"Factory full-auto hallways are where I feel it. Shoreline DMR taps are where I turn it down. Same raid week. Different guns. Save a preset if you swap a lot.",
@@ -1126,7 +1126,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Same license, same Status",
 				paragraphs: [
 					"No recoil ships with ESP and aimbot. No misc-only SKU. <a href=\"/features/\">Features</a>.",
-					"Status can grey combat toggles together. I do not treat leftover loot glow as a reason to spray into a yellow week. <a href=\"/blog/undetected-tarkov-cheats/\">Undetected Tarkov Cheats</a>.",
+					"Status can grey combat toggles together. I do not treat leftover loot glow as a reason to spray into a yellow week. <a href=\"/blog/patch-day-notes/\">Undetected Tarkov Cheats</a>.",
 					"Pro Tip: After a patch, set recoil to 70 before you touch FOV. If the gun still looks like a laser in a 10-second clip, go lower. You will still hit the shots that matter.",
 					"No recoil is not a separate cheat. It is a slider. Treat it like a slider. Not a personality.",
 				],
@@ -1135,7 +1135,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				h2: "Baseline I reset to",
 				paragraphs: [
 					"After patches I set recoil to 70, vis check on, FOV small. Then I raid a map I know before I touch anything else. Factory or Customs. Not Labs as a test range.",
-					"PC first week: <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>. Store: <a href=\"/pricing/\">Store</a>.",
+					"PC first week: <a href=\"/blog/tarkov-cheats-pc/\">Tarkov Cheats PC</a>. Store: <a href=\"/pricing/\">Pricing</a>.",
 					"Try This Today: Record ten seconds of full-auto at your current recoil. If you would not want that clip in someone else’s VOD review, turn it down.",
 					"Factory test, ten bullets, watch the clip. If it looks fake, lower it. If it still climbs a little, good. Guns climb a little.",
 				],
@@ -1153,11 +1153,11 @@ export const blogPosts: BlogPostDefinition[] = [
 		featured: false,
 		translations: {
 		en: {
-		slug: "tarkov-radar",
-		title: "Tarkov Radar",
-		metaDescription: "Tarkov radar searches usually mean a minimap or off-screen arrows. This license covers distance, snapline-style reads, and out-of-FOV cues in ESP.",
-		h1: "Tarkov Radar",
-		intro: "Tarkov radar searches usually mean a minimap circle or off-screen arrows. This license covers player distance and snapline-style reads in the ESP menu — I skipped a second radar SKU on a reseller cart.",
+		slug: "tarkov-radar-notes",
+		title: "Tarkov Radar Notes",
+		metaDescription: "Raid notes on Tarkov radar-style ESP — minimap searches vs off-screen arrows, distance, and out-of-FOV cues.",
+		h1: "Tarkov Radar Notes",
+		intro: "Tarkov Radar Notes: Tarkov radar searches usually mean a minimap circle or off-screen arrows. This license covers player distance and snapline-style reads in the ESP menu — I skipped a second radar SKU on a reseller cart.",
 		keywords: ["tarkov radar","eft radar hack","tarkov radar cheat","tarkov 2d radar"],
 		imageAlt: "Tarkov radar-style ESP arrows and distance",
 		sections: [
@@ -1166,7 +1166,7 @@ export const blogPosts: BlogPostDefinition[] = [
 				paragraphs: [
 					"Out-of-FOV arrows and distance text. That is the radar loop on a single monitor. Product: <a href=\"/tarkov-radar-hack/\">radar</a>. I do not run a second overlay window. Streets already eats attention.",
 					"Extract markers plus distance behind cover changed Interchange extracts when I was overweight. I held when markers showed players closer than my sprint. Without that I would have yolo’d parking again.",
-					"Player ESP is the parent menu. Radar cues live there. <a href=\"/blog/tarkov-esp/\">Tarkov ESP</a>. People search radar because other shops sold it as a separate feeling. Here it is a row.",
+					"Player ESP is the parent menu. Radar cues live there. <a href=\"/blog/tarkov-esp-notes/\">Tarkov ESP</a>. People search radar because other shops sold it as a separate feeling. Here it is a row.",
 					"I skipped a second SKU on a CheatVault cart that wanted extra money for a minimap. Count cart lines. <a href=\"/blog/cheatvault-tarkov/\">CheatVault Tarkov</a>.",
 					"Arrows for people behind me on Streets. Distance for whether I sprint extract. That is the whole radar dream. I do not need a circle map on a second monitor. I need those two reads.",
 				],
@@ -1174,7 +1174,7 @@ export const blogPosts: BlogPostDefinition[] = [
 			{
 				h2: "Audio still wins stairs",
 				paragraphs: [
-					"Radar does not mute footsteps on Factory stairs. I still die when I trust a dot and ignore sound. Vertical fights: chams plus a tight max range beat a minimap. <a href=\"/blog/tarkov-wallhack/\">Tarkov Wallhack</a>.",
+					"Radar does not mute footsteps on Factory stairs. I still die when I trust a dot and ignore sound. Vertical fights: chams plus a tight max range beat a minimap. <a href=\"/blog/tarkov-wallhack-notes/\">Tarkov Wallhack</a>.",
 					"Streets flanks are where arrows help. Dorms third floor is where I still get peaked because I looked at a name instead of the window.",
 					"ESP plus audio still beats radar alone. That is the honest version. Overlay helps. It does not play the raid for you.",
 					"Pro Tip: If your arrows clutter the center of the screen, lower max player distance before you buy a “cleaner radar” from someone else. Clutter is usually your sliders.",

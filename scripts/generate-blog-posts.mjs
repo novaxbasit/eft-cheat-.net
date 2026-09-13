@@ -19,24 +19,24 @@ const EXT = {
 
 const B = {
 	review: '/blog/tarkov-cheats-review/',
-	best: '/blog/best-tarkov-cheats/',
+	best: '/blog/comparing-tarkov-cheats/',
 	cheatvault: '/blog/cheatvault-tarkov/',
 	ghostware: '/blog/ghostware-tarkov/',
 	kernaim: '/blog/kernaim-tarkov/',
 	cosmo: '/blog/cosmo-tarkov/',
 	phoenix: '/blog/phoenix-tarkov/',
-	esp: '/blog/tarkov-esp/',
+	esp: '/blog/tarkov-esp-notes/',
 	buy: '/blog/buy-tarkov-cheats/',
 	price: '/blog/tarkov-cheats-price/',
 	pc: '/blog/tarkov-cheats-pc/',
 	loot: '/blog/tarkov-loot-esp/',
-	aimbot: '/blog/tarkov-aimbot/',
-	wallhack: '/blog/tarkov-wallhack/',
-	undetected: '/blog/undetected-tarkov-cheats/',
+	aimbot: '/blog/tarkov-aimbot-notes/',
+	wallhack: '/blog/tarkov-wallhack-notes/',
+	undetected: '/blog/patch-day-notes/',
 	arena: '/blog/tarkov-arena/',
 	dma: '/blog/cloud-dma/',
 	recoil: '/blog/tarkov-no-recoil/',
-	radar: '/blog/tarkov-radar/',
+	radar: '/blog/tarkov-radar-notes/',
 };
 
 /** @typedef {{ h2: string, paragraphs: string[] }} Section */
@@ -115,13 +115,13 @@ const sources = [
 						'">Best Tarkov Cheats</a>. Dates beat logos.',
 					'Price here is $35 for 31 days or $150 lifetime. Same stack. I started monthly, then lifetime after two wipes. Math: <a href="' +
 						B.price +
-						'">Tarkov Cheats Price</a> · live numbers on <a href="/pricing/">Store</a>.',
+						'">Tarkov Cheats Price</a> · live numbers on <a href="/pricing/">Pricing</a>.',
 				],
 			},
 			{
 				h2: 'Would I buy again',
 				paragraphs: [
-					'Yes for raids on Windows PC. I send friends <a href="/updates/">Status</a> first, then Features, then this review. Hype comments without dates get ignored.',
+					'Yes for raids on Windows PC. I send friends <a href="/updates/">Updates</a> first, then Features, then this review. Hype comments without dates get ignored.',
 					'I would not buy it for a clip account. I would not buy it if I only wanted Arena. I would not buy it on a yellow week just because Discord said go.',
 					'More voices on <a href="/reviews/">Reviews</a> — the ones that name Customs and Interchange sound like my notes. The ones that only say undetected do not.',
 					'Buy path I use now: <a href="' +
@@ -141,13 +141,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'Comparison',
 		featured: true,
-		slug: 'best-tarkov-cheats',
-		title: 'Best Tarkov Cheats',
+		slug: 'comparing-tarkov-cheats',
+		title: 'Comparing Tarkov Cheats',
 		metaDescription:
-			'I typed best Tarkov cheats into Google the night before I paid. Phoenix, Cosmo, CheatVault, Ghostware, Kernaim — what each key actually ships.',
-		h1: 'Best Tarkov Cheats',
+			'I compared Tarkov cheat shops the night before I paid. Phoenix, Cosmo, CheatVault, Ghostware, Kernaim — what each key actually ships.',
+		h1: 'Comparing Tarkov Cheats',
 		intro:
-			'I typed best Tarkov cheats into Google the night before I paid. Every shop had the same banner — undetected, silent aim, day keys. I opened Phoenix, Cosmo, CheatVault, Ghostware, Kernaim, and this site in tabs and wrote down what each key actually ships after checkout.',
+			'Comparing Tarkov Cheats is the notes doc I wrote the night before I paid. Every shop had the same banner — undetected, silent aim, day keys. I opened Phoenix, Cosmo, CheatVault, Ghostware, Kernaim, and this site in tabs and wrote down what each key actually ships after checkout.',
 		keywords: [
 			'best tarkov cheats',
 			'best tarkov cheats 2026',
@@ -163,7 +163,7 @@ const sources = [
 					'Raids vs Arena. Ads blur this. This product is raids only. I asked every shop the same sentence: does this key work in Arena. Answers were messy. Ours is no. <a href="' +
 						B.arena +
 						'">Tarkov Arena</a>.',
-					'Dated Status beats undetected badges. If the last note has no day, I treat it as unknown. Bookmark: <a href="/updates/">Status</a>.',
+					'Dated Updates beats undetected badges. If the last note has no day, I treat it as unknown. Bookmark: <a href="/updates/">Updates</a>.',
 					'Support with an order ID. Marketplace tickets vanish. Email here is support@eftcheat.net. I keep the receipt in the same folder as the screenshot of the store page from the day I paid.',
 					'Cloud DMA is required here — not a PCIe card. <a href="' +
 						B.dma +
@@ -197,7 +197,7 @@ const sources = [
 				paragraphs: [
 					'Here: $35 for 31 days or $150 lifetime. Same menu on both. <a href="' +
 						B.price +
-						'">Tarkov Cheats Price</a> · <a href="/pricing/">Store</a>.',
+						'">Tarkov Cheats Price</a> · <a href="/pricing/">Pricing</a>.',
 					'I multiplied Phoenix day-key numbers by thirty before I believed any cheap daily listing. Four “cheap” days plus a spoofer line plus a radar SKU beat one monthly here on the spreadsheet.',
 					'Feature parity beat a five-dollar gap. Streamproof included. Loot ESP not an upsell. That is what I was actually shopping for.',
 					'Yellow weeks still happen on lifetime. You wait. No shop I know refunds BattlEye downtime. Patience is the cost. <a href="' +
@@ -264,7 +264,7 @@ const sources = [
 				h2: 'The cheap daily key',
 				paragraphs: [
 					'An $8 daily key sounds cheap until you play four weeks of a wipe. Run the month against $35 here. I did it on paper because the cart makes daily numbers look friendly.',
-					'Lifetime $150 on <a href="/pricing/">Store</a>. No auction-style pricing. Plan notes: <a href="' +
+					'Lifetime $150 on <a href="/pricing/">Pricing</a>. No auction-style pricing. Plan notes: <a href="' +
 						B.price +
 						'">Tarkov Cheats Price</a>.',
 					'Watch HWID reset fees and “premium support” on marketplace carts. Those add up. I saw a listing that looked cheaper until the reset fee sat under the fold.',
@@ -278,7 +278,7 @@ const sources = [
 				h2: 'Support when it breaks',
 				paragraphs: [
 					'Marketplace tickets bounce between seller Discord and the vault brand. I wanted one email with order ID. Grey menu screenshot plus Status color got me a faster reply than a rage paragraph.',
-					'We post on <a href="/updates/">Status</a>. If a CheatVault listing has no dated note, I do not launch that key just because a stranger in chat said it is fine.',
+					'We post on <a href="/updates/">Updates</a>. If a CheatVault listing has no dated note, I do not launch that key just because a stranger in chat said it is fine.',
 					'Setup scares on a clean PC are usually HVCI or Secure Boot, not “detected.” <a href="' +
 						B.dma +
 						'">Cloud DMA</a> · <a href="/setup/">Setup</a>.',
@@ -349,7 +349,7 @@ const sources = [
 					'<a href="' +
 						B.dma +
 						'">Cloud DMA</a> if boxes never render on green Status. Empty ESP is usually reqs, not “aimbot detected, ESP fine.” Forums invent that split at 2 a.m.',
-					'Compare live Status pages after the last patch — not a three-month-old YouTube review. Ours: <a href="/updates/">Status</a>.',
+					'Compare live Status pages after the last patch — not a three-month-old YouTube review. Ours: <a href="/updates/">Updates</a>.',
 					'Pro Tip: If their hero says rage and your main is a stash run on Interchange, you are shopping the wrong feeling. Buy for the raids you actually queue.',
 				],
 			},
@@ -425,13 +425,13 @@ const sources = [
 						'">Tarkov Aimbot</a> · <a href="' +
 						B.esp +
 						'">Tarkov ESP</a>. I run ESP heavier than aimbot. That is a taste thing, not a brand thing.',
-					'Promo codes change weekly on big brands. Compare checkout totals the day you buy. Live here: <a href="/pricing/">Store</a>.',
+					'Promo codes change weekly on big brands. Compare checkout totals the day you buy. Live here: <a href="/pricing/">Pricing</a>.',
 				],
 			},
 			{
 				h2: 'Status after BattlEye',
 				paragraphs: [
-					'Both sides should publish status after BattlEye. We use <a href="/updates/">Status</a>. Check theirs before you launch either product.',
+					'Both sides should publish status after BattlEye. We use <a href="/updates/">Updates</a>. Check theirs before you launch either product.',
 					'Nobody promises forever. <a href="' + B.undetected + '">Undetected Tarkov Cheats</a>.',
 					'I know players happy with Kernaim. I know players happy here. The split is usually raids-only plus bundled loot vs wanting a named external brand.',
 					'Pro Tip: If a friend swears by Kernaim, ask which wipe and which map. “Undetected” without Customs or Labs in the sentence is not useful.',
@@ -495,7 +495,7 @@ const sources = [
 					'Cosmo uses daily, weekly, and monthly tiers. Promos move. Compare the same day to <a href="' +
 						B.price +
 						'">Tarkov Cheats Price</a>. A weekly that looks cheaper for a weekend is not cheaper for a wipe.',
-					'Both sides claim undetected after BattlEye. Cosmo posts on their site. We post on <a href="/updates/">Status</a>. Dates beat banners.',
+					'Both sides claim undetected after BattlEye. Cosmo posts on their site. We post on <a href="/updates/">Updates</a>. Dates beat banners.',
 					'<a href="' +
 						B.undetected +
 						'">Undetected Tarkov Cheats</a> before you trust any green badge. I have watched badges lag a patch.',
@@ -514,7 +514,7 @@ const sources = [
 						B.best +
 						'">Best Tarkov Cheats</a> is the checklist.',
 					'Try This Today: List three toggles you will use on your next raid. If Cosmo’s extra misc is not on that list, do not pay for the feeling of a longer page.',
-					'Store when green: <a href="/pricing/">Store</a>.',
+					'Store when green: <a href="/pricing/">Pricing</a>.',
 				],
 			},
 		],
@@ -559,8 +559,8 @@ const sources = [
 					'Add Phoenix day-key price times thirty before you compare to monthly here. Tiny daily numbers hide wipe cost. I spreadsheeted a month before I chose.',
 					'Live numbers: <a href="' +
 						B.price +
-						'">Tarkov Cheats Price</a> · <a href="/pricing/">Store</a>.',
-					'Status dates matter more than undetected banners. I compare when Phoenix last flipped green versus <a href="/updates/">Status</a> here. Green without a day is marketing.',
+						'">Tarkov Cheats Price</a> · <a href="/pricing/">Pricing</a>.',
+					'Status dates matter more than undetected banners. I compare when Phoenix last flipped green versus <a href="/updates/">Updates</a> here. Green without a day is marketing.',
 					'Support quality depends on who sold the Phoenix key. Buying direct here is one email with order ID — not a random Discord reseller.',
 					'Pro Tip: Do not import a Phoenix rage FOV into this menu on day one. Delete old configs. Start ESP-only on a map you know. I almost queued Customs with someone else’s snap.',
 				],
@@ -606,13 +606,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'ESP',
 		featured: false,
-		slug: 'tarkov-esp',
-		title: 'Tarkov ESP',
+		slug: 'tarkov-esp-notes',
+		title: 'Tarkov ESP Notes',
 		metaDescription:
-			'Tarkov ESP is why I bought a PC license before aimbot. Player boxes, loot filters, and distance on Customs and Interchange.',
-		h1: 'Tarkov ESP',
+			'Raid notes on Tarkov ESP after I bought a PC license. Player boxes, loot filters, and distance on Customs and Interchange.',
+		h1: 'Tarkov ESP Notes',
 		intro:
-			'Tarkov ESP is why I bought a PC license before I touched aimbot on Windows. Player boxes, loot names, health bars, and distance turned Customs dorms from guesswork into timed routes. I still die when I rotate late on Streets or greed-loot Interchange with five minutes on the clock.',
+			'Tarkov ESP Notes: Tarkov ESP is why I bought a PC license before I touched aimbot on Windows. Player boxes, loot names, health bars, and distance turned Customs dorms from guesswork into timed routes. I still die when I rotate late on Streets or greed-loot Interchange with five minutes on the clock.',
 		keywords: ['tarkov esp', 'eft esp', 'tarkov player esp', 'tarkov esp vs aimbot'],
 		imageAlt: 'Tarkov ESP player boxes and loot names in a raid',
 		sections: [
@@ -698,7 +698,7 @@ const sources = [
 			{
 				h2: 'Before you pay',
 				paragraphs: [
-					'Open <a href="/updates/">Status</a> first. Green means the build matches live Tarkov on PC. Yellow means make coffee. Paying then complaining about grey toggles is a self-inflicted problem I already made once.',
+					'Open <a href="/updates/">Updates</a> first. Green means the build matches live Tarkov on PC. Yellow means make coffee. Paying then complaining about grey toggles is a self-inflicted problem I already made once.',
 					'Cloud DMA is required for the full menu — HVCI, Secure Boot, TPM actually enabled, not “I think they are on.” <a href="' +
 						B.dma +
 						'">Cloud DMA</a> · <a href="/setup/">Setup</a>. Fix BIOS before you blame the cheat after checkout.',
@@ -720,7 +720,7 @@ const sources = [
 			{
 				h2: 'Monthly or lifetime',
 				paragraphs: [
-					'Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. Live numbers: <a href="/pricing/">Store</a>.',
+					'Monthly is $35 for 31 days. Lifetime is $150 once. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. Live numbers: <a href="/pricing/">Pricing</a>.',
 					'I started monthly to survive one wipe trial. Went lifetime after month four when I was still raiding weekends. Your break-even depends on BattlEye downtime and how often you actually queue. I tracked it on paper.',
 					'This key is for main Tarkov raids. Arena is separate — <a href="' +
 						B.arena +
@@ -793,8 +793,8 @@ const sources = [
 				h2: 'The two numbers here',
 				paragraphs: [
 					'Monthly is $35 for 31 days. Best for testing one wipe or returning after a break. Lower upfront. After 31 days the key stops until you renew. Same full menu. No downgrade to ESP only.',
-					'Lifetime is $150 once. Break-even is about five months of monthly. If you raid every wipe, lifetime removes rebilling. It does not skip patches. Still check <a href="/updates/">Status</a>.',
-					'Live checkout: <a href="/pricing/">Store</a>. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. I started monthly. Month two I was still playing. Lifetime after that.',
+					'Lifetime is $150 once. Break-even is about five months of monthly. If you raid every wipe, lifetime removes rebilling. It does not skip patches. Still check <a href="/updates/">Updates</a>.',
+					'Live checkout: <a href="/pricing/">Pricing</a>. Same player ESP, loot ESP, aimbot, no recoil, streamproof on both. I started monthly. Month two I was still playing. Lifetime after that.',
 					'Good for wipe tourists: monthly. Good if you forget to cancel things: monthly, because you just do not renew. Good if you hate re-entering a card every wipe: lifetime.',
 					'Pro Tip: Set a calendar reminder on day 28 of a monthly if you are still deciding. Do not let a dead key surprise you mid-Labs.',
 				],
@@ -895,7 +895,7 @@ const sources = [
 						B.aimbot +
 						'">Tarkov Aimbot</a>.',
 					'Thermals plus ESP is loud. I only toggle thermal for one quest. Not whole raids.',
-					'Check <a href="/updates/">Status</a> before each session. Same loader order: loader, key, Tarkov. I pinned the Status tab like server status in other games.',
+					'Check <a href="/updates/">Updates</a> before each session. Same loader order: loader, key, Tarkov. I pinned the Status tab like server status in other games.',
 					'I stopped importing YouTube configs from other brands. Those menus do not match this loader. customs_dorms is mine. config_final_FINAL is how you lose a night.',
 				],
 			},
@@ -969,7 +969,7 @@ const sources = [
 			{
 				h2: 'It is on the same key',
 				paragraphs: [
-					'Loot ESP ships with aimbot in one license. No second farming SKU. <a href="/pricing/">Store</a>. Competitors sometimes charge ESP-only then upsell combat. I did not want that trap after watching a Phoenix Lite friend.',
+					'Loot ESP ships with aimbot in one license. No second farming SKU. <a href="/pricing/">Pricing</a>. Competitors sometimes charge ESP-only then upsell combat. I did not want that trap after watching a Phoenix Lite friend.',
 					'<a href="' + B.phoenix + '">Phoenix Tarkov</a> Lite story is in that post. I will not retell it.',
 					'Try This Today: One Interchange Scav. Floor at 70k. Containers on. Count how many drawers you skip. That skip is the product.',
 					'Farming without a radar tax: <a href="' + B.radar + '">Tarkov Radar</a>.',
@@ -984,13 +984,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'Aimbot',
 		featured: false,
-		slug: 'tarkov-aimbot',
-		title: 'Tarkov Aimbot',
+		slug: 'tarkov-aimbot-notes',
+		title: 'Tarkov Aimbot Notes',
 		metaDescription:
-			'Tarkov aimbot was the second toggle I touched after ESP. Small FOV, vis check, hold-to-aim. Wide snap looks wrong in clips.',
-		h1: 'Tarkov Aimbot',
+			'Raid notes on Tarkov aimbot after ESP. Small FOV, vis check, hold-to-aim. Wide snap looks wrong in clips.',
+		h1: 'Tarkov Aimbot Notes',
 		intro:
-			'Tarkov aimbot was the second toggle I touched after ESP. Reseller ads sell silent aim like it is the default way to raid on PC. I run a small FOV with vis check on because wide snap looks wrong in clips and worse if someone reviews the fight later.',
+			'Tarkov Aimbot Notes: Tarkov aimbot was the second toggle I touched after ESP. Reseller ads sell silent aim like it is the default way to raid on PC. I run a small FOV with vis check on because wide snap looks wrong in clips and worse if someone reviews the fight later.',
 		keywords: [
 			'tarkov aimbot',
 			'eft aimbot',
@@ -1029,7 +1029,7 @@ const sources = [
 			{
 				h2: 'After a patch',
 				paragraphs: [
-					'Save one global safe preset plus a Factory preset. Check <a href="/updates/">Status</a> before importing old configs. Patch day: defaults first, then re-import one toggle at a time.',
+					'Save one global safe preset plus a Factory preset. Check <a href="/updates/">Updates</a> before importing old configs. Patch day: defaults first, then re-import one toggle at a time.',
 					'Yellow Status can grey combat. I do not “test” an old loader. That wastes a key. <a href="' +
 						B.undetected +
 						'">Undetected Tarkov Cheats</a>.',
@@ -1057,13 +1057,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'ESP',
 		featured: false,
-		slug: 'tarkov-wallhack',
-		title: 'Tarkov Wallhack',
+		slug: 'tarkov-wallhack-notes',
+		title: 'Tarkov Wallhack Notes',
 		metaDescription:
-			'Tarkov wallhack is what people type when they mean chams — seeing player models through walls. Boxes on Customs, skeleton in Factory.',
-		h1: 'Tarkov Wallhack',
+			'Raid notes on Tarkov wallhack — chams and boxes through walls. Boxes on Customs, skeleton in Factory.',
+		h1: 'Tarkov Wallhack Notes',
 		intro:
-			'Tarkov wallhack is what people type when they mean chams — seeing player models through walls. I run boxes on open maps like Customs and Shoreline, and skeleton lines in Factory and Labs where a full box blocks the door angle I care about.',
+			'Tarkov Wallhack Notes: Tarkov wallhack is what people type when they mean chams — seeing player models through walls. I run boxes on open maps like Customs and Shoreline, and skeleton lines in Factory and Labs where a full box blocks the door angle I care about.',
 		keywords: ['tarkov wallhack', 'eft wallhack', 'tarkov chams', 'tarkov chams vs esp'],
 		imageAlt: 'Tarkov wallhack chams and box ESP in a raid',
 		sections: [
@@ -1119,13 +1119,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'Status',
 		featured: false,
-		slug: 'undetected-tarkov-cheats',
-		title: 'Undetected Tarkov Cheats',
+		slug: 'patch-day-notes',
+		title: 'Patch Day Notes',
 		metaDescription:
-			'Undetected Tarkov cheats does not mean forever. It means the loader matches the last BattlEye wave today. Check Status before you queue.',
-		h1: 'Undetected Tarkov Cheats',
+			'Patch day notes for Tarkov cheats after BattlEye. Undetected today does not mean forever. Check Updates before you queue.',
+		h1: 'Patch Day Notes',
 		intro:
-			'Undetected Tarkov cheats does not mean forever on Windows PC. It means the loader on your desk matches the live game and the last BattlEye wave today. I burned a night on yellow Status once — half the menu grey, Customs extract lost anyway, and the page already told me to wait.',
+			'Patch Day Notes: undetected Tarkov cheats does not mean forever on Windows PC. It means the loader on your desk matches the live game and the last BattlEye wave today. I burned a night on yellow Updates once — half the menu grey, Customs extract lost anyway, and the page already told me to wait.',
 		keywords: [
 			'undetected tarkov cheats',
 			'tarkov cheats undetected',
@@ -1138,7 +1138,7 @@ const sources = [
 				h2: 'What undetected means today',
 				paragraphs: [
 					EXT.battleye +
-						' protects Escape from Tarkov. When BSG or BattlEye ships an update, loaders need a rebuild. Live notes: <a href="/updates/">Status</a>.',
+						' protects Escape from Tarkov. When BSG or BattlEye ships an update, loaders need a rebuild. Live notes: <a href="/updates/">Updates</a>.',
 					'No seller promises permanent undetected — not Cosmo, Phoenix, CheatVault listings, Ghostware, or Kernaim. If anyone does, verify against a dated status page. I treat a badge with no day as unknown.',
 					'Minor client patches sometimes skip a cheat rebuild. Wipe patches almost never do. I do not guess. I read the note.',
 					'If Status says wait, do not queue with an old loader. Launching it does not test BattlEye. It wastes a key. I did that once because Discord said go. Support said the same thing the page said.',
@@ -1168,7 +1168,7 @@ const sources = [
 			{
 				h2: 'Buy when it is actually green',
 				paragraphs: [
-					'Green Status means the team signed off the current build. Then buy or renew on <a href="/pricing/">Store</a>. Reverse that order and you get my yellow-week story.',
+					'Green Status means the team signed off the current build. Then buy or renew on <a href="/pricing/">Pricing</a>. Reverse that order and you get my yellow-week story.',
 					'<a href="' +
 						B.buy +
 						'">Buy Tarkov Cheats</a>. Review: <a href="' +
@@ -1233,7 +1233,7 @@ const sources = [
 				paragraphs: [
 					'<a href="' +
 						B.buy +
-						'">Buy Tarkov Cheats</a> · <a href="/features/">Features</a> · <a href="/pricing/">Store</a>.',
+						'">Buy Tarkov Cheats</a> · <a href="/features/">Features</a> · <a href="/pricing/">Pricing</a>.',
 					'Try This Today: If you queued Arena last night and raids tonight, write down which one you will actually play this wipe. Buy that key. Not both because a banner mixed them.',
 					'PC raids notes: <a href="' + B.pc + '">Tarkov Cheats PC</a>.',
 				],
@@ -1272,7 +1272,7 @@ const sources = [
 				h2: 'Loader order that actually worked',
 				paragraphs: [
 					'Run loader, paste license key, launch Tarkov. If the menu is empty, re-check HVCI and Secure Boot before blaming the patch.',
-					'After a BattlEye update, check <a href="/updates/">Status</a> before you change BIOS settings randomly. I flipped a switch I did not understand once. Do not be me.',
+					'After a BattlEye update, check <a href="/updates/">Updates</a> before you change BIOS settings randomly. I flipped a switch I did not understand once. Do not be me.',
 					'Run as admin only if Setup says so. Extra admin launches can trip HVCI on some builds.',
 					'Defender flag first launch is normal. Support steps. Reboot. ESP after. Not a detected event.',
 					'Pro Tip: Take a photo of the BIOS HVCI/Secure Boot screens. Support tickets go faster when you are not describing a menu from memory.',
@@ -1293,7 +1293,7 @@ const sources = [
 			{
 				h2: 'What unlocks after it passes',
 				paragraphs: [
-					'Player ESP, loot ESP, aimbot, no recoil, streamproof — one license. <a href="/features/">Features</a> · <a href="/pricing/">Store</a>.',
+					'Player ESP, loot ESP, aimbot, no recoil, streamproof — one license. <a href="/features/">Features</a> · <a href="/pricing/">Pricing</a>.',
 					'Without Cloud DMA you may see a partial menu. Do not assume ESP is broken until reqs are met. I almost refund-raged. It was firmware.',
 					'First week on PC: <a href="' +
 						B.pc +
@@ -1367,7 +1367,7 @@ const sources = [
 					'After patches I set recoil to 70, vis check on, FOV small. Then I raid a map I know before I touch anything else. Factory or Customs. Not Labs as a test range.',
 					'PC first week: <a href="' +
 						B.pc +
-						'">Tarkov Cheats PC</a>. Store: <a href="/pricing/">Store</a>.',
+						'">Tarkov Cheats PC</a>. Store: <a href="/pricing/">Pricing</a>.',
 					'Try This Today: Record ten seconds of full-auto at your current recoil. If you would not want that clip in someone else’s VOD review, turn it down.',
 				],
 			},
@@ -1380,13 +1380,13 @@ const sources = [
 		updated: '2026-09-14',
 		category: 'ESP',
 		featured: false,
-		slug: 'tarkov-radar',
-		title: 'Tarkov Radar',
+		slug: 'tarkov-radar-notes',
+		title: 'Tarkov Radar Notes',
 		metaDescription:
-			'Tarkov radar searches usually mean a minimap or off-screen arrows. This license covers distance, snapline-style reads, and out-of-FOV cues in ESP.',
-		h1: 'Tarkov Radar',
+			'Raid notes on Tarkov radar-style ESP — minimap searches vs off-screen arrows, distance, and out-of-FOV cues.',
+		h1: 'Tarkov Radar Notes',
 		intro:
-			'Tarkov radar searches usually mean a minimap circle or off-screen arrows. This license covers player distance and snapline-style reads in the ESP menu — I skipped a second radar SKU on a reseller cart.',
+			'Tarkov Radar Notes: Tarkov radar searches usually mean a minimap circle or off-screen arrows. This license covers player distance and snapline-style reads in the ESP menu — I skipped a second radar SKU on a reseller cart.',
 		keywords: ['tarkov radar', 'eft radar hack', 'tarkov radar cheat', 'tarkov 2d radar'],
 		imageAlt: 'Tarkov radar-style ESP arrows and distance',
 		sections: [

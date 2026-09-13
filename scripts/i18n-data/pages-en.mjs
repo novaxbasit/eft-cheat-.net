@@ -507,7 +507,7 @@ export const enPages = {
 				'How this Tarkov cheats pillar fits nearby pages',
 				'Use this pillar for the core product overview. For year-specific buying notes, see the <a href="/tarkov-cheats/">tarkov cheats 2026</a> and <a href="/tarkov-cheats/">Tarkov cheats</a> pages cover buyer comparisons in cheats wording.',
 				'Deep-dive modules: <a href="/tarkov-esp/">Tarkov ESP</a>, <a href="/tarkov-aimbot/">Tarkov Aimbot</a>, <a href="/tarkov-esp/">wallhack</a>, <a href="/tarkov-radar-hack/">radar hack</a>, and <a href="/tarkov-aimbot/">soft aim</a>.',
-				'Blog guides: <a href="/blog/cosmo-tarkov/">Cosmo Tarkov</a>, <a href="/blog/phoenix-tarkov/">Phoenix Tarkov</a>, and <a href="/blog/best-tarkov-cheats/">best Tarkov cheats</a>.',
+				'Blog guides: <a href="/blog/cosmo-tarkov/">Cosmo Tarkov</a>, <a href="/blog/phoenix-tarkov/">Phoenix Tarkov</a>, and <a href="/blog/comparing-tarkov-cheats/">comparing Tarkov cheats</a>.',
 			),
 			section(
 				'Tarkov cheats vs single-feature tools',

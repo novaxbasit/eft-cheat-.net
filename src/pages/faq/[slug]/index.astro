@@ -2,19 +2,29 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
-import { productInfo, seoFaqs, siteConfig, type FaqItem } from '../../../data/site';
+import { homeFaqs, productInfo, seoFaqs, siteConfig, type FaqItem } from '../../../data/site';
 import { absoluteFaqUrl, faqBasePath, getFaqCrawlImage, getFaqPath, getRelatedFaqs } from '../../../data/faq';
 import { getSelfHreflangAlternates } from '../../../data/i18n/routing';
 import { contentSrcSet, productMainSizes } from '../../../lib/responsive-images';
 
 export function getStaticPaths() {
-	return seoFaqs.map((faq) => ({
-		params: { slug: faq.slug },
-		props: { faq },
-	}));
+	return [
+		...seoFaqs.map((faq) => ({
+			params: { slug: faq.slug },
+			props: { faq, redirectToHub: false },
+		})),
+		...homeFaqs.map((faq) => ({
+			params: { slug: faq.slug },
+			props: { faq, redirectToHub: true },
+		})),
+	];
 }
 
-const { faq } = Astro.props as { faq: FaqItem };
+const { faq, redirectToHub } = Astro.props as { faq: FaqItem; redirectToHub: boolean };
+
+if (redirectToHub) {
+	return Astro.redirect(faqBasePath, 301);
+}
 
 const canonicalPath = getFaqPath(faq.slug);
 const canonicalURL = absoluteFaqUrl(faq.slug);

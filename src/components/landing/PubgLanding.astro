@@ -5,7 +5,6 @@
 import SiteBanner from './SiteBanner.astro';
 import InGameGallery from './InGameGallery.astro';
 import HomeOverview from './HomeOverview.astro';
-import HomeGuides from './HomeGuides.astro';
 import PatchNotesSection from './PatchNotesSection.astro';
 import { siteConfig, productInfo, homeFaqs, customerReviews } from '../../data/site';
 import { brand, fillBrandTokens } from '../../data/brand';
@@ -68,8 +67,6 @@ const topFaqs = homeFaqs;
 
 	<InGameGallery locale={locale} />
 
-	<HomeGuides locale={locale} />
-
 	<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-reviews-title">
 		<div class="pubg-wrap">
 			<header class="pubg-section__head">
@@ -106,7 +103,9 @@ const topFaqs = homeFaqs;
 					topFaqs.map((item) => (
 						<details>
 							<summary>{item.question}</summary>
-							<p class="pubg-faq__a">{item.answer}</p>
+							<p class="pubg-faq__a">
+								<a href={`${faqHref}#${item.slug}`}>Read the answer on FAQ</a>
+							</p>
 						</details>
 					))
 				) : (

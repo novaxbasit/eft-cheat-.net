@@ -88,6 +88,16 @@ export function getBlogPostPath(locale: LocaleCode, slug: string): string {
 	return `${base}${slug}/`;
 }
 
+/** Old blog slugs that used to match product URLs. Flattened 301s to editorial posts. */
+export const blogSlugRedirects: Record<string, string> = {
+	'best-tarkov-cheats': 'comparing-tarkov-cheats',
+	'tarkov-esp': 'tarkov-esp-notes',
+	'tarkov-aimbot': 'tarkov-aimbot-notes',
+	'tarkov-wallhack': 'tarkov-wallhack-notes',
+	'undetected-tarkov-cheats': 'patch-day-notes',
+	'tarkov-radar': 'tarkov-radar-notes',
+};
+
 export function absoluteBlogUrl(locale: LocaleCode, slug?: string): string {
 	const path = slug ? getBlogPostPath(locale, slug) : getBlogBasePath(locale);
 	return new URL(path, siteConfig.url).href;
