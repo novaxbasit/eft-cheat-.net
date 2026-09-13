@@ -650,7 +650,7 @@ export const i18nContent: Record<LocaleCode, { ui: LocaleUi; pages: Record<PageI
 							h2: "Before you buy in 2026",
 							paragraphs: [
 								"Read the <a href=\"/tarkov-cheats/\">Escape from Tarkov cheats</a> pillar, Features, Pricing, Setup, and Updates pages. Check undetected status notes after every major patch — responsible use and maintenance awareness matter.",
-								"Also compare the <a href=\"/tarkov-cheats/\">Escape from Tarkov cheats</a> checklist, <a href=\"/blog/worth/\">are cheats worth it</a>, and <a href=\"/faq/\">FAQ</a>.",
+								"Also compare the <a href=\"/tarkov-cheats/\">Escape from Tarkov cheats</a> checklist, <a href=\"/blog/tarkov-cheats-review/\">Tarkov cheats review</a>, and <a href=\"/faq/\">FAQ</a>.",
 								"Support is available at support@eftcheat.net via the <a href=\"/support/\">Support page</a>.",
 							],
 						},
@@ -681,7 +681,7 @@ export const i18nContent: Record<LocaleCode, { ui: LocaleUi; pages: Record<PageI
 							paragraphs: [
 								"Use this pillar for the core product overview. For year-specific buying notes, see the <a href=\"/tarkov-cheats/\">Escape from Tarkov cheats 2026</a> and <a href=\"/tarkov-cheats/\">Escape from Tarkov cheats</a> pages cover buyer comparisons in cheats wording.",
 								"Deep-dive modules: <a href=\"/tarkov-esp/\">Escape from Tarkov ESP</a>, <a href=\"/tarkov-aimbot/\">Escape from Tarkov Aimbot</a>, <a href=\"/tarkov-esp/\">wallhack</a>, <a href=\"/tarkov-radar-hack/\">radar hack</a>, and <a href=\"/tarkov-aimbot/\">soft aim</a>.",
-								"Blog guides: <a href=\"/blog/cosmo/\">vs Cosmo Cheats</a>, <a href=\"/blog/phoenix/\">vs Phoenix</a>, and <a href=\"/blog/compare/\">compare cheat sites</a>.",
+								"Blog guides: <a href=\"/blog/cosmo-tarkov/\">Cosmo Tarkov</a>, <a href=\"/blog/phoenix-tarkov/\">Phoenix Tarkov</a>, and <a href=\"/blog/best-tarkov-cheats/\">best Tarkov cheats</a>.",
 							],
 						},
 						{
