@@ -3,12 +3,11 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getPageContent, getUi, type PageId } from '../data/i18n';
 import { getLocalizedPath, localizeInternalHref } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { productInfo, hubFaqs, uniqueFaqSlugs, siteConfig, customerReviewStats } from '../data/site';
-import { absoluteFaqUrl, getFaqPath } from '../data/faq';
+import { productInfo, hubFaqs, siteConfig } from '../data/site';
 import { simplePageCopy } from '../data/i18n/simple-pages';
 import { getT } from '../i18n/server';
+import { cloakEmailsInHtml } from '../lib/support-email';
 import { getPageCrawlImage } from '../data/page-images';
-import { MONEY_PATH } from '../data/seo-canonical';
 
 interface Props {
 	locale: LocaleCode;
@@ -23,9 +22,11 @@ const crawl = getPageCrawlImage(pageId);
 const simple = locale === 'en' ? simplePageCopy[pageId] : undefined;
 
 function localizeParagraphHtml(html: string): string {
-	return html
-		.replace(/\{checkout\}/g, siteConfig.checkoutUrl)
-		.replace(/href="(\/[^"]+)"/g, (_, path: string) => `href="${localizeInternalHref(path, locale)}"`);
+	return cloakEmailsInHtml(
+		html
+			.replace(/\{checkout\}/g, siteConfig.checkoutUrl)
+			.replace(/href="(\/[^"]+)"/g, (_, path: string) => `href="${localizeInternalHref(path, locale)}"`),
+	);
 }
 
 const heading = simple?.h1 ?? page.h1;
@@ -48,7 +49,6 @@ const introEdit = locale === 'en' ? introEditByPage[pageId] : undefined;
 const showInGameGallery = pageId === 'hacks' || pageId === 'pricing';
 
 const pageUrl = new URL(getLocalizedPath(pageId, locale), siteConfig.url).href;
-const priceValidUntil = '2027-12-31';
 
 const faqSchema =
 	pageId === 'faq' && locale === 'en'
@@ -58,52 +58,13 @@ const faqSchema =
 				mainEntity: hubFaqs.map((item) => ({
 					'@type': 'Question',
 					name: item.question,
-					url: uniqueFaqSlugs.has(item.slug) ? absoluteFaqUrl(item.slug) : `${pageUrl}#${item.slug}`,
+					url: `${pageUrl}#${item.slug}`,
 					acceptedAnswer: { '@type': 'Answer', text: item.answer },
 				})),
 			}
-		: null;
+			: null;
 
-const storeSchema =
-	pageId === 'pricing' || pageId === 'hacks'
-		? {
-				'@type': 'Product',
-				'@id': `${pageUrl}#product`,
-				name: productInfo.name,
-				description: productInfo.summary,
-				image: crawl.url,
-				brand: { '@type': 'Brand', name: productInfo.brand },
-				url: new URL(MONEY_PATH, siteConfig.url).href,
-				aggregateRating: {
-					'@type': 'AggregateRating',
-					ratingValue: customerReviewStats.averageRating.toFixed(1),
-					reviewCount: String(customerReviewStats.totalCount),
-					bestRating: '5',
-					worstRating: '1',
-				},
-				offers: {
-					'@type': 'AggregateOffer',
-					lowPrice: Math.min(...productInfo.plans.map((p) => p.price)).toFixed(2),
-					highPrice: Math.max(...productInfo.plans.map((p) => p.price)).toFixed(2),
-					priceCurrency: productInfo.currency,
-					offerCount: productInfo.plans.length,
-					availability: 'https://schema.org/InStock',
-					url: siteConfig.checkoutUrl,
-					offers: productInfo.plans.map((plan) => ({
-						'@type': 'Offer',
-						name: `${productInfo.name} ${plan.label}`,
-						price: plan.price.toFixed(2),
-						priceCurrency: productInfo.currency,
-						priceValidUntil,
-						availability: 'https://schema.org/InStock',
-						url: siteConfig.checkoutUrl,
-						seller: { '@id': `${siteConfig.url}/#organization` },
-					})),
-				},
-			}
-		: null;
-
-const extraGraph = [faqSchema, storeSchema].filter(Boolean) as Record<string, unknown>[];
+const extraGraph = [faqSchema].filter(Boolean) as Record<string, unknown>[];
 
 /** Primary banner CTA — support/legal pages email; all product pages checkout */
 const mailtoPageIds = new Set(['support', 'privacy', 'refund', 'terms']);
@@ -128,7 +89,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	hacks: locale === 'en' ? t('nav.preview') : ui.nav.hacks,
 	'tarkov-esp': ui.nav.esp,
 	'tarkov-aimbot': ui.nav.aimbot,
-	radar: 'Wallhack',
+	radar: 'Radar',
 	setup: ui.nav.setup,
 	faq: ui.nav.faq,
 };
@@ -160,7 +121,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		showStorePlans && (
-			<section class="pubg-panel pubg-panel--lift">
+			<section class="site-panel site-panel--lift">
 				<h2>{t('product.plans')}</h2>
 				<div class="price-grid">
 					<a class="price-card" href={siteConfig.checkoutUrl} target="_blank" rel="noopener noreferrer">
@@ -180,7 +141,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		sections.map((section) => (
-			<section class="pubg-panel pubg-panel--lift">
+			<section class="site-panel site-panel--lift">
 				<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
 				{section.paragraphs.map((p) => (
 					<p set:html={localizeParagraphHtml(p)} />
@@ -198,19 +159,14 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 
 	{
 		pageId === 'faq' && locale === 'en' && (
-			<section class="pubg-panel pubg-panel--lift faq-index">
+			<section class="site-panel site-panel--lift faq-index">
 				<h2>{t('common.allQuestions')}</h2>
-				<p>Short answers live on this FAQ hub. Unique topics also have their own page.</p>
+				<p>Short answers live on this FAQ hub.</p>
 				<div class="faq-index__hub">
 					{hubFaqs.map((item) => (
 						<details class="faq-index__item" id={item.slug}>
 							<summary>{item.question}</summary>
-							<p>{item.answer}</p>
-							{uniqueFaqSlugs.has(item.slug) && (
-								<p>
-									<a href={getFaqPath(item.slug)}>Open full page</a>
-								</p>
-							)}
+							<p set:html={cloakEmailsInHtml(item.answer)} />
 						</details>
 					))}
 				</div>

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-import '../styles/pubg-home.css';
-import '../styles/pubg-site.css';
+import '../styles/site-home.css';
+import '../styles/site-pages.css';
 import '../styles/scroll-reveal.css';
 import { brand } from '../data/brand';
 import { productInfo, siteConfig } from '../data/site';
@@ -9,10 +9,9 @@ import ScrollReveal from '../components/ScrollReveal.astro';
 import MobileNavFallback from '../components/MobileNavFallback.astro';
 import { brandTheme, brandThemeInlineStyle, brandThemeRootCss } from '../data/brand-theme';
 import I18nHead from '../components/I18nHead.astro';
-import LocaleSuggest from '../components/LocaleSuggest.astro';
 import InlineBrandEditor from '../components/InlineBrandEditor.astro';
 import { heroMimeType, heroVideoMimeType } from '../lib/responsive-images';
-import { defaultLocale, localeMap, locales, type LocaleCode } from '../data/i18n/locales';
+import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
 import type { PageId } from '../data/i18n/content.generated';
 import { buildCanonicalUrl, type HreflangAlternate } from '../data/i18n/routing';
 
@@ -62,17 +61,13 @@ const faviconQuery = `?v=${brand.faviconVersion}`;
 const ogImageURL = new URL(ogImage, siteConfig.url).href;
 const logoURL = new URL(siteConfig.logoRaster, siteConfig.url).href;
 const ogImageIsLogo = ogImage === siteConfig.logo;
-const ogImageType = ogImage.endsWith('.webp') ? 'image/webp' : 'image/png';
-const ogImageWidth = ogImageIsLogo ? '512' : '1920';
-const ogImageHeight = ogImageIsLogo ? '512' : '1080';
+const ogImageType = ogImage.endsWith('.webp') ? 'image/webp' : ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg') ? 'image/jpeg' : 'image/png';
+const ogImageWidth = ogImageIsLogo ? String(siteConfig.logoRasterWidth) : ogImage.includes('hero-1024w') ? '1024' : '1024';
+const ogImageHeight = ogImageIsLogo ? String(siteConfig.logoRasterHeight) : ogImage.includes('hero-1024w') ? '409' : ogImage.includes('patch-notes') ? '576' : '576';
 const twitterCard = ogImageIsLogo ? 'summary' : 'summary_large_image';
 const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 const siteDescription = `${productInfo.tagline}. ${productInfo.summary}`;
-const localeMeta = localeMap[locale];
-const ogLocaleAlternates = locales.filter((l) => l.code !== locale);
-const schemaLanguage = localeMeta.ogLocale.replace('_', '-');
-const schemaLanguages = locales.map((l) => l.ogLocale.replace('_', '-'));
-const worldwidePlace = { '@type': 'Place' as const, name: siteConfig.market };
+const schemaLanguage = 'en';
 
 const graph: Record<string, unknown>[] = [
 	{
@@ -98,7 +93,7 @@ const graph: Record<string, unknown>[] = [
 		url: siteConfig.url,
 		name: siteConfig.name,
 		description: siteDescription,
-		inLanguage: schemaLanguages,
+		inLanguage: schemaLanguage,
 		publisher: { '@id': `${siteConfig.url}/#organization` },
 		logo: {
 			'@type': 'ImageObject',
@@ -113,7 +108,6 @@ const graph: Record<string, unknown>[] = [
 		name: siteConfig.name,
 		url: siteConfig.url,
 		email: siteConfig.supportEmail,
-		areaServed: worldwidePlace,
 		logo: {
 			'@type': 'ImageObject',
 			url: logoURL,
@@ -125,8 +119,7 @@ const graph: Record<string, unknown>[] = [
 			'@type': 'ContactPoint',
 			contactType: 'customer support',
 			email: siteConfig.supportEmail,
-			areaServed: worldwidePlace,
-			availableLanguage: locales.map((l) => l.name),
+			availableLanguage: 'English',
 		},
 	},
 ];
@@ -170,7 +163,7 @@ if (aboutNode) {
 ---
 
 <!doctype html>
-<html lang={locale} dir={localeMeta.dir} style={brandThemeInlineStyle()}>
+<html lang="en" dir="ltr" style={brandThemeInlineStyle()}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -247,10 +240,7 @@ if (aboutNode) {
 		<meta property="og:image:width" content={ogImageWidth} />
 		<meta property="og:image:height" content={ogImageHeight} />
 		<meta property="og:image:alt" content={ogImageAlt} />
-		<meta property="og:locale" content={localeMeta.ogLocale} />
-		{ogLocaleAlternates.map((alt) => (
-			<meta property="og:locale:alternate" content={alt.ogLocale} />
-		))}
+		<meta property="og:locale" content="en" />
 
 		<meta name="twitter:card" content={twitterCard} />
 		<meta name="twitter:title" content={title} />
@@ -274,7 +264,6 @@ if (aboutNode) {
 	</head>
 	<body>
 		<MobileNavFallback />
-		{pageId && <LocaleSuggest currentLocale={locale} pageId={pageId} />}
 		<slot />
 		<ScrollReveal />
 		<InlineBrandEditor />

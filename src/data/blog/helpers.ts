@@ -3,7 +3,7 @@ import { tarkovImages } from '../tarkov';
 import { blogSitemapImageMeta } from '../brand-sitemap';
 import {
 	defaultLocale,
-	localeCodes,
+	localeMap,
 	type LocaleCode,
 	locales,
 } from '../i18n/locales';
@@ -32,16 +32,26 @@ function expandTranslations(
 ): Record<LocaleCode, BlogTranslation> {
 	const en = translations.en;
 	const full = {} as Record<LocaleCode, BlogTranslation>;
-	for (const code of localeCodes) {
+	for (const code of Object.keys(localeMap) as LocaleCode[]) {
 		full[code] = translations[code] ?? { ...en };
 	}
 	return full;
 }
 
-export const blogPosts: BlogPostDefinition[] = rawBlogPosts.map((post) => ({
-	...post,
-	translations: expandTranslations(post.translations as Partial<Record<LocaleCode, BlogTranslation>> & { en: BlogTranslation }),
-}));
+export const doorwayBlogSlugs = new Set([
+	'phoenix-tarkov',
+	'cosmo-tarkov',
+	'ghostware-tarkov',
+	'kernaim-tarkov',
+	'cheatvault-tarkov',
+]);
+
+export const blogPosts: BlogPostDefinition[] = rawBlogPosts
+	.filter((post) => !doorwayBlogSlugs.has(post.translations.en.slug))
+	.map((post) => ({
+		...post,
+		translations: expandTranslations(post.translations as Partial<Record<LocaleCode, BlogTranslation>> & { en: BlogTranslation }),
+	}));
 
 export function getBlogImageSrc(key: BlogImageKey): string {
 	const src = imageMap[key] ?? FALLBACK_BLOG_IMAGE;
@@ -65,7 +75,7 @@ export function findPostBySlug(slug: string, locale?: LocaleCode): BlogPostDefin
 		if (locale) {
 			return post.translations[locale]?.slug === slug;
 		}
-		return localeCodes.some((code) => post.translations[code]?.slug === slug);
+		return (Object.keys(localeMap) as LocaleCode[]).some((code) => post.translations[code]?.slug === slug);
 	});
 }
 
@@ -96,6 +106,11 @@ export const blogSlugRedirects: Record<string, string> = {
 	'tarkov-wallhack': 'tarkov-wallhack-notes',
 	'undetected-tarkov-cheats': 'patch-day-notes',
 	'tarkov-radar': 'tarkov-radar-notes',
+	'phoenix-tarkov': 'comparing-tarkov-cheats',
+	'cosmo-tarkov': 'comparing-tarkov-cheats',
+	'ghostware-tarkov': 'comparing-tarkov-cheats',
+	'kernaim-tarkov': 'comparing-tarkov-cheats',
+	'cheatvault-tarkov': 'comparing-tarkov-cheats',
 };
 
 export function absoluteBlogUrl(locale: LocaleCode, slug?: string): string {

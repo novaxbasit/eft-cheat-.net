@@ -13,26 +13,26 @@ const home = getPageContent(locale, 'home');
 const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2 ?? ui.nav.features;
 ---
 
-<section class="pubg-section pubg-overview" aria-labelledby="pubg-overview-title">
-	<div class="pubg-wrap pubg-overview__inner">
-		<div class="pubg-overview__header">
-			<h2 class="pubg-section__title" id="pubg-overview-title">{overviewTitle}</h2>
+<section class="site-section site-overview" aria-labelledby="site-overview-title">
+	<div class="site-wrap site-overview__inner">
+		<div class="site-overview__header">
+			<h2 class="site-section__title" id="site-overview-title">{overviewTitle}</h2>
 			{
 				locale === 'en' ? (
-					<div class="pubg-overview__lead">
+					<div class="site-overview__lead">
 						<p>
 							{fillBrandTokens(
 								'Check Updates after a {game} or {antiCheat} patch before you raid.',
 							)}
 						</p>
-						<p class="pubg-overview__lead-sub">
+						<p class="site-overview__lead-sub">
 							{fillBrandTokens(
 								'The overlay is streamproof, so ESP and menus stay off OBS. Player ESP, loot ESP, and aimbot work in one menu. Cloud DMA is required for full functionality.',
 							)}
 						</p>
 					</div>
 				) : (
-					<div class="pubg-overview__lead">
+					<div class="site-overview__lead">
 						<p>{home.intro}</p>
 					</div>
 				)
@@ -41,10 +41,10 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 
 		{
 			locale === 'en' ? (
-				<div class="pubg-overview__grid">
-			<article class="pubg-overview__card">
-				<div class="pubg-overview__card-head">
-					<span class="pubg-overview__icon" aria-hidden="true">
+				<div class="site-overview__grid">
+			<article class="site-overview__card">
+				<div class="site-overview__card-head">
+					<span class="site-overview__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
 							<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
 							<circle cx="12" cy="12" r="3" />
@@ -56,16 +56,16 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 					Player ESP shows PMCs, bosses, bots, and Scavs with box, skeleton, chams, health, nickname, weapon, and distance.
 					Quest marks and radar sit in the same overlay.
 				</p>
-				<ul class="pubg-overview__list">
+				<ul class="site-overview__list">
 					<li>Box, skeleton, chams, and health</li>
 					<li>Boss, bot, Scav, and quest ESP</li>
 					<li>Exfils, transitions, and radar</li>
 				</ul>
 			</article>
 
-			<article class="pubg-overview__card">
-				<div class="pubg-overview__card-head">
-					<span class="pubg-overview__icon" aria-hidden="true">
+			<article class="site-overview__card">
+				<div class="site-overview__card-head">
+					<span class="site-overview__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
 							<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
 							<path d="M3.3 7 12 12l8.7-5M12 22V12" />
@@ -77,16 +77,16 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 					Loot ESP filters items by category, price, and distance. Containers, stashes, corpses, and computers can show too.
 					Weather, fog, and rain sit under World.
 				</p>
-				<ul class="pubg-overview__list">
+				<ul class="site-overview__list">
 					<li>Loot names, price, and filters</li>
 					<li>Containers, stashes, and corpses</li>
 					<li>Streamproof overlay for captures</li>
 				</ul>
 			</article>
 
-			<article class="pubg-overview__card">
-				<div class="pubg-overview__card-head">
-					<span class="pubg-overview__icon" aria-hidden="true">
+			<article class="site-overview__card">
+				<div class="site-overview__card-head">
+					<span class="site-overview__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
 							<circle cx="12" cy="12" r="10" />
 							<path d="M12 2v20M2 12h20" />
@@ -98,16 +98,16 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 				<p>
 					Aimbot includes FOV, vis check, smart bone, prediction, and lock. No recoil and no sway sit in Misc with thermal and third person.
 				</p>
-				<ul class="pubg-overview__list">
+				<ul class="site-overview__list">
 					<li>FOV, vis check, and prediction</li>
 					<li>No recoil, no sway, and instant ADS</li>
 					<li>Hotkeys and config saves</li>
 				</ul>
 			</article>
 
-			<article class="pubg-overview__card">
-				<div class="pubg-overview__card-head">
-					<span class="pubg-overview__icon" aria-hidden="true">
+			<article class="site-overview__card">
+				<div class="site-overview__card-head">
+					<span class="site-overview__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
 							<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
 							<path d="m9 12 2 2 4-4" />
@@ -118,7 +118,7 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 				<p>
 					Monthly ($35 / 31 days) and lifetime ($150) include the same features. Raids only — Arena is a separate key. Cloud DMA is required for full functionality.
 				</p>
-				<ul class="pubg-overview__list">
+				<ul class="site-overview__list">
 					<li>Instant delivery after checkout</li>
 					<li><a href="/pricing/">Pricing</a> · <a href="/updates/">Updates</a> · <a href="/blog/">Blog</a></li>
 					<li><a href="/setup/">Setup</a> after you buy</li>
@@ -126,10 +126,10 @@ const overviewTitle = locale === 'en' ? "What's included" : home.sections[1]?.h2
 			</article>
 				</div>
 			) : (
-				<div class="pubg-overview__grid">
+				<div class="site-overview__grid">
 					{
 						home.sections.map((section) => (
-							<article class="pubg-overview__card">
+							<article class="site-overview__card">
 								<h3>{section.h2}</h3>
 								{section.paragraphs.map((paragraph) => (
 									<p set:html={paragraph} />

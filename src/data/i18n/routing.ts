@@ -677,11 +677,12 @@ export const pageIds = Object.keys(englishPaths) as PageId[];
 
 export function getLocalizedPath(pageId: PageId, locale: LocaleCode): string {
 	const resolvedId = (isCannibalPageId(pageId) ? getCannibalTargetId(pageId) : pageId) as PageId;
-	if (locale === defaultLocale) {
-		return englishPaths[resolvedId];
+	const canonicalId = resolvedId === 'hacks' ? 'home' : resolvedId;
+	if (locale !== defaultLocale) {
+		// Retired locale prefixes 301 to English; never emit /es/... links.
+		return getLocalizedPath(canonicalId, defaultLocale);
 	}
-	const slug = localizedSlugs[resolvedId][locale];
-	return slug ? `/${locale}/${slug}/` : `/${locale}/`;
+	return englishPaths[canonicalId];
 }
 
 /** Map English root paths to the correct locale URL (for CTAs and inline links). */
@@ -730,24 +731,12 @@ export function getSelfHreflangAlternates(
 	];
 }
 
-export function getHreflangAlternates(pageId: PageId, currentLocale: LocaleCode = defaultLocale) {
+export function getHreflangAlternates(pageId: PageId, _currentLocale: LocaleCode = defaultLocale) {
 	const resolvedId = (isCannibalPageId(pageId) ? getCannibalTargetId(pageId) : pageId) as PageId;
-	const byLocale = localeCodes.map((code) => ({
-		hreflang: localeMap[code].hreflang,
-		href: absoluteLocalizedUrl(resolvedId, code),
-		code,
-	}));
-	const self = byLocale.find((alt) => alt.code === currentLocale)!;
-	const others = byLocale.filter((alt) => alt.code !== currentLocale);
-	const xDefault = {
-		hreflang: 'x-default' as const,
-		href: absoluteLocalizedUrl(resolvedId, defaultLocale),
-	};
-	// Self-referential hreflang first — required by Google/Seobility for the active locale.
+	const href = absoluteLocalizedUrl(resolvedId === 'hacks' ? 'home' : resolvedId, defaultLocale);
 	return [
-		{ hreflang: self.hreflang, href: self.href },
-		...others.map(({ hreflang, href }) => ({ hreflang, href })),
-		xDefault,
+		{ hreflang: 'en', href },
+		{ hreflang: 'x-default' as const, href },
 	];
 }
 
@@ -860,7 +849,7 @@ export function localeFromAcceptLanguage(header: string | null): LocaleCode {
 export function getNavForLocale(locale: LocaleCode, labels: Record<string, string>) {
 	const items: { label: string; href: string; pageId?: PageId }[] = [
 		{ label: labels.home, href: getLocalizedPath('home', locale), pageId: 'home' },
-		{ label: labels.preview ?? labels.hacks ?? 'Cheats', href: getLocalizedPath('hacks', locale), pageId: 'hacks' },
+		{ label: labels.preview ?? labels.hacks ?? 'Cheats', href: getLocalizedPath('home', locale), pageId: 'home' },
 		{ label: labels.features, href: getLocalizedPath('features', locale), pageId: 'features' },
 		{ label: labels.pricing, href: getLocalizedPath('pricing', locale), pageId: 'pricing' },
 		{ label: labels.updates, href: getLocalizedPath('updates', locale), pageId: 'updates' },

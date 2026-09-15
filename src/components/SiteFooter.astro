@@ -13,7 +13,7 @@ interface Props {
 const locale = Astro.props.locale ?? defaultLocale;
 
 const explore = [
-	{ labelKey: 'nav.preview', href: getLocalizedPath('hacks', locale) },
+	{ labelKey: 'nav.preview', href: getLocalizedPath('home', locale) },
 	{ labelKey: 'nav.features', href: getLocalizedPath('features', locale) },
 	{ labelKey: 'nav.pricing', href: getLocalizedPath('pricing', locale) },
 	{ labelKey: 'nav.updates', href: getLocalizedPath('updates', locale) },
@@ -21,6 +21,7 @@ const explore = [
 	{ labelKey: 'nav.faq', href: getLocalizedPath('faq', locale) },
 	{ labelKey: 'nav.esp', href: getLocalizedPath('tarkov-esp', locale) },
 	{ labelKey: 'nav.aimbot', href: getLocalizedPath('tarkov-aimbot', locale) },
+	{ labelKey: 'nav.radar', href: getLocalizedPath('radar', locale), fallback: 'Radar' },
 ];
 
 const help = [

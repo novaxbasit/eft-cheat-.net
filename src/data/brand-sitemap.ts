@@ -46,11 +46,11 @@ const defaultImages: BrandSitemapImage[] = [
 
 /** Per-page image title/caption templates for the English urlset. */
 const pageImageTemplates: Record<PageId, { title: string; caption: string }> = {
-	home: { title: '{brand} hero — ESP and aimbot in Tarkov', caption: 'Homepage preview of {primaryKeyword} on Windows PC' },
-	'tarkov-esp': { title: '{primaryKeyword} ESP overlay', caption: 'Player ESP boxes and distance with {primaryKeyword}' },
-	'tarkov-aimbot': { title: '{primaryKeyword} aimbot view', caption: 'Aimbot and soft aim controls in {primaryKeyword}' },
-	features: { title: '{primaryKeyword} features', caption: 'ESP, soft aim, and radar included with {primaryKeyword}' },
-	pricing: { title: '{primaryKeyword} store plans', caption: 'Monthly and lifetime {primaryKeyword} plans' },
+	home: { title: '{brand} homepage hero', caption: 'Homepage hero for {brand} on Windows PC' },
+	'tarkov-esp': { title: 'Player ESP overlay in {game}', caption: 'PMC ESP boxes and distance on the player ESP page' },
+	'tarkov-aimbot': { title: 'Aimbot overlay in {game}', caption: 'Aimbot screenshot on the aimbot page' },
+	features: { title: '{game} wallhack feature screenshot', caption: 'Feature screenshot: through-wall visibility in Tarkov raids' },
+	pricing: { title: '{brand} in a raid', caption: 'Raid view used on the pricing page for the Windows PC license' },
 	setup: { title: '{primaryKeyword} setup', caption: 'Install {primaryKeyword} on Windows PC after checkout' },
 	updates: { title: '{primaryKeyword} live status', caption: 'Check {primaryKeyword} after a game or BattlEye patch' },
 	faq: { title: '{primaryKeyword} FAQ', caption: 'Common questions about {primaryKeyword}' },
@@ -124,8 +124,10 @@ export const brandSitemap: SitemapShape = {
  * Use the real page lastmod only.
  * Do not inflate every URL with brand.sitemap.contentLastmod (looks like fake freshness).
  */
+export const SITEMAP_MIN_DATE = '2026-08-20';
+
 export function sitemapLastmod(pageLastmod: string): string {
-	return pageLastmod;
+	return pageLastmod < SITEMAP_MIN_DATE ? SITEMAP_MIN_DATE : pageLastmod;
 }
 
 export function resolvedSitemapImages(): BrandSitemapImage[] {

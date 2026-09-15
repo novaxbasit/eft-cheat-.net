@@ -48,14 +48,11 @@ const localeMetas = locales.map((l) => ({
 }));
 
 const links = [
-	{ id: 'hacks', labelKey: 'nav.preview', edit: 'navPreview', href: getLocalizedPath('hacks', locale) },
+	{ id: 'hacks', labelKey: 'nav.preview', edit: 'navPreview', href: getLocalizedPath('home', locale) },
 	{ id: 'features', labelKey: 'nav.features', edit: 'navFeatures', href: getLocalizedPath('features', locale) },
 	{ id: 'pricing', labelKey: 'nav.pricing', edit: 'navStore', href: getLocalizedPath('pricing', locale) },
 	{ id: 'updates', labelKey: 'nav.updates', edit: 'navStatus', href: getLocalizedPath('updates', locale) },
 	{ id: 'blog', labelKey: 'common.blog', href: getBlogBasePath(defaultLocale) },
-	{ id: 'faq', labelKey: 'nav.faq', href: getLocalizedPath('faq', locale) },
-	{ id: 'setup', labelKey: 'nav.setup', href: getLocalizedPath('setup', locale) },
-	{ id: 'support', labelKey: 'common.support', href: getLocalizedPath('support', locale) },
 ];
 
 const hasHeroBanner = !current.includes('/brand-studio');
@@ -187,7 +184,7 @@ const hasHeroBanner = !current.includes('/brand-studio');
 		color: #121410;
 	}
 
-	.site-header .site-tools__buy.pubg-btn,
+	.site-header .site-tools__buy.site-btn,
 	.site-header .site-tools__buy.btn-buy,
 	.site-header a.site-tools__buy {
 		min-width: 0 !important;
@@ -281,8 +278,8 @@ const hasHeroBanner = !current.includes('/brand-studio');
 		-webkit-backdrop-filter: blur(20px) saturate(1.35) !important;
 	}
 
-	body:has(.pubg-page__banner) .site-header.is-transparent:not(:has(.site-nav-drawer[open])),
-	body:has(.pubg-hero) .site-header.is-transparent:not(:has(.site-nav-drawer[open])) {
+	body:has(.site-page__banner) .site-header.is-transparent:not(:has(.site-nav-drawer[open])),
+	body:has(.site-hero) .site-header.is-transparent:not(:has(.site-nav-drawer[open])) {
 		background: color-mix(in srgb, var(--bg) 12%, transparent) !important;
 		border-bottom-color: rgba(255, 255, 255, 0.08) !important;
 		box-shadow: none !important;
@@ -381,7 +378,7 @@ const hasHeroBanner = !current.includes('/brand-studio');
 		box-shadow: inset 0 -2px 0 var(--accent);
 	}
 
-	@media (min-width: 1025px) {
+	@media (min-width: 768px) {
 		.site-nav a svg {
 			display: none;
 		}
@@ -481,14 +478,14 @@ const hasHeroBanner = !current.includes('/brand-studio');
 		}
 	}
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1100px) {
 		.site-nav a {
-			padding-inline: 0.5rem;
+			padding-inline: 0.4rem;
 			font-size: 0.6875rem;
 		}
 	}
 
-	@media (max-width: 1280px) {
+	@media (max-width: 767px) {
 		.site-nav {
 			display: none;
 			position: fixed;

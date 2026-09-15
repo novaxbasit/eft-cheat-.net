@@ -5,6 +5,7 @@
  */
 import PATH_REDIRECTS from '../functions/path-redirects.json';
 import CANNIBAL_REDIRECTS from '../functions/cannibal-redirects.json';
+import { localeToEnglish } from '../functions/locale-english.js';
 
 export interface Env {
 	ASSETS: Fetcher;
@@ -51,6 +52,7 @@ function resolvePathRedirect(pathname: string): string | null {
 	const map = PATH_REDIRECTS as Record<string, string>;
 	const cannibal = CANNIBAL_REDIRECTS as Record<string, string>;
 	return (
+		localeToEnglish(pathname) ??
 		map[pathname] ??
 		cannibal[pathname] ??
 		xmlTrailingSlashRedirect(pathname) ??

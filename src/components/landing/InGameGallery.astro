@@ -23,16 +23,16 @@ const screenshots = [
 ---
 
 <div>
-	<section class="pubg-section" aria-labelledby="pubg-gallery-title">
-		<div class="pubg-wrap">
-			<header class="pubg-section__head">
-				<h2 class="pubg-section__title" id="pubg-gallery-title">{galleryTitle}</h2>
-				<a class="pubg-link" href={featuresHref}>{galleryLinkLabel}</a>
+	<section class="site-section" aria-labelledby="site-gallery-title">
+		<div class="site-wrap">
+			<header class="site-section__head">
+				<h2 class="site-section__title" id="site-gallery-title">{galleryTitle}</h2>
+				<a class="site-link" href={featuresHref}>{galleryLinkLabel}</a>
 			</header>
-			<div class="pubg-gallery">
+			<div class="site-gallery">
 				{
 					screenshots.map(({ src, alt }) => (
-						<div class="pubg-gallery__item">
+						<div class="site-gallery__item">
 							<img src={src} alt={alt} width="800" height="500" loading="lazy" decoding="async" draggable="false" />
 						</div>
 					))

@@ -1,18 +1,6 @@
 ---
-/**
- * Locale blog index is not translated — 301 to the English blog.
- * Keeps hreflang/sitemaps English-only and passes equity to /blog/.
- */
-import { defaultLocale, isLocaleCode, localeCodes } from '../../../data/i18n/locales';
-
 export function getStaticPaths() {
-	return localeCodes
-		.filter((code) => code !== defaultLocale)
-		.map((lang) => ({ params: { lang }, props: { locale: lang } }));
-}
-
-if (!isLocaleCode(Astro.params.lang ?? '')) {
-	return Astro.redirect('/blog/', 301);
+	return [];
 }
 
 return Astro.redirect('/blog/', 301);

@@ -39,8 +39,26 @@ function extractSlugBlock(src, pageId) {
 	return slugs;
 }
 
+function extractEnglishPaths(src) {
+	const m = src.match(/export const englishPaths[^=]*=\s*\{([\s\S]*?)\n\};/);
+	if (!m) throw new Error('englishPaths missing');
+	/** @type {Record<string, string>} */
+	const paths = {};
+	for (const row of m[1].matchAll(/['"]?([\w-]+)['"]?\s*:\s*'([^']+)'/g)) {
+		paths[row[1]] = row[2];
+	}
+	return paths;
+}
+
 const TARGETS = readCannibalTargets();
 const routing = readFileSync(ROUTING, 'utf8');
+const englishPaths = extractEnglishPaths(routing);
+
+function englishPathFor(pageId) {
+	const resolved = pageId === 'hacks' ? 'home' : pageId;
+	return englishPaths[resolved] ?? '/';
+}
+
 const map = {};
 const lines = [
 	'',
@@ -50,13 +68,10 @@ const lines = [
 
 for (const [fromId, toId] of Object.entries(TARGETS)) {
 	const fromSlugs = extractSlugBlock(routing, fromId);
-	const toSlugs = extractSlugBlock(routing, toId);
+	const toPath = englishPathFor(toId);
 	for (const [locale, fromSlug] of Object.entries(fromSlugs)) {
-		if (locale === 'en') continue;
-		const toSlug = toSlugs[locale];
-		if (!toSlug) continue;
+		if (locale === 'en' || !fromSlug) continue;
 		const fromPath = `/${locale}/${fromSlug}/`;
-		const toPath = `/${locale}/${toSlug}/`;
 		map[fromPath] = toPath;
 		map[`/${locale}/${fromSlug}`] = toPath;
 		lines.push(`${fromPath.slice(0, -1)} ${toPath} 301`);

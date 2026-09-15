@@ -149,7 +149,12 @@ function SiteFooterInner({
 							{t(link.labelKey)}
 						</a>
 					))}
-					<a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+					<a
+						href={`mailto:${supportEmail}`}
+						dangerouslySetInnerHTML={{
+							__html: `<!--email_off-->${supportEmail}<!--email_on-->`,
+						}}
+					/>
 				</nav>
 			</div>
 		</footer>

@@ -1169,7 +1169,7 @@ export const i18nContent: Record<LocaleCode, { ui: LocaleUi; pages: Record<PageI
 						{
 							h2: "Por qué eligen Escape from Tarkov Cheats en 2026",
 							paragraphs: [
-								"Escape from Tarkov Cheats ofrece ESP wallhack, radar hack y Escape from Tarkov aimbot indetectables para Escape from Tarkov en Windows PC. Ideal para leer escuadrones enemigos en BR y unranked.",
+								"Escape from Tarkov Cheats ofrece ESP wallhack, radar hack y Escape from Tarkov aimbot indetectables para Escape from Tarkov en Windows PC. Ideal para raids de PMC y Scav.",
 								"Licencias con entrega digital instantánea vía checkout Zadeyo. Planes $35/mes y $150 de por vida incluyen BattlEye anti-cheat maintenance.",
 							],
 						},
@@ -10599,7 +10599,7 @@ export const i18nContent: Record<LocaleCode, { ui: LocaleUi; pages: Record<PageI
 						{
 							h2: "2026年にEscape from Tarkov Cheatsを選ぶ理由",
 							paragraphs: [
-								"Escape from Tarkov CheatsはEscape from Tarkov向けWindows PC用ESP wallhack、radar hack、Escape from Tarkov aimbotのundetectedパッケージです。BRとunrankedで敵スクワッドを読むのに最適。",
+								"Escape from Tarkov CheatsはEscape from Tarkov向けWindows PC用ESP wallhack、radar hack、Escape from Tarkov aimbotのundetectedパッケージです。PMCとScavのレイド向け。",
 								"Zadeyo checkoutで即時デジタル配信。$35/月と$150永久プランにBattlEye anti-cheatメンテナンス含む。",
 							],
 						},

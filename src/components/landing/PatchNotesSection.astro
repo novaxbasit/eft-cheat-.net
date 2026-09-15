@@ -22,15 +22,15 @@ const body =
 		: note;
 ---
 
-<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-updates-title">
-	<div class="pubg-wrap">
-		<header class="pubg-section__head">
-			<h2 class="pubg-section__title" id="pubg-updates-title">{heading}</h2>
-			<a class="pubg-link" href={updatesHref}>{linkLabel}</a>
+<section class="site-section site-section--tight" aria-labelledby="site-updates-title">
+	<div class="site-wrap">
+		<header class="site-section__head">
+			<h2 class="site-section__title" id="site-updates-title">{heading}</h2>
+			<a class="site-link" href={updatesHref}>{linkLabel}</a>
 		</header>
 
-		<a class="pubg-patch" href={updatesHref}>
-			<div class="pubg-patch__img">
+		<a class="site-patch" href={updatesHref}>
+			<div class="site-patch__img">
 				<img
 					src={tarkovImages.patchNotes}
 					alt="Escape from Tarkov Cheats updates — live undetected notes after BattlEye patches"
@@ -40,15 +40,14 @@ const body =
 					decoding="async"
 				/>
 			</div>
-			<div class="pubg-patch__shade" aria-hidden="true"></div>
-			<div class="pubg-patch__body">
-				<div class="pubg-patch__tabs">
-					<span class="pubg-patch__tab is-active">PC</span>
-					<span class="pubg-patch__tab">{ui.trust.status}</span>
+			<div class="site-patch__shade" aria-hidden="true"></div>
+			<div class="site-patch__body">
+				<div class="site-patch__tabs">
+					<span class="site-patch__tab is-active">PC</span>
+					<span class="site-patch__tab">{ui.trust.status}</span>
 				</div>
-				<h3 class="pubg-patch__h">{heading}</h3>
-				<p class="pubg-patch__p">{body}</p>
-				<span class="pubg-patch__cta">{linkLabel}</span>
+				<p class="site-patch__p">{body}</p>
+				<span class="site-patch__cta">{linkLabel}</span>
 			</div>
 		</a>
 	</div>

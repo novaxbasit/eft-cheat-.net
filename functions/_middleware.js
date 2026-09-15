@@ -1,5 +1,6 @@
 import CANNIBAL_REDIRECTS from './cannibal-redirects.json';
 import PATH_REDIRECTS from './path-redirects.json';
+import { localeToEnglish } from './locale-english.js';
 
 /** Kept in sync with brand.url by `npm run sync:brand`. */
 const CANONICAL_ORIGIN = 'https://eftcheat.net';
@@ -78,8 +79,17 @@ function getClientProtocol(request) {
 	return new URL(request.url).protocol.replace(':', '').toLowerCase();
 }
 
-function applySecurityHeaders(headers, { html = false } = {}) {
+function applySecurityHeaders(headers, { html = false, xml = false } = {}) {
 	for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
+		if (
+			xml &&
+			(key === 'Content-Security-Policy' ||
+				key === 'Cross-Origin-Embedder-Policy' ||
+				key === 'Cross-Origin-Resource-Policy' ||
+				key === 'Cross-Origin-Opener-Policy')
+		) {
+			continue;
+		}
 		headers.set(key, value);
 	}
 
@@ -110,6 +120,7 @@ function trailingSlashRedirect(pathname) {
 
 function resolvePathRedirect(pathname) {
 	return (
+		localeToEnglish(pathname) ??
 		PATH_REDIRECTS[pathname] ??
 		CANNIBAL_REDIRECTS[pathname] ??
 		xmlTrailingSlashRedirect(pathname) ??
@@ -156,7 +167,7 @@ export async function onRequest(context) {
 	const contentType = headers.get('Content-Type') || '';
 	const isHtml = contentType.includes('text/html');
 
-	applySecurityHeaders(headers, { html: isHtml });
+	applySecurityHeaders(headers, { html: isHtml, xml: contentType.includes('xml') });
 
 	return new Response(response.body, {
 		status: response.status,

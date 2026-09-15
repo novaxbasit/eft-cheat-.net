@@ -9,7 +9,7 @@ export const tarkovImages = {
 	espWallhack: '/images/tarkov-cheats-wallhack.webp',
 	aimbotCombat: '/images/tarkov-cheats-aimbot.webp',
 	aimbotSkeleton: '/images/tarkov-cheats-aimbot-view.webp',
-	playerEsp: '/images/tarkov-patch-notes-banner.jpg',
+	playerEsp: '/images/tarkov-cheats-esp.webp',
 	cheatsCombat: '/images/tarkov-cheats-raid.webp',
 	patchNotes: '/images/tarkov-patch-notes-banner.jpg',
 	logo: siteConfig.logo,

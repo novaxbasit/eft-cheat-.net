@@ -1,18 +1,7 @@
 ---
-import HtmlSitemapPage from '../../../components/HtmlSitemapPage.astro';
-import { defaultLocale, isLocaleCode, localeCodes } from '../../../data/i18n/locales';
-
 export function getStaticPaths() {
-	return localeCodes
-		.filter((code) => code !== defaultLocale)
-		.map((lang) => ({ params: { lang }, props: { locale: lang } }));
+	return [];
 }
 
-const { locale } = Astro.props;
-
-if (!isLocaleCode(Astro.params.lang ?? '')) {
-	return Astro.redirect('/site-map/', 301);
-}
+return Astro.redirect('/sitemap/', 301);
 ---
-
-<HtmlSitemapPage locale={locale} />

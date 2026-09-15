@@ -21,21 +21,21 @@ const showTitle = Boolean(title);
 const showCtas = Boolean(ctaPrimary || ctaSecondary);
 ---
 
-<section class={`pubg-page__banner${showTitle ? '' : ' pubg-page__banner--media'}`}>
+<section class={`site-page__banner${showTitle ? '' : ' site-page__banner--media'}`}>
 	<SiteBanner>
 		{
 			showTitle ? (
-				<div class="shell pubg-page__banner-shell">
-					<div class="pubg-page__banner-content">
-						<h1 class="pubg-page__banner-title">{title}</h1>
+				<div class="shell site-page__banner-shell">
+					<div class="site-page__banner-content">
+						<h1 class="site-page__banner-title">{title}</h1>
 						{intro && !introBelowBanner ? (
-							<p class="pubg-page__banner-intro" data-edit={introEdit || undefined}>{intro}</p>
+							<p class="site-page__banner-intro" data-edit={introEdit || undefined}>{intro}</p>
 						) : null}
 						{showCtas ? (
-							<div class="pubg-page__banner-actions pubg-cta-row">
+							<div class="site-page__banner-actions site-cta-row">
 								{ctaPrimary ? (
 									<a
-										class="pubg-btn pubg-btn--lg"
+										class="site-btn site-btn--lg"
 										href={ctaPrimary.href}
 										target={ctaPrimary.href.startsWith('http') ? '_blank' : undefined}
 										rel={ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -45,7 +45,7 @@ const showCtas = Boolean(ctaPrimary || ctaSecondary);
 								) : null}
 								{ctaSecondary ? (
 									<a
-										class="pubg-play pubg-play--ghost"
+										class="site-play site-play--ghost"
 										href={ctaSecondary.href}
 										target={ctaSecondary.href.startsWith('http') ? '_blank' : undefined}
 										rel={ctaSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -64,8 +64,8 @@ const showCtas = Boolean(ctaPrimary || ctaSecondary);
 		}
 	</SiteBanner>
 	{intro && introBelowBanner ? (
-		<div class="shell pubg-page__banner-intro-below">
-			<p class="pubg-page__banner-intro pubg-page__banner-intro--below">{intro}</p>
+		<div class="shell site-page__banner-intro-below">
+			<p class="site-page__banner-intro site-page__banner-intro--below">{intro}</p>
 		</div>
 	) : null}
 </section>

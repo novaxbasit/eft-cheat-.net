@@ -46,22 +46,5 @@ export function getReviewSitemapEntries() {
 		},
 	];
 
-	for (const review of customerReviews) {
-		const photo = getReviewCrawlImage(review.slug, review.handle, review.seoDescription);
-		entries.push({
-			path: getReviewPath(review.slug),
-			lastmod: review.date,
-			priority: 0.75,
-			changefreq: 'monthly',
-			images: [
-				{
-					url: photo.url,
-					title: photo.title,
-					caption: photo.caption,
-				},
-			],
-		});
-	}
-
 	return entries;
 }

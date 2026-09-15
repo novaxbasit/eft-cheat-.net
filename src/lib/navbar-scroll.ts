@@ -7,8 +7,8 @@ function headerHeight(): number {
 
 function bannerEl(): HTMLElement | null {
 	return (
-		document.querySelector<HTMLElement>('.pubg-hero') ??
-		document.querySelector<HTMLElement>('.pubg-page__banner')
+		document.querySelector<HTMLElement>('.site-hero') ??
+		document.querySelector<HTMLElement>('.site-page__banner')
 	);
 }
 

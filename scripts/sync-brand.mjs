@@ -53,13 +53,8 @@ writeFileSync(
 	path.join(ROOT, 'public/robots.txt'),
 	`User-agent: *
 Allow: /
-Allow: /images/
 Disallow: /brand-studio/
-Disallow: /brand-studio
 Disallow: /__brand/
-Disallow: /__brand
-
-# Primary sitemap for Google Search Console — index covers EN, locale, and image sitemaps.
 Sitemap: ${brand.url}/sitemap.xml
 `,
 	'utf8',

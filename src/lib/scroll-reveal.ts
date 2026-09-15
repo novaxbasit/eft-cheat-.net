@@ -34,7 +34,7 @@ function staggerChildren(parent: Element, selector: string, type = 'up') {
 
 function autoEnhance() {
 	document
-		.querySelectorAll('.pubg-hero__title, .pubg-hero__sub, .pubg-hero__cta')
+		.querySelectorAll('.site-hero__title, .site-hero__sub, .site-hero__cta')
 		.forEach((el, index) => markImmediate(el, 'up', index));
 
 	document
@@ -42,27 +42,27 @@ function autoEnhance() {
 		.forEach((el, index) => markImmediate(el, 'up', index));
 
 	document
-		.querySelectorAll('.pubg-page__banner-title, .pubg-page__banner-intro')
+		.querySelectorAll('.site-page__banner-title, .site-page__banner-intro')
 		.forEach((el, index) => markImmediate(el, 'up', index));
 
 	document
 		.querySelectorAll('.reviews-index__banner h1, .reviews-index__intro, .review-page__banner-title')
 		.forEach((el, index) => markImmediate(el, 'up', index));
 
-	document.querySelectorAll('.pubg-section__head:not([data-reveal])').forEach((el) => mark(el, 'up'));
-	document.querySelectorAll('.pubg-patch:not([data-reveal])').forEach((el) => mark(el, 'scale'));
-	document.querySelectorAll('.pubg-faq details:not([data-reveal])').forEach((el, index) => mark(el, 'up', index));
+	document.querySelectorAll('.site-section__head:not([data-reveal])').forEach((el) => mark(el, 'up'));
+	document.querySelectorAll('.site-patch:not([data-reveal])').forEach((el) => mark(el, 'scale'));
+	document.querySelectorAll('.site-faq details:not([data-reveal])').forEach((el, index) => mark(el, 'up', index));
 
-	document.querySelectorAll('.pubg-gallery').forEach((gallery) => {
-		staggerChildren(gallery, '.pubg-gallery__item:not([data-reveal])', 'up');
+	document.querySelectorAll('.site-gallery').forEach((gallery) => {
+		staggerChildren(gallery, '.site-gallery__item:not([data-reveal])', 'up');
 	});
 
-	document.querySelectorAll('.pubg-community').forEach((grid) => {
-		staggerChildren(grid, '.pubg-community__card:not([data-reveal])', 'up');
+	document.querySelectorAll('.site-community').forEach((grid) => {
+		staggerChildren(grid, '.site-community__card:not([data-reveal])', 'up');
 	});
 
 	document.querySelectorAll('.card-panel:not([data-reveal])').forEach((el, index) => mark(el, 'up', index % 3));
-	document.querySelectorAll('.pubg-panel:not([data-reveal])').forEach((el, index) => mark(el, 'up', index % 3));
+	document.querySelectorAll('.site-panel:not([data-reveal])').forEach((el, index) => mark(el, 'up', index % 3));
 	document.querySelectorAll('.price-card:not([data-reveal])').forEach((el, index) => mark(el, 'scale', index));
 	document.querySelectorAll('.blog__feature-card:not([data-reveal]), .blog__card:not([data-reveal])').forEach((el, index) =>
 		mark(el, 'up', index % 4),

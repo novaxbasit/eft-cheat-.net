@@ -90,14 +90,14 @@ function pageTitle(headline: string): string {
 	extraGraph={[articleSchema]}
 >
 	<Navbar locale={locale} />
-	<main class="pubg-page post">
+	<main class="site-page post">
 		<InnerPageBanner title={t.h1} intro={t.intro} />
 
-		<div class="shell pubg-page__body post__body">
+		<div class="shell site-page__body post__body">
 			<div class="post__inner">
-		<article class="pubg-panel pubg-panel--glow">
+		<article class="site-panel site-panel--glow">
 			<header class="post__header">
-				<p class="pubg-eyebrow">{post.category}</p>
+				<p class="site-eyebrow">{post.category}</p>
 				<p class="post__meta">
 					{ui.published} {post.published} · {ui.updated} {post.updated}
 				</p>
@@ -136,11 +136,11 @@ function pageTitle(headline: string): string {
 		{
 			related.length > 0 && (
 				<section class="post__related" aria-label={ui.relatedPosts}>
-					<h2 class="pubg-section-title">{ui.relatedPosts}</h2>
+					<h2 class="site-section-title">{ui.relatedPosts}</h2>
 					<ul>
 						{related.map((item) => (
 							<li>
-								<a class="pubg-list-link" href={item.canonicalPath}>
+								<a class="site-list-link" href={item.canonicalPath}>
 									<span>{item.translation.title}</span>
 								</a>
 							</li>

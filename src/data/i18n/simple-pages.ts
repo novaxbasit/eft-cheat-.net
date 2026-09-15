@@ -43,17 +43,17 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Features',
 		intro: brandCopy.featuresIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Main product',
-		ctaSecondaryHref: '/tarkov-cheats/',
+		ctaSecondary: 'Buy on homepage',
+		ctaSecondaryHref: '/',
 		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'How this list supports the product page',
 				paragraphs: [
-					'This Features page lists what is in the license. The main product landing is <a href="/tarkov-cheats/">Escape from Tarkov Cheats</a>. Use this page to scan modules, then buy there.',
+					'This Features page lists modules in the license. Buy on the <a href="/">Escape from Tarkov Cheats</a> homepage. Scan this list, then open Pricing or checkout.',
 				],
 				list: [
-					'<a href="/tarkov-cheats/">Main product</a>',
+					'<a href="/">Buy on homepage</a>',
 					'<a href="/pricing/">Pricing</a>',
 					'<a href="/updates/">Updates</a>',
 				],
@@ -154,14 +154,14 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		h1: 'Updates',
 		intro: brandCopy.statusIntro,
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Full product',
-		ctaSecondaryHref: '/tarkov-cheats/',
+		ctaSecondary: 'Buy on homepage',
+		ctaSecondaryHref: '/',
 		galleryTitle: 'In-game look',
 		sections: [
 			{
 				h2: 'Current updates',
 				paragraphs: [
-					'As of 21 Aug 2026 the package is online for Escape from Tarkov on Windows PC. We post a new Updates note here when a game or BattlEye patch needs a rebuild.',
+					'Last checked 2026-09-15. We post a new Updates note here when a game or BattlEye patch needs a rebuild. This is not a forever-online claim.',
 					'If Updates is green, you can raid. If we are rebuilding, wait for the next note.',
 				],
 				list: [
@@ -236,33 +236,35 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-esp': page({
-		title: 'Escape from Tarkov ESP | {brand}',
+		title: 'Player ESP | Escape from Tarkov Cheats',
 		description:
-			'Escape from Tarkov ESP for Windows PC — player, loot, quest, and exfil overlays in raids.',
-		h1: 'ESP',
-		intro: 'Escape from Tarkov ESP shows PMCs, Scavs, bosses, and loot through walls. Part of the same {brand} license for raids.',
+			'Player ESP for Escape from Tarkov raids — PMC, Scav, and boss boxes, skeletons, and distance. Buy the full license on the homepage.',
+		h1: 'Player ESP',
+		intro: 'Player ESP for Tarkov raids. See PMCs, Scavs, and bosses through walls. This page is only the player overlay — not loot, not aimbot, not the buy page.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Full product',
-		ctaSecondaryHref: '/tarkov-cheats/',
-		galleryTitle: 'In-game look',
+		ctaSecondary: 'Buy on homepage',
+		ctaSecondaryHref: '/',
+		galleryTitle: 'Player ESP overlay',
 		sections: [
 			{
-				h2: 'What ESP shows',
+				h2: 'What player ESP shows',
 				paragraphs: [
-					'Player ESP includes box, skeleton, chams, health, nickname, weapon, and distance. Boss, bot, Scav, and quest ESP share the same menu.',
+					'Player ESP draws boxes, skeletons, chams, health, nickname, weapon, and distance on PMCs, bosses, bots, and Scavs. Quest marks and extracts sit next to that overlay. It does not replace loot filters or aimbot lock.',
 				],
-				list: ['Player, boss, bot, and Scav ESP', 'Loot ESP with filters and price', 'Quest ESP, exfils, and radar'],
+				list: ['PMC, boss, bot, and Scav outlines', 'Health, weapon, and distance', 'Extracts next to player marks'],
 			},
 			{
-				h2: 'When to use it',
-				paragraphs: ['Filter loot by price and category so the overlay stays clear in a raid.'],
-				list: ['Tune max distance', 'Filter loot noise', 'Pair with the streamproof overlay'],
+				h2: 'How it differs from the homepage',
+				paragraphs: [
+					'The homepage sells the full raids license. This URL is the player-ESP deep dive. Loot ESP lives under Features. Aimbot has its own page. Radar is a 2D map cue, not this overlay.',
+				],
+				list: ['Tune max player distance', 'Keep loot filters on a different toggle', 'Pair with streamproof if you clip'],
 			},
 			{
 				h2: 'Next steps',
-				paragraphs: ['ESP is included with aimbot and wallhack in one plan.'],
+				paragraphs: ['Player ESP is included in the same raids license as loot ESP and aimbot. Buy on the homepage.'],
 				list: [
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/">Buy Escape from Tarkov Cheats</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Pricing</a>',
 				],
@@ -270,31 +272,35 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	'tarkov-aimbot': page({
-		title: 'Escape from Tarkov Aimbot | {brand}',
+		title: 'Aimbot | Escape from Tarkov Cheats',
 		description:
-			'Escape from Tarkov aimbot for Windows PC — FOV, vis check, prediction, no recoil, and no sway.',
+			'Aimbot for Escape from Tarkov raids — FOV, vis check, prediction, no recoil. Buy the full license on the homepage.',
 		h1: 'Aimbot',
-		intro: 'Escape from Tarkov aimbot with FOV, vis check, and no recoil. Included in the same {brand} license for raids.',
+		intro: 'Aimbot for Tarkov raids. FOV, vis check, and prediction in one menu. This page is only aim and recoil tools — not player ESP, not radar, not the buy page.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Full product',
-		ctaSecondaryHref: '/tarkov-cheats/',
+		ctaSecondary: 'Buy on homepage',
+		ctaSecondaryHref: '/',
 		galleryTitle: 'Aimbot view',
 		sections: [
 			{
-				h2: 'Controls',
-				paragraphs: ['Set FOV, vis check, smart bone, prediction, and lock before you queue.'],
+				h2: 'Aimbot controls',
+				paragraphs: [
+					'Set FOV, vis check, smart bone, prediction, and lock before you queue. No recoil and no sway sit in Misc. Wide FOV looks wrong in clips; keep it tight for raids.',
+				],
 				list: ['FOV, vis check, and prediction', 'No recoil and no sway', 'Hotkeys and config saves'],
 			},
 			{
-				h2: 'Play styles',
-				paragraphs: ['Keep FOV tight for raids. Raise strength only when you accept more risk.'],
-				list: ['Visible-only aim', 'Bone priority', 'Works with player ESP'],
+				h2: 'How it differs from ESP',
+				paragraphs: [
+					'ESP shows who is in the building. Aimbot only helps the shot once you take the fight. The homepage packages both. This URL stays on aim settings.',
+				],
+				list: ['Visible-only aim for raids', 'Bone priority', 'Works with player ESP, sold on the homepage'],
 			},
 			{
 				h2: 'Next steps',
-				paragraphs: ['Aimbot ships with ESP and wallhack in one license.'],
+				paragraphs: ['Aimbot ships with player ESP and loot ESP in one raids license. Arena needs a separate key.'],
 				list: [
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/">Buy Escape from Tarkov Cheats</a>',
 					'<a href="/features/">All features</a>',
 					'<a href="/pricing/">Pricing</a>',
 				],
@@ -302,27 +308,31 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		],
 	}),
 	radar: page({
-		title: 'Escape from Tarkov Wallhack | {brand}',
+		title: 'Radar | Escape from Tarkov Cheats',
 		description:
-			'Escape from Tarkov wallhack for Windows PC — chams and ESP through walls with a streamproof overlay.',
-		h1: 'Wallhack',
-		intro: 'Escape from Tarkov wallhack uses chams and ESP so you read PMCs through walls. Streamproof overlay included.',
+			'2D radar for Escape from Tarkov raids — flank and extract cues on a map, not wall ESP. Buy the full license on the homepage.',
+		h1: 'Radar',
+		intro: '2D radar for Tarkov raids. Map cues for flanks and extracts. This is not player ESP through walls and not aimbot. Buy the license on the homepage.',
 		ctaPrimary: brandCopy.ctaBuy,
-		ctaSecondary: 'Full product',
-		ctaSecondaryHref: '/tarkov-cheats/',
-		galleryTitle: 'Wallhack overlay',
+		ctaSecondary: 'Buy on homepage',
+		ctaSecondaryHref: '/',
+		galleryTitle: 'Radar overlay',
 		sections: [
 			{
-				h2: 'What it shows',
-				paragraphs: ['Chams, skeleton, and box ESP show enemies through walls. Radar and out-of-FOV arrows help on the flanks.'],
-				list: ['Chams and skeleton ESP', 'Streamproof overlay', 'Radar and OOF arrows'],
+				h2: 'What radar shows',
+				paragraphs: [
+					'Radar is a top-down cue: nearby threats, out-of-FOV arrows, and extract context on a 2D map. It does not draw boxes through Factory walls. That job is player ESP.',
+				],
+				list: ['2D threat cues', 'Out-of-FOV arrows', 'Extract context on the map'],
 			},
 			{
-				h2: 'With ESP',
-				paragraphs: ['Use wallhack for threats you cannot see yet. Use ESP when you push.'],
+				h2: 'Radar vs ESP',
+				paragraphs: [
+					'Use radar when you need rotation and flank reads. Use player ESP when you need through-wall outlines. Both are in one raids license. This URL stays on radar.',
+				],
 				list: [
-					'<a href="/tarkov-esp/">ESP guide</a>',
-					'<a href="/tarkov-cheats/">Full product</a>',
+					'<a href="/tarkov-esp/">Player ESP</a>',
+					'<a href="/">Buy on homepage</a>',
 					'<a href="/pricing/">Pricing</a>',
 				],
 			},
@@ -354,7 +364,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			},
 			{
 				h2: 'If something fails',
-				paragraphs: ['Check Updates after a patch. Email {email} with your order ID.'],
+				paragraphs: ['Check Updates after a patch. Email <!--email_off--><a href="mailto:support@eftcheat.net">support@eftcheat.net</a><!--email_on--> with your order ID.'],
 				list: ['<a href="/updates/">Updates</a>', '<a href="/support/">Support</a>', '<a href="/faq/">FAQ</a>'],
 			},
 		],
@@ -371,7 +381,9 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		sections: [
 			{
 				h2: 'How to contact us',
-				paragraphs: ['Support is by email at {email}. Include your order ID and a short note about the issue.'],
+				paragraphs: [
+					'Support is by email at <!--email_off--><a href="mailto:support@eftcheat.net">support@eftcheat.net</a><!--email_on-->. Include your order ID and a short note about the issue.',
+				],
 				list: ['Order ID from your receipt', 'Windows version', 'What you already tried'],
 			},
 			{

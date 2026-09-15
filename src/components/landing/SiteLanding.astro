@@ -1,6 +1,6 @@
 ---
 /**
- * PUBG-style conversion landing — SEO schema lives in LocalizedHome.
+ * Conversion landing — SEO schema lives in LocalizedHome.
  */
 import SiteBanner from './SiteBanner.astro';
 import InGameGallery from './InGameGallery.astro';
@@ -11,6 +11,7 @@ import { brand, fillBrandTokens } from '../../data/brand';
 import { getLocaleContent, getPageContent } from '../../data/i18n';
 import { getLocalizedPath } from '../../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../../data/i18n/locales';
+import { cloakEmailsInHtml } from '../../lib/support-email';
 import { reviewsBasePath } from '../../data/reviews';
 
 interface Props {
@@ -25,8 +26,8 @@ const faqPage = getPageContent(locale, 'faq');
 const checkout = siteConfig.checkoutUrl;
 const ctaLabel = locale === 'en' ? fillBrandTokens(brand.copy.ctaBuy) : home.ctaPrimary;
 const heroSub = locale === 'en' ? (productInfo.heroLede ?? ui.hero.subtitle) : home.intro;
-const seeCheatsHref = getLocalizedPath('hacks', locale);
-const seeCheatsLabel = locale === 'en' ? 'See Cheats' : home.ctaSecondary ?? ui.hero.seeFeatures;
+const seeCheatsHref = getLocalizedPath('features', locale);
+const seeCheatsLabel = locale === 'en' ? 'See Features' : home.ctaSecondary ?? ui.hero.seeFeatures;
 const faqHref = getLocalizedPath('faq', locale);
 const reviewsHref = reviewsBasePath;
 const reviewsTitle = locale === 'en' ? 'Reviews' : ui.reviews.title;
@@ -38,26 +39,26 @@ const topReviews = customerReviews.slice(0, 3);
 const topFaqs = homeFaqs;
 ---
 
-<div class="pubg-landing">
-	<section class="pubg-hero" aria-label={locale === 'en' ? productInfo.name : home.h1}>
+<div class="site-landing">
+	<section class="site-hero" aria-label={locale === 'en' ? productInfo.name : home.h1}>
 		<SiteBanner priority>
-			<div class="pubg-hero__inner">
+			<div class="site-hero__inner">
 				{
 					locale === 'en' ? (
-						<h1 class="pubg-hero__title" data-edit="heroH1">
+						<h1 class="site-hero__title" data-edit="heroH1">
 							<span>Escape from Tarkov</span>
-							<span class="pubg-hero__title-accent">Cheats</span>
+							<span class="site-hero__title-accent">Cheats</span>
 						</h1>
 					) : (
-						<h1 class="pubg-hero__title pubg-hero__title--locale">{home.h1}</h1>
+						<h1 class="site-hero__title site-hero__title--locale">{home.h1}</h1>
 					)
 				}
-				<p class="pubg-hero__sub" data-edit="heroLede">{heroSub}</p>
-				<div class="pubg-hero__cta">
-					<a class="pubg-btn pubg-btn--lg" href={checkout} target="_blank" rel="noopener noreferrer" data-edit="ctaBuy">
+				<p class="site-hero__sub" data-edit="heroLede">{heroSub}</p>
+				<div class="site-hero__cta">
+					<a class="site-btn site-btn--lg" href={checkout} target="_blank" rel="noopener noreferrer" data-edit="ctaBuy">
 						{ctaLabel}
 					</a>
-					<a class="pubg-play pubg-play--ghost" href={seeCheatsHref}>{seeCheatsLabel}</a>
+					<a class="site-play site-play--ghost" href={seeCheatsHref}>{seeCheatsLabel}</a>
 				</div>
 			</div>
 		</SiteBanner>
@@ -67,22 +68,22 @@ const topFaqs = homeFaqs;
 
 	<InGameGallery locale={locale} />
 
-	<section class="pubg-section pubg-section--tight" aria-labelledby="pubg-reviews-title">
-		<div class="pubg-wrap">
-			<header class="pubg-section__head">
-				<h2 class="pubg-section__title" id="pubg-reviews-title">{reviewsTitle}</h2>
-				<a class="pubg-link" href={reviewsHref}>{reviewsLinkLabel}</a>
+	<section class="site-section site-section--tight" aria-labelledby="site-reviews-title">
+		<div class="site-wrap">
+			<header class="site-section__head">
+				<h2 class="site-section__title" id="site-reviews-title">{reviewsTitle}</h2>
+				<a class="site-link" href={reviewsHref}>{reviewsLinkLabel}</a>
 			</header>
-			<div class="pubg-community">
+			<div class="site-community">
 				{
 					topReviews.map((r) => (
-						<article class="pubg-community__card">
-							<div class="pubg-community__stars" aria-hidden="true">
+						<article class="site-community__card">
+							<div class="site-community__stars" aria-hidden="true">
 								{'★'.repeat(r.rating)}
 								{'☆'.repeat(5 - r.rating)}
 							</div>
-							<p class="pubg-community__text">{r.short}</p>
-							<p class="pubg-community__author">{r.handle}</p>
+							<p class="site-community__text">{r.short}</p>
+							<p class="site-community__author">{r.handle}</p>
 						</article>
 					))
 				}
@@ -92,24 +93,22 @@ const topFaqs = homeFaqs;
 
 	<PatchNotesSection locale={locale} />
 
-	<section class="pubg-section pubg-section--faq" aria-labelledby="pubg-faq-title">
-		<div class="pubg-wrap pubg-faq">
-			<header class="pubg-section__head">
-				<h2 class="pubg-section__title pubg-section__title--sm" id="pubg-faq-title">{faqTitle}</h2>
-				<a class="pubg-link" href={faqHref}>{faqLinkLabel}</a>
+	<section class="site-section site-section--faq" aria-labelledby="site-faq-title">
+		<div class="site-wrap site-faq">
+			<header class="site-section__head">
+				<h2 class="site-section__title site-section__title--sm" id="site-faq-title">{faqTitle}</h2>
+				<a class="site-link" href={faqHref}>{faqLinkLabel}</a>
 			</header>
 			{
 				locale === 'en' ? (
 					topFaqs.map((item) => (
-						<details>
+						<details id={item.slug}>
 							<summary>{item.question}</summary>
-							<p class="pubg-faq__a">
-								<a href={`${faqHref}#${item.slug}`}>Read the answer on FAQ</a>
-							</p>
+							<p class="site-faq__a" set:html={cloakEmailsInHtml(item.answer)} />
 						</details>
 					))
 				) : (
-					<p class="pubg-faq__lede">{faqPage.intro}</p>
+					<p class="site-faq__lede">{faqPage.intro}</p>
 				)
 			}
 		</div>

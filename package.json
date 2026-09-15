@@ -7,8 +7,8 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"sync:brand": "node scripts/sync-brand.mjs && node scripts/sync-cannibal-redirects.mjs && node scripts/sync-path-redirects.mjs",
-		"prebuild": "node scripts/sync-brand.mjs && node scripts/sync-cannibal-redirects.mjs && node scripts/sync-path-redirects.mjs",
+		"sync:brand": "node scripts/sync-brand.mjs && node scripts/sync-locale-redirects.mjs && node scripts/sync-cannibal-redirects.mjs && node scripts/sync-path-redirects.mjs",
+		"prebuild": "node scripts/sync-brand.mjs && node scripts/sync-locale-redirects.mjs && node scripts/sync-cannibal-redirects.mjs && node scripts/sync-path-redirects.mjs",
 		"build": "astro build",
 		"postbuild": "node scripts/strip-brand-studio.mjs",
 		"build:validate": "npm run sync:brand && astro build && node scripts/strip-brand-studio.mjs && npm run validate:h1 && npm run validate:sitemaps",

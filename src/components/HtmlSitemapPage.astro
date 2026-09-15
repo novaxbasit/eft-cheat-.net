@@ -8,10 +8,9 @@ import { brandCopy } from '../data/site-core';
 import { siteConfig } from '../data/site';
 import {
 	getHtmlSitemapGroups,
-	getHtmlSitemapHreflangAlternates,
 	getHtmlSitemapPath,
 } from '../data/html-sitemap';
-import { getLocalizedPath } from '../data/i18n/routing';
+import { getLocalizedPath, getSelfHreflangAlternates } from '../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
 
 interface Props {
@@ -21,7 +20,7 @@ interface Props {
 const locale = Astro.props.locale ?? defaultLocale;
 const groups = getHtmlSitemapGroups(locale);
 const canonicalPath = getHtmlSitemapPath(locale);
-const hreflangAlternates = getHtmlSitemapHreflangAlternates(locale);
+const hreflangAlternates = getSelfHreflangAlternates(canonicalPath);
 const title = seoTitle('Sitemap');
 const description = seoDescription(
 	'HTML sitemap of canonical {brand} pages — Cheats, Features, Pricing, Updates, Blog, FAQ, Setup, and Support.',
@@ -42,17 +41,17 @@ const intro =
 	breadcrumbs={[{ label: 'Home', href: getLocalizedPath('home', locale) }, { label: 'Sitemap' }]}
 >
 	<Navbar locale={locale} />
-	<main class="pubg-page sitemap-html">
+	<main class="site-page sitemap-html">
 		<InnerPageBanner
 			title="Sitemap"
 			intro={intro}
 			ctaPrimary={{ href: siteConfig.checkoutUrl, label: brandCopy.ctaBuy }}
 			ctaSecondary={{ href: getLocalizedPath('pricing', locale), label: 'Pricing' }}
 		/>
-		<div class="shell pubg-page__body">
+		<div class="shell site-page__body">
 			{
 				groups.map((group) => (
-					<section class="sitemap-html__group pubg-panel">
+					<section class="sitemap-html__group site-panel">
 						<h2>{group.title}</h2>
 						<ul>
 							{group.links.map((link) => (

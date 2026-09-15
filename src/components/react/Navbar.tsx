@@ -83,8 +83,8 @@ function NavbarInner({
 		window.addEventListener('resize', onChange);
 
 		const hero =
-			document.querySelector<HTMLElement>('.pubg-hero') ??
-			document.querySelector<HTMLElement>('.pubg-page__banner');
+			document.querySelector<HTMLElement>('.site-hero') ??
+			document.querySelector<HTMLElement>('.site-page__banner');
 		let ro: ResizeObserver | undefined;
 		if (hero && typeof ResizeObserver !== 'undefined') {
 			ro = new ResizeObserver(onChange);
@@ -151,13 +151,15 @@ function NavbarInner({
 
 				<div className="site-tools">
 					<div className="site-tools__pair">
-						<div className="site-tools__lang">
-							<LanguageSwitcher
-								currentLocale={locale}
-								locales={locales}
-								hrefForLocale={hrefForLocale}
-							/>
-						</div>
+						{locales.length > 1 ? (
+							<div className="site-tools__lang">
+								<LanguageSwitcher
+									currentLocale={locale}
+									locales={locales}
+									hrefForLocale={hrefForLocale}
+								/>
+							</div>
+						) : null}
 						<a
 							href={checkoutUrl}
 							className="site-tools__buy site-tools__pill site-tools__pill--buy"

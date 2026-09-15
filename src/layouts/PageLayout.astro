@@ -87,7 +87,7 @@ const showGalleryBottom = showGallery && galleryPosition === 'bottom';
 	lcpImageSizes="100vw"
 >
 	<Navbar locale={locale} pageId={pageId} />
-	<main class="pubg-page">
+	<main class="site-page">
 		<InnerPageBanner
 			title={heading}
 			intro={intro}
@@ -98,8 +98,8 @@ const showGalleryBottom = showGallery && galleryPosition === 'bottom';
 
 		{showGalleryTop && <InGameGallery locale={locale} />}
 
-		<div class="shell pubg-page__body">
-			<article class="pubg-article">
+		<div class="shell site-page__body">
+			<article class="site-article">
 				<slot />
 			</article>
 		</div>

@@ -46,6 +46,8 @@ export default function LanguageSwitcher({ currentLocale, locales, hrefForLocale
 		};
 	}, []);
 
+	if (locales.length <= 1) return null;
+
 	return (
 		<details className="lang-switcher" ref={detailsRef}>
 			<summary className="lang-switcher__toggle" aria-label={t('common.selectLanguage')}>

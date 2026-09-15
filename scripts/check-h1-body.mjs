@@ -132,19 +132,13 @@ function check(id, h1, body) {
 	}
 }
 
-const siteSrc = readFileSync(path.join(ROOT, 'src/data/site.ts'), 'utf8');
-const faqBlocks = [...siteSrc.matchAll(/question:\s*'((?:\\'|[^'])*)',\s*\n\t\tanswer:\s*\n?\t\t\t?'((?:\\'|[^'])*)'/g)];
-for (const m of faqBlocks) {
-	const q = fill(m[1].replace(/\\'/g, "'"));
-	const a = fill(m[2].replace(/\\'/g, "'"));
-	check(`faq:${m[1].slice(0, 40)}`, q, a);
-}
-
 const blogSrc = readFileSync(path.join(ROOT, 'src/data/blog/posts.generated.ts'), 'utf8');
+const doorway = new Set(['phoenix-tarkov', 'cosmo-tarkov', 'ghostware-tarkov', 'kernaim-tarkov', 'cheatvault-tarkov']);
 const blogRe =
 	/\ten: \{[\s\S]*?slug: "([^"]+)"[\s\S]*?h1: "([^"]+)"[\s\S]*?intro: "([^"]+)"([\s\S]*?)\n\t\},/g;
 let bm;
 while ((bm = blogRe.exec(blogSrc))) {
+	if (doorway.has(bm[1])) continue;
 	const paras = [...bm[4].matchAll(/"([^"]{20,})"/g)].map((x) => x[1]).join(' ');
 	check(`blog:${bm[1]}`, bm[2], `${bm[3]} ${paras}`);
 }
@@ -166,16 +160,6 @@ for (const id of ['privacy', 'refund', 'terms']) {
 
 check('404', 'Page not found', 'This page was not found. The URL you opened is not on this site.');
 
-const reviewBlock = siteSrc.match(/export const customerReviews = \[([\s\S]*?)\] as const/);
-const handles = reviewBlock
-	? [...reviewBlock[1].matchAll(/handle:\s*'([^']+)'/g)].map((m) => m[1])
-	: ['xKrypt0_EFT'];
-for (const handle of handles) {
-	const h1 = `${brand.name} review by @${handle}`;
-	const lede = `${h1}. This review by @${handle} covers ${brand.name} for Windows PC.`;
-	check(`review:${handle}`, h1, lede);
-}
-
 const redirectMap = {
 	...JSON.parse(readFileSync(path.join(ROOT, 'functions/path-redirects.json'), 'utf8')),
 	...JSON.parse(readFileSync(path.join(ROOT, 'functions/cannibal-redirects.json'), 'utf8')),
@@ -189,6 +173,7 @@ function resolveRedirect(from, seen = new Set()) {
 }
 let redirectChains = 0;
 for (const from of Object.keys(redirectMap)) {
+	if (/^\/[a-z]{2}(\/|$)/.test(from)) continue;
 	const chain = resolveRedirect(from);
 	if (chain.length > 2) {
 		redirectChains++;

@@ -11,7 +11,7 @@ export const brand = {
 	/** Canonical origin — no trailing slash */
 	url: 'https://eftcheat.net',
 	locale: 'en',
-	market: 'Worldwide',
+	market: 'English',
 	supportEmail: 'support@eftcheat.net',
 	checkoutUrl: 'https://zadeyo.com/go/BASIT?to=%2Fproducts%2Fescape-from-tarkov',
 
@@ -74,7 +74,7 @@ export const brand = {
 	 */
 	seo: {
 		/** Titles ≤60 chars; descriptions ~140–160 (Google SERP display). */
-		/** Home = brand hub. Money URL /tarkov-cheats/ owns the head term. */
+		/** Home is the canonical product URL (https://eftcheat.net/). */
 		homeTitle: 'Escape from Tarkov Cheats | Features & Pricing',
 		homeDescription:
 			'Official Escape from Tarkov Cheats site for Windows PC. Player ESP, loot ESP, and aimbot for raids — not Arena. Check updates, then buy.',

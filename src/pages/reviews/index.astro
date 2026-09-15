@@ -2,11 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import { customerReviewStats, customerReviews, fillBrandTokens, productInfo, siteConfig } from '../../data/site';
+import { customerReviews, fillBrandTokens, productInfo, siteConfig } from '../../data/site';
 import { brandCopy, brandSeo, seoPageTitle } from '../../data/site-core';
 import { seoDescription } from '../../data/brand';
 import { getSelfHreflangAlternates } from '../../data/i18n/routing';
-import { getReviewPath, reviewsBasePath } from '../../data/reviews';
+import { reviewsBasePath } from '../../data/reviews';
 import { defaultCrawlImageSrc } from '../../data/page-images';
 import { contentSrcSet, productMainSizes } from '../../lib/responsive-images';
 
@@ -31,23 +31,7 @@ function formatDate(isoDate: string): string {
 
 const sortedReviews = [...customerReviews].sort((a, b) => (a.date < b.date ? 1 : -1));
 
-const canonicalURL = new URL(reviewsBasePath, siteConfig.url).href;
 const hreflangAlternates = getSelfHreflangAlternates(reviewsBasePath);
-
-const extraGraph: Record<string, unknown>[] = [
-	{
-		'@type': 'ItemList',
-		'@id': `${canonicalURL}#list`,
-		name: title,
-		description,
-		itemListElement: sortedReviews.map((review, index) => ({
-			'@type': 'ListItem',
-			position: index + 1,
-			url: new URL(getReviewPath(review.slug), siteConfig.url).href,
-			name: review.seoTitle,
-		})),
-	},
-];
 ---
 
 <Layout
@@ -62,7 +46,6 @@ const extraGraph: Record<string, unknown>[] = [
 		{ label: 'Home', href: '/' },
 		{ label: 'Reviews' },
 	]}
-	extraGraph={extraGraph}
 >
 	<Navbar />
 	<main class="reviews-index">
@@ -90,12 +73,10 @@ const extraGraph: Record<string, unknown>[] = [
 			<header class="reviews-index__head">
 				<div>
 					<h1 data-edit="navReviews">{siteConfig.name} reviews</h1>
-					<p class="reviews-index__intro" data-edit="reviewsIntro">{reviewsIntro}</p>
+					<p class="reviews-index__intro" data-edit="reviewsIntro">{reviewsIntro} These are customer notes on this page — not verified-purchase badges.</p>
 				</div>
-				<div class="reviews-index__summary" aria-label={`${customerReviewStats.averageRating} out of 5 average rating`}>
-					<p class="reviews-index__avg">{customerReviewStats.averageRating.toFixed(1)}</p>
-					<p class="reviews-index__avg-stars" aria-hidden="true">{stars(Math.round(customerReviewStats.averageRating))}</p>
-					<p class="reviews-index__count">{customerReviewStats.totalCount} reviews · out of 5</p>
+				<div class="reviews-index__summary" aria-label={`${sortedReviews.length} customer notes on this page`}>
+					<p class="reviews-index__count">{sortedReviews.length} notes on this page</p>
 				</div>
 			</header>
 
@@ -117,12 +98,6 @@ const extraGraph: Record<string, unknown>[] = [
 							</div>
 							{review.tag ? <p class="reviews-index__tag">{review.tag}</p> : null}
 							<p class="reviews-index__text">{review.text}</p>
-							<a class="reviews-index__more" href={getReviewPath(review.slug)}>
-								Read full review
-								<svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-									<path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</a>
 						</article>
 					))
 				}

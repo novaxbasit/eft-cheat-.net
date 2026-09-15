@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import PubgLanding from '../components/landing/PubgLanding.astro';
+import SiteLanding from '../components/landing/SiteLanding.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { getLocaleContent, getPageContent } from '../data/i18n';
 import { getLocalizedPath } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { homeSeo, productInfo, siteConfig, customerReviewStats } from '../data/site';
+import { homeSeo, productInfo, siteConfig, homeFaqs } from '../data/site';
 import { defaultCrawlImageSrc } from '../data/page-images';
-import { MONEY_PATH } from '../data/seo-canonical';
 
 interface Props {
 	locale: LocaleCode;
@@ -26,14 +25,6 @@ const canonicalURL = new URL(canonicalPath, siteConfig.url).href;
 const heroImage = new URL(siteConfig.defaultOgImage || defaultCrawlImageSrc, siteConfig.url).href;
 const priceValidUntil = '2027-12-31';
 
-const aggregateRating = {
-	'@type': 'AggregateRating',
-	ratingValue: customerReviewStats.averageRating.toFixed(1),
-	reviewCount: String(customerReviewStats.totalCount),
-	bestRating: '5',
-	worstRating: '1',
-};
-
 const extraGraph: Record<string, unknown>[] = [
 	{
 		'@type': 'Product',
@@ -42,8 +33,7 @@ const extraGraph: Record<string, unknown>[] = [
 		description: productInfo.summary,
 		image: heroImage,
 		brand: { '@type': 'Brand', name: productInfo.brand },
-		url: new URL(MONEY_PATH, siteConfig.url).href,
-		aggregateRating,
+		url: canonicalURL,
 		offers: {
 			'@type': 'AggregateOffer',
 			lowPrice: Math.min(...productInfo.plans.map((p) => p.price)).toFixed(2),
@@ -63,6 +53,16 @@ const extraGraph: Record<string, unknown>[] = [
 				seller: { '@id': `${siteConfig.url}/#organization` },
 			})),
 		},
+	},
+	{
+		'@type': 'FAQPage',
+		'@id': `${canonicalURL}#faq`,
+		mainEntity: homeFaqs.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			url: `${new URL('/faq/', siteConfig.url).href}#${item.slug}`,
+			acceptedAnswer: { '@type': 'Answer', text: item.answer },
+		})),
 	},
 ];
 ---
@@ -86,7 +86,7 @@ const extraGraph: Record<string, unknown>[] = [
 >
 	<Navbar locale={locale} pageId="home" />
 	<main class="home">
-		<PubgLanding locale={locale} />
+		<SiteLanding locale={locale} />
 		<SiteFooter locale={locale} />
 	</main>
 </Layout>
