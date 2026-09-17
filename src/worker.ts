@@ -41,6 +41,16 @@ function xmlTrailingSlashRedirect(pathname: string): string | null {
 	return pathname.slice(0, -1);
 }
 
+/** Legacy /blog/* → /forum/* (specific aliases in PATH_REDIRECTS win first). */
+function blogToForumRedirect(pathname: string): string | null {
+	if (pathname === '/blog' || pathname === '/blog/') return '/forum/';
+	if (pathname.startsWith('/blog/')) {
+		const rest = pathname.slice('/blog/'.length);
+		return rest ? `/forum/${rest}` : '/forum/';
+	}
+	return null;
+}
+
 function trailingSlashRedirect(pathname: string): string | null {
 	if (!pathname || pathname === '/' || pathname.includes('.') || pathname.endsWith('/')) {
 		return null;
@@ -55,6 +65,7 @@ function resolvePathRedirect(pathname: string): string | null {
 		localeToEnglish(pathname) ??
 		map[pathname] ??
 		cannibal[pathname] ??
+		blogToForumRedirect(pathname) ??
 		xmlTrailingSlashRedirect(pathname) ??
 		trailingSlashRedirect(pathname)
 	);

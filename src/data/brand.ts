@@ -102,9 +102,9 @@ export const brand = {
 		reviewsTitle: 'Escape from Tarkov Cheats Reviews | Buyers',
 		reviewsDescription:
 			'Buyer reviews for Escape from Tarkov Cheats — ESP, aimbot, wallhack, and patch updates on Windows PC. Real feedback from current license holders.',
-		blogTitle: 'Tarkov Cheat Blog | Cheats',
+		blogTitle: 'Tarkov Cheats Forum | Cheats',
 		blogDescription:
-			'Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, ESP vs aimbot, settings, and buyer notes. Raids on Windows PC.',
+			'Tarkov Cheats community forum — archived threads on ESP vs aimbot, loot ESP, Cloud DMA, settings, and buyer notes. Raids on Windows PC.',
 	},
 
 	/** On-page marketing copy (tokens allowed) */
@@ -113,12 +113,12 @@ export const brand = {
 		summary:
 			'{brand} is an undetected {game} cheat for Windows PC raids. Player ESP, loot ESP, aimbot, and no recoil, with streamproof overlay and {antiCheat} updates after patches. Separate key from Arena.',
 		heroLede: 'Escape from Tarkov Cheats — player ESP, loot ESP, and aimbot for raids on Windows PC.',
-		blogLabel: 'Blog',
+		blogLabel: 'Forum',
 		ctaBuy: 'Get Access',
 		ctaBuyShort: 'Buy',
 		featuresIntro: 'Feature list for {brand} on Windows PC. The product page is where you buy. Not Arena.',
 		storeIntro: 'Pricing plans for {brand}. Same features on both. Instant delivery after payment.',
-		statusIntro: 'Live Updates for {brand} — check here after a {game} or {antiCheat} patch before you queue.',
+		statusIntro: 'Live Updates for {brand} — check here after an {game} or {antiCheat} patch before you queue.',
 		previewIntro:
 			'Escape from Tarkov Cheats for Windows PC raids — player ESP, loot ESP, aimbot, no recoil, and a streamproof overlay. Separate key from Arena.',
 		setupIntro: 'Setup guide for {brand} on Windows PC after you buy. Follow these short steps.',
@@ -144,8 +144,8 @@ export const brand = {
 	sitemap: {
 		/** YYYY-MM-DD — Brand Studio can bump this on save to refresh crawl dates */
 		contentLastmod: '2026-08-21',
-		blogImageTitle: '{brand} blog',
-		blogImageCaption: 'Tips and updates for {primaryKeyword}',
+		blogImageTitle: '{brand} forum',
+		blogImageCaption: 'Forum threads for {primaryKeyword}',
 		reviewsImageTitle: '{brand} reviews',
 		reviewsImageCaption: 'What buyers say about {primaryKeyword}',
 		images: [

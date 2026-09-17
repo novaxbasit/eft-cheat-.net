@@ -104,17 +104,17 @@ export const blogUi: Record<
 	}
 > = {
 	en: {
-		blogTitle: 'Tarkov Cheat Blog | Cheats',
+		blogTitle: 'Tarkov Cheats Forum | Cheats',
 		blogDescription:
-			'Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, settings, and buyer notes. English posts at eftcheat.net/blog/.',
-		blogH1: 'Blog',
+			'Tarkov Cheats community forum — closed threads on ESP, aimbot, loot ESP, Cloud DMA, updates, and buyer notes for the raids license at eftcheat.net.',
+		blogH1: 'Forum',
 		blogIntro:
-			'Tarkov cheat blog posts from real raid use — vs Cosmo Cheats, Phoenix, CheatVault, plus settings and buyer notes for this raids license.',
-		readMore: 'Read more',
-		published: 'Published',
-		updated: 'Updated',
-		relatedPosts: 'Related posts',
-		allPosts: 'All blog posts',
+			'Real questions from the community forum — setup fixes, ESP and aimbot settings, pricing, and undetected status. Threads are archived and closed to new replies.',
+		readMore: 'Open thread',
+		published: 'Started',
+		updated: 'Last reply',
+		relatedPosts: 'Related threads',
+		allPosts: 'All threads',
 		home: 'Tarkov Cheats home',
 		language: 'Language',
 	},

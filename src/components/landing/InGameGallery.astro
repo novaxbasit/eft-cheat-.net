@@ -33,7 +33,7 @@ const screenshots = [
 				{
 					screenshots.map(({ src, alt }) => (
 						<div class="site-gallery__item">
-							<img src={src} alt={alt} width="800" height="500" loading="lazy" decoding="async" draggable="false" />
+							<img src={src} alt={alt} width="800" height="500" loading="eager" decoding="async" draggable="false" />
 						</div>
 					))
 				}

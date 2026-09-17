@@ -14,6 +14,7 @@ import { siteConfig } from '../data/site';
 import { brandSeo, seoPageTitle } from '../data/site-core';
 import { seoDescription } from '../data/brand';
 import { getLocalizedPath } from '../data/i18n/routing';
+import { getThreadMeta } from '../data/forum';
 
 interface Props {
 	locale: LocaleCode;
@@ -63,137 +64,231 @@ const articleListSchema = {
 	extraGraph={[articleListSchema]}
 >
 	<Navbar locale={locale} />
-	<main class="site-page blog">
+	<main class="site-page forum">
 		<InnerPageBanner title={ui.blogH1} intro={ui.blogIntro} />
 
-		<div class="shell site-page__body blog__inner">
-		<section class="blog__list" aria-label={ui.allPosts}>
-			{
-				posts.map((post, index) => (
-					<article class="blog__card site-panel site-panel--lift">
-						<a href={post.canonicalPath}>
-							<img
-								src={post.imageSrc}
-								alt={post.translation.imageAlt}
-								width="480"
-								height="270"
-								loading={index === 0 ? 'eager' : 'lazy'}
-								decoding="async"
-								fetchpriority={index === 0 ? 'high' : undefined}
-							/>
-							<span class="blog__cat">{post.category}</span>
-							<h2>{post.translation.title}</h2>
-							<p>{post.translation.intro}</p>
-							<span class="blog__meta">
-								{ui.updated} {post.updated}
-							</span>
-						</a>
-					</article>
-				))
-			}
-		</section>
+		<div class="shell site-page__body forum__inner">
+			<p class="forum__notice" role="note">
+				<span class="forum__notice-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+						<rect x="5" y="11" width="14" height="9" rx="1.5" />
+						<path d="M8 11V8a4 4 0 0 1 8 0v3" />
+					</svg>
+				</span>
+				This forum is archived. Threads below are read-only — replies are closed.
+			</p>
+			<section class="forum__board" aria-label={ui.allPosts}>
+				<div class="forum__head" aria-hidden="true">
+					<span>Thread</span>
+					<span class="forum__head-stat">Replies</span>
+					<span class="forum__head-stat">Views</span>
+					<span class="forum__head-stat">Last reply</span>
+				</div>
+				{
+					posts.map((post) => {
+						const meta = getThreadMeta(post.id + post.translation.slug, post.translation.slug);
+						return (
+							<a class="forum__row" href={post.canonicalPath}>
+								<span class="forum__row-icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+										<rect x="5" y="11" width="14" height="9" rx="1.5" />
+										<path d="M8 11V8a4 4 0 0 1 8 0v3" />
+									</svg>
+								</span>
+								<span class="forum__row-main">
+									<span class="forum__cat">{post.category}</span>
+									<span class="forum__title">{post.translation.title}</span>
+									<span class="forum__snippet">{post.translation.intro}</span>
+									<span class="forum__tags">
+										<span class="forum__pill forum__pill--closed">Closed</span>
+										<span class="forum__by">by {meta.op.handle}</span>
+									</span>
+								</span>
+								<span class="forum__stat"><b>{meta.replyCount}</b><small>replies</small></span>
+								<span class="forum__stat"><b>{meta.views.toLocaleString('en-US')}</b><small>views</small></span>
+								<span class="forum__stat forum__stat--date"><b>{post.updated}</b><small>{ui.updated}</small></span>
+							</a>
+						);
+					})
+				}
+			</section>
 		</div>
 	</main>
 	<SiteFooter locale={locale} />
 </Layout>
 
 <style>
-	.blog__inner {
+	.forum__inner {
 		display: grid;
-		gap: 1.5rem;
-	}
-	.blog__featured {
-		display: grid;
-		gap: 1.25rem;
-		margin-bottom: 2.5rem;
-	}
-	.blog__feature-card {
-		display: grid;
-		grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
 		gap: 1rem;
-		padding: 0;
-		overflow: hidden;
-		text-decoration: none;
-		color: inherit;
 	}
-	.blog__feature-card img {
-		width: 100%;
-		height: 100%;
-		max-height: 240px;
-		object-fit: cover;
-	}
-	.blog__feature-card h2 {
-		margin: 0.4rem 0 0.6rem;
-		font-size: 1.35rem;
-		color: var(--heading);
-	}
-	.blog__list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
-		gap: 1.25rem;
-	}
-	.blog__card a {
-		display: block;
-		height: 100%;
-		padding: 0.75rem;
-		text-decoration: none;
-		color: inherit;
-	}
-	.blog__card img {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		object-fit: cover;
-		margin-bottom: 0.75rem;
-	}
-	.blog__card h2 {
-		margin: 0.35rem 0 0.5rem;
-		font-size: 1.05rem;
-		line-height: 1.25;
-		color: var(--heading);
-	}
-	.blog__card p,
-	.blog__feature-card p {
+
+	.forum__notice {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
 		margin: 0;
-		color: rgba(255, 255, 255, 0.68);
-		font-size: 0.92rem;
+		padding: 0.75rem 1rem;
+		border: 1px solid color-mix(in srgb, var(--magenta-soft) 30%, var(--line));
+		background: color-mix(in srgb, var(--magenta-soft) 8%, var(--bg-panel));
+		color: rgba(255, 255, 255, 0.82);
+		font-size: 0.9rem;
 	}
-	.blog__cat {
-		display: inline-block;
+	.forum__notice-icon {
+		display: inline-flex;
 		color: var(--magenta-soft);
-		font-size: 0.72rem;
+	}
+
+	.forum__board {
+		border: 1px solid var(--line);
+		background: var(--bg-panel);
+	}
+
+	.forum__head {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 5.5rem 6rem 8rem;
+		gap: 1rem;
+		padding: 0.6rem 1rem;
+		border-bottom: 1px solid var(--line);
+		background: color-mix(in srgb, #fff 3%, var(--bg-panel));
+		font-family: var(--font-display);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+	}
+	.forum__head-stat {
+		text-align: center;
+	}
+
+	.forum__row {
+		display: grid;
+		grid-template-columns: 1.75rem minmax(0, 1fr) 5.5rem 6rem 8rem;
+		gap: 1rem;
+		align-items: center;
+		padding: 0.85rem 1rem;
+		border-bottom: 1px solid var(--line-soft);
+		text-decoration: none;
+		color: inherit;
+		transition: background 0.15s ease;
+	}
+	.forum__row:last-child {
+		border-bottom: none;
+	}
+	.forum__row:hover {
+		background: color-mix(in srgb, var(--magenta-soft) 6%, transparent);
+	}
+	.forum__row-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--ink-faint);
+	}
+	.forum__head {
+		padding-left: calc(1rem + 1.75rem + 1rem);
+	}
+
+	.forum__row-main {
+		min-width: 0;
+		display: grid;
+		gap: 0.2rem;
+	}
+	.forum__cat {
+		color: var(--magenta-soft);
+		font-size: 0.68rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 	}
-	.blog__more,
-	.blog__meta {
-		display: inline-block;
-		margin-top: 0.75rem;
-		color: rgba(255, 255, 255, 0.55);
-		font-size: 0.8rem;
-		font-weight: 600;
+	.forum__title {
+		font-size: 1.02rem;
+		font-weight: 700;
+		line-height: 1.25;
+		color: var(--heading);
 	}
-	.blog__more {
-		color: var(--magenta-soft);
+	.forum__row:hover .forum__title {
+		color: #fff;
 	}
+	.forum__snippet {
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 0.86rem;
+		line-height: 1.5;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.forum__tags {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.15rem;
+	}
+	.forum__pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.1rem 0.45rem;
+		font-size: 0.66rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border: 1px solid var(--line);
+		color: var(--ink-faint);
+	}
+	.forum__pill--closed {
+		color: #f0b23a;
+		border-color: color-mix(in srgb, #f0b23a 45%, var(--line));
+		background: color-mix(in srgb, #f0b23a 10%, transparent);
+	}
+	.forum__by {
+		font-size: 0.76rem;
+		color: var(--ink-faint);
+	}
+
+	.forum__stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.1rem;
+		text-align: center;
+	}
+	.forum__stat b {
+		font-size: 0.95rem;
+		color: var(--ink);
+		font-variant-numeric: tabular-nums;
+	}
+	.forum__stat small {
+		font-size: 0.66rem;
+		color: var(--ink-faint);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
 	@media (max-width: 760px) {
-		.blog__feature-card {
-			grid-template-columns: 1fr;
+		.forum__head {
+			display: none;
 		}
-
-		.blog__list {
-			grid-template-columns: 1fr;
-			gap: 1rem;
+		.forum__row {
+			grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+			grid-template-areas:
+				'icon main main'
+				'icon stats stats';
+			gap: 0.5rem 0.85rem;
 		}
-
-		.blog__card a {
-			padding: 0.75rem;
+		.forum__row-icon {
+			grid-area: icon;
+			align-self: start;
+			margin-top: 0.2rem;
 		}
-	}
-
-	@media (max-width: 480px) {
-		.blog__feature-card h2 {
-			font-size: 1.2rem;
+		.forum__row-main {
+			grid-area: main;
+		}
+		.forum__stat {
+			display: none;
+		}
+		.forum__snippet {
+			-webkit-line-clamp: 2;
 		}
 	}
 </style>

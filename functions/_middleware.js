@@ -110,6 +110,16 @@ function xmlTrailingSlashRedirect(pathname) {
 	return pathname.slice(0, -1);
 }
 
+/** Legacy /blog/* → /forum/* (specific aliases in PATH_REDIRECTS win first). */
+function blogToForumRedirect(pathname) {
+	if (pathname === '/blog' || pathname === '/blog/') return '/forum/';
+	if (pathname.startsWith('/blog/')) {
+		const rest = pathname.slice('/blog/'.length);
+		return rest ? `/forum/${rest}` : '/forum/';
+	}
+	return null;
+}
+
 /** Add trailing slash for directory-style paths (matches Astro trailingSlash: 'always'). */
 function trailingSlashRedirect(pathname) {
 	if (!pathname || pathname === '/' || pathname.includes('.') || pathname.endsWith('/')) {
@@ -123,6 +133,7 @@ function resolvePathRedirect(pathname) {
 		localeToEnglish(pathname) ??
 		PATH_REDIRECTS[pathname] ??
 		CANNIBAL_REDIRECTS[pathname] ??
+		blogToForumRedirect(pathname) ??
 		xmlTrailingSlashRedirect(pathname) ??
 		trailingSlashRedirect(pathname)
 	);
@@ -166,6 +177,14 @@ export async function onRequest(context) {
 	const headers = new Headers(response.headers);
 	const contentType = headers.get('Content-Type') || '';
 	const isHtml = contentType.includes('text/html');
+
+	// The runtime hands us a decoded body when we re-wrap the response, but the
+	// upstream Content-Encoding/Content-Length still describe the compressed asset.
+	// Leaving them causes decode failures (HTTP 500) for any client that sent
+	// Accept-Encoding (browsers, many fetchers) while identity clients (curl,
+	// Googlebot) stayed 200. Drop them so the platform re-derives correct values.
+	headers.delete('Content-Encoding');
+	headers.delete('Content-Length');
 
 	applySecurityHeaders(headers, { html: isHtml, xml: contentType.includes('xml') });
 

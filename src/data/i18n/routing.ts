@@ -785,7 +785,7 @@ export function resolvePageContextFromPath(pathname: string): PageContext {
 		return { locale, pageId: 'home' };
 	}
 
-	if (rest[0] === 'blog') {
+	if (rest[0] === 'forum' || rest[0] === 'blog') {
 		if (rest.length === 1) {
 			return { locale, isBlogIndex: true };
 		}
@@ -853,7 +853,7 @@ export function getNavForLocale(locale: LocaleCode, labels: Record<string, strin
 		{ label: labels.features, href: getLocalizedPath('features', locale), pageId: 'features' },
 		{ label: labels.pricing, href: getLocalizedPath('pricing', locale), pageId: 'pricing' },
 		{ label: labels.updates, href: getLocalizedPath('updates', locale), pageId: 'updates' },
-		{ label: 'Blog', href: '/blog/' },
+		{ label: 'Forum', href: '/forum/' },
 		{ label: labels.faq, href: getLocalizedPath('faq', locale), pageId: 'faq' },
 		{ label: labels.setup, href: getLocalizedPath('setup', locale), pageId: 'setup' },
 		{ label: labels.support ?? 'Support', href: getLocalizedPath('support', locale), pageId: 'support' },

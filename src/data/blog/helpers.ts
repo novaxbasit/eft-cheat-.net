@@ -61,8 +61,9 @@ export function getBlogImageSrc(key: BlogImageKey): string {
 	return src;
 }
 
+/** Public forum base path (legacy `/blog/` URLs 301 here). */
 export function getBlogBasePath(locale: LocaleCode): string {
-	return locale === defaultLocale ? '/blog/' : `/${locale}/blog/`;
+	return locale === defaultLocale ? '/forum/' : `/${locale}/forum/`;
 }
 
 export function isBlogPath(pathname: string): boolean {
@@ -90,6 +91,7 @@ export function getBlogLocaleSwitchHref(pathname: string, _targetLocale: LocaleC
 		}
 	}
 
+	if (context.isBlogIndex) return getBlogBasePath(defaultLocale);
 	return getBlogBasePath(defaultLocale);
 }
 
@@ -98,19 +100,52 @@ export function getBlogPostPath(locale: LocaleCode, slug: string): string {
 	return `${base}${slug}/`;
 }
 
-/** Old blog slugs that used to match product URLs. Flattened 301s to editorial posts. */
+/** Retired forum slugs → current H1-derived slugs. Served as /forum/ 301s. */
 export const blogSlugRedirects: Record<string, string> = {
-	'best-tarkov-cheats': 'comparing-tarkov-cheats',
-	'tarkov-esp': 'tarkov-esp-notes',
-	'tarkov-aimbot': 'tarkov-aimbot-notes',
-	'tarkov-wallhack': 'tarkov-wallhack-notes',
-	'undetected-tarkov-cheats': 'patch-day-notes',
-	'tarkov-radar': 'tarkov-radar-notes',
-	'phoenix-tarkov': 'comparing-tarkov-cheats',
-	'cosmo-tarkov': 'comparing-tarkov-cheats',
-	'ghostware-tarkov': 'comparing-tarkov-cheats',
-	'kernaim-tarkov': 'comparing-tarkov-cheats',
-	'cheatvault-tarkov': 'comparing-tarkov-cheats',
+	// Original long slugs
+	'tarkov-cheats-review': 'is-it-worth-it',
+	'comparing-tarkov-cheats': 'how-does-it-compare',
+	'best-tarkov-cheats': 'how-does-it-compare',
+	'tarkov-esp-notes': 'esp-not-showing-in-raid',
+	'tarkov-esp': 'esp-not-showing-in-raid',
+	'buy-tarkov-cheats': 'how-do-i-get-access',
+	'tarkov-cheats-price': 'how-much-does-it-cost',
+	'tarkov-cheats-pc': 'system-requirements',
+	'tarkov-loot-esp': 'loot-esp-too-cluttered',
+	'tarkov-aimbot-notes': 'best-aimbot-settings',
+	'tarkov-aimbot': 'best-aimbot-settings',
+	'tarkov-wallhack-notes': 'wallhack-and-chams',
+	'tarkov-wallhack': 'wallhack-and-chams',
+	'patch-day-notes': 'safe-to-play-after-a-patch',
+	'undetected-tarkov-cheats': 'safe-to-play-after-a-patch',
+	'tarkov-arena': 'does-it-work-in-arena',
+	'tarkov-no-recoil': 'no-recoil-settings',
+	'tarkov-radar-notes': 'is-radar-worth-it',
+	'tarkov-radar': 'is-radar-worth-it',
+	// Retired doorway comparison pages
+	'phoenix-tarkov': 'how-does-it-compare',
+	'cosmo-tarkov': 'how-does-it-compare',
+	'ghostware-tarkov': 'how-does-it-compare',
+	'kernaim-tarkov': 'how-does-it-compare',
+	'cheatvault-tarkov': 'how-does-it-compare',
+	// Interim short slugs (previous rename)
+	'worth-it': 'is-it-worth-it',
+	'vs-other-cheats': 'how-does-it-compare',
+	'esp-not-showing': 'esp-not-showing-in-raid',
+	'how-to-buy': 'how-do-i-get-access',
+	'how-much': 'how-much-does-it-cost',
+	'loot-filter': 'loot-esp-too-cluttered',
+	'aimbot-settings': 'best-aimbot-settings',
+	wallhack: 'wallhack-and-chams',
+	'after-patch': 'safe-to-play-after-a-patch',
+	arena: 'does-it-work-in-arena',
+	'cloud-dma': 'cloud-dma-setup',
+	'no-recoil': 'no-recoil-settings',
+	radar: 'is-radar-worth-it',
+	'grey-menu': 'menu-greyed-out',
+	'not-delivered': 'order-not-delivered',
+	'is-it-safe': 'is-it-undetected',
+	'streamproof-obs': 'streamproof-on-obs',
 };
 
 export function absoluteBlogUrl(locale: LocaleCode, slug?: string): string {
@@ -169,7 +204,7 @@ export function getBlogIndexHreflangAlternates(_currentLocale: LocaleCode = defa
 
 /**
  * Localized blog routes are not translated — do not build/index them.
- * Use EN `/blog/` only. Locale paths 301 to EN via [lang]/blog pages.
+ * Use EN `/forum/` only. Locale paths 301 to EN via [lang]/forum pages.
  */
 export function getAllBlogStaticPaths(): { params: { lang?: string; slug: string }; props: { locale: LocaleCode } }[] {
 	return blogPosts.map((post) => ({

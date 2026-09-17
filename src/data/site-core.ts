@@ -17,12 +17,12 @@ const copyDefaults = {
 	summary:
 		'{brand} is an undetected {game} cheat package for Windows PC. Includes ESP, soft aim, and radar, with {antiCheat} maintenance after patches.',
 	heroLede: 'Hacks and cheats available — 0% detection.',
-	blogLabel: '{game} Intel',
+	blogLabel: 'Forum',
 	ctaBuy: 'Buy now',
 	ctaBuyShort: 'Buy',
 	featuresIntro: 'Everything included in one license for {game} on Windows PC.',
 	storeIntro: 'Pick a plan. Same features on both. Instant delivery after payment.',
-	statusIntro: 'Check here after a {game} or {antiCheat} patch before you play.',
+	statusIntro: 'Check here after an {game} or {antiCheat} patch before you play.',
 	previewIntro: 'A quick look at {brand} — ESP, aimbot, radar, and updates after patches.',
 	setupIntro: 'Install {brand} on Windows PC after you buy. Follow these short steps.',
 	supportIntro: 'Need help with {brand}? Email {email} with your order ID.',
@@ -63,8 +63,8 @@ const seoDefaults = {
 	reviewsTitle: '{brand} Reviews | Buyer Feedback',
 	reviewsDescription:
 		'Real buyer reviews for {brand} — ESP, soft aim, radar, and patch updates on Windows PC.',
-	blogTitle: '{game} Intel | {brand}',
-	blogDescription: 'Guides and notes for {game} — meta tips, ESP, aimbot, and {antiCheat} updates.',
+	blogTitle: '{game} Forum | {brand}',
+	blogDescription: 'Community forum for {game} — archived threads on ESP, aimbot, and {antiCheat} updates.',
 } as const;
 
 type SeoShape = typeof seoDefaults;
@@ -103,7 +103,7 @@ export const siteConfig = {
 /** Prefer brand.keywords — kept for Layout meta keywords. */
 export const seoKeywords = brand.keywords.list;
 
-/** Blog eyebrow / title suffix */
+/** Forum eyebrow / title suffix */
 export const blogLabel = fillBrandTokens(brandCopy.blogLabel);
 
 export const productInfo = {

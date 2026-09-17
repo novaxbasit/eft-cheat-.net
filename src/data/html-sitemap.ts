@@ -59,9 +59,9 @@ export function getHtmlSitemapGroups(_locale: LocaleCode): HtmlSitemapGroup[] {
 			],
 		},
 		{
-			title: 'Blog',
+			title: 'Forum',
 			links: [
-				{ label: 'Blog', href: getBlogBasePath(defaultLocale) },
+				{ label: 'Forum', href: getBlogBasePath(defaultLocale) },
 				...getAllPostsForLocale(defaultLocale).map((post) => ({
 					label: post.translation.title,
 					href: getBlogPostPath(defaultLocale, post.translation.slug),

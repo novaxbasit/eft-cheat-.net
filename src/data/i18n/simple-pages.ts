@@ -218,7 +218,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				list: [
 					'<a href="/tarkov-esp/">ESP guide</a>',
 					'<a href="/tarkov-aimbot/">Aimbot controls</a>',
-					'<a href="/blog/">Blog</a>',
+					'<a href="/forum/">Forum</a>',
 					'<a href="/updates/">Updates</a>',
 				],
 			},

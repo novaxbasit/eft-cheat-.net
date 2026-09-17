@@ -3,3 +3,4 @@ Allow: /
 Disallow: /brand-studio/
 Disallow: /__brand/
 Sitemap: https://eftcheat.net/sitemap.xml
+Sitemap: https://eftcheat.net/sitemap-images.xml

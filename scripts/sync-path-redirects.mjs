@@ -14,7 +14,8 @@ const OUT = path.join(ROOT, 'functions/path-redirects.json');
 const EXTRA = {
 	'/sitemap-0.xml': '/sitemap.xml',
 	'/sitemap.xml/': '/sitemap.xml',
-	'/sitemap-en.xml/': '/sitemap-en.xml',
+	'/sitemap-en.xml': '/sitemap.xml',
+	'/sitemap-en.xml/': '/sitemap.xml',
 	'/sitemap-i18n.xml': '/sitemap.xml',
 	'/sitemap-i18n.xml/': '/sitemap.xml',
 	'/sitemap-images.xml/': '/sitemap-images.xml',
@@ -59,6 +60,8 @@ for (const line of readFileSync(REDIRECTS, 'utf8').split('\n')) {
 	if (!trimmed || trimmed.startsWith('#')) continue;
 	const m = trimmed.match(/^(\S+)\s+(\S+)\s+301$/);
 	if (!m) continue;
+	// Splats are handled by Cloudflare _redirects + middleware blog→forum rewrite.
+	if (m[1].includes('*') || m[2].includes(':splat')) continue;
 	map[m[1]] = m[2];
 }
 

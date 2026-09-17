@@ -56,6 +56,7 @@ Allow: /
 Disallow: /brand-studio/
 Disallow: /__brand/
 Sitemap: ${brand.url}/sitemap.xml
+Sitemap: ${brand.url}/sitemap-images.xml
 `,
 	'utf8',
 );

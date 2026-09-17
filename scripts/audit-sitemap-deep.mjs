@@ -86,14 +86,22 @@ async function main() {
 	console.log(`Deep sitemap audit (${path.relative(ROOT, DIST)})\n`);
 
 	const sitemapXml = await readFile(path.join(DIST, 'sitemap.xml'), 'utf8');
-	const enXml = await readFile(path.join(DIST, 'sitemap-en.xml'), 'utf8');
 	const imagesXml = await readFile(path.join(DIST, 'sitemap-images.xml'), 'utf8');
 
 	if (sitemapXml.includes('<sitemapindex')) fail('sitemap.xml is still a sitemapindex');
 	else ok('sitemap.xml is a urlset');
 
-	if (sitemapXml !== enXml) fail('sitemap-en.xml does not match sitemap.xml');
-	else ok('sitemap-en.xml matches sitemap.xml');
+	// /sitemap-en.xml must be a 301 alias, not a built duplicate file.
+	try {
+		await access(path.join(DIST, 'sitemap-en.xml'));
+		fail('sitemap-en.xml still built as a file — it must 301 to sitemap.xml');
+	} catch {
+		ok('sitemap-en.xml not built (301 alias)');
+	}
+	const enRedirect =
+		REDIRECT_MAP.get('/sitemap-en.xml') || REDIRECT_MAP.get('/sitemap-en.xml/');
+	if (enRedirect !== '/sitemap.xml') fail('sitemap-en.xml missing 301 → /sitemap.xml in redirects');
+	else ok('sitemap-en.xml 301 → /sitemap.xml');
 
 	const allPageUrls = new Set();
 	const allImageUrls = new Set();

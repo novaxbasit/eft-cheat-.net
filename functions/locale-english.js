@@ -29,11 +29,24 @@ export const REDIRECT_LOCALES = new Set([
 ]);
 
 const BLOG_SLUG_REDIRECTS = {
-	'phoenix-tarkov': '/blog/comparing-tarkov-cheats/',
-	'cosmo-tarkov': '/blog/comparing-tarkov-cheats/',
-	'ghostware-tarkov': '/blog/comparing-tarkov-cheats/',
-	'kernaim-tarkov': '/blog/comparing-tarkov-cheats/',
-	'cheatvault-tarkov': '/blog/comparing-tarkov-cheats/',
+	'phoenix-tarkov': '/forum/how-does-it-compare/',
+	'cosmo-tarkov': '/forum/how-does-it-compare/',
+	'ghostware-tarkov': '/forum/how-does-it-compare/',
+	'kernaim-tarkov': '/forum/how-does-it-compare/',
+	'cheatvault-tarkov': '/forum/how-does-it-compare/',
+	'comparing-tarkov-cheats': '/forum/how-does-it-compare/',
+	'tarkov-cheats-review': '/forum/is-it-worth-it/',
+	'tarkov-esp-notes': '/forum/esp-not-showing-in-raid/',
+	'buy-tarkov-cheats': '/forum/how-do-i-get-access/',
+	'tarkov-cheats-price': '/forum/how-much-does-it-cost/',
+	'tarkov-cheats-pc': '/forum/system-requirements/',
+	'tarkov-loot-esp': '/forum/loot-esp-too-cluttered/',
+	'tarkov-aimbot-notes': '/forum/best-aimbot-settings/',
+	'tarkov-wallhack-notes': '/forum/wallhack-and-chams/',
+	'patch-day-notes': '/forum/safe-to-play-after-a-patch/',
+	'tarkov-arena': '/forum/does-it-work-in-arena/',
+	'tarkov-no-recoil': '/forum/no-recoil-settings/',
+	'tarkov-radar-notes': '/forum/is-radar-worth-it/',
 };
 
 const KNOWN_ENGLISH_PREFIXES = new Set([
@@ -44,6 +57,7 @@ const KNOWN_ENGLISH_PREFIXES = new Set([
 	'faq',
 	'support',
 	'reviews',
+	'forum',
 	'blog',
 	'privacy-policy',
 	'refund-policy',
@@ -70,10 +84,10 @@ export function localeToEnglish(pathname) {
 	const first = rest[0];
 	if (first.endsWith('.xml')) return '/sitemap.xml';
 
-	if (first === 'blog') {
-		if (rest.length === 1) return '/blog/';
+	if (first === 'blog' || first === 'forum') {
+		if (rest.length === 1) return '/forum/';
 		const slug = rest[1];
-		return BLOG_SLUG_REDIRECTS[slug] || `/blog/${slug}/`;
+		return BLOG_SLUG_REDIRECTS[slug] || `/forum/${slug}/`;
 	}
 
 	if (first === 'site-map' || first === 'sitemap') return '/sitemap/';

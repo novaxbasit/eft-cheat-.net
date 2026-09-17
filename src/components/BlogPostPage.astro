@@ -13,6 +13,7 @@ import {
 import type { ResolvedBlogPost } from '../data/blog/types';
 import { blogLabel, siteConfig } from '../data/site';
 import { getLocalizedPath, localizeInternalHref } from '../data/i18n/routing';
+import { getThreadMeta } from '../data/forum';
 
 interface Props {
 	locale: LocaleCode;
@@ -27,6 +28,7 @@ const blogHref = getBlogBasePath(defaultLocale);
 const related = getAllPostsForLocale(defaultLocale)
 	.filter((p) => p.id !== post.id)
 	.slice(0, 3);
+const thread = getThreadMeta(post.id + t.slug, t.slug);
 
 const articleUrl = absoluteBlogUrl(defaultLocale, post.translations[defaultLocale]?.slug ?? t.slug);
 const hreflangAlternates = getBlogPostHreflangAlternates(post, locale);
@@ -98,9 +100,19 @@ function pageTitle(headline: string): string {
 		<article class="site-panel site-panel--glow">
 			<header class="post__header">
 				<p class="site-eyebrow">{post.category}</p>
-				<p class="post__meta">
-					{ui.published} {post.published} · {ui.updated} {post.updated}
-				</p>
+				<div class="thread__op">
+					<span class="thread__avatar thread__avatar--op" aria-hidden="true">{thread.op.initial}</span>
+					<div class="thread__op-meta">
+						<span class="thread__handle">
+							{thread.op.handle}
+							<span class="thread__badge thread__badge--op">OP</span>
+						</span>
+						<p class="post__meta">
+							{ui.published} {post.published} · {ui.updated} {post.updated} · {thread.replyCount} replies ·{' '}
+							<span class="thread__pill thread__pill--closed">Closed</span>
+						</p>
+					</div>
+				</div>
 			</header>
 			<img
 				class="post__hero"
@@ -114,24 +126,52 @@ function pageTitle(headline: string): string {
 			{
 				t.sections.map((section) => (
 					<section class="post__section">
-						<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
-						{section.paragraphs.map((paragraph) => {
-							const isTip = paragraph.startsWith('Pro Tip');
-							const isTry = paragraph.startsWith('Try This Today');
-							const html = localizeParagraphHtml(paragraph);
-							if (isTip || isTry) {
-								return (
-									<aside class:list={['callout', { 'callout--tip': isTip, 'callout--try': isTry }]}>
-										<p set:html={html} />
-									</aside>
-								);
-							}
-							return <p set:html={html} />;
-						})}
+						{section.h2 && (
+							<h2 class:list={[/^before you buy/i.test(section.h2) && 'is-title-white']}>{section.h2}</h2>
+						)}
+						{section.paragraphs.map((paragraph) => (
+							<p set:html={localizeParagraphHtml(paragraph)} />
+						))}
 					</section>
 				))
 			}
 		</article>
+
+		<section class="thread__replies" aria-label="Replies">
+			<h2 class="thread__replies-title">{thread.replyCount} Replies</h2>
+			<ol class="thread__list">
+				{thread.replies.map((reply) => (
+					<li class:list={['thread__reply', { 'thread__reply--solution': reply.solution, 'thread__reply--staff': reply.staff }]}>
+						<span class:list={['thread__avatar', { 'thread__avatar--staff': reply.staff }]} aria-hidden="true">{reply.initial}</span>
+						<div class="thread__reply-body">
+							<div class="thread__reply-head">
+								<span class="thread__handle">{reply.handle}</span>
+								{reply.staff && <span class="thread__badge">Staff</span>}
+								{reply.op && <span class="thread__badge thread__badge--op">OP</span>}
+								{reply.solution && <span class="thread__badge thread__badge--solution">✓ Solution</span>}
+							</div>
+							<p class="thread__reply-text" set:html={localizeParagraphHtml(reply.body)} />
+							<span class="thread__helpful" aria-hidden="true">▲ {reply.helpful} found this helpful</span>
+						</div>
+					</li>
+				))}
+			</ol>
+			<div class="thread__closed" role="note">
+				<span class="thread__closed-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7">
+						<rect x="5" y="11" width="14" height="9" rx="1.5" />
+						<path d="M8 11V8a4 4 0 0 1 8 0v3" />
+					</svg>
+				</span>
+				<div>
+					<strong>This thread is closed.</strong>
+					<span>
+						Replies were disabled after the discussion wrapped up. For account or license
+						questions, contact <a href={getLocalizedPath('support', locale)}>Support</a>.
+					</span>
+				</div>
+			</div>
+		</section>
 
 		{
 			related.length > 0 && (
@@ -244,6 +284,171 @@ function pageTitle(headline: string): string {
 		font-weight: 600;
 	}
 	.post__related a:hover {
+		text-decoration: underline;
+	}
+
+	/* Forum thread reskin */
+	.thread__op {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+	}
+	.thread__op-meta {
+		min-width: 0;
+	}
+	.thread__avatar {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.4rem;
+		height: 2.4rem;
+		flex: 0 0 auto;
+		border: 1px solid var(--line);
+		background: color-mix(in srgb, var(--magenta-soft) 12%, var(--bg-panel));
+		color: #fff;
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+	.thread__avatar--op {
+		border-color: color-mix(in srgb, var(--magenta-soft) 50%, var(--line));
+		background: color-mix(in srgb, var(--magenta-soft) 22%, var(--bg-panel));
+	}
+	.thread__handle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 700;
+		color: var(--heading);
+		font-size: 0.95rem;
+	}
+	.thread__badge {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.05rem 0.4rem;
+		font-size: 0.62rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--magenta-soft);
+		border: 1px solid color-mix(in srgb, var(--magenta-soft) 45%, var(--line));
+	}
+	.thread__badge--op {
+		color: #7fb2ff;
+		border-color: color-mix(in srgb, #7fb2ff 45%, var(--line));
+	}
+	.thread__badge--solution {
+		color: #34d399;
+		border-color: color-mix(in srgb, #34d399 45%, var(--line));
+		background: color-mix(in srgb, #34d399 10%, transparent);
+	}
+	.thread__pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.05rem 0.45rem;
+		font-size: 0.66rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		vertical-align: middle;
+	}
+	.thread__pill--closed {
+		color: #f0b23a;
+		border: 1px solid color-mix(in srgb, #f0b23a 45%, var(--line));
+		background: color-mix(in srgb, #f0b23a 10%, transparent);
+	}
+
+	.thread__replies {
+		margin-top: 2rem;
+	}
+	.thread__replies-title {
+		margin: 0 0 1rem;
+		padding-bottom: 0.6rem;
+		border-bottom: 1px solid var(--line);
+		font-size: 1.1rem;
+		color: var(--heading);
+	}
+	.thread__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 0.85rem;
+	}
+	.thread__reply {
+		display: grid;
+		grid-template-columns: 2.4rem minmax(0, 1fr);
+		gap: 0.75rem;
+		padding: 0.9rem 1rem;
+		border: 1px solid var(--line-soft);
+		background: color-mix(in srgb, #fff 2%, var(--bg-panel));
+	}
+	.thread__reply--staff {
+		border-color: color-mix(in srgb, var(--magenta-soft) 28%, var(--line));
+	}
+	.thread__reply--solution {
+		border-color: color-mix(in srgb, #34d399 40%, var(--line));
+		background: color-mix(in srgb, #34d399 6%, var(--bg-panel));
+	}
+	.thread__avatar--staff {
+		border-color: color-mix(in srgb, var(--magenta-soft) 50%, var(--line));
+		background: color-mix(in srgb, var(--magenta-soft) 25%, var(--bg-panel));
+		color: #fff;
+	}
+	.thread__reply-body {
+		min-width: 0;
+		display: grid;
+		gap: 0.35rem;
+	}
+	.thread__reply-head {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.thread__reply-text {
+		margin: 0;
+		color: var(--ink-muted);
+		line-height: 1.6;
+		font-size: 0.92rem;
+	}
+	.thread__helpful {
+		font-size: 0.74rem;
+		color: var(--ink-faint);
+		letter-spacing: 0.02em;
+	}
+
+	.thread__closed {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.7rem;
+		margin-top: 1.25rem;
+		padding: 1rem 1.1rem;
+		border: 1px solid color-mix(in srgb, #f0b23a 35%, var(--line));
+		background: color-mix(in srgb, #f0b23a 8%, var(--bg-panel));
+	}
+	.thread__closed-icon {
+		display: inline-flex;
+		color: #f0b23a;
+		margin-top: 0.05rem;
+	}
+	.thread__closed strong {
+		display: block;
+		color: #fff;
+		font-size: 0.95rem;
+		margin-bottom: 0.15rem;
+	}
+	.thread__closed span {
+		color: var(--ink-muted);
+		font-size: 0.88rem;
+		line-height: 1.55;
+	}
+	.thread__closed a {
+		color: var(--magenta-soft);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.thread__closed a:hover {
 		text-decoration: underline;
 	}
 </style>

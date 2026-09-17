@@ -45,7 +45,7 @@ const REQUIRED_PATHS = [
 	'/faq/',
 	'/support/',
 	'/reviews/',
-	'/blog/',
+	'/forum/',
 	'/privacy-policy/',
 	'/refund-policy/',
 	'/terms/',
@@ -63,11 +63,12 @@ const FORBIDDEN_PATH_SNIPPETS = [
 	'/undetected-tarkov-cheats/',
 	'/battleye-bypass/',
 	'/tarkov-wallhack/',
-	'/blog/phoenix-tarkov/',
-	'/blog/cosmo-tarkov/',
-	'/blog/ghostware-tarkov/',
-	'/blog/kernaim-tarkov/',
-	'/blog/cheatvault-tarkov/',
+	'/blog/',
+	'/forum/phoenix-tarkov/',
+	'/forum/cosmo-tarkov/',
+	'/forum/ghostware-tarkov/',
+	'/forum/kernaim-tarkov/',
+	'/forum/cheatvault-tarkov/',
 ];
 
 const LOCALE_PREFIXES = [
@@ -94,7 +95,6 @@ const ok = (msg) => console.log(`✓ ${msg}`);
 async function main() {
 	const DIST = await resolveDistRoot();
 	const sitemapXml = await readFile(path.join(DIST, 'sitemap.xml'), 'utf8');
-	const enXml = await readFile(path.join(DIST, 'sitemap-en.xml'), 'utf8');
 	const imagesXml = await readFile(path.join(DIST, 'sitemap-images.xml'), 'utf8');
 
 	if (sitemapXml.includes('<sitemapindex')) fail('sitemap.xml must be a urlset, not a sitemapindex');
@@ -109,8 +109,13 @@ async function main() {
 		fail('sitemap.xml should be loc/lastmod/changefreq/priority only');
 	}
 
-	if (sitemapXml !== enXml) fail('sitemap-en.xml must match sitemap.xml');
-	else ok('sitemap-en.xml matches sitemap.xml');
+	// /sitemap-en.xml is a 301 to /sitemap.xml — it must NOT be built as a duplicate file.
+	try {
+		await access(path.join(DIST, 'sitemap-en.xml'));
+		fail('sitemap-en.xml still built as a file — it must 301 to sitemap.xml');
+	} catch {
+		ok('sitemap-en.xml not built (301 alias of sitemap.xml)');
+	}
 
 	const locs = [...sitemapXml.matchAll(/<url>[\s\S]*?<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 	const paths = locs.map(pathFromLoc);

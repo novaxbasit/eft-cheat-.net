@@ -70,7 +70,7 @@ const copyDefaults = {
 	ctaBuyShort: 'Buy',
 	featuresIntro: 'Everything included in one license for {game} on Windows PC.',
 	storeIntro: 'Pick a plan. Same features on both. Instant delivery after payment.',
-	statusIntro: 'Check here after a {game} or {antiCheat} patch before you play.',
+	statusIntro: 'Check here after an {game} or {antiCheat} patch before you play.',
 	previewIntro: 'A quick look at {brand} — ESP, aimbot, radar, and updates after patches.',
 	setupIntro: 'Install {brand} on Windows PC after you buy. Follow these short steps.',
 	supportIntro: 'Need help with {brand}? Email {email} with your order ID.',
@@ -538,7 +538,7 @@ const copyFields: Field[] = [
 	{
 		name: 'statusIntro',
 		label: 'Status intro',
-		tip: 'What: Intro under Status H1. | Why: Patch-day reminder. | Example: Check here after a {game} or {antiCheat} patch...',
+		tip: 'What: Intro under Status H1. | Why: Patch-day reminder. | Example: Check here after an {game} or {antiCheat} patch...',
 		value: copy.statusIntro,
 		textarea: true,
 		rows: 2,
@@ -774,7 +774,7 @@ const seoAuditRows = [
 	{ page: 'Support', path: '/support/', fields: 'supportTitle / Description + intro', status: 'Live · permanent' },
 	{ page: 'FAQ index', path: '/faq/', fields: 'faqTitle / Description + intro', status: 'Live · permanent' },
 	{ page: 'Reviews index', path: '/reviews/', fields: 'reviewsTitle / Description + intro', status: 'Live · permanent' },
-	{ page: 'Blog index', path: '/blog/', fields: 'blogTitle / blogDescription', status: 'Live · EN permanent' },
+	{ page: 'Forum index', path: '/forum/', fields: 'blogTitle / blogDescription', status: 'Live · EN permanent' },
 	{ page: 'Keyword landings', path: '/tarkov-esp/ …', fields: 'content.generated.ts', status: 'Manual file' },
 	{ page: 'FAQ answers', path: '/faq/[slug]/', fields: 'site.ts faqs', status: 'Manual file' },
 	{ page: 'Review posts', path: '/reviews/[slug]/', fields: 'site.ts reviews', status: 'Manual file' },
@@ -1542,7 +1542,7 @@ const sections = [
 					ctaBuyShort: 'Buy',
 					featuresIntro: 'Everything included in one license for {game} on Windows PC.',
 					storeIntro: 'Pick a plan. Same features on both. Instant delivery after payment.',
-					statusIntro: 'Check here after a {game} or {antiCheat} patch before you play.',
+					statusIntro: 'Check here after an {game} or {antiCheat} patch before you play.',
 					previewIntro: 'A quick look at {brand} — ESP, aimbot, radar, and updates after patches.',
 					setupIntro: 'Install {brand} on Windows PC after you buy. Follow these short steps.',
 					supportIntro: 'Need help with {brand}? Email {email} with your order ID.',
@@ -1758,7 +1758,8 @@ const sections = [
 							support: '/support/',
 							faq: '/faq/',
 							reviews: '/reviews/',
-							blog: '/blog/',
+							blog: '/forum/',
+							forum: '/forum/',
 						};
 						const path = paths[activeSerp] || '/';
 						serpUrl.textContent = (u || 'example.com') + path;

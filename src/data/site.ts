@@ -56,7 +56,7 @@ export const mainNav = [
 	{ label: 'Features', href: '/features/' },
 	{ label: 'Pricing', href: '/pricing/' },
 	{ label: 'Updates', href: '/updates/' },
-	{ label: 'Blog', href: '/blog/' },
+	{ label: 'Forum', href: '/forum/' },
 ] as const;
 
 export const footerNav = [
@@ -79,7 +79,7 @@ export const footerExplore = [
 	{ label: fillBrandTokens('{game} hack setup guide'), href: '/setup/' },
 	{ label: fillBrandTokens('{game} hacks FAQ'), href: '/faq/' },
 	{ label: fillBrandTokens('{brand} reviews'), href: '/reviews/' },
-	{ label: fillBrandTokens('{game} cheat guides'), href: '/blog/' },
+	{ label: fillBrandTokens('{game} cheat guides'), href: '/forum/' },
 	{ label: fillBrandTokens('Contact {brand} support'), href: '/support/' },
 ] as const;
 

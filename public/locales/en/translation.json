@@ -103,7 +103,7 @@
     "shareX": "Share on X",
     "shareReddit": "Share on Reddit",
     "shareFacebook": "Share on Facebook",
-    "blog": "Blog",
+    "blog": "Forum",
     "guides": "Guides",
     "sitemap": "Sitemap",
     "support": "Support",
@@ -157,7 +157,7 @@
     "linkFaq": "FAQ",
     "linkSupport": "Support",
     "linkSetupGuide": "Setup guide",
-    "linkBlog": "Blog",
+    "linkBlog": "Forum",
     "linkRefunds": "Refunds",
     "faqEyebrow": "FAQ",
     "faqTitle": "Before you buy",
@@ -188,7 +188,7 @@
     "undetected": "Undetected",
     "pricing": "Pricing",
     "setup": "Setup",
-    "blog": "Blog"
+    "blog": "Forum"
   },
   "images": {
     "hero": "Escape from Tarkov Cheats hero — ESP and aimbot overlay in Escape from Tarkov",
@@ -203,18 +203,18 @@
     "battleRoyaleIsland": "ESP markers for loot and extracts in Escape from Tarkov"
   },
   "blog": {
-    "blogTitle": "Tarkov Cheat Blog | Cheats",
-    "blogDescription": "Tarkov cheat blog — comparisons vs Cosmo Cheats, Phoenix, CheatVault, settings, and buyer notes. English posts at eftcheat.net/blog/.",
-    "blogH1": "Blog",
-    "blogIntro": "Tarkov cheat blog posts — comparisons, ESP, aimbot, loot ESP, Cloud DMA, and how to buy.",
-    "readMore": "Read more",
-    "published": "Published",
-    "updated": "Updated",
-    "relatedPosts": "Related posts",
-    "allPosts": "All blog posts",
+    "blogTitle": "Tarkov Cheats Forum | Cheats",
+    "blogDescription": "Tarkov Cheats community forum — closed threads on ESP, aimbot, loot ESP, Cloud DMA, updates, and buyer notes at eftcheat.net.",
+    "blogH1": "Forum",
+    "blogIntro": "Community threads — ESP, aimbot, loot ESP, Cloud DMA, and buyer notes. Threads are archived and closed to new replies.",
+    "readMore": "Open thread",
+    "published": "Started",
+    "updated": "Last reply",
+    "relatedPosts": "Related threads",
+    "allPosts": "All threads",
     "home": "Escape from Tarkov Cheats home",
     "language": "Language",
-    "label": "Blog"
+    "label": "Forum"
   },
   "gallery": {
     "eyebrow": "Escape from Tarkov Cheats",

@@ -23,7 +23,7 @@ const canonicalPath = getHtmlSitemapPath(locale);
 const hreflangAlternates = getSelfHreflangAlternates(canonicalPath);
 const title = seoTitle('Sitemap');
 const description = seoDescription(
-	'HTML sitemap of canonical {brand} pages — Cheats, Features, Pricing, Updates, Blog, FAQ, Setup, and Support.',
+	'HTML sitemap of canonical {brand} pages — Cheats, Features, Pricing, Updates, Forum, FAQ, Setup, and Support.',
 );
 const intro =
 	locale === 'en'
@@ -57,7 +57,6 @@ const intro =
 							{group.links.map((link) => (
 								<li>
 									<a href={link.href}>{link.label}</a>
-									<span>{link.href}</span>
 								</li>
 							))}
 						</ul>

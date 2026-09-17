@@ -10,26 +10,6 @@
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://zadeyo.com; img-src 'self' data: blob: https:; media-src 'self' blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; script-src-attr 'none'; connect-src 'self'; upgrade-insecure-requests; trusted-types default; require-trusted-types-for 'script'
 
-/favicon.ico
-  Content-Type: image/x-icon
-  Cache-Control: public, max-age=604800
-
-/favicon-16x16.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-/favicon-32x32.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-/favicon.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-/apple-touch-icon.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
 /site.webmanifest
   Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=86400
@@ -89,3 +69,28 @@
 /*.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=3600
+
+# Favicons LAST so these win over the immutable /*.png and /*.ico rules above.
+# The bare /favicon.ico is auto-requested by browsers on non-HTML responses
+# (e.g. /sitemap.xml) and can't be version-busted like the HTML <link> icons,
+# so keep it short + revalidating to survive rebrands. favicon.ico ships PNG
+# bytes, so its Content-Type is image/png (must match, given global nosniff).
+/favicon.ico
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon-16x16.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon-32x32.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/apple-touch-icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600, must-revalidate

@@ -1,5 +1,4 @@
 ---
-import BlogIndexPage from '../../components/BlogIndexPage.astro';
+/** Legacy /blog/ index — permanent redirect to /forum/. */
+return Astro.redirect('/forum/', 301);
 ---
-
-<BlogIndexPage locale="en" />
